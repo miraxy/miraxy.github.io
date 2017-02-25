@@ -5,8 +5,8 @@
     <description>اسناد راهنما برای شروع کار با میرا</description>
     <link>http://localhost:80</link>
     <atom:link href="http://localhost:80/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-02-25 23:45:05</pubDate>
-    <lastBuildDate>2017-02-25 23:45:05</lastBuildDate>
+    <pubDate>2017-02-26 01:09:29</pubDate>
+    <lastBuildDate>2017-02-26 01:09:29</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -268,6 +268,63 @@ disqus_shortname: DISQUS SHORTNAME
           <pubDate>2017-02-25 22:44:13</pubDate>
           <link>/start-fa/parser/</link>
           <guid isPermaLink="true">/start-fa/parser/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>استفاده از فیلدهای فایل‌های تنظیمات در قالب</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;تمام فیلدهای موجود در فایل‌های تنظیم را میتوان به پوسته نیز وارد کرد&lt;/p&gt;
+
+&lt;p&gt;برای داشتن مقادیر موجود در فایل config.yml از برچسب MAIN و تنظیمات ذخیره شده در شاخه‌ی کانفیگ برای هر طبقه با برچسب SITE در قالب قابل بازیابی هستند. &lt;br /&gt;
+حتی تمام مقادیری که برچسب مستقل دارند مسث description و ... را نیز میتوان از این راه نیز به قالب وارد کرد.&lt;/p&gt;
+
+&lt;p&gt;برای مثال اگر در config.yml فیلد icno را داشته باشیم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MAIN.icon }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا اگر در config/books.yml فیلد logo داشته باشیم در تمام صفحات قالب books با این دستور قابل دسترسی است&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ SITE.logo }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;همچنین فیلدهایی که مانند آرایه یا هش، به شکل لیستی از پشته‌ها ذخیره شده‌اند را هم میتوان با حلقه FOREACH در قالب لود کرد&lt;/p&gt;
+
+&lt;p&gt;اگر شبکه های اجتماعی که در آن‌ها عضو هستیم را بخواهیم در ساید بار وبلاگ خود معرفی کنیم، در فایل config/book.yml این مقادیر را اضافه میکنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;social:
+ -  name: twitter
+    url: https://twitter.com/USER_NAME
+    desc: Follow me on twitter
+
+ -  name: github
+    url: https://github.com/USER_NAME
+    desc: Fork me on github
+
+ -  name: google+
+    url: https://plus.google.com/USER_NAME
+    desc: Follow me on google plus
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا هر جا که بخواهیم در قالب به این مقادیر دسترسی داشته باشیم با استفاده از حلقه FOREACH خواهیم داشت:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH social IN SITE.social }}
+    &amp;lt;a href=&quot;{{ social.url }}&quot;&amp;gt;my {{social.name }}&amp;lt;/a&amp;gt; - {{ social.desc }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر فیلد socia را در فایل config.yml قرار داده بودیم تنها کافی است در ابتدای حلقه، به جای SITE از MAIN hsjthni ;kdl:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH social IN MAIN.social }}
+...
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-02-16 05:50:48</pubDate>
+          <link>/start-fa/config-fields/</link>
+          <guid isPermaLink="true">/start-fa/config-fields/</guid>
 
 
         <category>
@@ -1119,7 +1176,7 @@ more
 به یاد داشته باشید more شامل تمام متن، قبل و بعد از نشانه گذار
     &lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
 می‌باشد.&lt;/p&gt;</description>
-          <pubDate>2017-02-16 10:11:01</pubDate>
+          <pubDate>2017-02-16 00:40:55</pubDate>
           <link>/start-fa/content-body/</link>
           <guid isPermaLink="true">/start-fa/content-body/</guid>
 
@@ -1382,36 +1439,6 @@ categories, tags...
           <pubDate>2017-02-16 00:25:29</pubDate>
           <link>/start-fa/title/</link>
           <guid isPermaLink="true">/start-fa/title/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>date</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;تاریخ تولید فایل محتوا&lt;/p&gt;
-
-&lt;p&gt;با یکی از این دو فرمت قابل قبول است&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;YYYY-MM-DD HH:MM:SS
-YYYY-MM-DDTHH:MM:SS
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;میرا تاریخ را با یک کاراکتر فاصیه بین تاریخ و زمان میسازد اما اگر فاصله با T هم جایگزین شود باز هم مورد قبول است، اما به جز این دو فرمت از حالت دیگری برای ذخیره تاریخ و زمان در فیلد date استفاده نکنید. &lt;br /&gt;
-این فیلد برای معتبر بودن، حتما باید تاریخ و زمان را با خود داشته باشد. پس در صپرت نیاز به این فیلد، اقدام به حذف ساعت و دقیقه و ثانیه از این فیلد نکنید، اما میتوانید آه نا را با صفر جایگزین کنید.&lt;/p&gt;
-
-&lt;p&gt;هیچ الزامی به نگه داشتن این فیلد وجود ندارد، در صورت عدم نیاز، آن را خالی بگذارید یا حتی از سربرگ حذفش کنید. &lt;br /&gt;
-در صورت وجود داشتن این فیلد دقیقا با فرمت ذکر شده در بالا، آرشیو بر اساس تاریخ برای پست‌هایی که date استاندارد را در خود دارند تولید خواهد شد&lt;/p&gt;
-
-&lt;p&gt;در قالب درون حلقه‌ی POSTS با این برچسب قابل دسترسی است&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{{ date }}
-&lt;/code&gt;&lt;/pre&gt;</description>
-          <pubDate>2017-02-16 00:23:41</pubDate>
-          <link>/start-fa/date/</link>
-          <guid isPermaLink="true">/start-fa/date/</guid>
 
 
         <category>

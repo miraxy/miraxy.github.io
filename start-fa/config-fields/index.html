@@ -10,7 +10,7 @@
     <meta name="description" content="اسناد راهنما برای شروع کار با میرا">
     <meta name="author" content="kiavash">
 
-    <title>راهنمای میرا - 139512</title>
+    <title>استفاده از فیلدهای فایل‌های تنظیمات در قالب - راهنمای میرا</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
@@ -78,16 +78,56 @@
 <!-- Main Content -->
 <div class="container">
   <div class="row">
-    <div class="col-lg-7 col-lg-offset-1 col-md-7 col-md-offset-1">
+    <div class="col-lg-7 col-lg-offset-1 col-md-8">
       
-        <h4><a href="/start-fa/sample/">یک مثال جامع</a> - <small>2017-02-25 23:22:39</small></h4>
-        <h4><a href="/start-fa/img-parser/">img</a> - <small>2017-02-25 23:22:09</small></h4>
-        <h4><a href="/start-fa/parser/">پارسرهای داخلی میرا</a> - <small>2017-02-25 22:44:13</small></h4>
+      <a name="استفاده از فیلدهای فایل‌های تنظیمات در قالب"></a>
+         <h2><a href="/start-fa/config-fields/">استفاده از فیلدهای فایل‌های تنظیمات در قالب</a></h2>
+         <a name="more"></a><br><p>تمام فیلدهای موجود در فایل‌های تنظیم را میتوان به پوسته نیز وارد کرد</p>
 
-      <ul class="pager">
-        
-        
-      </ul>
+<p>برای داشتن مقادیر موجود در فایل config.yml از برچسب MAIN و تنظیمات ذخیره شده در شاخه‌ی کانفیگ برای هر طبقه با برچسب SITE در قالب قابل بازیابی هستند. <br />
+حتی تمام مقادیری که برچسب مستقل دارند مسث description و ... را نیز میتوان از این راه نیز به قالب وارد کرد.</p>
+
+<p>برای مثال اگر در config.yml فیلد icno را داشته باشیم</p>
+
+<pre><code>{{ MAIN.icon }}
+</code></pre>
+
+<p>یا اگر در config/books.yml فیلد logo داشته باشیم در تمام صفحات قالب books با این دستور قابل دسترسی است</p>
+
+<pre><code>{{ SITE.logo }}
+</code></pre>
+
+<p>همچنین فیلدهایی که مانند آرایه یا هش، به شکل لیستی از پشته‌ها ذخیره شده‌اند را هم میتوان با حلقه FOREACH در قالب لود کرد</p>
+
+<p>اگر شبکه های اجتماعی که در آن‌ها عضو هستیم را بخواهیم در ساید بار وبلاگ خود معرفی کنیم، در فایل config/book.yml این مقادیر را اضافه میکنیم:</p>
+
+<pre><code>social:
+ -  name: twitter
+    url: https://twitter.com/USER_NAME
+    desc: Follow me on twitter
+
+ -  name: github
+    url: https://github.com/USER_NAME
+    desc: Fork me on github
+
+ -  name: google+
+    url: https://plus.google.com/USER_NAME
+    desc: Follow me on google plus
+</code></pre>
+
+<p>حالا هر جا که بخواهیم در قالب به این مقادیر دسترسی داشته باشیم با استفاده از حلقه FOREACH خواهیم داشت:</p>
+
+<pre><code>{{ FOREACH social IN SITE.social }}
+    &lt;a href="{{ social.url }}"&gt;my {{social.name }}&lt;/a&gt; - {{ social.desc }}
+{{ END }}
+</code></pre>
+
+<p>اگر فیلد socia را در فایل config.yml قرار داده بودیم تنها کافی است در ابتدای حلقه، به جای SITE از MAIN hsjthni ;kdl:</p>
+
+<pre><code>{{ FOREACH social IN MAIN.social }}
+...
+</code></pre>
+      
     </div>
 
     <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">

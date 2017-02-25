@@ -1600,6 +1600,54 @@ Archives:
 
 <p>استفاده شده، در هر جایی که بخواهید اعداد به جای لاتین به فارسی نمایش داده شوند از این فیلتر در کنار برچسب میتوان استفاده کرد.</p>
        
+       <a name="استفاده از فیلدهای فایل‌های تنظیمات در قالب"></a>
+          <h2><a href="/start-fa/config-fields/">استفاده از فیلدهای فایل‌های تنظیمات در قالب</a></h2>
+          <a name="more"></a><br><p>تمام فیلدهای موجود در فایل‌های تنظیم را میتوان به پوسته نیز وارد کرد</p>
+
+<p>برای داشتن مقادیر موجود در فایل config.yml از برچسب MAIN و تنظیمات ذخیره شده در شاخه‌ی کانفیگ برای هر طبقه با برچسب SITE در قالب قابل بازیابی هستند. <br />
+حتی تمام مقادیری که برچسب مستقل دارند مسث description و ... را نیز میتوان از این راه نیز به قالب وارد کرد.</p>
+
+<p>برای مثال اگر در config.yml فیلد icno را داشته باشیم</p>
+
+<pre><code>{{ MAIN.icon }}
+</code></pre>
+
+<p>یا اگر در config/books.yml فیلد logo داشته باشیم در تمام صفحات قالب books با این دستور قابل دسترسی است</p>
+
+<pre><code>{{ SITE.logo }}
+</code></pre>
+
+<p>همچنین فیلدهایی که مانند آرایه یا هش، به شکل لیستی از پشته‌ها ذخیره شده‌اند را هم میتوان با حلقه FOREACH در قالب لود کرد</p>
+
+<p>اگر شبکه های اجتماعی که در آن‌ها عضو هستیم را بخواهیم در ساید بار وبلاگ خود معرفی کنیم، در فایل config/book.yml این مقادیر را اضافه میکنیم:</p>
+
+<pre><code>social:
+ -  name: twitter
+    url: https://twitter.com/USER_NAME
+    desc: Follow me on twitter
+
+ -  name: github
+    url: https://github.com/USER_NAME
+    desc: Fork me on github
+
+ -  name: google+
+    url: https://plus.google.com/USER_NAME
+    desc: Follow me on google plus
+</code></pre>
+
+<p>حالا هر جا که بخواهیم در قالب به این مقادیر دسترسی داشته باشیم با استفاده از حلقه FOREACH خواهیم داشت:</p>
+
+<pre><code>{{ FOREACH social IN SITE.social }}
+    &lt;a href="{{ social.url }}"&gt;my {{social.name }}&lt;/a&gt; - {{ social.desc }}
+{{ END }}
+</code></pre>
+
+<p>اگر فیلد socia را در فایل config.yml قرار داده بودیم تنها کافی است در ابتدای حلقه، به جای SITE از MAIN hsjthni ;kdl:</p>
+
+<pre><code>{{ FOREACH social IN MAIN.social }}
+...
+</code></pre>
+       
        <a name="پارسرهای داخلی میرا"></a>
           <h2><a href="/start-fa/parser/">پارسرهای داخلی میرا</a></h2>
           <a name="more"></a><br><p>با استفاده از قواعد درونی parserهای میرا میتوان علاوه بر استفاده از markup برای نوشتن بدنه محتوا، از برچسب‌های درونی میرا نیز استفاده کرد</p>
@@ -1963,6 +2011,10 @@ disqus_shortname: DISQUS SHORTNAME
       
       <h5><a href="#نمایش محتوا، با استفاده از POSTS">نمایش محتوا، با استفاده از POSTS</a></h5>
 <!--      <h5><a href="#/start-fa/show-posts/">نمایش محتوا، با استفاده از POSTS</a></h5> -->
+    
+      
+      <h5><a href="#استفاده از فیلدهای فایل‌های تنظیمات در قالب">استفاده از فیلدهای فایل‌های تنظیمات در قالب</a></h5>
+<!--      <h5><a href="#/start-fa/config-fields/">استفاده از فیلدهای فایل‌های تنظیمات در قالب</a></h5> -->
     
     
       

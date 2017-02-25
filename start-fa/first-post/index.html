@@ -82,19 +82,32 @@
       
       <a name="اولین نوشته"></a>
          <h2><a href="/start-fa/first-post/">اولین نوشته</a></h2>
-         <a name="more"></a><br><p>برای نوشتن هر پست جدید لازم است که تیتر و طبقه‌ای که محتوا در آن تولید میشود با سوییچ های t یا title و سوییچ f یا floor مشخص کنیم، در صورتیکه طبقه را مشخص نکنید پست جدید در طبقه‌ای که به عنوان پیش فرض در تنظیمات مشخص شده ثبت میشود
-<code>mira new -t "hello world" -f blog</code>
-یا
-<code>mira new --title="hello world" --floor=blog</code>
-بعد از ساخته شدن اولین پست محتوا با پیغامی شبیه به این روبرو خواهید شد که محل و نام فایل جدید را مشخص می‌کند
-<code>/Your_Mira/content/blog/2017-2-11-hello_world.pen created</code></p>
+         <a name="more"></a><br><p>برای نوشتن هر پست جدید لازم است که تیتر و طبقه‌ای که محتوا در آن تولید میشود با سوییچ های t یا title و سوییچ f یا floor مشخص کنیم، در صورتیکه طبقه را مشخص نکنید پست جدید در طبقه‌ای که به عنوان پیش فرض در تنظیمات مشخص شده ثبت میشود</p>
+
+<pre><code>mira new -t "hello world" -f blog
+</code></pre>
+
+<p>یا</p>
+
+<pre><code>mira new --title="hello world" --floor=blog
+</code></pre>
+
+<p>بعد از ساخته شدن اولین پست محتوا با پیغامی شبیه به این روبرو خواهید شد که محل و نام فایل جدید را مشخص می‌کند</p>
+
+<pre><code>/Your_Mira/content/blog/2017-2-11-hello_world.pen created
+</code></pre>
 
 <p><strong>توجه۱:</strong> مسیر فایل در دایرکتوری content مشخص کننده‌ی طبقه‌ی آن برای انتشار است، تغیر مکان آن به معنی تغییر محل قرارگیری برای انتشار نهایی است.</p>
 
-<p><strong>توجه۲:</strong> تغییر دادن نام این فایل هیچ مشکلی ندارد، هر طور که خودتان راحت هستید آن‌را تغییر دهید، مثلا به
-<code>01-hello.pen</code>
-یا
-<code>hi.pen</code></p>
+<p><strong>توجه۲:</strong> تغییر دادن نام این فایل هیچ مشکلی ندارد، هر طور که خودتان راحت هستید آن‌را تغییر دهید، مثلا به</p>
+
+<pre><code>01-hello.pen
+</code></pre>
+
+<p>یا</p>
+
+<pre><code>hi.pen
+</code></pre>
 
 <p><strong>توجه۳:</strong> پسوند (pen) را تغییر ندهید، هر فایلی بدون این پسوند از نظر میرا قابل انتشار نیست، از تغییر پسوند تنها برای draft کردن و جلوگیری از انتشار نوشته‌هایتان استفاده کنید.</p>
 
@@ -137,11 +150,13 @@ tags:
   - برچسب ۲
 thumb:
 author: kiavash
-body-format: markdown
+_markup: markdown
 ---
 سلام دنیا
 این اولین نوشته من است
 </code></pre>
+
+<p>در مورد فیلدها کمی بعد مفصل صحبت میکنیم، فقط اینجا بگویم که به جز utid، سایر فیلدهایی هم که با _ نامشان شروع میشود، فیلدهای سیستمی هستند و هنگام پردازش نهایی، در رفتار پست شما میتوانند تاثیرگذار باشند.</p>
       
     </div>
 
@@ -216,8 +231,8 @@ body-format: markdown
 <!--      <h5><a href="#/start-fa/author/">author</a></h5> -->
     
       
-      <h5><a href="#body_format">body_format</a></h5>
-<!--      <h5><a href="#/start-fa/body_format/">body_format</a></h5> -->
+      <h5><a href="#_markup">_markup</a></h5>
+<!--      <h5><a href="#/start-fa/_markup/">_markup</a></h5> -->
     
       
       <h5><a href="#_permalink">_permalink</a></h5>
@@ -269,6 +284,13 @@ body-format: markdown
       
       <h5><a href="#نمایش محتوا، با استفاده از POSTS">نمایش محتوا، با استفاده از POSTS</a></h5>
 <!--      <h5><a href="#/start-fa/show-posts/">نمایش محتوا، با استفاده از POSTS</a></h5> -->
+    
+    
+      
+        <h3>مثال</h3>
+      
+      <h5><a href="#یک مثال جامع">یک مثال جامع</a></h5>
+<!--      <h5><a href="#/start-fa/sample/">یک مثال جامع</a></h5> -->
     
 </ul>
 </div>

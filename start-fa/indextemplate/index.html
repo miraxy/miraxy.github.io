@@ -84,28 +84,28 @@
          <h2><a href="/start-fa/indextemplate/">index.tt2 و atom.tt2</a></h2>
          <a name="more"></a><br><p>به جز برچسب UTIDS تمام برچسب‌های main.tt2 در index و atom feed با همان مقادیر معتبر هستند</p>
 
-<pre><code>{{ TITLE }}
+<pre><code>{{ MianTITLE }}
+{{ MianDESCRIPTION }}
+{{ MianURL }}
+{{ MianROOT }}
+{{ MianSTATIC }}
+{{ MianIMGURL }}
+{{ MianAUTHOR }}
+{{ MianEMAIL }}
+{{ PageTitle }}
+
+{{ TITLE }}
 {{ DESCRIPTION }}
 {{ URL }}
 {{ ROOT }}
-{{ STATIC }}
-{{ IMGURL }}
 {{ AUTHOR }}
 {{ EMAIL }}
-{{ PageTitle }}
-
-{{ FloorTITLE }}
-{{ FloorDESCRIPTION }}
-{{ FlooURL }}
-{{ FloorROOT }}
-{{ FloorAUTHOR }}
-{{ FloorEMAIL }}
 
 Archives:
 {{ FOREACH archive IN Archives.pairs }}
 </code></pre>
 
-<p>برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند.</p>
+<p>برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند، کارکرد این برچسب را صفحات archive متفاوت است.  </p>
       
     </div>
 
@@ -180,8 +180,8 @@ Archives:
 <!--      <h5><a href="#/start-fa/author/">author</a></h5> -->
     
       
-      <h5><a href="#body_format">body_format</a></h5>
-<!--      <h5><a href="#/start-fa/body_format/">body_format</a></h5> -->
+      <h5><a href="#_markup">_markup</a></h5>
+<!--      <h5><a href="#/start-fa/_markup/">_markup</a></h5> -->
     
       
       <h5><a href="#_permalink">_permalink</a></h5>
@@ -233,6 +233,13 @@ Archives:
       
       <h5><a href="#نمایش محتوا، با استفاده از POSTS">نمایش محتوا، با استفاده از POSTS</a></h5>
 <!--      <h5><a href="#/start-fa/show-posts/">نمایش محتوا، با استفاده از POSTS</a></h5> -->
+    
+    
+      
+        <h3>مثال</h3>
+      
+      <h5><a href="#یک مثال جامع">یک مثال جامع</a></h5>
+<!--      <h5><a href="#/start-fa/sample/">یک مثال جامع</a></h5> -->
     
 </ul>
 </div>

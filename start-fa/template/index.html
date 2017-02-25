@@ -116,7 +116,7 @@
 └── post.tt2
 </code></pre>
 
-<p>در کل همان پنج فایل با پسوند tt2 اجزای اصلی تشکیل دهنده یک پوسته هستند و وجودشان الزامیست، تنها باید به این نکته اشاره کرد که آرشیو را میتوان به هر تعداد نام دیگر که بخواهید تکثیر کنید، که در ادامه در این مورد هم خواهیم خواند.</p>
+<p>در کل همان پنج فایل با پسوند tt2 اجزای اصلی تشکیل دهنده یک پوسته هستند و وجودشان الزامیست، تنها باید به این نکته اشاره کرد که آرشیو و post را میتوان به هر تعداد نام دیگر که بخواهید تکثیر کنید، که در ادامه در این مورد هم خواهیم خواند.</p>
 
 <p>اما این پنج فایل چه هستند و چه میکنند؟</p>
 
@@ -178,9 +178,12 @@ Site.com/blog/tagss/...
 </code></pre>
 
 <p>قبلا گفته شد که صفحات آرشیو را به هر تعداد که بخواهید میتوانید تکثیر کنید <br />
-اگر بخواهید هر کدام از آرشیو‌هایی که دارید، قالب متفاوتی داشته باشد، میتوانید هم‌نام آن آرشیو مثل categories یا هر چیز دیگری، یک فایل با پسوند tt2 در شاخه‌ی پوسته در کنار ساید فایل‌های tt2 قرار دهید، چیزی مثل این:
-<code>template/THEME/categories.tt2</code>
-از این به بعد آرشیو موضوعی categories به جای archive.tt2 از الگویی که در categories.tt2 تنظیم کرده‌اید برای ساختن خروجی استفاده خواهد کرد.</p>
+اگر بخواهید هر کدام از آرشیو‌هایی که دارید، قالب متفاوتی داشته باشد، میتوانید هم‌نام آن آرشیو مثل categories یا هر چیز دیگری، یک فایل با پسوند tt2 در شاخه‌ی پوسته در کنار ساید فایل‌های tt2 قرار دهید، چیزی مثل این:</p>
+
+<pre><code>template/THEME/categories.tt2
+</code></pre>
+
+<p>از این به بعد آرشیو موضوعی categories به جای archive.tt2 از الگویی که در categories.tt2 تنظیم کرده‌اید برای ساختن خروجی استفاده خواهد کرد.</p>
 
 <h3>post</h3>
 
@@ -197,6 +200,15 @@ _permalink: :year/:title
 </code></pre>
 
 <p>تمام آدرس‌های ثابت محتوای تولید شده از الگویی که در فایل post.tt2 تعریف کرده‌اید برای ساخت استفاده میکنند</p>
+
+<p><strong>یک قابلیت آزمایشی</strong> <br />
+در صورتیکه در سربرگ پست، فیلد <code>_layout</code> را با نام یک فایل معتبر در شاخه‌ی قالب مقدار دهی کنید، به جای post.tt2 آن پست با استفاده از فایل جدید تولید میشود</p>
+
+<pre><code>_layout: custom_page.tt2
+</code></pre>
+
+<p>اگر در شاخه‌ی قالب فایل custom.tt2 موجود باشد، به جای post.tt2 از آن استفاده خواهد شد. <br />
+<strong>قابلیت فوق هنوز در نسخه‌ی نهایی مورد استفاده قرار نگرفته</strong></p>
 
 <h3>atom</h3>
 
@@ -218,74 +230,74 @@ _permalink: :year/:title
 ...
 </code></pre>
 
-<h3>TITLE</h3>
+<h3>MainTITLE</h3>
 
 <p>تیتر اصلی سایت ذخیره شده در فایل تنظیمات مرکزی یا همان config.yml
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ TITLE }}
+<pre><code>{{ MainTITLE }}
 </code></pre>
 
-<h3>DESCRIPTION</h3>
+<h3>MainDESCRIPTION</h3>
 
 <p>توضیحات اصلی سایت ذخیره شده در فایل تنظیمات مرکزی یا همان config.yml
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ DESCRIPTION }}
+<pre><code>{{ MainDESCRIPTION }}
 </code></pre>
 
-<h3>URL</h3>
+<h3>MainURL</h3>
 
 <p>آدرس اصلی سایت ذخیره شده در فایل تنظیمات مرکزی
 مقدار بازگشتی برای مثال: YOURSITE.com
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ URL }}
+<pre><code>{{ MainURL }}
 </code></pre>
 
-<h3>ROOT</h3>
+<h3>MainROOT</h3>
 
 <p>ریشه اصلی سایت ذخیره شده در فایل تنظیمات مرکزی
 مقدار بازگشتی برای مثال: /
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ ROOT }}
+<pre><code>{{ MainROOT }}
 </code></pre>
 
-<h3>STATIC</h3>
+<h3>MainSTATIC</h3>
 
 <p>شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
 مقدار بازگشتی برای مثال:
 <code>/statics</code>
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ STATIC }}
+<pre><code>{{ MainSTATIC }}
 </code></pre>
 
-<h3>IMGURL</h3>
+<h3>MainIMGURL</h3>
 
 <p>شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
 مقدار بازگشتی برای مثال:
 <code>/statics/images</code>
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ IMGURL }}
+<pre><code>{{ MainIMAGEURL }}
 </code></pre>
 
-<h3>AUTHOR</h3>
+<h3>MainAUTHOR</h3>
 
 <p>نام نویسنده ذخیره شده در فایل تنظیمات مرکزی
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ AUTHOR }}
+<pre><code>{{ MainAUTHOR }}
 </code></pre>
 
-<h3>EMAIL</h3>
+<h3>MainEMAIL</h3>
 
 <p>ایمیل نویسنده
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ EMAIL }}
+<pre><code>{{ MainEMAIL }}
 </code></pre>
 
 <h3>PageTITLE</h3>
@@ -308,7 +320,8 @@ description
 posts (list)
 </code></pre>
 
-<p>تمام مقادیری که برای POSTS که در قسمت‌های بعد توضیح داده میشود در مورد posts نیز قابل استفاده است</p>
+<p>ش posts شامل تعداد مشخص از آخرین ارسال‌های شماست، تعداد ارسال‌های موجود در این کلید از config.yml و فیلد post_num برداشت میشود. <br />
+تمام مقادیری که برای POSTS که در قسمت‌های بعد توضیح داده میشود در مورد لیست posts در Floors نیز قابل استفاده است</p>
 
 <p>نحوه‌ استفاده:</p>
 
@@ -341,62 +354,59 @@ posts (list)
 <pre><code>{{ FOREACH id IN UTIDS }}
    &lt;h2&gt;&lt;a href="{{ Entries.$id.url }}"&gt;{{ Entries.$id.title }}&lt;/a&gt;&lt;h2&gt;
    &lt;h4&gt;{{ Entries.$id.CALENDAR.day }}-{{ Entries.$id.CALENDAR.month_name }}-{{ Entries.$id.CALENDAR.year }}&lt;/h4&gt;
-   &lt;p&gt;{{ body.less }}&lt;/p&gt;
+   &lt;p&gt;{{ Entries.$id.body.less }}&lt;/p&gt;
 {{ END }}
 </code></pre>
 
 <p><br><br></p>
 
-<h3>FloorTITLE</h3>
+<h3>TITLE</h3>
 
 <p>تیتر اصلی طبقه، ذخیره شده در فایل تنظیمات طبقه <br />
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ FloorTITLE }}
+<pre><code>{{ TITLE }}
 </code></pre>
 
-<h3>FloorDESCRIPTION</h3>
+<h3>DESCRIPTION</h3>
 
 <p>توضیحات طبقه، ذخیره شده در فایل تنظیمات طبقه <br />
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ FloorDESCRIPTION }}
+<pre><code>{{ DESCRIPTION }}
 </code></pre>
 
-<h3>FloorURL</h3>
+<h3>URL</h3>
 
-<p>آدرس سایتی که طبقه در آن منتشر میشود، ذخیره شده در فایل تنظیمات طبقه. <br />
-مثال برای خروجی:
-<code>SITE.com/FLOOR/</code>
-یا
-<code>FLOOR.SITE.com</code>
-نحوه‌ استفاده:</p>
+<p>آدرس سایتی که طبقه در آن منتشر میشود، ذخیره شده در فیلد url فایل تنظیمات طبقه.  </p>
 
-<pre><code>{{ FlooURL }}
+<p>نحوه‌ استفاده:</p>
+
+<pre><code>{{ URL }}
 </code></pre>
 
-<h3>FloorROOT</h3>
+<h3>ROOT</h3>
 
 <p>آدرس شاخه‌ی ریشه، ذخیره شده در فایل تنظیمات طبقه <br />
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ FloorROOT }}
+<pre><code>{{ ROOT }}
 </code></pre>
 
-<h3>FloorAUTHOR</h3>
+<h3>AUTHOR</h3>
 
 <p>نام نویسنده، ذخیره شده در فایل تنظیمات طبقه <br />
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ FloorAUTHOR }}
+<pre><code>{{ AUTHOR }}
 </code></pre>
 
-<h3>FloorEMAIL</h3>
+<h3>EMAIL</h3>
 
 <p>نام نوسنده، ذخیره شده در فایل تنظیمات طبقه <br />
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ FloorEMAIL }}
+<pre><code>{{ EMAIL }}
 </code></pre>
 
 <h3>Archives</h3>
@@ -503,14 +513,21 @@ posts (list)
 
 <p>نحوه استفاده برای فیلد فرضی categories</p>
 
-<pre><code>{{ FOREACH categories }}
+<pre><code>{{ FOREACH categories.values }}
   &lt;a href="{{ url }}"&gt;{{ name }}&lt;/a&gt; - &lt;small&gt;{{ posts.size }}&lt;/small&gt;&lt;br&gt;
+{{ END }}
+</code></pre>
+
+<p>یا</p>
+
+<pre><code>{{ FOREACH cat IN categories.values }}
+  &lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt; - &lt;small&gt;{{ cat.posts.size }}&lt;/small&gt;&lt;br&gt;
 {{ END }}
 </code></pre>
 
 <p>همانطور که مشخص است در posts، تمام utid ها برگشت داده شده، پس برای نمایش تک تک فایل‌های موجود در هر دسته میتوان از Entries کمک گرفت </p>
 
-<pre><code>{{ FOREACH categories }}
+<pre><code>{{ FOREACH categories.values }}
   &lt;a href="{{ url }}"&gt;{{ name }}&lt;/a&gt; - &lt;small&gt;{{ posts.size }}&lt;/small&gt;&lt;br&gt;
   {{ FOREACH id IN posts.sort }}
     &lt;h5&gt;&lt;a href="{{ Entries.$id.url }}"&gt;{{ Entries.$id.title }}&lt;/a&gt;&lt;/h5&gt;
@@ -593,8 +610,8 @@ posts (list)
 <!--      <h5><a href="#/start-fa/author/">author</a></h5> -->
     
       
-      <h5><a href="#body_format">body_format</a></h5>
-<!--      <h5><a href="#/start-fa/body_format/">body_format</a></h5> -->
+      <h5><a href="#_markup">_markup</a></h5>
+<!--      <h5><a href="#/start-fa/_markup/">_markup</a></h5> -->
     
       
       <h5><a href="#_permalink">_permalink</a></h5>
@@ -646,6 +663,13 @@ posts (list)
       
       <h5><a href="#نمایش محتوا، با استفاده از POSTS">نمایش محتوا، با استفاده از POSTS</a></h5>
 <!--      <h5><a href="#/start-fa/show-posts/">نمایش محتوا، با استفاده از POSTS</a></h5> -->
+    
+    
+      
+        <h3>مثال</h3>
+      
+      <h5><a href="#یک مثال جامع">یک مثال جامع</a></h5>
+<!--      <h5><a href="#/start-fa/sample/">یک مثال جامع</a></h5> -->
     
 </ul>
 </div>

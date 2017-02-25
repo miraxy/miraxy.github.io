@@ -5,11 +5,223 @@
     <description>اسناد راهنما برای شروع کار با میرا</description>
     <link>http://localhost:80</link>
     <atom:link href="http://localhost:80/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-02-18 13:12:03</pubDate>
-    <lastBuildDate>2017-02-18 13:12:03</lastBuildDate>
+    <pubDate>2017-02-25 23:16:22</pubDate>
+    <lastBuildDate>2017-02-25 23:16:22</lastBuildDate>
     <generator>mira</generator>
 
 
+      
+        <item>
+          <title>یک مثال جامع</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;h3&gt;پیش فرض‌ها&lt;/h3&gt;
+
+&lt;p&gt;برای نوشتن این مثال‌ با این فرض پیش می‌رویم که قصد داریم چهار سایت در کنار هم داشته باشیم:&lt;/p&gt;
+
+&lt;p&gt;۱- وبلاگ به زبان فارسی (fablog) &lt;br /&gt;
+۲- وبلاگ به زبان انگلیسی (enblog) &lt;br /&gt;
+۳- یک سایت برای نوشتن داستان‌ها (story) &lt;br /&gt;
+۴- یک سایت برای نوشتن درمورد کتاب‌هایی که خوانده‌ایم (books)  &lt;/p&gt;
+
+&lt;p&gt;در طول این راهنما سعی میکنیم این چهار سایت را در کنار هم در میرا بسازیم، تنظیم کنیم، قالب دهی کنیم و در نهایت منتشر کنیم&lt;/p&gt;
+
+&lt;h3&gt;تغییر فیلدهای پیش فرض&lt;/h3&gt;
+
+&lt;p&gt;فرض کنیم که برای هر نوشته در وبلاگ فارسی تصمیم داریم یک عکس اختصاصی برای سر برگ در نظر بگیریم و آن را در هدر در فیلدی به اسم thumb مشخص کنیم. &lt;br /&gt;
+در وبلاگ انگلیسی در مورد سفرهایمان بنویسیم و با فیلد location بخواهیم مکانی که پست را نوشته‌ایم جدا از بدنه اصلی پست معرفی کنیم. &lt;br /&gt;
+در مورد داستان‌هایمان تنها میخواهیم آن‌ها را دسته بندی موضوعی بر اساس categotire کنیم. &lt;br /&gt;
+در مورد کتاب‌ها هم میخواهیم ژانر، نام نویسنده یا اگر ترجمه شده باشد نام مترجم و نام ناشر آن‌ها را در فیلدهایی مجزا با نام های genre و bookauthor و publisher مشخص کنیم. که برای نام ژانر ممکن است بیشتر از یک مورد بخواهیم مشخص کنیم.  &lt;/p&gt;
+
+&lt;p&gt;در این صورت میتوانیم هر بارکه پست جدیدی را با دستور new میسازیم، موارد مورد نیاز را به هدر اضافه یا حذف کنیم. اما احتمالاً اینکار سخت خواهد بود، شاید یک بار فراموش کنیم فیلدی را اضافه کنیم یا با غلط املایی آن را تایپ کنیم یا هر چیز دیگری، اما راه حل برای اجتناب از این تکرار چیست؟ &lt;br /&gt;
+جواب استفاده کردن از شاخه‌ی &lt;strong&gt;structure&lt;/strong&gt; است.&lt;/p&gt;
+
+&lt;p&gt;هر بار که پستی را مینویسید، این فیلدها به شکل پیش‌فرض در هدر آن قرار میگیرند:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;utid
+date
+title
+_index
+author
+_markup
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای فیلدهایی اضافه بر این‌ها میرا در شاخه‌ی structure برنامه ابتدا به دنبال نام فایلی هم نام با نام طبقه شما میگردد، اگر این فایل موجد باشد، به جز فیلدهایی که بالا نوشته شدند، محتوییات آن فایل نیز به هدر شما اضافه میشود، اگر این فایل موجود نبود، برای محتویات آن طبقه برنامه از فایل default استفاده میکند.&lt;/p&gt;
+
+&lt;p&gt;بر میگردیم به مثال پیش‌فرض برای ساختن چهار سایت خودمان. &lt;br /&gt;
+چهار فایل در شاخه‌ی structure همنام بانام سایت‌ها میسازیم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;structure/books
+structure/enblog
+structure/fablog
+structure/story
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;محتوای هر یک از این چهار فایل را به این صورت مشخص میکنیم:&lt;/p&gt;
+
+&lt;p&gt;فایل books:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;genre:
+  -
+bookauthor:
+publisher:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;فایل enblog:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;categories:
+  -
+tags:
+  -
+location:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;فایل fablog:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;categories:
+  -
+tags:
+  -
+thumb:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;فایل story:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;categories:
+  -
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا محتویات شاخه استراکچر این‌ها خواهند بود&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;YOUR_Mira/structure/
+.
+│
+├── books
+├── default
+├── enblog
+├── fablog
+└── story
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا اگر در طبقه books یک پست جدید ایجاد کنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira new -t hyperion -f books
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;با فایلی شبیه به این روبرو خواهیم شد&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170225192330
+date: 2017-02-25 19:23:30
+title: hyperion
+_index:
+genre:
+  -
+bookauthor:
+publisher:
+author: YOUR_NAME
+_markup: markdown
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا اولین پست خودمان را با ویرایش این فایل مینویسیم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170225192330
+date: 2017-02-25 19:23:30
+title: هایپریون
+_index: hyperion
+genre:
+  - فانتزی
+  - علمی-تخیلی
+  - فضا
+bookauthor: دن سیمونز
+publisher: Bantam Spectra
+author: kiavash
+_markup: markdown
+---
+هایپریون (Hyperion)، رمانی علمی–تخیلی از دن سیمونز است که اولین‌بار در سال ۱۹۸۹ به چاپ رسید و اولین کتاب از سری چهارگانهٔ سرودهای هایپریون است. کتاب سقوط هایپریون که دنبالهٔ این کتاب است در سال ۱۹۹۰ به چاپ رسید.
+این کتاب موفق شد جوایز هوگو و لوکس را در سال ۱۹۹۰ از آن خود کند و نامزد سال ۱۹۹۰ جایزهٔ علمی‌تخیلی انگلیس و نامزد سال ۱۹۹۲ جایزهٔ آرتور سی. کلارک شود.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;تنظیم کردن اختصاصی برای هر چهار پست&lt;/h3&gt;
+
+&lt;p&gt;حالا که فیلدهای مناسب برای هر پست را داریم، نیاز داریم که در تنظیمات مشخص کنیم که از چه قالبی برای پوسته استفاده میکنیم، چه قالب زمانی برای هرکدام در نظر داریم، آرشیو ها بر اساس کدام فیلدها ساخته شوند و …  &lt;/p&gt;
+
+&lt;h3&gt;فرضیات برای تنظیم سایت کتاب‌ها:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;برای سایت کتاب‌هایمان میخواهیم کتاب‌ها بر اساس ژانر و نام نویسنده هم آرشیو شوند  &lt;/li&gt;
+&lt;li&gt;میخواهیم آدرس صفحه‌های آرشیو هم که از فیلدهای فارسی در آن‌ها استفاده شده به انگلیسی باشند  &lt;/li&gt;
+&lt;li&gt;تاریخ ها را به جلالی و هجری شمسی هم داشته باشیم  &lt;/li&gt;
+&lt;li&gt;آدرس فایل‌ها هم بر اساس نام نویسنده ساخته شوند  &lt;/li&gt;
+&lt;li&gt;از پوسته ای که در شاخه‌ی template با نام bookblog وجود دارد استفاده کنیم  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;در شاخه‌ی config فایلی به اسم books.yml میسازیم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira_start/config/book.yml
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;محتویات آن را به این صورت مینویسیم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;title: کتاب‌ها
+description: هر چیزی در مورد کتاب‌هایی که میخوانم
+
+author: اسم من
+email: email@address.com
+
+url: https://mysite.com/books/
+root: /books/
+
+static: /static/books
+imageurl: /static/books/img
+
+permalink: :bookauthor/:title/
+
+date_format: jalali
+
+default_markup: markdown
+
+post_num: 5
+archive_post_num: 25
+
+template: bookblog
+
+lists:
+ - genre
+ - bookauthor
+
+namespace:
+  فانتزی: fantasy
+  کتاب: book
+  درباره: about
+  علمی تخلی: science fiction
+  فضا: space
+  دن سیمونز: dan simons
+
+disqus_shortname: DISQUS SHORTNAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا پستی که برای کتاب هایپریون نوشته بودیم هنگام انتشار در این آدرس منتشر می‌شود&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yoursite.com/books/dan-simons/hyperion/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و آرشیو ها هم در صفحاتی شبیه به این:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yoursite.com/books/genre/fantasy/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;همانطور که میبینید تمام فیلدهایی که به فارسی نوشته بودیم و در namespace مشخص کرده بودیم به انگلیسی ساخته شدند &lt;br /&gt;
+البته معقول‌تر این بود که نام نویسنده را در هدر خود فایل انگلیسی مینوشتیم یا فیلدی جدید برای نام نویسنده به انگلیسی هم داشته باشیم به جای تغییر آن در namespace، اما فعلا که در صفحات مثال هستیم و هنوز چندان نیازی به معقول بودن نداریم.&lt;/p&gt;</description>
+          <pubDate>2017-02-25 22:44:13</pubDate>
+          <link>/start-fa/sample/</link>
+          <guid isPermaLink="true">/start-fa/sample/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
       
         <item>
           <title>نمایش محتوا، با استفاده از POSTS</title>
@@ -139,9 +351,12 @@
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;در قسمت تاریخ جهت نمایش اعداد به فارسی از فیلتر
-&lt;code&gt;‍| $FarsiNum‍&lt;/code&gt;
-استفاده شده&lt;/p&gt;</description>
+&lt;p&gt;در قسمت تاریخ جهت نمایش اعداد به فارسی از فیلتر&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;| $FarsiNum‍
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;استفاده شده، در هر جایی که بخواهید اعداد به جای لاتین به فارسی نمایش داده شوند از این فیلتر در کنار برچسب میتوان استفاده کرد.&lt;/p&gt;</description>
           <pubDate>2017-02-16 05:50:47</pubDate>
           <link>/start-fa/show-posts/</link>
           <guid isPermaLink="true">/start-fa/show-posts/</guid>
@@ -158,22 +373,22 @@
 
 &lt;p&gt;تنها برچسب اختصاصی در این الگو PostTITLE است که برابر با نام تیتر نوشته شما یا همان فیلد title در سربرگ میباشد&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ TITLE }}
+&lt;pre&gt;&lt;code&gt;{{ MainTITLE }}
+{{ MainDESCRIPTION }}
+{{ MainURL }}
+{{ MainROOT }}
+{{ MainSTATIC }}
+{{ MainIMGURL }}
+{{ MainAUTHOR }}
+{{ MainEMAIL }}
+{{ MainPageTitle }}
+
+{{ TITLE }}
 {{ DESCRIPTION }}
 {{ URL }}
 {{ ROOT }}
-{{ STATIC }}
-{{ IMGURL }}
 {{ AUTHOR }}
 {{ EMAIL }}
-{{ PageTitle }}
-
-{{ FloorTITLE }}
-{{ FloorDESCRIPTION }}
-{{ FlooURL }}
-{{ FloorROOT }}
-{{ FloorAUTHOR }}
-{{ FloorEMAIL }}
 
 Archives:
 {{ FOREACH archive IN Archives.pairs }}
@@ -197,22 +412,22 @@ Archives:
           <title>archive.tt2</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;به جز برچسب UTIDS تمام برچسب‌های main.tt2 و index.tt2 در archive با همان مقادیر معتبر هستند&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ TITLE }}
+&lt;pre&gt;&lt;code&gt;{{ MainTITLE }}
+{{ MainDESCRIPTION }}
+{{ MainURL }}
+{{ MainROOT }}
+{{ MainSTATIC }}
+{{ MainIMGURL }}
+{{ MainAUTHOR }}
+{{ MainEMAIL }}
+{{ MainPageTitle }}
+
+{{ TITLE }}
 {{ DESCRIPTION }}
 {{ URL }}
 {{ ROOT }}
-{{ STATIC }}
-{{ IMGURL }}
 {{ AUTHOR }}
 {{ EMAIL }}
-{{ PageTitle }}
-
-{{ FloorTITLE }}
-{{ FloorDESCRIPTION }}
-{{ FlooURL }}
-{{ FloorROOT }}
-{{ FloorAUTHOR }}
-{{ FloorEMAIL }}
 
 {{ ArchiveTITLE }}
 &lt;/code&gt;&lt;/pre&gt;</description>
@@ -230,28 +445,28 @@ Archives:
           <title>index.tt2 و atom.tt2</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;به جز برچسب UTIDS تمام برچسب‌های main.tt2 در index و atom feed با همان مقادیر معتبر هستند&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ TITLE }}
+&lt;pre&gt;&lt;code&gt;{{ MianTITLE }}
+{{ MianDESCRIPTION }}
+{{ MianURL }}
+{{ MianROOT }}
+{{ MianSTATIC }}
+{{ MianIMGURL }}
+{{ MianAUTHOR }}
+{{ MianEMAIL }}
+{{ PageTitle }}
+
+{{ TITLE }}
 {{ DESCRIPTION }}
 {{ URL }}
 {{ ROOT }}
-{{ STATIC }}
-{{ IMGURL }}
 {{ AUTHOR }}
 {{ EMAIL }}
-{{ PageTitle }}
-
-{{ FloorTITLE }}
-{{ FloorDESCRIPTION }}
-{{ FlooURL }}
-{{ FloorROOT }}
-{{ FloorAUTHOR }}
-{{ FloorEMAIL }}
 
 Archives:
 {{ FOREACH archive IN Archives.pairs }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند.&lt;/p&gt;</description>
+&lt;p&gt;برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند، کارکرد این برچسب را صفحات archive متفاوت است.  &lt;/p&gt;</description>
           <pubDate>2017-02-16 03:55:43</pubDate>
           <link>/start-fa/indextemplate/</link>
           <guid isPermaLink="true">/start-fa/indextemplate/</guid>
@@ -266,22 +481,23 @@ Archives:
           <title>main.tt2</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;برچسب‌های معتبر در این قالب و مقادیرشان.  &lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ TITLE }}
-{{ DESCRIPTION }}
-{{ URL }}
-{{ ROOT }}
-{{ STATIC }}
-{{ IMGURL }}
-{{ AUTHOR }}
-{{ EMAIL }}
-{{ PageTitle }}
+&lt;pre&gt;&lt;code&gt;{{ MainTITLE }}
+{{ MainDESCRIPTION }}
+{{ MainURL }}
+{{ MainROOT }}
+{{ MainSTATIC }}
+{{ MainIMGURL }}
+{{ MainAUTHOR }}
+{{ MainEMAIL }}
+{{ MainPageTitle }}
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;تنها راه نمایش محتوا در صفحه‌ی main، استفاده از حلقه‌ی Floors به صورت مستقل، یا حلقه‌ی Entries و کلیدهای UTIDS می‌باشد، POSTS در این صفحه معتبر نیست.&lt;/p&gt;
 
 &lt;h3&gt;Floors&lt;/h3&gt;
 
-&lt;p&gt;تنها راه نمایش محتوا در صفحه‌ی main، استفاده از حلقه‌ی Floors می‌باشد، POSTS در این صفحه معتبر نیست.&lt;/p&gt;
-
-&lt;p&gt;نحوه‌ استفاده:&lt;/p&gt;
+&lt;p&gt;این حلقه تنها به اندازه‌ی مقداری که در فیلد post_num در فایل config.yml مشخص کرده‌اید از مختوای هر طبقه را در خود ذخیره می‌کند.
+نحوه‌ استفاده:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ FOREACH Floors.values }}
   {{ name }}
@@ -298,7 +514,7 @@ Archives:
 
 &lt;h3&gt;UTIDS&lt;/h3&gt;
 
-&lt;p&gt;کلید نام تمام محتوای موجود در سایت مرتب شده بر اساس مقدار utid هر پست، برابر با utid هر پست، برای لود کردن محتوا در برچسب Entries قابل استفاده است.&lt;/p&gt;
+&lt;p&gt;کلید نام تمام محتوای موجود در سایت مرتب شده بر اساس مقدار utid هر پست، برابر با utid هر پست، در UTIDS ذخیره شده، برای لود کردن محتوا در برچسب Entries قابل استفاده است.&lt;/p&gt;
 
 &lt;p&gt;این برچسب تنها مختص به main.tt2 میباشد&lt;/p&gt;
 
@@ -312,7 +528,7 @@ Archives:
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;تمام محتوای تولید شده، نمایش داده خواهند شد، تاکید میکنم، &lt;strong&gt;تمام محتوا&lt;/strong&gt;، اگر در میرا پنج سایت(طبقه) ساخته باشید و در هرکدام ۱۰۰ پست باشد، این کد تمام ۵۰۰ نوشته‌ی شما را به ترتیب نمایش خواهد داد. &lt;br /&gt;
+&lt;p&gt;تمام محتوای تولید شده، نمایش داده خواهند شد، تاکید میکنم، &lt;strong&gt;تمام محتوا&lt;/strong&gt;، اگر در میرا پنج سایت(طبقه) ساخته باشید و در هرکدام ۱۰۰ پست باشد، این کد تمام ۵۰۰ نوشته‌ی شما را به ترتیب مقدار عددی utid نمایش خواهد داد. &lt;br /&gt;
 برای محدود کردن نمایش تعداد پست‌ها میتوان از کدهای کنترل کننده حلقه استفاده کرد، مثال:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ FOREACH id IN UTIDS }}
@@ -367,7 +583,7 @@ Archives:
 └── post.tt2
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;در کل همان پنج فایل با پسوند tt2 اجزای اصلی تشکیل دهنده یک پوسته هستند و وجودشان الزامیست، تنها باید به این نکته اشاره کرد که آرشیو را میتوان به هر تعداد نام دیگر که بخواهید تکثیر کنید، که در ادامه در این مورد هم خواهیم خواند.&lt;/p&gt;
+&lt;p&gt;در کل همان پنج فایل با پسوند tt2 اجزای اصلی تشکیل دهنده یک پوسته هستند و وجودشان الزامیست، تنها باید به این نکته اشاره کرد که آرشیو و post را میتوان به هر تعداد نام دیگر که بخواهید تکثیر کنید، که در ادامه در این مورد هم خواهیم خواند.&lt;/p&gt;
 
 &lt;p&gt;اما این پنج فایل چه هستند و چه میکنند؟&lt;/p&gt;
 
@@ -429,9 +645,12 @@ Site.com/blog/tagss/...
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;قبلا گفته شد که صفحات آرشیو را به هر تعداد که بخواهید میتوانید تکثیر کنید &lt;br /&gt;
-اگر بخواهید هر کدام از آرشیو‌هایی که دارید، قالب متفاوتی داشته باشد، میتوانید هم‌نام آن آرشیو مثل categories یا هر چیز دیگری، یک فایل با پسوند tt2 در شاخه‌ی پوسته در کنار ساید فایل‌های tt2 قرار دهید، چیزی مثل این:
-&lt;code&gt;template/THEME/categories.tt2&lt;/code&gt;
-از این به بعد آرشیو موضوعی categories به جای archive.tt2 از الگویی که در categories.tt2 تنظیم کرده‌اید برای ساختن خروجی استفاده خواهد کرد.&lt;/p&gt;
+اگر بخواهید هر کدام از آرشیو‌هایی که دارید، قالب متفاوتی داشته باشد، میتوانید هم‌نام آن آرشیو مثل categories یا هر چیز دیگری، یک فایل با پسوند tt2 در شاخه‌ی پوسته در کنار ساید فایل‌های tt2 قرار دهید، چیزی مثل این:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;template/THEME/categories.tt2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از این به بعد آرشیو موضوعی categories به جای archive.tt2 از الگویی که در categories.tt2 تنظیم کرده‌اید برای ساختن خروجی استفاده خواهد کرد.&lt;/p&gt;
 
 &lt;h3&gt;post&lt;/h3&gt;
 
@@ -448,6 +667,15 @@ _permalink: :year/:title
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;تمام آدرس‌های ثابت محتوای تولید شده از الگویی که در فایل post.tt2 تعریف کرده‌اید برای ساخت استفاده میکنند&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;یک قابلیت آزمایشی&lt;/strong&gt; &lt;br /&gt;
+در صورتیکه در سربرگ پست، فیلد &lt;code&gt;_layout&lt;/code&gt; را با نام یک فایل معتبر در شاخه‌ی قالب مقدار دهی کنید، به جای post.tt2 آن پست با استفاده از فایل جدید تولید میشود&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;_layout: custom_page.tt2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر در شاخه‌ی قالب فایل custom.tt2 موجود باشد، به جای post.tt2 از آن استفاده خواهد شد. &lt;br /&gt;
+&lt;strong&gt;قابلیت فوق هنوز در نسخه‌ی نهایی مورد استفاده قرار نگرفته&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3&gt;atom&lt;/h3&gt;
 
@@ -469,74 +697,74 @@ _permalink: :year/:title
 ...
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;TITLE&lt;/h3&gt;
+&lt;h3&gt;MainTITLE&lt;/h3&gt;
 
 &lt;p&gt;تیتر اصلی سایت ذخیره شده در فایل تنظیمات مرکزی یا همان config.yml
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ TITLE }}
+&lt;pre&gt;&lt;code&gt;{{ MainTITLE }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;DESCRIPTION&lt;/h3&gt;
+&lt;h3&gt;MainDESCRIPTION&lt;/h3&gt;
 
 &lt;p&gt;توضیحات اصلی سایت ذخیره شده در فایل تنظیمات مرکزی یا همان config.yml
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ DESCRIPTION }}
+&lt;pre&gt;&lt;code&gt;{{ MainDESCRIPTION }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;URL&lt;/h3&gt;
+&lt;h3&gt;MainURL&lt;/h3&gt;
 
 &lt;p&gt;آدرس اصلی سایت ذخیره شده در فایل تنظیمات مرکزی
 مقدار بازگشتی برای مثال: YOURSITE.com
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ URL }}
+&lt;pre&gt;&lt;code&gt;{{ MainURL }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;ROOT&lt;/h3&gt;
+&lt;h3&gt;MainROOT&lt;/h3&gt;
 
 &lt;p&gt;ریشه اصلی سایت ذخیره شده در فایل تنظیمات مرکزی
 مقدار بازگشتی برای مثال: /
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ ROOT }}
+&lt;pre&gt;&lt;code&gt;{{ MainROOT }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;STATIC&lt;/h3&gt;
+&lt;h3&gt;MainSTATIC&lt;/h3&gt;
 
 &lt;p&gt;شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
 مقدار بازگشتی برای مثال:
 &lt;code&gt;/statics&lt;/code&gt;
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ STATIC }}
+&lt;pre&gt;&lt;code&gt;{{ MainSTATIC }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;IMGURL&lt;/h3&gt;
+&lt;h3&gt;MainIMGURL&lt;/h3&gt;
 
 &lt;p&gt;شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
 مقدار بازگشتی برای مثال:
 &lt;code&gt;/statics/images&lt;/code&gt;
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ IMGURL }}
+&lt;pre&gt;&lt;code&gt;{{ MainIMAGEURL }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;AUTHOR&lt;/h3&gt;
+&lt;h3&gt;MainAUTHOR&lt;/h3&gt;
 
 &lt;p&gt;نام نویسنده ذخیره شده در فایل تنظیمات مرکزی
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ AUTHOR }}
+&lt;pre&gt;&lt;code&gt;{{ MainAUTHOR }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;EMAIL&lt;/h3&gt;
+&lt;h3&gt;MainEMAIL&lt;/h3&gt;
 
 &lt;p&gt;ایمیل نویسنده
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ EMAIL }}
+&lt;pre&gt;&lt;code&gt;{{ MainEMAIL }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;PageTITLE&lt;/h3&gt;
@@ -559,7 +787,8 @@ description
 posts (list)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;تمام مقادیری که برای POSTS که در قسمت‌های بعد توضیح داده میشود در مورد posts نیز قابل استفاده است&lt;/p&gt;
+&lt;p&gt;ش posts شامل تعداد مشخص از آخرین ارسال‌های شماست، تعداد ارسال‌های موجود در این کلید از config.yml و فیلد post_num برداشت میشود. &lt;br /&gt;
+تمام مقادیری که برای POSTS که در قسمت‌های بعد توضیح داده میشود در مورد لیست posts در Floors نیز قابل استفاده است&lt;/p&gt;
 
 &lt;p&gt;نحوه‌ استفاده:&lt;/p&gt;
 
@@ -592,62 +821,59 @@ posts (list)
 &lt;pre&gt;&lt;code&gt;{{ FOREACH id IN UTIDS }}
    &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ Entries.$id.url }}&quot;&amp;gt;{{ Entries.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
    &amp;lt;h4&amp;gt;{{ Entries.$id.CALENDAR.day }}-{{ Entries.$id.CALENDAR.month_name }}-{{ Entries.$id.CALENDAR.year }}&amp;lt;/h4&amp;gt;
-   &amp;lt;p&amp;gt;{{ body.less }}&amp;lt;/p&amp;gt;
+   &amp;lt;p&amp;gt;{{ Entries.$id.body.less }}&amp;lt;/p&amp;gt;
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 
-&lt;h3&gt;FloorTITLE&lt;/h3&gt;
+&lt;h3&gt;TITLE&lt;/h3&gt;
 
 &lt;p&gt;تیتر اصلی طبقه، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FloorTITLE }}
+&lt;pre&gt;&lt;code&gt;{{ TITLE }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;FloorDESCRIPTION&lt;/h3&gt;
+&lt;h3&gt;DESCRIPTION&lt;/h3&gt;
 
 &lt;p&gt;توضیحات طبقه، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FloorDESCRIPTION }}
+&lt;pre&gt;&lt;code&gt;{{ DESCRIPTION }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;FloorURL&lt;/h3&gt;
+&lt;h3&gt;URL&lt;/h3&gt;
 
-&lt;p&gt;آدرس سایتی که طبقه در آن منتشر میشود، ذخیره شده در فایل تنظیمات طبقه. &lt;br /&gt;
-مثال برای خروجی:
-&lt;code&gt;SITE.com/FLOOR/&lt;/code&gt;
-یا
-&lt;code&gt;FLOOR.SITE.com&lt;/code&gt;
-نحوه‌ استفاده:&lt;/p&gt;
+&lt;p&gt;آدرس سایتی که طبقه در آن منتشر میشود، ذخیره شده در فیلد url فایل تنظیمات طبقه.  &lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FlooURL }}
+&lt;p&gt;نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ URL }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;FloorROOT&lt;/h3&gt;
+&lt;h3&gt;ROOT&lt;/h3&gt;
 
 &lt;p&gt;آدرس شاخه‌ی ریشه، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FloorROOT }}
+&lt;pre&gt;&lt;code&gt;{{ ROOT }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;FloorAUTHOR&lt;/h3&gt;
+&lt;h3&gt;AUTHOR&lt;/h3&gt;
 
 &lt;p&gt;نام نویسنده، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FloorAUTHOR }}
+&lt;pre&gt;&lt;code&gt;{{ AUTHOR }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;FloorEMAIL&lt;/h3&gt;
+&lt;h3&gt;EMAIL&lt;/h3&gt;
 
 &lt;p&gt;نام نوسنده، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FloorEMAIL }}
+&lt;pre&gt;&lt;code&gt;{{ EMAIL }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3&gt;Archives&lt;/h3&gt;
@@ -754,14 +980,21 @@ posts (list)
 
 &lt;p&gt;نحوه استفاده برای فیلد فرضی categories&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FOREACH categories }}
+&lt;pre&gt;&lt;code&gt;{{ FOREACH categories.values }}
   &amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH cat IN categories.values }}
+  &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ cat.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;همانطور که مشخص است در posts، تمام utid ها برگشت داده شده، پس برای نمایش تک تک فایل‌های موجود در هر دسته میتوان از Entries کمک گرفت &lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FOREACH categories }}
+&lt;pre&gt;&lt;code&gt;{{ FOREACH categories.values }}
   &amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
   {{ FOREACH id IN posts.sort }}
     &amp;lt;h5&amp;gt;&amp;lt;a href=&quot;{{ Entries.$id.url }}&quot;&amp;gt;{{ Entries.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;/h5&amp;gt;
@@ -782,7 +1015,7 @@ posts (list)
       
         <item>
           <title>بدنه اصلی محتوا</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;بدنه قسمت اصلی محتوای شماست، هر چیزی که در مورد آن میخواهید بنویسید در این قسمت قرار میگیرد.&lt;/p&gt;
+          <description>&lt;p&gt;بدنه قسمت اصلی محتوای شماست، هر چیزی که در مورد آن میخواهید بنویسید در این قسمت قرار میگیرد.&lt;/p&gt;
 
 &lt;p&gt;برای نوشتن بدنه می‌توانید از Mrkup Language هایی که میرا پشتیبانی میکند، کدهای html یا متن‌های خالص استفاده کنید&lt;/p&gt;
 
@@ -795,7 +1028,7 @@ text
 txt
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;تنها به یاد داشته باشید که برای نمایش صحیح متن، در فیلد body-format در سربرگ هر فایل یا فایل تنظیمات، مشخص کرده باشید که دقیقا از چه مارک‌آپی برای نوشتن متن استفاده کرده‌اید.&lt;/p&gt;
+&lt;p&gt;تنها به یاد داشته باشید که برای نمایش صحیح متن، در فیلد &lt;code&gt;_markup&lt;/code&gt; در سربرگ هر فایل یا فایل تنظیمات، مشخص کرده باشید که دقیقا از چه مارک‌آپی برای نوشتن متن استفاده کرده‌اید.&lt;/p&gt;
 
 &lt;h2&gt;قسمت‌های بدنه&lt;/h2&gt;
 
@@ -814,6 +1047,8 @@ txt
 &lt;p&gt;تمام قسمت‌های قبل از آن به عنوان less مشخص می‌شوند، در این حالت کدهای HTML نیز از متن حذف نخواهند شد&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;خلاصه‌ای از متن
+یا همان
+less
 در این قسمت نوشته شده
 
 &amp;lt;!--     more     --&amp;gt;
@@ -821,12 +1056,16 @@ txt
 ادامه متن
 را در این قسمت
 مینویسیم
+کل متن قبل و بعد از نشانه گذار
+به عنوان
+more
+شناخته خواهد شد
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;
 به یاد داشته باشید more شامل تمام متن، قبل و بعد از نشانه گذار
-&lt;code&gt;‍&amp;lt;!-- more --&amp;gt;&lt;/code&gt;
+    &lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
 می‌باشد.&lt;/p&gt;</description>
           <pubDate>2017-02-16 10:11:01</pubDate>
           <link>/start-fa/content-body/</link>
@@ -866,7 +1105,7 @@ chaptername:
 tags:
   - 
 author: kiavash
-body-format: markdown
+_markup: markdown
 ---
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -899,7 +1138,7 @@ body-format: markdown
       
         <item>
           <title>لیست ها</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;اگر بخواهید فیلدهایی را برای آرشیو کردن بسازید یا هر فیلد بیشتر از یک مقدار داشته باشد باید آن را به این صورت بسازید:  &lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;اگر بخواهید فیلدهایی را با مقداری بیشتر از یک آیتم داشته باشید، باید آن‌ها را به صورت لیست‌هایی با این دستور زبان بسازید:  &lt;/p&gt;
 
 &lt;p&gt;نام فیلد، دونقطه، اینتر، فاصله، خط تیره، فاصله، مقدار&lt;/p&gt;
 
@@ -925,16 +1164,24 @@ tags:
       
         <item>
           <title>فیلدهای انتخابی</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;به جز موارد ذکر شده از هر فیلد دیگری که بخواهید میتوانید در سربرگ استفاده کنید، مثلا اگر بخواهید برای هر نوشته یک عکس ثابت برای صفحه ایستای آن در کنار عنوان داشته باشید یا اگر مطالبی که مینویسید ترجمه‌ای از منابع مختلف است و میخواهید از نام منبع به شکل ثابتی در قالب جدا از بدنه نوشته استفاده کنید، یا هر چیز دیگر میتوانید در سر برگ نوشته فیلدی برای این منظور ها بسازید&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;به جز موارد ذکر شده از هر فیلد دیگری که بخواهید میتوانید در سربرگ استفاده کنید، مثلا اگر بخواهید برای هر نوشته یک عکس ثابت برای صفحه ایستای آن در کنار عنوان داشته باشید یا اگر مطالبی که مینویسید ترجمه‌ای از منابع مختلف است و میخواهید از نام منبع به شکل ثابتی در قالب جدا از بدنه نوشته استفاده کنید، یا هر چیز دیگر. &lt;br /&gt;
+میتوانید در سر برگ نوشته فیلدی برای این منظور ها بسازید&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;thumbs: address.com/img/image.jpg
 source: other.com/post.html
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;از این فیلدها در قالب در زیر مجموعه‌ی هر پست با این برچسب ها میتوانید استفاده کنید&lt;/p&gt;
+&lt;p&gt;از این فیلدها در قالب در زیر مجموعه‌ی حلقه‌ی POSTS با برچسب‌هایی هم نام همین فیلدها میتوانید استفاده کنید&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ thumbs }}
-{{ source }}
+&lt;pre&gt;&lt;code&gt;{{ FOREACH POSTS }}
+    &amp;lt;a href=&quot;{{ url }}#more&amp;gt;{{ title }}&amp;lt;/a&amp;gt;
+    {{ author }}
+    &amp;lt;img src=&quot;{{ thumbs }}&quot;&amp;gt;
+    &amp;lt;a href =&quot;{{ source }}&quot;&amp;gt;منبع&amp;lt;/a&amp;gt;
+    &amp;lt;div class=&quot;content&quot;&amp;gt;
+        {{ body.less}}
+    &amp;lt;/div&amp;gt;
+{{ END }}
 &lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2017-02-16 00:33:14</pubDate>
           <link>/start-fa/other-fields/</link>
@@ -961,8 +1208,8 @@ source: other.com/post.html
         </item>
       
         <item>
-          <title>body_format</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;فرمتی که با آن بدنه محتوا را مینویسید، یا همان markup language. به شکل پیش فرض با مقداری که به فیلدی با همین نام در فایل تنظیمات مشخص کرده‌اید پر خواهد شد، اما برای هر پست میتوانید آن را تغییر دهید. &lt;br /&gt;
+          <title>_markup</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;فرمتی که با آن بدنه محتوا را مینویسید، یا همان markup language. به شکل پیش فرض با مقداری که به فیلدی با نام default_markup در فایل تنظیمات مشخص کرده‌اید پر خواهد شد، اما برای هر پست میتوانید آن را تغییر دهید. &lt;br /&gt;
 اگر در فایل تنظیمات مقداری برای این فیلد مشخص نکرده باشید و در سربرگ هم به آن مقداری ندهید میرا به شکل پیش فرض از markdown برای پردازش نهایی استفاده میکند.  &lt;/p&gt;
 
 &lt;p&gt;مقادیری که میتوانید به این فیلد بدهید این‌ها هستند&lt;/p&gt;
@@ -980,8 +1227,8 @@ txt
 اگر میخواهید فقط از کدهای html در بدنه‌ی نوشته‌تان استفاده کنید و مقدار را برابر html قرار دهید، دقیقا همان متنی که در بدنه نوشته اید به همان شکل در فایل خروجی نیز استفاده خواهد شد
 اگر از text یا txt به عنوان مقدار استفاده کنید دقیقا همان متن در خروجی استفاده میشود تنها در انتهای هر خط کاراکتر خط جدید به &lt;br&gt; تبدیل خواهد شد. استفاده از کدهای html در این حالت مجاز است&lt;/p&gt;</description>
           <pubDate>2017-02-16 00:28:09</pubDate>
-          <link>/start-fa/body_format/</link>
-          <guid isPermaLink="true">/start-fa/body_format/</guid>
+          <link>/start-fa/_markup/</link>
+          <guid isPermaLink="true">/start-fa/_markup/</guid>
 
 
         <category>
@@ -994,7 +1241,10 @@ txt
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;نام نویسنده مطلب، به صورت پیش فرض با فیلدی که به همین نام در فایل تنظیمات مشخص کرده‌اید پر خواهد شد. &lt;br /&gt;
 در صورت عدم نیاز میتواند خالی بماند یا حذف شود  &lt;/p&gt;
 
-&lt;p&gt;در قالب: {{ author }}&lt;/p&gt;</description>
+&lt;p&gt;قابل بازیابی در قالب در حلقه‌ی POSTS با استفاده از این برچسب:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ author }}
+&lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2017-02-16 00:27:23</pubDate>
           <link>/start-fa/author/</link>
           <guid isPermaLink="true">/start-fa/author/</guid>
@@ -1007,10 +1257,13 @@ txt
       
         <item>
           <title>_index</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;همانطور که در مورد فیلد title خواندید، آدرس نهایی پست شما با استفاده از آن ساخته خواهد شد، اما در صورتیکه عنوان بیش از حدی که مایل باشید طولانی باشد و نخواهید آدرس طولانی داشته باشید، یا از چیزی به جز اعداد و حروف نوشتاری در عنوان استفاده کردید که وجودشان برای مفهوم بودن معنی ضروری است و میخواهید در آدرس از نام آنها به جای علامتشان استفاده کنید(مثلا به جای * در تیتر، در آدرس بنویسید start) یا حتی تیتر به زبان فارسی نوشته شده اما میخواهید آدرس به انگلیسی ساخته شود، میتوانید از این فیلد کمک بگیرید.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;همانطور که در مورد فیلد title خواندید، آدرس نهایی پست شما با استفاده از آن ساخته خواهد شد، اما در صورتیکه عنوان بیش از حدی که مایل باشید طولانی باشد و نخواهید آدرس طولانی داشته باشید، یا از چیزی به جز اعداد و حروف نوشتاری در عنوان استفاده کردید که وجودشان برای مفهوم بودن معنی ضروری است و میخواهید در آدرس از نام آنها به جای علامتشان استفاده کنید(مثلا به جای * در تیتر، در آدرس بنویسید star) یا حتی تیتر به زبان فارسی نوشته شده اما میخواهید آدرس به انگلیسی ساخته شود، میتوانید از این فیلد کمک بگیرید.&lt;/p&gt;
 
-&lt;p&gt;برای مثال اگر عنوان پست شما چیزی شبیه به این باشد: &lt;br /&gt;
-یک تیتر خیلی خیلی طولانی در مورد هتل‌های ۵*&lt;/p&gt;
+&lt;p&gt;برای مثال اگر عنوان پست شما چیزی شبیه به این باشد:  &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;یک تیتر خیلی خیلی طولانی در مورد هتل‌های ۵*&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;آدرس نهایی چیزی شبیه به این خواهد بود&lt;/p&gt;
 
@@ -1055,22 +1308,25 @@ categories, tags...
           <title>title</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;تیتر یا عنوان نوشته شما&lt;/p&gt;
 
-&lt;p&gt;وجود این فیلد هم مانند utid ضروری است و باید حتما مقدار دهی شود.&lt;/p&gt;
+&lt;p&gt;وجود این فیلد هم مانند utid ضروری است و باید حتما مقدار دهی شود. اما بر خلاف utid، در صورت عدم وجود، میرا از پست چشم پوشی نمیکند، بلکه مقدار title را با عدد utid مساوی قرار می‌دهد.&lt;/p&gt;
 
 &lt;p&gt;علاوه بر استفاده به عنوان تیتر نوشته در صفحات ایستا و هدرهای html، برای ساخت آدرس ثابت هر پست هم از این مقدار استفاده میشود، برای مثال اگر عنوان پست شما و فرمت مورد نظرتان برای تولید آدرس اینها باشد:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;title: 3rd Hello World :)
+&lt;pre&gt;&lt;code&gt;title: 3rd Hel-lo World :)
 :year/:month/:title
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;در نهایت آدرس یکتای این پست این خواهد بود:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;ADDRESS.COM/FLOOR/2017/02/3rd-hello-world/
+&lt;pre&gt;&lt;code&gt;ADDRESS.COM/FLOOR/2017/02/3rd-hel-lo-world/
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;همانطور که در بالا دیدید هنگام تولید آدرس تمام علایم غیر نوشتاری و اعداد از آدرس حذف خواهند شد و فاصله‌ها با خط تیره جایگزین می‌شوند&lt;/p&gt;
+&lt;p&gt;همانطور که در بالا دیدید هنگام تولید آدرس تمام علایم غیر از علایم نوشتاری، اعداد و کاراکتر خط تیره از آدرس حذف خواهند شد و فاصله‌ها با خط تیره جایگزین می‌شوند&lt;/p&gt;
 
-&lt;p&gt;در قالب: {{ title }}&lt;/p&gt;</description>
+&lt;p&gt;قابل بازیابی در قالب درون حلقه‌ی POSTS با این برچسب&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ title }}
+&lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2017-02-16 00:25:29</pubDate>
           <link>/start-fa/title/</link>
           <guid isPermaLink="true">/start-fa/title/</guid>
@@ -1092,12 +1348,15 @@ YYYY-MM-DDTHH:MM:SS
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;میرا تاریخ را با یک کاراکتر فاصیه بین تاریخ و زمان میسازد اما اگر فاصله با T هم جایگزین شود باز هم مورد قبول است، اما به جز این دو فرمت از حالت دیگری برای ذخیره تاریخ و زمان در فیلد date استفاده نکنید. &lt;br /&gt;
-این فیلد حتما باید تاریخ و زمان را با خود داشته باشد.&lt;/p&gt;
+این فیلد برای معتبر بودن، حتما باید تاریخ و زمان را با خود داشته باشد. پس در صپرت نیاز به این فیلد، اقدام به حذف ساعت و دقیقه و ثانیه از این فیلد نکنید، اما میتوانید آه نا را با صفر جایگزین کنید.&lt;/p&gt;
 
 &lt;p&gt;هیچ الزامی به نگه داشتن این فیلد وجود ندارد، در صورت عدم نیاز، آن را خالی بگذارید یا حتی از سربرگ حذفش کنید. &lt;br /&gt;
 در صورت وجود داشتن این فیلد دقیقا با فرمت ذکر شده در بالا، آرشیو بر اساس تاریخ برای پست‌هایی که date استاندارد را در خود دارند تولید خواهد شد&lt;/p&gt;
 
-&lt;p&gt;در قالب با این برچسب قابل دسترسی است {{ date }}&lt;/p&gt;</description>
+&lt;p&gt;در قالب درون حلقه‌ی POSTS با این برچسب قابل دسترسی است&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ date }}
+&lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2017-02-16 00:23:41</pubDate>
           <link>/start-fa/date/</link>
           <guid isPermaLink="true">/start-fa/date/</guid>
@@ -1116,9 +1375,12 @@ YYYY-MM-DDTHH:MM:SS
 &lt;p&gt;به شکل پیش فرض و در هنگام ساختن هر پست جدید یک شناسه چهارده رقمی از کنار هم قرار دادن سال، ماه، روز، ساعت، دقیقه و ثانیه تولید هر پست به عنوان مقدار این فیلد تولید میشود. &lt;br /&gt;
 ترتیب تولید و نمایش نوشته های شما در سایت بر اساس مقدار این فیلد ترتیب دهی خواهند شد. &lt;br /&gt;
 همچنین هنگامی که آدرس ایستای یک محتوا تولید میشود در صورتیکه دو محتوا نام یکسانی به خود بگیرند، اولویت دریافت نام با نویسه‌ای است که utid کوچکتری داشته باشد و پست‌های بعدی در آدرس، پیشوند ۲، ۳،... میگیرند
-برای مثال اگر دو پست با شناسه‌های 20170203040506 و 20171213141516 اما با تیتر یکسان hello داشته باشیم و فرمت تولید نام های خروجی را هم
-&lt;code&gt;:year/:title&lt;/code&gt;
-تعیین کرده باشیم، خروجی چیزی شبیه به این خواهد بود&lt;/p&gt;
+برای مثال اگر دو پست با شناسه‌های 20170203040506 و 20171213141516 اما با تیتر یکسان hello داشته باشیم و فرمت تولید نام های خروجی را هم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:year/:title
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;تعیین کرده باشیم، خروجی چیزی شبیه به این خواهد بود&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;YOURSITE.com/blog/2017/hello/          &amp;gt; utid 20170203040506
 YOURSITE.com/blog/2017/hello/2/        &amp;gt; utid 20171213141516
@@ -1135,7 +1397,7 @@ YOURSITE.com/blog/2017/hello/2/        &amp;gt; utid 20171213141516
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;از آنجا که با تغییر دادن utid ترتیب نمایش پست‌های شما هم تغییر میکند، با تغییر این گزینه میتوانید به بازچینی خروجی محتوای خود دست بزنید &lt;br /&gt;
-مثلا اگر میخواهید نوشته ای به وبلاگ خود اضافه کنید اما مایل نیستید در صفحه اول نمایش داده شود یا مثلا میخواهید در آخرین صفحه وبلاگ و در کنار نوشته‌های اولیه‌تان قرار بگیرد، با تغییر این مقدار میتوانید به خواسته خود برسید، یا برعکس اگر برای پین کردن یک نوشته با صفحه اول نمیخواهید از کدها و برچسب‌های موجود برای تولید قالب استفاده کنید، خیلی ساده میتوانید مقدار خیلی بزرگی مثل ۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹ را به utid اختصاص دهید، اینظوز میتوانید مطمین باشید آن نوشته همیشه در بالای سایت شما قرار میگیرد.&lt;/p&gt;
+مثلا اگر میخواهید نوشته ای به وبلاگ خود اضافه کنید اما مایل نیستید در صفحه اول نمایش داده شود یا مثلا میخواهید در آخرین صفحه وبلاگ و در کنار نوشته‌های اولیه‌تان قرار بگیرد، با تغییر این مقدار میتوانید به خواسته خود برسید، یا برعکس اگر برای نگه داشتن همیشگی یک نوشته در صفحه اول، اگر نمیخواهید از کدها و برچسب‌های موجود برای تولید قالب استفاده کنید، خیلی ساده میتوانید مقدار خیلی بزرگی مثل ۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹ را به utid اختصاص دهید، اینظور میتوانید مطمین باشید آن نوشته همیشه در بالای سایت شما قرار میگیرد.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;توصیه:&lt;/strong&gt; به جز مواقع ضروری یا زمان‌هایی که احیانا نیاز به ماجراجویی و تجربه دارید، مقدار این فیلد را تغییر ندهید&lt;/p&gt;</description>
           <pubDate>2017-02-16 00:16:04</pubDate>
@@ -1150,48 +1412,20 @@ YOURSITE.com/blog/2017/hello/2/        &amp;gt; utid 20171213141516
       
         <item>
           <title>سربرگ</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;تیتر، مشخصات، تنظیمات و هر خصوصیت دیگری که بخواهید به یک نوشته اختصاص دهید در قسمت سربرگ نوشته می‌شود، تعدادی فیلد در هر سربرگ به صورت پیش فرض تولید میشود، مابقی را میتوانید به صورت دستی به هر نوشته اضافه کنید یا فایلی همنام هر طبقه در شاخه structure بسازید و فیلدهایی که میخواهید با دستور new در سربرگ هر پست از یک طبقه خاص به صورت اتوماتیک نولید شوند را مشخص کنید&lt;/p&gt;</description>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;تیتر، مشخصات، تنظیمات و هر خصوصیت دیگری که بخواهید به یک نوشته اختصاص دهید در قسمت سربرگ نوشته می‌شود، تعدادی فیلد در هر سربرگ به صورت پیش فرض تولید میشود، مابقی را میتوانید به صورت دستی به هر نوشته اضافه کنید یا فایلی همنام هر طبقه در شاخه structure بسازید و فیلدهایی که میخواهید با دستور new در سربرگ هر پست از یک طبقه خاص به صورت اتوماتیک تولید شوند را مشخص کنید&lt;/p&gt;
+
+&lt;p&gt;بدون توجه به وجود فایل استراکچر این فیلدها همیشه هنگام ساختن پست جدید در سربرگ ظاهر میشوند&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;utid
+date
+title
+_index
+author
+_markup
+&lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2017-02-16 00:11:10</pubDate>
           <link>/start-fa/header/</link>
           <guid isPermaLink="true">/start-fa/header/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>تولید</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;برای تولید محتوای جدید از دستور new با فرمت زیر استفاده کنید:
-&lt;code&gt;mira new -t &quot;YOUR POST TITLE&quot; -f &quot;blog&quot;&lt;/code&gt;
-یا
-&lt;code&gt;mira new --title=&quot;YOUR POST TITLE&quot; --floor=&quot;blog&quot;&lt;/code&gt;
-با پیامی شبیه به این روبرو خواهید شد:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;.../YOUR_Mira/content/blog/2017-2-15-YOUR_POST_TITLE.pen created
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;یک فایل در مسیر طبقه مورد نظر با پیشوند تاریخ و پسوند pen ساخته میشود، نام این فایل تاثیری در نتیجه خروجی نخواهد داشت، پس با خیال راحت و هر طور که دوست دارید میتوانید نام این فایل را تغییر دهید، فقط پسوند pen را نگه دارید.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;نکته:&lt;/strong&gt; در صورتی که میخواهید از انتشار یک فایل به شکل موقت چشم پوشی کنید، یا به اصطلاح آن را در درفت نگهداری کنید، تنها کافی است پسوند این فایل را تغییر دهید، به این شکل محتوای شما با تمام خصوصیاتش حفظ خواهد شد، تنها در لیست انتشار قرار نمیگیرد&lt;/p&gt;
-
-&lt;p&gt;فایل تولید شده شامل یک قسمت سربرگ در بالا و بدنه در پایین میباشد، سربرگ با خط چین سه تایی --- در بالا و پایین آن از بدنه جدا شده، و تمام قسمت پایین بعد از خط چین سه تایی دوم بدنه نوشته خواهد بود&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;---
-HEDER
-FIELDS
----
-CONTENT BODY
-CONTENT BODY
-CONTENT BODY
-...
-...
-...
-&lt;/code&gt;&lt;/pre&gt;</description>
-          <pubDate>2017-02-16 00:11:06</pubDate>
-          <link>/start-fa/creat/</link>
-          <guid isPermaLink="true">/start-fa/creat/</guid>
 
 
         <category>

@@ -10,7 +10,7 @@
     <meta name="description" content="اسناد راهنما برای شروع کار با میرا">
     <meta name="author" content="kiavash">
 
-    <title>راهنمای میرا - 04</title>
+    <title>یک مثال جامع - راهنمای میرا</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
@@ -78,19 +78,211 @@
 <!-- Main Content -->
 <div class="container">
   <div class="row">
-    <div class="col-lg-7 col-lg-offset-1 col-md-7 col-md-offset-1">
+    <div class="col-lg-7 col-lg-offset-1 col-md-8">
       
-        <h4><a href="/start-fa/show-posts/">نمایش محتوا، با استفاده از POSTS</a> - <small>2017-02-16 05:50:47</small></h4>
-        <h4><a href="/start-fa/post-template/">post-template</a> - <small>2017-02-16 05:46:45</small></h4>
-        <h4><a href="/start-fa/archive-template/">archive.tt2</a> - <small>2017-02-16 05:39:37</small></h4>
-        <h4><a href="/start-fa/indextemplate/">index.tt2 و atom.tt2</a> - <small>2017-02-16 03:55:43</small></h4>
-        <h4><a href="/start-fa/main-template/">main.tt2</a> - <small>2017-02-16 02:42:28</small></h4>
-        <h4><a href="/start-fa/template/">پوسته و اجزای تشکیل دهنده</a> - <small>2017-02-16 01:03:56</small></h4>
+      <a name="یک مثال جامع"></a>
+         <h2><a href="/start-fa/sample/">یک مثال جامع</a></h2>
+         <a name="more"></a><br><h3>پیش فرض‌ها</h3>
 
-      <ul class="pager">
-        
-        
-      </ul>
+<p>برای نوشتن این مثال‌ با این فرض پیش می‌رویم که قصد داریم چهار سایت در کنار هم داشته باشیم:</p>
+
+<p>۱- وبلاگ به زبان فارسی (fablog) <br />
+۲- وبلاگ به زبان انگلیسی (enblog) <br />
+۳- یک سایت برای نوشتن داستان‌ها (story) <br />
+۴- یک سایت برای نوشتن درمورد کتاب‌هایی که خوانده‌ایم (books)  </p>
+
+<p>در طول این راهنما سعی میکنیم این چهار سایت را در کنار هم در میرا بسازیم، تنظیم کنیم، قالب دهی کنیم و در نهایت منتشر کنیم</p>
+
+<h3>تغییر فیلدهای پیش فرض</h3>
+
+<p>فرض کنیم که برای هر نوشته در وبلاگ فارسی تصمیم داریم یک عکس اختصاصی برای سر برگ در نظر بگیریم و آن را در هدر در فیلدی به اسم thumb مشخص کنیم. <br />
+در وبلاگ انگلیسی در مورد سفرهایمان بنویسیم و با فیلد location بخواهیم مکانی که پست را نوشته‌ایم جدا از بدنه اصلی پست معرفی کنیم. <br />
+در مورد داستان‌هایمان تنها میخواهیم آن‌ها را دسته بندی موضوعی بر اساس categotire کنیم. <br />
+در مورد کتاب‌ها هم میخواهیم ژانر، نام نویسنده یا اگر ترجمه شده باشد نام مترجم و نام ناشر آن‌ها را در فیلدهایی مجزا با نام های genre و bookauthor و publisher مشخص کنیم. که برای نام ژانر ممکن است بیشتر از یک مورد بخواهیم مشخص کنیم.  </p>
+
+<p>در این صورت میتوانیم هر بارکه پست جدیدی را با دستور new میسازیم، موارد مورد نیاز را به هدر اضافه یا حذف کنیم. اما احتمالاً اینکار سخت خواهد بود، شاید یک بار فراموش کنیم فیلدی را اضافه کنیم یا با غلط املایی آن را تایپ کنیم یا هر چیز دیگری، اما راه حل برای اجتناب از این تکرار چیست؟ <br />
+جواب استفاده کردن از شاخه‌ی <strong>structure</strong> است.</p>
+
+<p>هر بار که پستی را مینویسید، این فیلدها به شکل پیش‌فرض در هدر آن قرار میگیرند:</p>
+
+<pre><code>utid
+date
+title
+_index
+author
+_markup
+</code></pre>
+
+<p>برای فیلدهایی اضافه بر این‌ها میرا در شاخه‌ی structure برنامه ابتدا به دنبال نام فایلی هم نام با نام طبقه شما میگردد، اگر این فایل موجد باشد، به جز فیلدهایی که بالا نوشته شدند، محتوییات آن فایل نیز به هدر شما اضافه میشود، اگر این فایل موجود نبود، برای محتویات آن طبقه برنامه از فایل default استفاده میکند.</p>
+
+<p>بر میگردیم به مثال پیش‌فرض برای ساختن چهار سایت خودمان. <br />
+چهار فایل در شاخه‌ی structure همنام بانام سایت‌ها میسازیم</p>
+
+<pre><code>structure/books
+structure/enblog
+structure/fablog
+structure/story
+</code></pre>
+
+<p>محتوای هر یک از این چهار فایل را به این صورت مشخص میکنیم:</p>
+
+<p>فایل books:</p>
+
+<pre><code>genre:
+  -
+bookauthor:
+publisher:
+</code></pre>
+
+<p>فایل enblog:</p>
+
+<pre><code>categories:
+  -
+tags:
+  -
+location:
+</code></pre>
+
+<p>فایل fablog:</p>
+
+<pre><code>categories:
+  -
+tags:
+  -
+thumb:
+</code></pre>
+
+<p>فایل story:</p>
+
+<pre><code>categories:
+  -
+</code></pre>
+
+<p>حالا محتویات شاخه استراکچر این‌ها خواهند بود</p>
+
+<pre><code>YOUR_Mira/structure/
+.
+│
+├── books
+├── default
+├── enblog
+├── fablog
+└── story
+</code></pre>
+
+<p>حالا اگر در طبقه books یک پست جدید ایجاد کنیم:</p>
+
+<pre><code>mira new -t hyperion -f books
+</code></pre>
+
+<p>با فایلی شبیه به این روبرو خواهیم شد</p>
+
+<pre><code>---
+utid: 20170225192330
+date: 2017-02-25 19:23:30
+title: hyperion
+_index:
+genre:
+  -
+bookauthor:
+publisher:
+author: YOUR_NAME
+_markup: markdown
+---
+</code></pre>
+
+<p>حالا اولین پست خودمان را با ویرایش این فایل مینویسیم</p>
+
+<pre><code>---
+utid: 20170225192330
+date: 2017-02-25 19:23:30
+title: هایپریون
+_index: hyperion
+genre:
+  - فانتزی
+  - علمی-تخیلی
+  - فضا
+bookauthor: دن سیمونز
+publisher: Bantam Spectra
+author: kiavash
+_markup: markdown
+---
+هایپریون (Hyperion)، رمانی علمی–تخیلی از دن سیمونز است که اولین‌بار در سال ۱۹۸۹ به چاپ رسید و اولین کتاب از سری چهارگانهٔ سرودهای هایپریون است. کتاب سقوط هایپریون که دنبالهٔ این کتاب است در سال ۱۹۹۰ به چاپ رسید.
+این کتاب موفق شد جوایز هوگو و لوکس را در سال ۱۹۹۰ از آن خود کند و نامزد سال ۱۹۹۰ جایزهٔ علمی‌تخیلی انگلیس و نامزد سال ۱۹۹۲ جایزهٔ آرتور سی. کلارک شود.
+</code></pre>
+
+<h3>تنظیم کردن اختصاصی برای هر چهار پست</h3>
+
+<p>حالا که فیلدهای مناسب برای هر پست را داریم، نیاز داریم که در تنظیمات مشخص کنیم که از چه قالبی برای پوسته استفاده میکنیم، چه قالب زمانی برای هرکدام در نظر داریم، آرشیو ها بر اساس کدام فیلدها ساخته شوند و …  </p>
+
+<h3>فرضیات برای تنظیم سایت کتاب‌ها:</h3>
+
+<ul>
+<li>برای سایت کتاب‌هایمان میخواهیم کتاب‌ها بر اساس ژانر و نام نویسنده هم آرشیو شوند  </li>
+<li>میخواهیم آدرس صفحه‌های آرشیو هم که از فیلدهای فارسی در آن‌ها استفاده شده به انگلیسی باشند  </li>
+<li>تاریخ ها را به جلالی و هجری شمسی هم داشته باشیم  </li>
+<li>آدرس فایل‌ها هم بر اساس نام نویسنده ساخته شوند  </li>
+<li>از پوسته ای که در شاخه‌ی template با نام bookblog وجود دارد استفاده کنیم  </li>
+</ul>
+
+<p>در شاخه‌ی config فایلی به اسم books.yml میسازیم</p>
+
+<pre><code>mira_start/config/book.yml
+</code></pre>
+
+<p>محتویات آن را به این صورت مینویسیم</p>
+
+<pre><code>title: کتاب‌ها
+description: هر چیزی در مورد کتاب‌هایی که میخوانم
+
+author: اسم من
+email: email@address.com
+
+url: https://mysite.com/books/
+root: /books/
+
+static: /static/books
+imageurl: /static/books/img
+
+permalink: :bookauthor/:title/
+
+date_format: jalali
+
+default_markup: markdown
+
+post_num: 5
+archive_post_num: 25
+
+template: bookblog
+
+lists:
+ - genre
+ - bookauthor
+
+namespace:
+  فانتزی: fantasy
+  کتاب: book
+  درباره: about
+  علمی تخلی: science fiction
+  فضا: space
+  دن سیمونز: dan simons
+
+disqus_shortname: DISQUS SHORTNAME
+</code></pre>
+
+<p>حالا پستی که برای کتاب هایپریون نوشته بودیم هنگام انتشار در این آدرس منتشر می‌شود</p>
+
+<pre><code>yoursite.com/books/dan-simons/hyperion/
+</code></pre>
+
+<p>و آرشیو ها هم در صفحاتی شبیه به این:</p>
+
+<pre><code>yoursite.com/books/genre/fantasy/
+</code></pre>
+
+<p>همانطور که میبینید تمام فیلدهایی که به فارسی نوشته بودیم و در namespace مشخص کرده بودیم به انگلیسی ساخته شدند <br />
+البته معقول‌تر این بود که نام نویسنده را در هدر خود فایل انگلیسی مینوشتیم یا فیلدی جدید برای نام نویسنده به انگلیسی هم داشته باشیم به جای تغییر آن در namespace، اما فعلا که در صفحات مثال هستیم و هنوز چندان نیازی به معقول بودن نداریم.</p>
+      
     </div>
 
     <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">

@@ -10,7 +10,7 @@
     <meta name="description" content="اسناد راهنما برای شروع کار با میرا">
     <meta name="author" content="kiavash">
 
-    <title>راهنمای میرا - 04</title>
+    <title>_markup - راهنمای میرا</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
@@ -78,19 +78,28 @@
 <!-- Main Content -->
 <div class="container">
   <div class="row">
-    <div class="col-lg-7 col-lg-offset-1 col-md-7 col-md-offset-1">
+    <div class="col-lg-7 col-lg-offset-1 col-md-8">
       
-        <h4><a href="/start-fa/show-posts/">نمایش محتوا، با استفاده از POSTS</a> - <small>2017-02-16 05:50:47</small></h4>
-        <h4><a href="/start-fa/post-template/">post-template</a> - <small>2017-02-16 05:46:45</small></h4>
-        <h4><a href="/start-fa/archive-template/">archive.tt2</a> - <small>2017-02-16 05:39:37</small></h4>
-        <h4><a href="/start-fa/indextemplate/">index.tt2 و atom.tt2</a> - <small>2017-02-16 03:55:43</small></h4>
-        <h4><a href="/start-fa/main-template/">main.tt2</a> - <small>2017-02-16 02:42:28</small></h4>
-        <h4><a href="/start-fa/template/">پوسته و اجزای تشکیل دهنده</a> - <small>2017-02-16 01:03:56</small></h4>
+      <a name="_markup"></a>
+         <h2><a href="/start-fa/_markup/">_markup</a></h2>
+         <a name="more"></a><br><p>فرمتی که با آن بدنه محتوا را مینویسید، یا همان markup language. به شکل پیش فرض با مقداری که به فیلدی با نام default_markup در فایل تنظیمات مشخص کرده‌اید پر خواهد شد، اما برای هر پست میتوانید آن را تغییر دهید. <br />
+اگر در فایل تنظیمات مقداری برای این فیلد مشخص نکرده باشید و در سربرگ هم به آن مقداری ندهید میرا به شکل پیش فرض از markdown برای پردازش نهایی استفاده میکند.  </p>
 
-      <ul class="pager">
-        
-        
-      </ul>
+<p>مقادیری که میتوانید به این فیلد بدهید این‌ها هستند</p>
+
+<pre><code>markdown
+md
+textile
+bbcode
+html
+text
+txt
+</code></pre>
+
+<p>مقادیر md و markdown یکی هستند، همچنین txt و text نیز یکی هستند.
+اگر میخواهید فقط از کدهای html در بدنه‌ی نوشته‌تان استفاده کنید و مقدار را برابر html قرار دهید، دقیقا همان متنی که در بدنه نوشته اید به همان شکل در فایل خروجی نیز استفاده خواهد شد
+اگر از text یا txt به عنوان مقدار استفاده کنید دقیقا همان متن در خروجی استفاده میشود تنها در انتهای هر خط کاراکتر خط جدید به <br> تبدیل خواهد شد. استفاده از کدهای html در این حالت مجاز است</p>
+      
     </div>
 
     <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">

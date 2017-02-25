@@ -1600,6 +1600,40 @@ Archives:
 
 <p>استفاده شده، در هر جایی که بخواهید اعداد به جای لاتین به فارسی نمایش داده شوند از این فیلتر در کنار برچسب میتوان استفاده کرد.</p>
        
+       <a name="پارسرهای داخلی میرا"></a>
+          <h2><a href="/start-fa/parser/">پارسرهای داخلی میرا</a></h2>
+          <a name="more"></a><br><p>با استفاده از قواعد درونی parserهای میرا میتوان علاوه بر استفاده از markup برای نوشتن بدنه محتوا، از برچسب‌های درونی میرا نیز استفاده کرد</p>
+       
+       <a name="img"></a>
+          <h2><a href="/start-fa/img-parser/">img</a></h2>
+          <a name="more"></a><br><p>در هر قسمت از فایل محتوایی که با پسوند pen تولید شده، با استفاده از برچسب {{ img }} میتوان یک عکس را در بدنه نوشته لود کرد</p>
+
+<p>قاعده استفاده از آن به این شکل است:</p>
+
+<pre><code>{{ img addres/image.jpg "alt" "title" }}
+</code></pre>
+
+<ul>
+<li>در این برچسب alt و title اختیاری هستند</li>
+<li>هر دو گزینه‌ی alt و title باید بین "" قرار بگیرند</li>
+<li>آدرس عکسی که لود میکنید از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد</li>
+</ul>
+
+<p>در هر جایی از نوشته که میرا با این برچسب مواجه شود آن را با کد html شبیه به این یکی میداند.</p>
+
+<pre><code>&lt;img src="/FLOOR/IMG/address/image.jpg" alt="alt" title="title"&gt;
+</code></pre>
+
+<p>مثلا اگر نوشته شما در طبقه وبلاگ با نام blog قرار دارد و در فایل config/blog.yml مقدار imageurl را مساوی</p>
+
+<pre><code>imageurl: /static/blog/images
+</code></pre>
+
+<p>قرار داده‌باشید، نتیجه این خواهد بود:</p>
+
+<pre><code>&lt;img src="/static/blog/images/address/image.jpg" alt="alt" title="title"&gt;
+</code></pre>
+       
        <a name="یک مثال جامع"></a>
           <h2><a href="/start-fa/sample/">یک مثال جامع</a></h2>
           <a name="more"></a><br><h3>پیش فرض‌ها</h3>
@@ -1929,6 +1963,17 @@ disqus_shortname: DISQUS SHORTNAME
       
       <h5><a href="#نمایش محتوا، با استفاده از POSTS">نمایش محتوا، با استفاده از POSTS</a></h5>
 <!--      <h5><a href="#/start-fa/show-posts/">نمایش محتوا، با استفاده از POSTS</a></h5> -->
+    
+    
+      
+        <h3>parser</h3>
+      
+      <h5><a href="#پارسرهای داخلی میرا">پارسرهای داخلی میرا</a></h5>
+<!--      <h5><a href="#/start-fa/parser/">پارسرهای داخلی میرا</a></h5> -->
+    
+      
+      <h5><a href="#img">img</a></h5>
+<!--      <h5><a href="#/start-fa/img-parser/">img</a></h5> -->
     
     
       

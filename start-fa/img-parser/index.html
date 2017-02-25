@@ -10,7 +10,7 @@
     <meta name="description" content="اسناد راهنما برای شروع کار با میرا">
     <meta name="author" content="kiavash">
 
-    <title>_permalink - راهنمای میرا</title>
+    <title>img - راهنمای میرا</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
@@ -80,10 +80,35 @@
   <div class="row">
     <div class="col-lg-7 col-lg-offset-1 col-md-8">
       
-      <a name="_permalink"></a>
-         <h2><a href="/start-fa/_permalink/">_permalink</a></h2>
-         <a name="more"></a><br><p>در حالت پیش فرض آدرس ایستای هر نوشته با مقداری که به فیلد permalink در فایل تنظیمات داده‌اید ساخته میشود، با مقدار دهی به این فیلد مقدار موجود در فایل تنظیمات نادیده گرفته میشود و از این مقدار استفاده خواهد شد. <br />
-این فیلد دقیقا از همان مقادیری که فیلد permalink در فایل تنظیمات میگیرد استفاده میکند.</p>
+      <a name="img"></a>
+         <h2><a href="/start-fa/img-parser/">img</a></h2>
+         <a name="more"></a><br><p>در هر قسمت از فایل محتوایی که با پسوند pen تولید شده، با استفاده از برچسب {{ img }} میتوان یک عکس را در بدنه نوشته لود کرد</p>
+
+<p>قاعده استفاده از آن به این شکل است:</p>
+
+<pre><code>{{ img addres/image.jpg "alt" "title" }}
+</code></pre>
+
+<ul>
+<li>در این برچسب alt و title اختیاری هستند</li>
+<li>هر دو گزینه‌ی alt و title باید بین "" قرار بگیرند</li>
+<li>آدرس عکسی که لود میکنید از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد</li>
+</ul>
+
+<p>در هر جایی از نوشته که میرا با این برچسب مواجه شود آن را با کد html شبیه به این یکی میداند.</p>
+
+<pre><code>&lt;img src="/FLOOR/IMG/address/image.jpg" alt="alt" title="title"&gt;
+</code></pre>
+
+<p>مثلا اگر نوشته شما در طبقه وبلاگ با نام blog قرار دارد و در فایل config/blog.yml مقدار imageurl را مساوی</p>
+
+<pre><code>imageurl: /static/blog/images
+</code></pre>
+
+<p>قرار داده‌باشید، نتیجه این خواهد بود:</p>
+
+<pre><code>&lt;img src="/static/blog/images/address/image.jpg" alt="alt" title="title"&gt;
+</code></pre>
       
     </div>
 

@@ -5,8 +5,8 @@
     <description>اسناد راهنما برای شروع کار با میرا</description>
     <link>http://localhost:80</link>
     <atom:link href="http://localhost:80/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-02-25 23:16:22</pubDate>
-    <lastBuildDate>2017-02-25 23:16:22</lastBuildDate>
+    <pubDate>2017-02-25 23:45:05</pubDate>
+    <lastBuildDate>2017-02-25 23:45:05</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -213,9 +213,61 @@ disqus_shortname: DISQUS SHORTNAME
 
 &lt;p&gt;همانطور که میبینید تمام فیلدهایی که به فارسی نوشته بودیم و در namespace مشخص کرده بودیم به انگلیسی ساخته شدند &lt;br /&gt;
 البته معقول‌تر این بود که نام نویسنده را در هدر خود فایل انگلیسی مینوشتیم یا فیلدی جدید برای نام نویسنده به انگلیسی هم داشته باشیم به جای تغییر آن در namespace، اما فعلا که در صفحات مثال هستیم و هنوز چندان نیازی به معقول بودن نداریم.&lt;/p&gt;</description>
-          <pubDate>2017-02-25 22:44:13</pubDate>
+          <pubDate>2017-02-25 23:22:39</pubDate>
           <link>/start-fa/sample/</link>
           <guid isPermaLink="true">/start-fa/sample/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>img</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در هر قسمت از فایل محتوایی که با پسوند pen تولید شده، با استفاده از برچسب {{ img }} میتوان یک عکس را در بدنه نوشته لود کرد&lt;/p&gt;
+
+&lt;p&gt;قاعده استفاده از آن به این شکل است:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ img addres/image.jpg &quot;alt&quot; &quot;title&quot; }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;در این برچسب alt و title اختیاری هستند&lt;/li&gt;
+&lt;li&gt;هر دو گزینه‌ی alt و title باید بین &quot;&quot; قرار بگیرند&lt;/li&gt;
+&lt;li&gt;آدرس عکسی که لود میکنید از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;در هر جایی از نوشته که میرا با این برچسب مواجه شود آن را با کد html شبیه به این یکی میداند.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&quot;/FLOOR/IMG/address/image.jpg&quot; alt=&quot;alt&quot; title=&quot;title&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;مثلا اگر نوشته شما در طبقه وبلاگ با نام blog قرار دارد و در فایل config/blog.yml مقدار imageurl را مساوی&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;imageurl: /static/blog/images
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;قرار داده‌باشید، نتیجه این خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&quot;/static/blog/images/address/image.jpg&quot; alt=&quot;alt&quot; title=&quot;title&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-02-25 23:22:09</pubDate>
+          <link>/start-fa/img-parser/</link>
+          <guid isPermaLink="true">/start-fa/img-parser/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>پارسرهای داخلی میرا</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;با استفاده از قواعد درونی parserهای میرا میتوان علاوه بر استفاده از markup برای نوشتن بدنه محتوا، از برچسب‌های درونی میرا نیز استفاده کرد&lt;/p&gt;</description>
+          <pubDate>2017-02-25 22:44:13</pubDate>
+          <link>/start-fa/parser/</link>
+          <guid isPermaLink="true">/start-fa/parser/</guid>
 
 
         <category>
@@ -1360,72 +1412,6 @@ YYYY-MM-DDTHH:MM:SS
           <pubDate>2017-02-16 00:23:41</pubDate>
           <link>/start-fa/date/</link>
           <guid isPermaLink="true">/start-fa/date/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>utid</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;این فیلد از نظر سیستمی مهمترین فیلد هر نوشته میباشد، ترتیب نمایش، محل ذخیره در حافظه، آدرس دهی و هر چیزی که به محتوای شما مربوط باشد به این فیلد وابسته است. در صورتی که این فیلد موجو نباشد، میرا از تمام محتوای موجود چشم پوشی میکند. &lt;br /&gt;
-کلمه‌ی utid در اصل مخفف unique time ID میباشد، همانطور که از نام فیلد هم میتوان دریافت، این فیلد یک مشخصه یکتا است که براساس زمان تولید شده&lt;/p&gt;
-
-&lt;p&gt;به شکل پیش فرض و در هنگام ساختن هر پست جدید یک شناسه چهارده رقمی از کنار هم قرار دادن سال، ماه، روز، ساعت، دقیقه و ثانیه تولید هر پست به عنوان مقدار این فیلد تولید میشود. &lt;br /&gt;
-ترتیب تولید و نمایش نوشته های شما در سایت بر اساس مقدار این فیلد ترتیب دهی خواهند شد. &lt;br /&gt;
-همچنین هنگامی که آدرس ایستای یک محتوا تولید میشود در صورتیکه دو محتوا نام یکسانی به خود بگیرند، اولویت دریافت نام با نویسه‌ای است که utid کوچکتری داشته باشد و پست‌های بعدی در آدرس، پیشوند ۲، ۳،... میگیرند
-برای مثال اگر دو پست با شناسه‌های 20170203040506 و 20171213141516 اما با تیتر یکسان hello داشته باشیم و فرمت تولید نام های خروجی را هم&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:year/:title
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;تعیین کرده باشیم، خروجی چیزی شبیه به این خواهد بود&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;YOURSITE.com/blog/2017/hello/          &amp;gt; utid 20170203040506
-YOURSITE.com/blog/2017/hello/2/        &amp;gt; utid 20171213141516
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;همانطور که گفته شد، به شکل پیش فرض و در هنگام ساختن هر پست جدید یک شناسه چهارده رقمی از کنار هم قرار دادن سال، ماه، روز، ساعت، دقیقه و ثانیه تولید هر پست به عنوان مقدار utid اختصاص داده میشود، اما باید به این نکته اشاره کنم که هیچ اجباری در حفظ این فرمت وجود ندارد و تا زمانی که مقادیر utid تکراری نشود به هر شکل که بخواهید میتوانید utid را ویرایش کنید، تنها به این نکته دقت کنید که میرا مقادیر عددی را برای این فیلد میخواند، پس اگر به utid همچین مقداری بدهید&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;s1-c3/p145(l3)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;هنگام پردازش، میرا آن را به این صورت خواهد خواند&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;131453
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;از آنجا که با تغییر دادن utid ترتیب نمایش پست‌های شما هم تغییر میکند، با تغییر این گزینه میتوانید به بازچینی خروجی محتوای خود دست بزنید &lt;br /&gt;
-مثلا اگر میخواهید نوشته ای به وبلاگ خود اضافه کنید اما مایل نیستید در صفحه اول نمایش داده شود یا مثلا میخواهید در آخرین صفحه وبلاگ و در کنار نوشته‌های اولیه‌تان قرار بگیرد، با تغییر این مقدار میتوانید به خواسته خود برسید، یا برعکس اگر برای نگه داشتن همیشگی یک نوشته در صفحه اول، اگر نمیخواهید از کدها و برچسب‌های موجود برای تولید قالب استفاده کنید، خیلی ساده میتوانید مقدار خیلی بزرگی مثل ۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹ را به utid اختصاص دهید، اینظور میتوانید مطمین باشید آن نوشته همیشه در بالای سایت شما قرار میگیرد.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;توصیه:&lt;/strong&gt; به جز مواقع ضروری یا زمان‌هایی که احیانا نیاز به ماجراجویی و تجربه دارید، مقدار این فیلد را تغییر ندهید&lt;/p&gt;</description>
-          <pubDate>2017-02-16 00:16:04</pubDate>
-          <link>/start-fa/utid/</link>
-          <guid isPermaLink="true">/start-fa/utid/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>سربرگ</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;تیتر، مشخصات، تنظیمات و هر خصوصیت دیگری که بخواهید به یک نوشته اختصاص دهید در قسمت سربرگ نوشته می‌شود، تعدادی فیلد در هر سربرگ به صورت پیش فرض تولید میشود، مابقی را میتوانید به صورت دستی به هر نوشته اضافه کنید یا فایلی همنام هر طبقه در شاخه structure بسازید و فیلدهایی که میخواهید با دستور new در سربرگ هر پست از یک طبقه خاص به صورت اتوماتیک تولید شوند را مشخص کنید&lt;/p&gt;
-
-&lt;p&gt;بدون توجه به وجود فایل استراکچر این فیلدها همیشه هنگام ساختن پست جدید در سربرگ ظاهر میشوند&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;utid
-date
-title
-_index
-author
-_markup
-&lt;/code&gt;&lt;/pre&gt;</description>
-          <pubDate>2017-02-16 00:11:10</pubDate>
-          <link>/start-fa/header/</link>
-          <guid isPermaLink="true">/start-fa/header/</guid>
 
 
         <category>

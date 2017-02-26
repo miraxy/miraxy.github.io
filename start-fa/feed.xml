@@ -5,8 +5,8 @@
     <description>اسناد راهنما برای شروع کار با میرا</description>
     <link>http://localhost:80</link>
     <atom:link href="http://localhost:80/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-02-26 21:08:12</pubDate>
-    <lastBuildDate>2017-02-26 21:08:12</lastBuildDate>
+    <pubDate>2017-02-26 21:19:32</pubDate>
+    <lastBuildDate>2017-02-26 21:19:32</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -235,7 +235,11 @@ disqus_shortname: DISQUS SHORTNAME
 &lt;ul&gt;
 &lt;li&gt;در این برچسب alt و title اختیاری هستند&lt;/li&gt;
 &lt;li&gt;هر دو گزینه‌ی alt و title باید بین &quot;&quot; قرار بگیرند&lt;/li&gt;
-&lt;li&gt;آدرس عکسی که لود میکنید اگر با &lt;code&gt;http://&lt;/code&gt; یا &lt;code&gt;https://&lt;/code&gt; یا &lt;code&gt;ftp://&lt;/code&gt; یا هرچیزی مثل این‌ها شروع نشود از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد.&lt;/li&gt;
+&lt;li&gt;آدرس عکسی که لود میکنید اگر با
+&lt;code&gt;http://&lt;/code&gt;
+&lt;code&gt;https://&lt;/code&gt;
+&lt;code&gt;ftp://&lt;/code&gt;
+یا هرچیزی مثل این‌ها شروع نشود از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;در هر جایی از نوشته که میرا با این برچسب مواجه شود آن را با کد html شبیه به این یکی میداند.&lt;/p&gt;

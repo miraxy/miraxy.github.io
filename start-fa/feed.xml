@@ -5,8 +5,8 @@
     <description>اسناد راهنما برای شروع کار با میرا</description>
     <link>http://localhost:80</link>
     <atom:link href="http://localhost:80/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-02-26 01:52:17</pubDate>
-    <lastBuildDate>2017-02-26 01:52:17</lastBuildDate>
+    <pubDate>2017-02-26 20:06:11</pubDate>
+    <lastBuildDate>2017-02-26 20:06:11</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -783,8 +783,7 @@ _permalink: :year/:title
 &lt;pre&gt;&lt;code&gt;_layout: custom_page.tt2
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;اگر در شاخه‌ی قالب فایل custom.tt2 موجود باشد، به جای post.tt2 از آن استفاده خواهد شد. &lt;br /&gt;
-&lt;strong&gt;قابلیت فوق هنوز در نسخه‌ی نهایی مورد استفاده قرار نگرفته&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;اگر در شاخه‌ی قالب فایل custom.tt2 موجود باشد، به جای post.tt2 از آن استفاده خواهد شد.  &lt;/p&gt;
 
 &lt;h3&gt;atom&lt;/h3&gt;
 

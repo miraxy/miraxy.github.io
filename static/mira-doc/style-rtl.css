@@ -104,11 +104,17 @@ i.point-icon {
 code {
   direction: ltr;
   text-align: left;
-  display: block;
+/*  display: block; */
 /*  background-color: #CCC; */
   padding: 10px;
-	color: #314e6c;
+  color: #314e6c;
+}
 
+pre {
+  direction: ltr;
+  text-align: left;
+/*  display: block; */
+/*  background-color: #CCC; */
 }
 
 .jumbotron-custom {

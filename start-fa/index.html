@@ -86,15 +86,20 @@
           <a name="more"></a><br><p>میرا برای نصب به پرل نسخه 5.12 به بالا نیاز دارد</p>
 
 <p>برای تست این که پرل را روی سیستم خود از قبل نصب شده دارید یا نه، terminal یا command line را باز کنید و تایپ کنید <code>perl -v</code>
-اگر پرل از قبل نصب شده باشد متنی شبیه به این را خواهید دید که ورژن پرل نصب شده را به شما نشان خواهد داد
-<code>This is perl 5, version 24, subversion 1 (v5.24.1)</code>
-اگر پرل را ندارید از این طریق آن‌را نصب کنید:</p>
+اگر پرل از قبل نصب شده باشد متنی شبیه به این را خواهید دید که ورژن پرل نصب شده را به شما نشان خواهد داد</p>
+
+<pre><code>This is perl 5, version 24, subversion 1 (v5.24.1)
+</code></pre>
+
+<p>اگر پرل را ندارید از این طریق آن‌را نصب کنید:</p>
 
 <h2>ویندوز</h2>
 
 <p>اگر از ویندوز استفاده میکنید <a href="http://strawberryperl.com/" title="Strawberry Perl">Strawberry Perl</a> یا «پرل توت فرنگی» را ابتدا نصب کنید <br />
-توت فرنگی cpan minus را به شکل توکار همراه خود دارد، برای نصب میرا تایپ کنید:
-<code>cpanm Mira</code></p>
+توت فرنگی cpan minus را به شکل توکار همراه خود دارد، برای نصب میرا تایپ کنید:</p>
+
+<pre><code>cpanm Mira
+</code></pre>
 
 <h2>سیستم‌های شبه یونیکس</h2>
 
@@ -102,20 +107,30 @@
 
 <p>توزیع‌های لینوکس به شکل توکار پرل را در خود دارند، اما اگر نیاز به نصب مجدد یا نصب نسخه‌ی بالاتری که در توزیع شما نصب نیست دارید به این صفحه مراجعه کنید
 <a href="https://www.perl.org/get.html" title="Perl">getperl</a> <br />
-اگر capan minus را ندارید آن‌را نصب کنید
-<code>curl -L https://cpanmin.us | perl - --sudo App::cpanminus</code>
-و بعد برای نصب میرا
-<code>sudo cpanm Mira</code></p>
+اگر capan minus را ندارید آن‌را نصب کنید</p>
+
+<pre><code>curl -L https://cpanmin.us | perl - --sudo App::cpanminus
+</code></pre>
+
+<p>و بعد برای نصب میرا</p>
+
+<pre><code>sudo cpanm Mira
+</code></pre>
 
 <h3>مک</h3>
 
 <p>مک به شکل توکار پرل را در خود دارد، اما اگر نیاز به نصب مجدد یا نصب نسخه‌ی بالاتری که در حال حاضر بر روی کامپیوترتان نصب نیست دارید به این صفحه مراجعه کنید
 <a href="https://www.perl.org/get.html" title="Perl">getperl</a>  </p>
 
-<p>اگر capan minus را ندارید آن‌را نصب کنید
-<code>curl -L https://cpanmin.us | perl - --sudo App::cpanminus</code> <br />
-و بعد برای نصب میرا
-<code>sudo cpanm Mira</code></p>
+<p>اگر capan minus را ندارید آن‌را نصب کنید</p>
+
+<pre><code>curl -L https://cpanmin.us | perl - --sudo App::cpanminus
+</code></pre>
+
+<p>و بعد برای نصب میرا</p>
+
+<pre><code>sudo cpanm Mira
+</code></pre>
        
        <a name="شروع"></a>
           <h2><a href="/start-fa/start/">شروع</a></h2>
@@ -388,7 +403,7 @@ http://127.0.0.1:5000/
 
 <h3>imageurl</h3>
 
-<p>در بدنه‌ی هر نوشته که از برچسب <img src="/static/img" > استفاده کنید، هنگام build با این آدرس جایگزین خواهد شد، همچنین در قالب با برچسب {{ IMGURL }} قابل دسترس است</p>
+<p>در بدنه‌ی هر نوشته که از برچسب {{ img }} استفاده کنید، هنگام build با این آدرس جایگزین خواهد شد، همچنین در قالب با برچسب {{ IMGURL }} قابل دسترس است</p>
 
 <h3>permalink</h3>
 
@@ -1663,7 +1678,7 @@ Archives:
 <ul>
 <li>در این برچسب alt و title اختیاری هستند</li>
 <li>هر دو گزینه‌ی alt و title باید بین "" قرار بگیرند</li>
-<li>آدرس عکسی که لود میکنید از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد</li>
+<li>آدرس عکسی که لود میکنید اگر با <code>http://</code> یا <code>https://</code> یا <code>ftp://</code> یا هرچیزی مثل این‌ها شروع نشود از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد.</li>
 </ul>
 
 <p>در هر جایی از نوشته که میرا با این برچسب مواجه شود آن را با کد html شبیه به این یکی میداند.</p>
@@ -1679,6 +1694,24 @@ Archives:
 <p>قرار داده‌باشید، نتیجه این خواهد بود:</p>
 
 <pre><code>&lt;img src="/static/blog/images/address/image.jpg" alt="alt" title="title"&gt;
+</code></pre>
+
+<p>در صورتیکه img را به این صورت نوشته باشید</p>
+
+<pre><code>{{ img http://addres.com/image.jpg "image alt" "image title" }}
+</code></pre>
+
+<p>با این کد html برابر خواهد بود:</p>
+
+<pre><code>&lt;img src="http://address.com/image.jpg" alt="image alt" title="image title"&gt;
+</code></pre>
+
+<p>اگر میخواهید پارسر عمل نکند یک \ قبل از } ابتدایی قرار دهید</p>
+
+<pre><code>اگر در بدنه پست بنویسید
+\{{ img ... }}
+نشان داده خواهد شد:
+{{ img ... }}
 </code></pre>
        
        <a name="یک مثال جامع"></a>

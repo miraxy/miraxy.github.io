@@ -5,8 +5,8 @@
     <description>اسناد راهنما برای شروع کار با میرا</description>
     <link>http://localhost:80</link>
     <atom:link href="http://localhost:80/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-02-26 20:06:11</pubDate>
-    <lastBuildDate>2017-02-26 20:06:11</lastBuildDate>
+    <pubDate>2017-02-26 21:08:12</pubDate>
+    <lastBuildDate>2017-02-26 21:08:12</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -235,7 +235,7 @@ disqus_shortname: DISQUS SHORTNAME
 &lt;ul&gt;
 &lt;li&gt;در این برچسب alt و title اختیاری هستند&lt;/li&gt;
 &lt;li&gt;هر دو گزینه‌ی alt و title باید بین &quot;&quot; قرار بگیرند&lt;/li&gt;
-&lt;li&gt;آدرس عکسی که لود میکنید از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد&lt;/li&gt;
+&lt;li&gt;آدرس عکسی که لود میکنید اگر با &lt;code&gt;http://&lt;/code&gt; یا &lt;code&gt;https://&lt;/code&gt; یا &lt;code&gt;ftp://&lt;/code&gt; یا هرچیزی مثل این‌ها شروع نشود از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;در هر جایی از نوشته که میرا با این برچسب مواجه شود آن را با کد html شبیه به این یکی میداند.&lt;/p&gt;
@@ -251,6 +251,24 @@ disqus_shortname: DISQUS SHORTNAME
 &lt;p&gt;قرار داده‌باشید، نتیجه این خواهد بود:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;img src=&quot;/static/blog/images/address/image.jpg&quot; alt=&quot;alt&quot; title=&quot;title&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در صورتیکه img را به این صورت نوشته باشید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ img http://addres.com/image.jpg &quot;image alt&quot; &quot;image title&quot; }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;با این کد html برابر خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&quot;http://address.com/image.jpg&quot; alt=&quot;image alt&quot; title=&quot;image title&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر میخواهید پارسر عمل نکند یک \ قبل از } ابتدایی قرار دهید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;اگر در بدنه پست بنویسید
+\{{ img ... }}
+نشان داده خواهد شد:
+{{ img ... }}
 &lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2017-02-25 23:22:09</pubDate>
           <link>/start-fa/img-parser/</link>

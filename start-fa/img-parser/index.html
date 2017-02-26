@@ -92,7 +92,7 @@
 <ul>
 <li>در این برچسب alt و title اختیاری هستند</li>
 <li>هر دو گزینه‌ی alt و title باید بین "" قرار بگیرند</li>
-<li>آدرس عکسی که لود میکنید از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد</li>
+<li>آدرس عکسی که لود میکنید اگر با <code>http://</code> یا <code>https://</code> یا <code>ftp://</code> یا هرچیزی مثل این‌ها شروع نشود از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد.</li>
 </ul>
 
 <p>در هر جایی از نوشته که میرا با این برچسب مواجه شود آن را با کد html شبیه به این یکی میداند.</p>
@@ -108,6 +108,24 @@
 <p>قرار داده‌باشید، نتیجه این خواهد بود:</p>
 
 <pre><code>&lt;img src="/static/blog/images/address/image.jpg" alt="alt" title="title"&gt;
+</code></pre>
+
+<p>در صورتیکه img را به این صورت نوشته باشید</p>
+
+<pre><code>{{ img http://addres.com/image.jpg "image alt" "image title" }}
+</code></pre>
+
+<p>با این کد html برابر خواهد بود:</p>
+
+<pre><code>&lt;img src="http://address.com/image.jpg" alt="image alt" title="image title"&gt;
+</code></pre>
+
+<p>اگر میخواهید پارسر عمل نکند یک \ قبل از } ابتدایی قرار دهید</p>
+
+<pre><code>اگر در بدنه پست بنویسید
+\{{ img ... }}
+نشان داده خواهد شد:
+{{ img ... }}
 </code></pre>
       
     </div>

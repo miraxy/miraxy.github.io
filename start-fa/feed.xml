@@ -5,8 +5,8 @@
     <description>اسناد راهنما برای شروع کار با میرا</description>
     <link>http://localhost:80</link>
     <atom:link href="http://localhost:80/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-02-26 21:25:46</pubDate>
-    <lastBuildDate>2017-02-26 21:25:46</lastBuildDate>
+    <pubDate></pubDate>
+    <lastBuildDate></lastBuildDate>
     <generator>mira</generator>
 
 
@@ -229,12 +229,12 @@ disqus_shortname: DISQUS SHORTNAME
 
 &lt;p&gt;قاعده استفاده از آن به این شکل است:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ img addres/image.jpg &quot;alt&quot; &quot;title&quot; }}
+&lt;pre&gt;&lt;code&gt;{{ img addres/image.jpg [alt] [title] }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;در این برچسب alt و title اختیاری هستند&lt;/li&gt;
-&lt;li&gt;هر دو گزینه‌ی alt و title باید بین &quot;&quot; قرار بگیرند&lt;/li&gt;
+&lt;li&gt;هر دو گزینه‌ی alt و title باید بین [] قرار بگیرند&lt;/li&gt;
 &lt;li&gt;آدرس عکسی که لود میکنید اگر با
 &lt;code&gt;
 http:// &lt;br /&gt;
@@ -244,7 +244,7 @@ ftp://
 یا هرچیزی مثل این‌ها شروع نشود از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;در هر جایی از نوشته که میرا با این برچسب مواجه شود آن را با کد html شبیه به این یکی میداند.&lt;/p&gt;
+&lt;p&gt;در هر جایی از نوشته که میرا با برچسب بالا مواجه شود آن را با کد html شبیه به این یکی میداند.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;img src=&quot;/FLOOR/IMG/address/image.jpg&quot; alt=&quot;alt&quot; title=&quot;title&quot;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -261,7 +261,7 @@ ftp://
 
 &lt;p&gt;در صورتیکه img را به این صورت نوشته باشید&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ img http://addres.com/image.jpg &quot;image alt&quot; &quot;image title&quot; }}
+&lt;pre&gt;&lt;code&gt;{{ img http://addres.com/image.jpg [image alt] [image title] }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;با این کد html برابر خواهد بود:&lt;/p&gt;
@@ -341,7 +341,7 @@ ftp://
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;اگر فیلد socia را در فایل config.yml قرار داده بودیم تنها کافی است در ابتدای حلقه، به جای SITE از MAIN hsjthni ;kdl:&lt;/p&gt;
+&lt;p&gt;اگر فیلد social را در فایل config.yml قرار داده بودیم تنها کافی است در ابتدای حلقه، به جای SITE از MAIN استفاده کنیم:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ FOREACH social IN MAIN.social }}
 ...
@@ -524,7 +524,7 @@ ftp://
 {{ EMAIL }}
 
 Archives:
-{{ FOREACH archive IN Archives.pairs }}
+{{ FOREACH archive IN ARCHIVES.pairs }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند.&lt;/p&gt;
@@ -596,7 +596,7 @@ Archives:
 {{ EMAIL }}
 
 Archives:
-{{ FOREACH archive IN Archives.pairs }}
+{{ FOREACH archive IN ARCHIVES.pairs }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند، کارکرد این برچسب را صفحات archive متفاوت است.  &lt;/p&gt;</description>
@@ -627,7 +627,7 @@ Archives:
 
 &lt;p&gt;تنها راه نمایش محتوا در صفحه‌ی main، استفاده از حلقه‌ی Floors به صورت مستقل، یا حلقه‌ی Entries و کلیدهای UTIDS می‌باشد، POSTS در این صفحه معتبر نیست.&lt;/p&gt;
 
-&lt;h3&gt;Floors&lt;/h3&gt;
+&lt;h3&gt;FLOORS&lt;/h3&gt;
 
 &lt;p&gt;این حلقه تنها به اندازه‌ی مقداری که در فیلد post_num در فایل config.yml مشخص کرده‌اید از مختوای هر طبقه را در خود ذخیره می‌کند.
 نحوه‌ استفاده:&lt;/p&gt;
@@ -873,7 +873,7 @@ _permalink: :year/:title
 &lt;pre&gt;&lt;code&gt;{{ MainSTATIC }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;MainIMGURL&lt;/h3&gt;
+&lt;h3&gt;MainIMAGEURL&lt;/h3&gt;
 
 &lt;p&gt;شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
 مقدار بازگشتی برای مثال:
@@ -907,7 +907,7 @@ _permalink: :year/:title
 &lt;pre&gt;&lt;code&gt;{{ PageTitle }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;Floors&lt;/h3&gt;
+&lt;h3&gt;FLOORS&lt;/h3&gt;
 
 &lt;p&gt;نام تمام طبقات موجود در سایت به همراه توضیحاتشان و تعداد مشخصی از پست‌ها که در فیلد post_num در فایل تنظیمات مشخص کرده‌اید&lt;/p&gt;
 
@@ -937,7 +937,7 @@ posts (list)
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;Entries&lt;/h3&gt;
+&lt;h3&gt;ENTRIES&lt;/h3&gt;
 
 &lt;p&gt;کلید-مقداری از تمام محتوای تولید شده در سایت، در مورد کارکرد این برچسب، توضیحات UTIDS را بخوانید&lt;/p&gt;
 
@@ -1008,7 +1008,7 @@ posts (list)
 &lt;pre&gt;&lt;code&gt;{{ EMAIL }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3&gt;Archives&lt;/h3&gt;
+&lt;h3&gt;ARCHIVES&lt;/h3&gt;
 
 &lt;p&gt;تمام آرشیوهای موجود در طبقه&lt;/p&gt;
 
@@ -1078,11 +1078,11 @@ posts (list)
 
 &lt;h2&gt;سایر برچسب‌ها برای آرشیو&lt;/h2&gt;
 
-&lt;p&gt;میرا برای هر آرشیو، همنام با همان آرشیو، مقداری برای قالب تولید میکند، برای مثال اگر در فایل تنظیمات برای آرشیو ها فیلد categories را به عنوان آٰشیو مشخص کرده باشید، حلقه‌ای به نام categories نیز در قالب قابل استفاده خواهد بود، یا برای tags، میتوانید از tags استفاده کنید.&lt;/p&gt;
+&lt;p&gt;میرا برای هر آرشیو، همنام با همان آرشیو، مقداری برای قالب تولید میکند، برای مثال اگر در فایل تنظیمات برای آرشیو ها فیلد categories را به عنوان آٰشیو مشخص کرده باشید، حلقه‌ای به نام CATEGORIES_ARCHIVE نیز در قالب قابل استفاده خواهد بود، یا برای tags، میتوانید از TAGS_ARCHIVE استفاده کنید.&lt;/p&gt;
 
 &lt;p&gt;اطلاعات موجود در هرکدام از این مقادیر، شبیه به این خواهند بود&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$categories = [
+&lt;pre&gt;&lt;code&gt;CATEGORIES_ARCHIVE = [
           {
             'name' =&amp;gt; &quot;CAT1&quot;,
             'url' =&amp;gt; &quot;/FLOOR/categories/CAT1namespace/&quot;,
@@ -1112,24 +1112,24 @@ posts (list)
 
 &lt;p&gt;نحوه استفاده برای فیلد فرضی categories&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FOREACH categories.values }}
+&lt;pre&gt;&lt;code&gt;{{ FOREACH CATEGORIES_ARCHIVE.values }}
   &amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;یا&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FOREACH cat IN categories.values }}
+&lt;pre&gt;&lt;code&gt;{{ FOREACH cat IN CATEGORIES_ARCHIVE.values }}
   &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ cat.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;همانطور که مشخص است در posts، تمام utid ها برگشت داده شده، پس برای نمایش تک تک فایل‌های موجود در هر دسته میتوان از Entries کمک گرفت &lt;/p&gt;
+&lt;p&gt;همانطور که مشخص است در posts، تمام utid ها برگشت داده شده، پس برای نمایش تک تک فایل‌های موجود در هر دسته میتوان از ENTRIES کمک گرفت &lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FOREACH categories.values }}
+&lt;pre&gt;&lt;code&gt;{{ FOREACH CATEGORIES_ARCHIVE.values }}
   &amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
   {{ FOREACH id IN posts.sort }}
-    &amp;lt;h5&amp;gt;&amp;lt;a href=&quot;{{ Entries.$id.url }}&quot;&amp;gt;{{ Entries.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;/h5&amp;gt;
+    &amp;lt;h5&amp;gt;&amp;lt;a href=&quot;{{ ENTRIES.$id.url }}&quot;&amp;gt;{{ ENTRIES.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;/h5&amp;gt;
   {{ END }}
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
@@ -1326,9 +1326,44 @@ source: other.com/post.html
         </item>
       
         <item>
+          <title>_type</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در صورتیکه در هر پست به این فیلد مقدار page بدهید، پست مورد نظر، در صفحات اول سایت و کلیدهای page next و page prev پست‌ها لیست نمیشود.&lt;/p&gt;
+
+&lt;p&gt;استفاده از این فیلد و فیلدهای layout و permalink برای ساختن صفحات در سایت مفید هست، برای مثال اگر بخواهید یک صفحه به نام «درباره من» بسازید که در صفحات سایت به صورت سریالی بین سایر نوشته‌ها نمایش داده نشود، میتوانید تنظیماتی شبیه به این در هدر آن داشته باشید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;title: درباره من
+_type: page
+_layout: about.tt2
+_index: about
+_permalink: /:title/
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-03-12 19:18:15</pubDate>
+          <link>/start-fa/_type/</link>
+          <guid isPermaLink="true">/start-fa/_type/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>_layout</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;میرا برای تولید خروجی نهایی تمام پست‌ها، به شکل پیش فرض از فایلی به نام post.tt2 در پوسته‌ای که در تنظیمات مشخص کرده‌اید استفاده می‌کند، اما اگر به این فیلد مقدار بدهید، پست مورد نظر، از یک قالب اختصاصی می‌تواند استفاده می‌کند.&lt;/p&gt;</description>
+          <pubDate>2017-03-12 19:18:09</pubDate>
+          <link>/start-fa/_layout/</link>
+          <guid isPermaLink="true">/start-fa/_layout/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
           <title>_permalink</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در حالت پیش فرض آدرس ایستای هر نوشته با مقداری که به فیلد permalink در فایل تنظیمات داده‌اید ساخته میشود، با مقدار دهی به این فیلد مقدار موجود در فایل تنظیمات نادیده گرفته میشود و از این مقدار استفاده خواهد شد. &lt;br /&gt;
-این فیلد دقیقا از همان مقادیری که فیلد permalink در فایل تنظیمات میگیرد استفاده میکند.&lt;/p&gt;</description>
+برای تنظیم این فیلد، دقیقا از همان مقادیری که برای فیلد permalink در فایل تنظیمات توضیح داده شده می‌توانید استفاده کنید.&lt;/p&gt;</description>
           <pubDate>2017-02-16 00:32:11</pubDate>
           <link>/start-fa/_permalink/</link>
           <guid isPermaLink="true">/start-fa/_permalink/</guid>
@@ -1344,7 +1379,7 @@ source: other.com/post.html
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;فرمتی که با آن بدنه محتوا را مینویسید، یا همان markup language. به شکل پیش فرض با مقداری که به فیلدی با نام default_markup در فایل تنظیمات مشخص کرده‌اید پر خواهد شد، اما برای هر پست میتوانید آن را تغییر دهید. &lt;br /&gt;
 اگر در فایل تنظیمات مقداری برای این فیلد مشخص نکرده باشید و در سربرگ هم به آن مقداری ندهید میرا به شکل پیش فرض از markdown برای پردازش نهایی استفاده میکند.  &lt;/p&gt;
 
-&lt;p&gt;مقادیری که میتوانید به این فیلد بدهید این‌ها هستند&lt;/p&gt;
+&lt;p&gt;مقادیری که میرا برای این فیلد می‌شناسد، این‌ها هستند:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;markdown
 md
@@ -1357,7 +1392,7 @@ txt
 
 &lt;p&gt;مقادیر md و markdown یکی هستند، همچنین txt و text نیز یکی هستند.
 اگر میخواهید فقط از کدهای html در بدنه‌ی نوشته‌تان استفاده کنید و مقدار را برابر html قرار دهید، دقیقا همان متنی که در بدنه نوشته اید به همان شکل در فایل خروجی نیز استفاده خواهد شد
-اگر از text یا txt به عنوان مقدار استفاده کنید دقیقا همان متن در خروجی استفاده میشود تنها در انتهای هر خط کاراکتر خط جدید به &lt;br&gt; تبدیل خواهد شد. استفاده از کدهای html در این حالت مجاز است&lt;/p&gt;</description>
+اگر از text یا txt به عنوان مقدار استفاده کنید دقیقا همان متن در خروجی استفاده میشود تنها در انتهای هر خط کاراکتر خط جدید به &lt;br&gt; تبدیل خواهد شد. استفاده از کدهای html در این حالت نیز مجاز است.&lt;/p&gt;</description>
           <pubDate>2017-02-16 00:28:09</pubDate>
           <link>/start-fa/_markup/</link>
           <guid isPermaLink="true">/start-fa/_markup/</guid>
@@ -1380,88 +1415,6 @@ txt
           <pubDate>2017-02-16 00:27:23</pubDate>
           <link>/start-fa/author/</link>
           <guid isPermaLink="true">/start-fa/author/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>_index</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;همانطور که در مورد فیلد title خواندید، آدرس نهایی پست شما با استفاده از آن ساخته خواهد شد، اما در صورتیکه عنوان بیش از حدی که مایل باشید طولانی باشد و نخواهید آدرس طولانی داشته باشید، یا از چیزی به جز اعداد و حروف نوشتاری در عنوان استفاده کردید که وجودشان برای مفهوم بودن معنی ضروری است و میخواهید در آدرس از نام آنها به جای علامتشان استفاده کنید(مثلا به جای * در تیتر، در آدرس بنویسید star) یا حتی تیتر به زبان فارسی نوشته شده اما میخواهید آدرس به انگلیسی ساخته شود، میتوانید از این فیلد کمک بگیرید.&lt;/p&gt;
-
-&lt;p&gt;برای مثال اگر عنوان پست شما چیزی شبیه به این باشد:  &lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;یک تیتر خیلی خیلی طولانی در مورد هتل‌های ۵*&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;آدرس نهایی چیزی شبیه به این خواهد بود&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ADDRESS.COM/FLOOR/2017/02/یک-تیتر-خیلی-خیلی-طولانی-در-مورد-هتل‌های-۵/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;حالا اگر به _index مقداری شبیه به این بدهیم:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;_index: 5start hotels
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;آدرس به این صورت تغییر خواهد کرد&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ADDRESS.COM/FLOOR/2017/02/5star-hotels/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;این فیلد در صورت عدم نیاز میتواند خالی بماند یا حذف شود&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;توجه:&lt;/strong&gt; اگر صفحات شما در الگوی که تنها حاوی نام تیتر است تولید می‌شوند:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;:title/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;از این نام‌ها برای تیتر یا ایندکس استفاده نکنید&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;archives
-page
-نام هر فیلدی که در لیست‌های آرشیو مشخص کرده اید، مثل
-categories, tags...
-&lt;/code&gt;&lt;/pre&gt;</description>
-          <pubDate>2017-02-16 00:26:36</pubDate>
-          <link>/start-fa/_index/</link>
-          <guid isPermaLink="true">/start-fa/_index/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>title</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;تیتر یا عنوان نوشته شما&lt;/p&gt;
-
-&lt;p&gt;وجود این فیلد هم مانند utid ضروری است و باید حتما مقدار دهی شود. اما بر خلاف utid، در صورت عدم وجود، میرا از پست چشم پوشی نمیکند، بلکه مقدار title را با عدد utid مساوی قرار می‌دهد.&lt;/p&gt;
-
-&lt;p&gt;علاوه بر استفاده به عنوان تیتر نوشته در صفحات ایستا و هدرهای html، برای ساخت آدرس ثابت هر پست هم از این مقدار استفاده میشود، برای مثال اگر عنوان پست شما و فرمت مورد نظرتان برای تولید آدرس اینها باشد:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;title: 3rd Hel-lo World :)
-:year/:month/:title
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;در نهایت آدرس یکتای این پست این خواهد بود:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ADDRESS.COM/FLOOR/2017/02/3rd-hel-lo-world/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;همانطور که در بالا دیدید هنگام تولید آدرس تمام علایم غیر از علایم نوشتاری، اعداد و کاراکتر خط تیره از آدرس حذف خواهند شد و فاصله‌ها با خط تیره جایگزین می‌شوند&lt;/p&gt;
-
-&lt;p&gt;قابل بازیابی در قالب درون حلقه‌ی POSTS با این برچسب&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{{ title }}
-&lt;/code&gt;&lt;/pre&gt;</description>
-          <pubDate>2017-02-16 00:25:29</pubDate>
-          <link>/start-fa/title/</link>
-          <guid isPermaLink="true">/start-fa/title/</guid>
 
 
         <category>

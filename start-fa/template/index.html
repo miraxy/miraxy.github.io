@@ -58,11 +58,11 @@
              <ul class="nav navbar-nav navbar-right">
                
                  <li>
-                     <a href="/fa/" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
+                     <a href="http://localhost:80" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
                  </li>
                
                  <li>
-                     <a href="/start-fa/" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
+                     <a href="http://localhost:80" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
                  </li>
                
              </ul>
@@ -273,7 +273,7 @@ _permalink: :year/:title
 <pre><code>{{ MainSTATIC }}
 </code></pre>
 
-<h3>MainIMGURL</h3>
+<h3>MainIMAGEURL</h3>
 
 <p>شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
 مقدار بازگشتی برای مثال:
@@ -307,7 +307,7 @@ _permalink: :year/:title
 <pre><code>{{ PageTitle }}
 </code></pre>
 
-<h3>Floors</h3>
+<h3>FLOORS</h3>
 
 <p>نام تمام طبقات موجود در سایت به همراه توضیحاتشان و تعداد مشخصی از پست‌ها که در فیلد post_num در فایل تنظیمات مشخص کرده‌اید</p>
 
@@ -337,7 +337,7 @@ posts (list)
 {{ END }}
 </code></pre>
 
-<h3>Entries</h3>
+<h3>ENTRIES</h3>
 
 <p>کلید-مقداری از تمام محتوای تولید شده در سایت، در مورد کارکرد این برچسب، توضیحات UTIDS را بخوانید</p>
 
@@ -408,7 +408,7 @@ posts (list)
 <pre><code>{{ EMAIL }}
 </code></pre>
 
-<h3>Archives</h3>
+<h3>ARCHIVES</h3>
 
 <p>تمام آرشیوهای موجود در طبقه</p>
 
@@ -478,11 +478,11 @@ posts (list)
 
 <h2>سایر برچسب‌ها برای آرشیو</h2>
 
-<p>میرا برای هر آرشیو، همنام با همان آرشیو، مقداری برای قالب تولید میکند، برای مثال اگر در فایل تنظیمات برای آرشیو ها فیلد categories را به عنوان آٰشیو مشخص کرده باشید، حلقه‌ای به نام categories نیز در قالب قابل استفاده خواهد بود، یا برای tags، میتوانید از tags استفاده کنید.</p>
+<p>میرا برای هر آرشیو، همنام با همان آرشیو، مقداری برای قالب تولید میکند، برای مثال اگر در فایل تنظیمات برای آرشیو ها فیلد categories را به عنوان آٰشیو مشخص کرده باشید، حلقه‌ای به نام CATEGORIES_ARCHIVE نیز در قالب قابل استفاده خواهد بود، یا برای tags، میتوانید از TAGS_ARCHIVE استفاده کنید.</p>
 
 <p>اطلاعات موجود در هرکدام از این مقادیر، شبیه به این خواهند بود</p>
 
-<pre><code>$categories = [
+<pre><code>CATEGORIES_ARCHIVE = [
           {
             'name' =&gt; "CAT1",
             'url' =&gt; "/FLOOR/categories/CAT1namespace/",
@@ -512,24 +512,24 @@ posts (list)
 
 <p>نحوه استفاده برای فیلد فرضی categories</p>
 
-<pre><code>{{ FOREACH categories.values }}
+<pre><code>{{ FOREACH CATEGORIES_ARCHIVE.values }}
   &lt;a href="{{ url }}"&gt;{{ name }}&lt;/a&gt; - &lt;small&gt;{{ posts.size }}&lt;/small&gt;&lt;br&gt;
 {{ END }}
 </code></pre>
 
 <p>یا</p>
 
-<pre><code>{{ FOREACH cat IN categories.values }}
+<pre><code>{{ FOREACH cat IN CATEGORIES_ARCHIVE.values }}
   &lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt; - &lt;small&gt;{{ cat.posts.size }}&lt;/small&gt;&lt;br&gt;
 {{ END }}
 </code></pre>
 
-<p>همانطور که مشخص است در posts، تمام utid ها برگشت داده شده، پس برای نمایش تک تک فایل‌های موجود در هر دسته میتوان از Entries کمک گرفت </p>
+<p>همانطور که مشخص است در posts، تمام utid ها برگشت داده شده، پس برای نمایش تک تک فایل‌های موجود در هر دسته میتوان از ENTRIES کمک گرفت </p>
 
-<pre><code>{{ FOREACH categories.values }}
+<pre><code>{{ FOREACH CATEGORIES_ARCHIVE.values }}
   &lt;a href="{{ url }}"&gt;{{ name }}&lt;/a&gt; - &lt;small&gt;{{ posts.size }}&lt;/small&gt;&lt;br&gt;
   {{ FOREACH id IN posts.sort }}
-    &lt;h5&gt;&lt;a href="{{ Entries.$id.url }}"&gt;{{ Entries.$id.title }}&lt;/a&gt;&lt;/h5&gt;
+    &lt;h5&gt;&lt;a href="{{ ENTRIES.$id.url }}"&gt;{{ ENTRIES.$id.title }}&lt;/a&gt;&lt;/h5&gt;
   {{ END }}
 {{ END }}
 </code></pre>
@@ -572,6 +572,10 @@ posts (list)
       
       <h5><a href="#تنظیمات">تنظیمات</a></h5>
 <!--      <h5><a href="#/start-fa/config/">تنظیمات</a></h5> -->
+    
+      
+      <h5><a href="#استفاده از تنظیمات در قالب">استفاده از تنظیمات در قالب</a></h5>
+<!--      <h5><a href="#/start-fa/configs-in-templates/">استفاده از تنظیمات در قالب</a></h5> -->
     
     
       
@@ -640,6 +644,14 @@ posts (list)
       
         <h3>قالب</h3>
       
+      <h5><a href="#_layout">_layout</a></h5>
+<!--      <h5><a href="#/start-fa/_layout/">_layout</a></h5> -->
+    
+      
+      <h5><a href="#_type">_type</a></h5>
+<!--      <h5><a href="#/start-fa/_type/">_type</a></h5> -->
+    
+      
       <h5><a href="#پوسته و اجزای تشکیل دهنده">پوسته و اجزای تشکیل دهنده</a></h5>
 <!--      <h5><a href="#/start-fa/template/">پوسته و اجزای تشکیل دهنده</a></h5> -->
     
@@ -700,7 +712,7 @@ posts (list)
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                   <li>
-                    <a href="EMAIL: kiavash@gmail.com">
+                    <a href="mailto: kiavash@gmail.com">
                       <span class="fa-stack fa-lg">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>

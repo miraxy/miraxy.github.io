@@ -58,11 +58,11 @@
              <ul class="nav navbar-nav navbar-right">
                
                  <li>
-                     <a href="/fa/" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
+                     <a href="http://localhost:80" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
                  </li>
                
                  <li>
-                     <a href="/start-fa/" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
+                     <a href="http://localhost:80" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
                  </li>
                
              </ul>
@@ -86,12 +86,12 @@
 
 <p>قاعده استفاده از آن به این شکل است:</p>
 
-<pre><code>{{ img addres/image.jpg "alt" "title" }}
+<pre><code>{{ img addres/image.jpg [alt] [title] }}
 </code></pre>
 
 <ul>
 <li>در این برچسب alt و title اختیاری هستند</li>
-<li>هر دو گزینه‌ی alt و title باید بین "" قرار بگیرند</li>
+<li>هر دو گزینه‌ی alt و title باید بین [] قرار بگیرند</li>
 <li>آدرس عکسی که لود میکنید اگر با
 <code>
 http:// <br />
@@ -101,7 +101,7 @@ ftp://
 یا هرچیزی مثل این‌ها شروع نشود از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد.</li>
 </ul>
 
-<p>در هر جایی از نوشته که میرا با این برچسب مواجه شود آن را با کد html شبیه به این یکی میداند.</p>
+<p>در هر جایی از نوشته که میرا با برچسب بالا مواجه شود آن را با کد html شبیه به این یکی میداند.</p>
 
 <pre><code>&lt;img src="/FLOOR/IMG/address/image.jpg" alt="alt" title="title"&gt;
 </code></pre>
@@ -118,7 +118,7 @@ ftp://
 
 <p>در صورتیکه img را به این صورت نوشته باشید</p>
 
-<pre><code>{{ img http://addres.com/image.jpg "image alt" "image title" }}
+<pre><code>{{ img http://addres.com/image.jpg [image alt] [image title] }}
 </code></pre>
 
 <p>با این کد html برابر خواهد بود:</p>
@@ -170,6 +170,10 @@ ftp://
       
       <h5><a href="#تنظیمات">تنظیمات</a></h5>
 <!--      <h5><a href="#/start-fa/config/">تنظیمات</a></h5> -->
+    
+      
+      <h5><a href="#استفاده از تنظیمات در قالب">استفاده از تنظیمات در قالب</a></h5>
+<!--      <h5><a href="#/start-fa/configs-in-templates/">استفاده از تنظیمات در قالب</a></h5> -->
     
     
       
@@ -238,6 +242,14 @@ ftp://
       
         <h3>قالب</h3>
       
+      <h5><a href="#_layout">_layout</a></h5>
+<!--      <h5><a href="#/start-fa/_layout/">_layout</a></h5> -->
+    
+      
+      <h5><a href="#_type">_type</a></h5>
+<!--      <h5><a href="#/start-fa/_type/">_type</a></h5> -->
+    
+      
       <h5><a href="#پوسته و اجزای تشکیل دهنده">پوسته و اجزای تشکیل دهنده</a></h5>
 <!--      <h5><a href="#/start-fa/template/">پوسته و اجزای تشکیل دهنده</a></h5> -->
     
@@ -298,7 +310,7 @@ ftp://
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                   <li>
-                    <a href="EMAIL: kiavash@gmail.com">
+                    <a href="mailto: kiavash@gmail.com">
                       <span class="fa-stack fa-lg">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>

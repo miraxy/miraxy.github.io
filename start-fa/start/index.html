@@ -58,11 +58,11 @@
              <ul class="nav navbar-nav navbar-right">
                
                  <li>
-                     <a href="/fa/" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
+                     <a href="http://localhost:80" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
                  </li>
                
                  <li>
-                     <a href="/start-fa/" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
+                     <a href="http://localhost:80" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
                  </li>
                
              </ul>
@@ -136,7 +136,8 @@
 
 <h3>statics</h3>
 
-<p>فایل‌های پیوست محتوا، مانند عکس‌ها، استایل‌شیت ها، سربرگ‌ها و ... را که میخواهید در محتوای منتشر شده یا قالب سایت از آن‌ها استفاده کنید را در این مسیر ذخیره کنید، در قالب و یا متن محتوا به راحتی با استفاده از کدهای میرا میتوانید به این مسیر دسترسی داشته باشید</p>
+<p>فایل‌های پیوست محتوا، مانند عکس‌ها، استایل‌شیت ها، سربرگ‌ها و ... را که میخواهید در محتوای منتشر شده یا قالب سایت از آن‌ها استفاده کنید را در این مسیر ذخیره کنید، در قالب و یا متن محتوا به راحتی با استفاده از کدهای میرا میتوانید به این مسیر دسترسی داشته باشید. <br />
+البته هر طبقه نیز به صورت مجزا میتواند در دایرکتوری content خود، به تعداد نامحدود دایرکتوری‌های static داشته باشد.</p>
 
 <h3>structure</h3>
 
@@ -145,6 +146,52 @@
 <h3>template</h3>
 
 <p>این دایرکتوری محل ذخیره پوسته‌های ظاهری سایت است</p>
+
+<h2>شکل نهایی</h2>
+
+<p>در صورتی که چند سایت با نام‌های ,blog, portfolio, projectX, docs بخواهید بسازید، و برای هر کدام بخواهید تنظیمات منحصر به فردی و ساختار جداگانه‌ای نسبت به سایر سایت‌ها در نظر بگیرید، نتیجه چیزی شبیه به این خواهد بود</p>
+
+<pre><code>YOUR_Mira/
+.
+│
+├── config
+│     │
+│     ├── blog.yml
+│     ├── docs.yml
+│     ├── portfolio.yml
+│     └── projectX.yml
+├── config.yml
+├── content
+│     │
+│     ├── blog
+│     │     └── _static
+│     ├── docs
+│     ├── portfolio
+│     └── projectX
+├── public
+├── statics
+│     │
+│     ├── images
+│     ├── css
+│     ├── your-theme-statics
+│     │      │
+│     │      ├── img
+│     │      ├── css
+│     │      ├── js
+│     │      └── static
+│     └── logo
+├── structure
+│     │
+│     ├── blog
+│     ├── docs
+│     ├── portfolio
+│     └── projectX
+└── template
+       │
+       ├── default-theme
+       ├── another-theme
+       └── on-more-theme
+</code></pre>
       
     </div>
 
@@ -182,6 +229,10 @@
       
       <h5><a href="#تنظیمات">تنظیمات</a></h5>
 <!--      <h5><a href="#/start-fa/config/">تنظیمات</a></h5> -->
+    
+      
+      <h5><a href="#استفاده از تنظیمات در قالب">استفاده از تنظیمات در قالب</a></h5>
+<!--      <h5><a href="#/start-fa/configs-in-templates/">استفاده از تنظیمات در قالب</a></h5> -->
     
     
       
@@ -250,6 +301,14 @@
       
         <h3>قالب</h3>
       
+      <h5><a href="#_layout">_layout</a></h5>
+<!--      <h5><a href="#/start-fa/_layout/">_layout</a></h5> -->
+    
+      
+      <h5><a href="#_type">_type</a></h5>
+<!--      <h5><a href="#/start-fa/_type/">_type</a></h5> -->
+    
+      
       <h5><a href="#پوسته و اجزای تشکیل دهنده">پوسته و اجزای تشکیل دهنده</a></h5>
 <!--      <h5><a href="#/start-fa/template/">پوسته و اجزای تشکیل دهنده</a></h5> -->
     
@@ -310,7 +369,7 @@
               <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                   <li>
-                    <a href="EMAIL: kiavash@gmail.com">
+                    <a href="mailto: kiavash@gmail.com">
                       <span class="fa-stack fa-lg">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>

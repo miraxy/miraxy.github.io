@@ -505,75 +505,8 @@ author: someone
 /story/start/index.html
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;و با توجه به آرشیوهایی که در تنظیمات مشخص کردیم، هنگام ساختن سایت، آدرس‌ها به این صورت در خواهند آمد:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;.
-├── blog
-│   ├── category
-│   │   └── آزمایش
-│   │       └── index.html
-│   ├── feed.xml
-│   ├── index.html
-│   └── آزمایش
-│       └── 2017
-│           └── 03
-│               └── 23
-│                   └── hello-world.html
-├── en
-│   ├── 2017
-│   │   └── 03
-│   │       └── 23
-│   │           └── first-post
-│   │               └── index.html
-│   ├── feed.xml
-│   ├── index.html
-│   └── tags
-│       ├── first
-│       │   └── index.html
-│       └── test
-│           └── index.html
-├── index.html
-├── linux
-│   ├── author
-│   │   └── someone
-│   │       └── index.html
-│   ├── categories
-│   │   ├── لینوکس
-│   │   │   └── index.html
-│   │   └── هسته
-│   │       └── index.html
-│   ├── feed.xml
-│   ├── index.html
-│   ├── someone
-│   │   └── amazing-update
-│   │       └── index.html
-│   └── tags
-│       ├── آپدیت-هسته
-│       │   └── index.html
-│       ├── لینوکس
-│       │   └── index.html
-│       ├── هسته
-│       │   └── index.html
-│       ├── هسته-لینوکس
-│       │   └── index.html
-│       └── ویژگی-جدید
-│           └── index.html
-├── static
-│   └── default-theme
-│       ├── img
-│       │   ├── mira-b.png
-│       │   └── mira-c.png
-│       ├── style.css
-│       └── style-rtl.css
-└── story
-    ├── feed.xml
-    ├── index.html
-    └── start
-        └── index.html
-&lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: &lt;br /&gt;
-نام و پسوند فایل‌ها در دایرکتوری محتوا یا content در پردازش نهایی هیچ تاثیری نخواهند داشت، به هر شکلی که می‌خواهید می‌توانید آن‌ها را تغییر دهید، برای مثال این نام فایل را ممکن است دست نداشته باشید:&lt;/p&gt;
+نام و پسوند فایل‌ها در دایرکتوری محتوا یا content در پردازش نهایی هیچ تاثیری نخواهند داشت، به هر شکلی که می‌خواهید می‌توانید آن‌ها را تغییر دهید، برای مثال این نام فایل را ممکن است دوست نداشته باشید:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;~/mira/content/linux-learn/2017-3-23-یک-ویژگی-جدید-در-آخرین-نسخه-هسته-که-تازه-دیروز-منتشر-شده-و-به-نظرم-خیلی-جالب-بود.md
 &lt;/code&gt;&lt;/pre&gt;
@@ -584,7 +517,7 @@ author: someone
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;پیشنهاد&lt;/strong&gt; &lt;br /&gt;
-برای ساختن فایل‌های جدید با دستور میرا از تیتر مورد نظرتان استفاده نکنید، از یک نام ساده استفاده کنید و بعد تیتر و index را در هدر فایل مشخص کنید، برای مثال به جای این دستور:&lt;/p&gt;
+برای ساختن فایل‌های جدید با دستور mira new از تیتر مورد نظرتان استفاده &lt;strong&gt;نکنید&lt;/strong&gt;، از یک نام ساده استفاده کنید و بعد تیتر و index را در هدر فایل مشخص کنید، برای مثال به جای این دستور:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;mira new -t 'یک ویژگی جدید در آخرین نسخه هسته که تازه دیروز منتشر شده و به نظرم خیلی جالب بود' -f linux-learn
 &lt;/code&gt;&lt;/pre&gt;

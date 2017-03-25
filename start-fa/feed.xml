@@ -154,13 +154,15 @@ author:
 └── story
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;h2&gt;&lt;a href=&quot;https://raw.githubusercontent.com/miraxy/sample/master/structure.zip&quot;&gt;دانلود شاخه structure&lt;/a&gt;&lt;/h2&gt;
+
 &lt;h3&gt;قدم سوم: تنظیمات اولیه&lt;/h3&gt;
 
 &lt;p&gt;حالا باید مشخص کنیم هر کدام از این سایت‌ها را میخواهیم در چه آدرسی و به چه شکل منتشر کنیم، بدنه اصلی نوشته‌هایمان را چگونه بنویسیم، آدرس نهایی برای هر پست به چه شکلی باشید و …&lt;/p&gt;
 
 &lt;h4&gt;تنظیمات عمومی&lt;/h4&gt;
 
-&lt;p&gt;ابتدا چند فرض عمومی را در نظر میگیریم، نام نویسنده مطالب، آدرس ایمیل، تصویر نویسنده و لوگوی سایت برای هر چهار سایت در صورتیکه در هدر هر پست تغییر نکنند(مثل قسمت آموزش لینوکس که مطالب مکن بود نویسنده جدا داشته باشند) ثابت است، هر چهار سایت از یک قالب مشترک استفاده می‌کنند، سایت‌هایمان را قارار است در آدرس address.com منتشر کنیم.  &lt;/p&gt;
+&lt;p&gt;ابتدا چند فرض عمومی را در نظر میگیریم، نام نویسنده مطالب، آدرس ایمیل، تصویر نویسنده و لوگوی سایت برای هر چهار سایت در صورتیکه در هدر هر پست تغییر نکنند(مثل قسمت آموزش لینوکس که مطالب مکن بود نویسنده جدا داشته باشند) ثابت است، هر چهار سایت از یک قالب مشترک استفاده می‌کنند، سایت‌هایمان را قرار است در آدرس address.com منتشر کنیم.  &lt;/p&gt;
 
 &lt;p&gt;فایل‌های ضمیمه عمومی را در شاخه‌ی statics در ریشه اصلی می‌توانید نگهداری کنید&lt;/p&gt;
 
@@ -172,7 +174,8 @@ author:
 &lt;pre&gt;&lt;code&gt;~/mira/config.yml
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;در فیلد static مسیر دهی کرده باشید منتقل خواهد شد، لوگو، تصاویر مشترک، و ... را در این شاخه ذخیره خواهیم کرد، متعلقات قالب را هم که در آینده میسازیم در همین مسیر نگهداری خواهیم کرد.&lt;/p&gt;
+&lt;p&gt;در فیلد static مسیر دهی کرده باشید منتقل خواهد شد، لوگو، تصاویر مشترک، و ... را در این شاخه ذخیره خواهیم کرد، متعلقات قالب را هم که در آینده میسازیم در همین مسیر نگهداری خواهیم کرد. &lt;br /&gt;
+در گام پنجم در مورد فیال‌های ضمیمه و static کامل‌تر و با چند مثال صحبت خواهیم کرد.&lt;/p&gt;
 
 &lt;h4&gt;تنظیمات اختصاصی هر سایت&lt;/h4&gt;
 
@@ -348,6 +351,8 @@ plugins:
 lang: fa
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;h2&gt;&lt;a href=&quot;https://raw.githubusercontent.com/miraxy/sample/master/config.zip&quot;&gt;دانلود فایل config.yml و شاخه config&lt;/a&gt;&lt;/h2&gt;
+
 &lt;p&gt;به فایل تنظیمات سایت «دنباله دار» نگاه کنید، فیلد lists وجود دارد، اما به آن مقداری داده نشده، این یعنی میخواهید هیچ آرشیوی نداشته باشید، اگر فیلد lists را به جای خالی رها کردن، کلا در تنظیمات وارد نمی‌کردیم، به معنی وجود نداشتن هیچ آرشیوی نیست، بلکه به این معنی بود که هر مقداری که فایل تنظیمات عمومی برای آرشیو در خود دارد برای این سایت هم همان مقدار در نظر گرفته شود.&lt;/p&gt;
 
 &lt;p&gt;همانطور که میبینید در هیچ کدام از فایل‌های تنظیم اختصاصی template و default_markup وجود ندارد، اما در فایل تنظیمات عمومی، config.yml در شاخه‌ی اصلی این فیلد هم وجود دارد و هم مقدار دارد، وجود نداشتن یک فیلد در &lt;strong&gt;تنظیمات اختصاصی&lt;/strong&gt; به این معنی است که می‌خواهیم برای آن فیلد از تنظیمات عمومی پیروی کنیم. پس my-theme و markdown برای تمام سایت‌ها معتبر است.&lt;/p&gt;
@@ -370,7 +375,7 @@ lang: fa
 &lt;pre&gt;&lt;code&gt;~/mira/content/blog-fa/2017-3-23-سلام-دنیا.md created
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;که در اصل مسیری است که فایل ساخته شده در آن ذخیره شده، این فایل را با هر ویرایشگری که دوست دارید باز کنید و ویرایش کنید، محتویات آن تقریبا شبیه به این خواهد بود:&lt;/p&gt;
+&lt;p&gt;که در اصل مسیری است که فایل ساخته شده در آن ذخیره شده، این فایل را با هر ویرایشگری که دوست دارید باز کنید و ویرایش کنید، محتویات آن بعد از ویرایش باید تقریبا شبیه به این باشد:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;---
 utid: 20170323112305
@@ -384,6 +389,9 @@ image: /blog/assets/article_images/hello.jpg
 این اولین نوشته من است که برای تست کردن نوشته شده.  
 این یک متن آزمایشی است.
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;اخطار&lt;/strong&gt;: &lt;br /&gt;
+فیلد utid را به هیچ عنوان حذف یا ویرایش نکنید، این فیلد یک کلید برای خواندن، مسیردهی در حافظه، چینش، اولویت بندی و تمام کارهای دیگری است که میرا با محتوا می‌کند، هر فایلی بدون این فیلد از نظر میرا یک فایل محتوا به حساب نمی‌آید و از وجود آن چشم پوشی می‌کند.&lt;/p&gt;
 
 &lt;p&gt;چند پست دیگر را هم بنویسید،&lt;/p&gt;
 
@@ -404,7 +412,7 @@ mira new -t 'آغاز' -f story
 
 &lt;p&gt;نکته: در آدرس‌هایی که برای مثال در بالا نوشته شده‌اند، CATEGORY و AUTHOR با مقداری که در هدر هر پست هست جایگزین می‌شود، فعلا چون در تمام قسمت‌ها مطلبی ننوشتیم از نام فیلدها استفاده کردیم.&lt;/p&gt;
 
-&lt;p&gt;به جز وبلاگ انگلیسی، در سه وبلاگ دیگر که تیترهایشان فارسی هستند، آدرس نهایی هم به زبان فارسی ساخته شده و آدرس مطلبی که در آموزش لینوکس نوشتیم هم که خیلی خیلی طولانی است. اما شاید بخواهید آدرس‌ها همه به لاتین باشند و کوتاه، index اینجا به کمک ما می‌آید، نوشته ها را یک بار دیگر ویرایش کنید و این‌بار به index مقدار بدهید:&lt;/p&gt;
+&lt;p&gt;به جز وبلاگ انگلیسی، در سه وبلاگ دیگر که تیترهایشان فارسی هستند، آدرس نهایی هم به زبان فارسی ساخته شده و آدرس مطلبی که در آموزش لینوکس نوشتیم هم که خیلی خیلی طولانی است. اما شاید بخواهید آدرس‌ها همه به لاتین باشند و یا کوتاه، index اینجا به کمک ما می‌آید، نوشته ها را یک بار دیگر ویرایش کنید و این‌بار به index مقدار بدهید:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;~/mira/content/blog-fa/2017-3-23-سلام-دنیا.md
 
@@ -525,7 +533,167 @@ author: someone
 &lt;p&gt;از چیزی شبیه به این استفاده کنید:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;mira new -t 'new update' -f linux-learn
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: &lt;br /&gt;
+مسیر ذخیره شدن و نام فایل در پوشه‌ی محتوای هر سایت از نظر میرا اهمیتی ندارد و با تمام فایل‌های محتوایی که در هر عمقی پیدا میکند، یکسان و تنها با توجه به سربرگ فایل‌ها و تنظیمات ذخیره شده برخورد می‌کند. برای مثال تمام این مسیرها برای فایل مثال بالا یکسان می‌باشند و همه در همان آدرس و به همان صورت منتشر می‌شوند:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/content/linux-learn/2017-3-23-new-update.markdown
+
+~/mira/content/linux-learn/new-update.md
+
+~/mira/content/linux-learn/new.txt
+
+~/mira/content/linux-learn/deep/2017-3-23-new-update.markdown
+
+~/mira/content/linux-learn/folder/sub/folder/2017-3-23-new-update.markdown
+
+~/mira/content/linux-learn/update/deep/more/deep/2017-3-23-new-update.markdown
+
+~/mira/content/linux-learn/update/deep/more/deep/new.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;قدم پنجم: فایل‌های ضمیمه&lt;/h3&gt;
+
+&lt;p&gt;فایل‌های ضمیمه فایل‌های ثابتی هستند که در محتوا از آن‌ها استفاده می‌کنیم اما نیازی به پردازش توسط برنامه‌ی میرا ندارند، مثل عکس‌ها یا فایل‌های pdf، موسیقی، استایل شیت‌ها فایل‌های جاوااسکریپت یا هر چیز دیگری که در نوشته‌هایمان از آن‌ها استفاده کنیم یا بخواهیم به آن‌ها لینک بدهیم.&lt;/p&gt;
+
+&lt;p&gt;میرا یک پوشه‌ی عمومی برای ضمیمه‌ها در ریشه‌ی اصلی در شاخه‌ی statics دارد&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/statics
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و بی‌نهایت پوشه‌ی دیگر برای هرسایت.&lt;/p&gt;
+
+&lt;h4&gt;ضمیمه‌های عمومی:&lt;/h4&gt;
+
+&lt;p&gt;محتویات پوشه‌ی عمومی
+&lt;code&gt;~/mira/statics&lt;/code&gt;
+به مسیری که در فایل تنظیمات
+&lt;code&gt;~/mira/config.yml&lt;/code&gt;
+و فیلد static مسیر دهی کرده‌اید منتقل می‌شود و در قالب با استفاده از کد
+&lt;code&gt;{{ Main.STATIC }}&lt;/code&gt;
+قابل دسترسی خواهد بود.&lt;/p&gt;
+
+&lt;p&gt;برای مثال اگر فیلد static در فایل config.yml مساوی
+&lt;code&gt;/attach&lt;/code&gt;
+باشد و سایت‌مان را قرار باشد در address.com منتشر کنیم، نتیحه مسیری شبیه به این خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/statics     &amp;gt;       http://address.com/attach/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;ضمیمه‌های اختصاصی هر سایت:&lt;/h4&gt;
+
+&lt;p&gt;در پوشه‌ی محتوای هر سایت در شاخه‌ی content هر پوشه‌ای که با خط زیر یا همان آندرلاین _ شروع شود از نظر میرا یک پوشه‌ی ضمیمه به حساب می‌آید و تمام محتویات آن‌را بدون هیچ بررسی به مسیر اصلی سایت منتقل میکند.&lt;/p&gt;
+
+&lt;p&gt;یک مثال: &lt;br /&gt;
+در بخش تنظیمات برای وبلاگ فارسی(blog-fa) در فیلدهای url و root مسیر blog را برای انتشار مشخص کردیم، پس هر پوشه‌ای که در مسیر blog-fa با ـ شروع شود به عنوان ضمیمه در مسیر blog آدرس دهی میشود، به این مثال‌ها دقت کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~mira/content/blog-fa/_assets
+/blog/assets/
+
+~mira/content/blog-fa/_statics
+/blog/statics/
+
+~mira/content/blog-fa/deep/_image
+/blog/deep/image
+
+~mira/content/blog-fa/more/deep/folder/_attach
+/blog/more/deep/folder/attach
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;دقت داشته باشید قبل از رسیدن به پوشه‌ی ضمیمه، اگر فایل محتوایی موجود باشد، برای انتشار آماده می‌شود، تنها بعد از رسیدن به اولین شاخه‌ای که با _ شروع شده باشد، میرا دست از نفوذ به عمق شاخه‌ها می‌کشد. برای مثال مسیرهای زیر را در نظر بگیرید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~mira/content/blog-fa/more/content.md
+~mira/content/blog-fa/more/deep/post.txt
+~mira/content/blog-fa/more/deep/folder/contetnt.md
+~mira/content/blog-fa/more/deep/folder/_attach
+~mira/content/blog-fa/more/deep/folder/_attach/post.markdown
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;میرا سه فایلی را که قبل از رسیدن به
+&lt;code&gt;~mira/content/blog-fa/more/deep/folder/_attach&lt;/code&gt;
+قرار دارند، برای انتشار بررسی و آماده می‌کند، اما فایل آخر
+&lt;code&gt;~mira/content/blog-fa/more/deep/folder/_attach/post.markdown&lt;/code&gt;
+را به عنوان یک فایل ضمیمه می‌شناسد و تنها آن را همان شکلی که هست به مسیر انتشار انتقال می‌دهد.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: &lt;br /&gt;
+احتمالا متوجه شدید که فیلد static در فایل تنظیمات اختصاصی هیچ تاثری در انتقال و آدرس‌دهی به مسیر فایل‌ها و پوشه‌های ضمیمه برای سایت‌ها ندارد.&lt;/p&gt;
+
+&lt;p&gt;این فیلد تنها جهت سهولت دسترسی در قالب و استفاده در قالب سایت با تگ
+&lt;code&gt;{{ STATIC }}&lt;/code&gt;
+می‌باشد.&lt;/p&gt;
+
+&lt;h3&gt;imageurl&lt;/h3&gt;
+
+&lt;p&gt;اما در تنظیمات یک فیلد دیگر را به نام imageurl مقدار دهی کرده بودیم، برخلاف فیلد static که در تنظیمات عمومی تاثیر گذار بود و در تنظیمات اختصاصی تنها برای دسترسی در قالب استفاده می‌شد، این فیلد در تنظیمات عمومی استفاده‌ی خاصی ندارد و فقط برای دسترسی در قالب تعریف شده، اما در تنظیمات اختصاصی تاثیر گذار است.&lt;/p&gt;
+
+&lt;p&gt;مورد استفاده این فیلد در پارسرهای داخلی میرا و هنگلم نوشتن متن محتوا است، در تنظیمات وبلاگ فارسی به این فیلد این مقدار را داده بودیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;imageurl: /blog/assets/article_images
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا در هر کدام از نوشته‌های این سایت اگر از تگ {{ img }} استفاده کنیم، میرا دنبال تصاویر در این مسیر میگردد. &lt;br /&gt;
+نحوه‌ی استفاده از {{ img }} به این شکل است:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ img image/address/pic.jpg [alt] [title] }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اولین نوشته در وبلاگ فارسی را به یاد دارید؟&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/content/blog-fa/2017-3-23-سلام-دنیا.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;بیایید یک‌بار دیگر آن‌را ویرایش کنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170323112305
+date: 2017-03-23 11:23:05
+title: سلام دنیا
+_index: hello world
+category: آزمایش
+image: /blog/assets/article_images/hello.jpg
+---
+سلام دنیا  
+این اولین نوشته من است که برای تست کردن نوشته شده.
+
+{{ img /future/sky.jpg [image alt] [pic title] }}
+
+این یک متن آزمایشی است.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;نتیجه‌ی نهایی برای انتشار این‌گونه خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;سلام دنیا&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;این اولین نوشته من است که برای تست کردن نوشته شده.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;img src=&quot;/blog/assets/article_images/future/sky.jpg&quot; alt=&quot;image alt&quot; title=&quot;pic title&quot;&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;این یک متن آزمایشی است.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در برچسب {{ img }} مقادیر [alt] و [title] اختیاری هستند و می‌توانید از آن‌ها چشم پوشی کنید.&lt;/p&gt;
+
+&lt;h3&gt;قدم ششم: دانلود محتوای مثال&lt;/h3&gt;
+
+&lt;p&gt;برای اینکه مثال‌های کامل‌تری داشته باشیم، علاوه بر فایل‌های فشرده structure و config که در پایان قدم‌های دوم و سوم به آن‌ها لینک داده شده بود، قسمت محتوا هم با استفاده از تعدادی از نوشته‌های سایت‌های زیر به وجود آمده.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;behroozam.com برای استفاده در وبلاگ فارسی&lt;/li&gt;
+&lt;li&gt;sallar.me وبلاگ انگلیسی&lt;/li&gt;
+&lt;li&gt;morde.ir داستان‌ها&lt;/li&gt;
+&lt;li&gt;linuxiha.ir آموزش لینوکس&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;&lt;a href=&quot;https://raw.githubusercontent.com/miraxy/sample/master/content.zip&quot;&gt;دانلود شاخهcontent&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;این فایل را دانلود کنید و آماده قدم گذاشتن به گام هفتم، برای ساختن قالب شوید.&lt;/p&gt;
+
+&lt;h3&gt;ادامه دارد...&lt;/h3&gt;
+
+&lt;p&gt;البته می‌توانید تا نوشته شدن گام هفتم، با استفاده از قالب پیش‌فرضی که همراه با میرا نصب شده، نتیجه‌ی کار را تا اینجا ببینید و امتحان کنید، اگر از فایل فشرده تنظیمات استفاده می‌کنید، نیازی به تغییر نیست، تایپ کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira build
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اما اگر فایل config.yml را بر اساس آن‌چه در بالا گفته شد خودتان به وجود آوردید، ابتدا مقدار فیلد template را از my-theme به default-theme تغییر دهید&lt;/p&gt;</description>
           <pubDate>2017-02-25 23:22:39</pubDate>
           <link>/start-fa/sample/</link>
           <guid isPermaLink="true">/start-fa/sample/</guid>

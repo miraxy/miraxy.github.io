@@ -10,7 +10,7 @@
     <meta name="description" content="راهنمای شروع به کار با میرا">
     <meta name="author" content="kiavash">
 
-    <title>مثال‌هایی برای محتوا - شروع</title>
+    <title>ساختن صفحات - شروع</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
@@ -84,20 +84,80 @@
   <div class="row">
     <div class="col-lg-7 col-lg-offset-1 col-md-8">
       
-      <a name="مثال‌هایی برای محتوا"></a>
-         <h2><a href="/start-fa/content-dl/">مثال‌هایی برای محتوا</a></h2>
-         <a name="more"></a><br><p>برای اینکه مثال‌های کامل‌تری داشته باشیم، محتوای سایت‌هایمان را با استفاده از تعدادی از نوشته‌های سایت‌های زیر تکمیل می‌کنیم.</p>
+      <a name="ساختن صفحات"></a>
+         <h2><a href="/start-fa/pages/">ساختن صفحات</a></h2>
+         <a name="more"></a><br><p>برای ساختن صفحات ثابت جدا از روند اصلی سایت، مثل صفحه درباره یا تماس و ... با اضافه کردن فیلد type و مقدار page در هدر هر پست، آن پست را به عنوان صفحه ثابت به میرا معرفی می‌کنیم، این کار باعث میشود که پست مورد نظر از لیست‌های مطالب برای نمایش در صفحه اول یا سایر صفحه‌های سایت و page.next و page.prev برای حرکت بین پست‌ها حذف شده و تنها با وارد کردن آدرس مستقیم آن نمایش داده شود.</p>
 
-<ul>
-<li>behroozam.com برای استفاده در وبلاگ فارسی</li>
-<li>sallar.me وبلاگ انگلیسی</li>
-<li>morde.ir داستان‌ها</li>
-<li>linuxiha.ir آموزش لینوکس</li>
-</ul>
+<p>در وبلاگ فارسی یک پست جدید بسازید:</p>
 
-<h2><a href="https://raw.githubusercontent.com/miraxy/sample/master/content.zip">دانلود شاخهcontent</a></h2>
+<pre><code>mira new -t 'about me' -f blog-fa
+</code></pre>
 
-<p><strong>توضیح</strong>: مثال‌هایی که در ادامه این بخش میخوانید در این فایل موجود نیستند، بهتر است برای کپی کردن این مثال‌ها در سایت آزمایشیتان، تا آخر این گام صبر کنید و پس از خواندن این بخش و ساختن فایل‌های مثال خودتان، محتویات را جایگزین کنید.</p>
+<p>حالا آن را ویرایش کنید:</p>
+
+<pre><code>---
+utid: 20170328195013
+title: درباره من
+_index: about
+_type: page
+_layout: page
+_permalink: /:title/
+---
+این صفحه در باره من است، اینجا مقداری در مورد خودم توضیح می‌دهم
+</code></pre>
+
+<p>حالا در شاخه‌ی قالب my-theme یک فایل جدید به نام page بسازید:</p>
+
+<pre><code>~/mira/template/my-theme/page
+</code></pre>
+
+<p>و مقادیر زیر را در آن کپی کنید:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="description" content="{{ DESCRIPTION }}"&gt;
+    &lt;meta name="author" content="{{ MainAUTHOR }}"&gt;
+    &lt;link rel="shortcut icon" href="{{ MAIN.author_image }}"&gt;
+    &lt;title&gt;{{ PageTITLE }}&lt;/title&gt;
+    &lt;style&gt;
+    img {
+    max-width: 100% !important;
+    }
+    {{ IF SITE.lang == 'fa' }}
+    body {
+       direction: rtl;
+    }
+    {{ END }}
+    {{ IF SITE.lang == 'en' }}
+    body {
+       direction: ltr;
+    }
+    {{ END }}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;center&gt;
+    &lt;img src="{{ SITE.author_image }}"&gt;
+    &lt;h1&gt;{{ post.title }}&lt;/h1&gt;
+    &lt;/center&gt;
+    &lt;hr&gt;
+    &lt;table&gt;
+    &lt;tr&gt;
+    &lt;td&gt;
+      &lt;p&gt;{{ post.body.more }}&lt;/p&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>این پست در صفحه اصلی یا هیچ‌کجای دیگر سایت نمایش داده نخواهد شد، تنها راه دسترسی به آن دادن لینک مستقیم به این صفحه در این آدرس است:</p>
+
+<pre><code>/blog/about/
+</code></pre>
       
     </div>
 

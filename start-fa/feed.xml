@@ -12,6 +12,90 @@
 
       
         <item>
+          <title>ساختن صفحات</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;برای ساختن صفحات ثابت جدا از روند اصلی سایت، مثل صفحه درباره یا تماس و ... با اضافه کردن فیلد type و مقدار page در هدر هر پست، آن پست را به عنوان صفحه ثابت به میرا معرفی می‌کنیم، این کار باعث میشود که پست مورد نظر از لیست‌های مطالب برای نمایش در صفحه اول یا سایر صفحه‌های سایت و page.next و page.prev برای حرکت بین پست‌ها حذف شده و تنها با وارد کردن آدرس مستقیم آن نمایش داده شود.&lt;/p&gt;
+
+&lt;p&gt;در وبلاگ فارسی یک پست جدید بسازید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira new -t 'about me' -f blog-fa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا آن را ویرایش کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170328195013
+title: درباره من
+_index: about
+_type: page
+_layout: page
+_permalink: /:title/
+---
+این صفحه در باره من است، اینجا مقداری در مورد خودم توضیح می‌دهم
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا در شاخه‌ی قالب my-theme یک فایل جدید به نام page بسازید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/template/my-theme/page
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و مقادیر زیر را در آن کپی کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;
+    &amp;lt;meta name=&quot;description&quot; content=&quot;{{ DESCRIPTION }}&quot;&amp;gt;
+    &amp;lt;meta name=&quot;author&quot; content=&quot;{{ MainAUTHOR }}&quot;&amp;gt;
+    &amp;lt;link rel=&quot;shortcut icon&quot; href=&quot;{{ MAIN.author_image }}&quot;&amp;gt;
+    &amp;lt;title&amp;gt;{{ PageTITLE }}&amp;lt;/title&amp;gt;
+    &amp;lt;style&amp;gt;
+    img {
+    max-width: 100% !important;
+    }
+    {{ IF SITE.lang == 'fa' }}
+    body {
+       direction: rtl;
+    }
+    {{ END }}
+    {{ IF SITE.lang == 'en' }}
+    body {
+       direction: ltr;
+    }
+    {{ END }}
+    &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;center&amp;gt;
+    &amp;lt;img src=&quot;{{ SITE.author_image }}&quot;&amp;gt;
+    &amp;lt;h1&amp;gt;{{ post.title }}&amp;lt;/h1&amp;gt;
+    &amp;lt;/center&amp;gt;
+    &amp;lt;hr&amp;gt;
+    &amp;lt;table&amp;gt;
+    &amp;lt;tr&amp;gt;
+    &amp;lt;td&amp;gt;
+      &amp;lt;p&amp;gt;{{ post.body.more }}&amp;lt;/p&amp;gt;
+    &amp;lt;/td&amp;gt;
+    &amp;lt;/tr&amp;gt;
+    &amp;lt;/table&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;این پست در صفحه اصلی یا هیچ‌کجای دیگر سایت نمایش داده نخواهد شد، تنها راه دسترسی به آن دادن لینک مستقیم به این صفحه در این آدرس است:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/blog/about/
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-03-28 19:50:13</pubDate>
+          <link>/start-fa/pages/</link>
+          <guid isPermaLink="true">/start-fa/pages/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
           <title>پوسته‌های بیشتر برای هر قالب و تغییر آدرس</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;پیش از این گفتیم که علاوه بر پنج فایل پایه‌ی هر قالب، میتوان به هر تعداد دیگر پوسته برای یک قالب تعریف کرد. در میرا می‌توان برای هر آرشیو یا هر پست یک قالب مجزا داشت.&lt;/p&gt;
 
@@ -1466,72 +1550,6 @@ mira new -t 'آغاز' -f story
           <pubDate>2017-03-28 12:36:06</pubDate>
           <link>/start-fa/content/</link>
           <guid isPermaLink="true">/start-fa/content/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>تنظیمات عمومی</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;ابتدا چند فرض عمومی را در نظر میگیریم:&lt;/p&gt;
-
-&lt;p&gt;فرض می‌گیریم تمام این موارد برای هر چهار سایت مقدار یکسانی باید داشته باشند:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;نام نویسنده مطالب&lt;/li&gt;
-&lt;li&gt;آدرس ایمیل&lt;/li&gt;
-&lt;li&gt;تصویر نویسنده&lt;/li&gt;
-&lt;li&gt;لوگوی سایت&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;می‌خواهیم مقادیر بالا برای هر چهار سایت یکسان و ثابت باشند، مگر اینکه در هدر هر پست تغییر کنند(مثل قسمت آموزش لینوکس که مطالب ممکن بود نویسنده جدا داشته باشند)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;هر چهار سایت از یک قالب مشترک استفاده می‌کنند. template&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;برای قالب انتشار هر چهار سایت را با استفاده از یک قالب منتشر می‌کنیم، می‌خواهیم در ادامه قالب خودمان را با نام my-theme بسازیم، فعلاً فقط به مقداردهی اولیه اکتفا میکنیم و فیلد template را مقدار دهی میکنیم. این قالب را در ادامه همراه هم به وجود می‌آوریم.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;سایت‌هایمان را قرار است در ریشه‌ی آدرس address.com منتشر کنیم. url و root&lt;/li&gt;
-&lt;li&gt;محل ذخیره فایل‌های ضمیمه عمومی یا همان static را address.com/static مشخص می‌کینم. static&lt;/li&gt;
-&lt;li&gt;محل ذخیره تصاویر مشترک مثل لوگو و... را address.com/static/imagesدر نظر می‌گیریم. imageurl&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;در گام پنجم در مورد فیال‌های ضمیمه و static کامل‌تر و با چند مثال صحبت خواهیم کرد.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;تعداد پست‌هایی که در صفحه‌ی مشترک بین سایت‌ها میخواهیم نمایش دهیم را ۵ در نظر می‌گیریم. post_num&lt;/li&gt;
-&lt;li&gt;متن اصلی محتوا برای هر چهار سایت را با استفاده از فرمت markdown می‌خواهیم بنویسیم. default_markup&lt;/li&gt;
-&lt;li&gt;در صورتیکه هنگام استفاده از دستور mira new برای ایجاد پست جدید سوییچ -f را برای مشخص کردن طبقه(یا همان سایت) وارد نکنیم، به شکل پیش‌فرض نوشته جدید در وبلاگ فارسی به وجود بیاید. default_floor&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;فایل config.yml را با هر ویرایشگر متنی که دوست دارید باز کنید، تمام محتویات آن را پاک کنید و با مقادیر زیر جایگزین کنید:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;~/mira/config.yml&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;title: نوشته های من 
-description: نوشته‌های من در باره‌ی تجربیات روزانه و سفرهایم، آهنگ‌هایی که شنیدم و داستان‌هایی که مینویسم
-
-author: اسم شما
-email: Your@Email.com
-url: http://www.address.com/
-root: /
-static: /static
-imageurl: /static/images
-default_markup: markdown
-default_floor: blog-fa
-post_num: 5
-template: my-theme
-
-logo: /static/images/logo.png
-author_image: /static/images/author_image.png
-&lt;/code&gt;&lt;/pre&gt;</description>
-          <pubDate>2017-03-28 11:20:49</pubDate>
-          <link>/start-fa/general-config/</link>
-          <guid isPermaLink="true">/start-fa/general-config/</guid>
 
 
         <category>

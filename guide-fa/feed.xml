@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>راهنمای میرا</title>
+    <description>اسناد راهنما برای شروع کار با میرا</description>
+    <link>http://localhost:80</link>
+    <atom:link href="http://localhost:80/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate></pubDate>
+    <lastBuildDate></lastBuildDate>
+    <generator>mira</generator>
+
+
+      
+        <item>
+          <title>img</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در هر قسمت از فایل محتوایی که با پسوند pen تولید شده، با استفاده از برچسب {{ img }} میتوان یک عکس را در بدنه نوشته لود کرد&lt;/p&gt;
+
+&lt;p&gt;قاعده استفاده از آن به این شکل است:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ img addres/image.jpg [alt] [title] }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;در این برچسب alt و title اختیاری هستند&lt;/li&gt;
+&lt;li&gt;هر دو گزینه‌ی alt و title باید بین [] قرار بگیرند&lt;/li&gt;
+&lt;li&gt;آدرس عکسی که لود میکنید اگر با
+&lt;code&gt;
+http:// &lt;br /&gt;
+https:// &lt;br /&gt;
+ftp://
+&lt;/code&gt;
+یا هرچیزی مثل این‌ها شروع نشود از فیلد imageurl در فایل تنظیمات طبقه انشعاب میگیرد.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;در هر جایی از نوشته که میرا با برچسب بالا مواجه شود آن را با کد html شبیه به این یکی میداند.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&quot;/FLOOR/IMG/address/image.jpg&quot; alt=&quot;alt&quot; title=&quot;title&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;مثلا اگر نوشته شما در طبقه وبلاگ با نام blog قرار دارد و در فایل config/blog.yml مقدار imageurl را مساوی&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;imageurl: /static/blog/images
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;قرار داده‌باشید، نتیجه این خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&quot;/static/blog/images/address/image.jpg&quot; alt=&quot;alt&quot; title=&quot;title&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در صورتیکه img را به این صورت نوشته باشید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ img http://addres.com/image.jpg [image alt] [image title] }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;با این کد html برابر خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;img src=&quot;http://address.com/image.jpg&quot; alt=&quot;image alt&quot; title=&quot;image title&quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر میخواهید پارسر عمل نکند یک \ قبل از } ابتدایی قرار دهید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;اگر در بدنه پست بنویسید
+\{{ img ... }}
+نشان داده خواهد شد:
+{{ img ... }}
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-02-25 23:22:09</pubDate>
+          <link>/guide-fa/img-parser/</link>
+          <guid isPermaLink="true">/guide-fa/img-parser/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>پارسرهای داخلی میرا</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;با استفاده از قواعد درونی parserهای میرا میتوان علاوه بر استفاده از markup برای نوشتن بدنه محتوا، از برچسب‌های درونی میرا نیز استفاده کرد&lt;/p&gt;</description>
+          <pubDate>2017-02-25 22:44:13</pubDate>
+          <link>/guide-fa/parser/</link>
+          <guid isPermaLink="true">/guide-fa/parser/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>استفاده از فیلدهای فایل‌های تنظیمات در قالب</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;تمام فیلدهای موجود در فایل‌های تنظیم را میتوان به پوسته نیز وارد کرد&lt;/p&gt;
+
+&lt;p&gt;برای داشتن مقادیر موجود در فایل config.yml از برچسب MAIN و تنظیمات ذخیره شده در شاخه‌ی کانفیگ برای هر طبقه با برچسب SITE در قالب قابل بازیابی هستند. &lt;br /&gt;
+حتی تمام مقادیری که برچسب مستقل دارند مسث description و ... را نیز میتوان از این راه نیز به قالب وارد کرد.&lt;/p&gt;
+
+&lt;p&gt;برای مثال اگر در config.yml فیلد icno را داشته باشیم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MAIN.icon }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا اگر در config/books.yml فیلد logo داشته باشیم در تمام صفحات قالب books با این دستور قابل دسترسی است&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ SITE.logo }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;همچنین فیلدهایی که مانند آرایه یا هش، به شکل لیستی از پشته‌ها ذخیره شده‌اند را هم میتوان با حلقه FOREACH در قالب لود کرد&lt;/p&gt;
+
+&lt;p&gt;اگر شبکه های اجتماعی که در آن‌ها عضو هستیم را بخواهیم در ساید بار وبلاگ خود معرفی کنیم، در فایل config/book.yml این مقادیر را اضافه میکنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;social:
+ -  name: twitter
+    url: https://twitter.com/USER_NAME
+    desc: Follow me on twitter
+
+ -  name: github
+    url: https://github.com/USER_NAME
+    desc: Fork me on github
+
+ -  name: google+
+    url: https://plus.google.com/USER_NAME
+    desc: Follow me on google plus
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا هر جا که بخواهیم در قالب به این مقادیر دسترسی داشته باشیم با استفاده از حلقه FOREACH خواهیم داشت:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH social IN SITE.social }}
+    &amp;lt;a href=&quot;{{ social.url }}&quot;&amp;gt;my {{social.name }}&amp;lt;/a&amp;gt; - {{ social.desc }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر فیلد social را در فایل config.yml قرار داده بودیم تنها کافی است در ابتدای حلقه، به جای SITE از MAIN استفاده کنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH social IN MAIN.social }}
+...
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-02-16 05:50:48</pubDate>
+          <link>/guide-fa/config-fields/</link>
+          <guid isPermaLink="true">/guide-fa/config-fields/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>نمایش محتوا، با استفاده از POSTS</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;جهت نمایش محتوا در هر کدام از صفحات باید از حلقه‌ای که مقادیر POSTS را نمایش خواهد داد استفاده کرد.&lt;/p&gt;
+
+&lt;p&gt;در تمام صفحات به جز صفحه‌ی main.tt2 برای نمایش محتوا از این حلقه استفاده می‌شود.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH POSTS }}
+   ...
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اطلاعات ذخیره شده در هر POSTS چیزی شبیه به بلوک زیر است، بسته به تنظیم شخصی که انجام دادید، ممکن است فیلدها کمتر یا بیشتر باشند.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;'title' =&amp;gt; &quot;post title&quot;,
+'author' =&amp;gt; 'kiavash',
+'floor' =&amp;gt; 'blog',
+'body' =&amp;gt; {
+        'less' =&amp;gt; &quot;less body content&quot;,
+        'more' =&amp;gt; &quot;full body content&quot;
+       },
+'date' =&amp;gt; '2017-02-10 17:45:03',
+'CALENDAR' =&amp;gt; {
+           'year' =&amp;gt; '2017',
+           'month_name' =&amp;gt; 'February',
+           'day' =&amp;gt; '10',
+           'month' =&amp;gt; '02'
+           'jyear' =&amp;gt; '1396',
+           'jmonth_name' =&amp;gt; 'بهمن',
+           'jday' =&amp;gt; '26',
+           'jmonth' =&amp;gt; '11'
+           'hour' =&amp;gt; '17',
+           'minute' =&amp;gt; '45',
+           'second' =&amp;gt; '03'
+    },
+'categories' =&amp;gt; {
+             &quot;CAT1&quot; =&amp;gt; {
+                    'name' =&amp;gt; &quot;CAT1&quot;,
+                    'url' =&amp;gt; &quot;/blog/categories/CAT1namespace/&quot;
+                   },
+             &quot;CAT2&quot; =&amp;gt; {
+                    'name' =&amp;gt; &quot;CAT2&quot;,
+                    'url' =&amp;gt; &quot;/blog/categories/CAT2namespace/&quot;
+                   }
+    },
+'other_archive_fields' =&amp;gt; {
+             &quot;OAF1&quot; =&amp;gt; {
+                    'name' =&amp;gt; &quot;OAF1&quot;,
+                    'url' =&amp;gt; &quot;/blog/categories/OAF1namespace/&quot;
+                   },
+             &quot;OAF2&quot; =&amp;gt; {
+                    'name' =&amp;gt; &quot;OAF2&quot;,
+                    'url' =&amp;gt; &quot;/blog/categories/OAF2namespace/&quot;
+                   },
+    },
+'url' =&amp;gt; &quot;/blog/2017/02/10/post-title/&quot;,
+'custom_field' =&amp;gt; 'value',
+'other_field' =&amp;gt; 'value',
+'else' =&amp;gt; 'value',
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای فراخوانی مقدار فیلدها در حلقه‌ی POST:&lt;/p&gt;
+
+&lt;p&gt;برای آنهایی که مقدار تک خطی دارند کافی است بین دو آکولاد نامشان را بنویسید، مثل&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ title }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;فیلدهای تاریخ را با یک نقطه بین CALENDAR و مقداری که مورد نظرتان است مشخص کنید، مثل&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ CALENDAR.year }}
+{{ CALENDAR.month_name }}
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;متن بدنه‌ی محتوا هم مانند فیلدهای تاریخ&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ body.less }}
+{{ body.more }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;لیست‌ها و آرشیو‌ها را در یک حلقه جدید لود کنید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH categories.values }}
+   &amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ name }}&amp;lt;/a&amp;gt;
+{{- END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH categories }}
+   &amp;lt;a href=&quot;{{ value.url }}&quot;&amp;gt;{{ value.name }}&amp;lt;/a&amp;gt;
+{{- END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حلقه‌ها در هر بار تکرار یک کاراکتر خط جدید تولید میکنند، خط تیره که ابتدای END میبینید، به حلقه می‌گوید که در همان خط بماند&lt;/p&gt;
+
+&lt;p&gt;یک مثال کامل:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH POSTS }}
+
+   &amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ title }}&amp;lt;/a&amp;gt;
+
+   {{ CALENDAR.day }}&amp;amp;nbsp;{{ CALENDAR.month_name }}&amp;amp;nbsp;{{ CALENDAR.year }}
+
+   {{ CALENDAR.jday | $FarsiNum }}&amp;amp;nbsp;{{ CALENDAR.jmonth_name }}&amp;amp;nbsp;{{ CALENDAR.jyear | $FarsiNum }}
+
+   {{ IF author }}
+        {{ author }}
+   {{- END }}
+
+
+   {{ IF categories }}
+     {{ FOREACH categories.values }}
+       &amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;@{{ name }}&amp;lt;/a&amp;gt;
+     {{- END }}
+   {{- END }}
+
+   {{ IF tags }}
+     {{ FOREACH tags }}
+        &amp;lt;a href=&quot;{{ value.url }}&quot;&amp;gt;#{{ value.name }}&amp;lt;/a&amp;gt;
+     {{- END }}
+   {{- END }}
+
+   {{ body.more }}
+
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در قسمت تاریخ جهت نمایش اعداد به فارسی از فیلتر&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;| $FarsiNum‍
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;استفاده شده، در هر جایی که بخواهید اعداد به جای لاتین به فارسی نمایش داده شوند از این فیلتر در کنار برچسب میتوان استفاده کرد.&lt;/p&gt;</description>
+          <pubDate>2017-02-16 05:50:47</pubDate>
+          <link>/guide-fa/show-posts/</link>
+          <guid isPermaLink="true">/guide-fa/show-posts/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>post-template</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;تمام برچسب‌های index.tt2 در post.tt2 با همان مقادیر معتبر هستند.&lt;/p&gt;
+
+&lt;p&gt;تنها برچسب اختصاصی در این الگو PostTITLE است که برابر با نام تیتر نوشته شما یا همان فیلد title در سربرگ میباشد&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainTITLE }}
+{{ MainDESCRIPTION }}
+{{ MainURL }}
+{{ MainROOT }}
+{{ MainSTATIC }}
+{{ MainIMGURL }}
+{{ MainAUTHOR }}
+{{ MainEMAIL }}
+{{ MainPageTitle }}
+
+{{ TITLE }}
+{{ DESCRIPTION }}
+{{ URL }}
+{{ ROOT }}
+{{ AUTHOR }}
+{{ EMAIL }}
+
+Archives:
+{{ FOREACH archive IN ARCHIVES.pairs }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{PostTITLE}}
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-02-16 05:46:45</pubDate>
+          <link>/guide-fa/post-template/</link>
+          <guid isPermaLink="true">/guide-fa/post-template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>archive.tt2</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;به جز برچسب UTIDS تمام برچسب‌های main.tt2 و index.tt2 در archive با همان مقادیر معتبر هستند&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainTITLE }}
+{{ MainDESCRIPTION }}
+{{ MainURL }}
+{{ MainROOT }}
+{{ MainSTATIC }}
+{{ MainIMGURL }}
+{{ MainAUTHOR }}
+{{ MainEMAIL }}
+{{ MainPageTitle }}
+
+{{ TITLE }}
+{{ DESCRIPTION }}
+{{ URL }}
+{{ ROOT }}
+{{ AUTHOR }}
+{{ EMAIL }}
+
+{{ ArchiveTITLE }}
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-02-16 05:39:37</pubDate>
+          <link>/guide-fa/archive-template/</link>
+          <guid isPermaLink="true">/guide-fa/archive-template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>index.tt2 و atom.tt2</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;به جز برچسب UTIDS تمام برچسب‌های main.tt2 در index و atom feed با همان مقادیر معتبر هستند&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MianTITLE }}
+{{ MianDESCRIPTION }}
+{{ MianURL }}
+{{ MianROOT }}
+{{ MianSTATIC }}
+{{ MianIMGURL }}
+{{ MianAUTHOR }}
+{{ MianEMAIL }}
+{{ PageTitle }}
+
+{{ TITLE }}
+{{ DESCRIPTION }}
+{{ URL }}
+{{ ROOT }}
+{{ AUTHOR }}
+{{ EMAIL }}
+
+Archives:
+{{ FOREACH archive IN ARCHIVES.pairs }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند، کارکرد این برچسب را صفحات archive متفاوت است.  &lt;/p&gt;</description>
+          <pubDate>2017-02-16 03:55:43</pubDate>
+          <link>/guide-fa/indextemplate/</link>
+          <guid isPermaLink="true">/guide-fa/indextemplate/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>main.tt2</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;برچسب‌های معتبر در این قالب و مقادیرشان.  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainTITLE }}
+{{ MainDESCRIPTION }}
+{{ MainURL }}
+{{ MainROOT }}
+{{ MainSTATIC }}
+{{ MainIMGURL }}
+{{ MainAUTHOR }}
+{{ MainEMAIL }}
+{{ MainPageTitle }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;تنها راه نمایش محتوا در صفحه‌ی main، استفاده از حلقه‌ی Floors به صورت مستقل، یا حلقه‌ی Entries و کلیدهای UTIDS می‌باشد، POSTS در این صفحه معتبر نیست.&lt;/p&gt;
+
+&lt;h3&gt;FLOORS&lt;/h3&gt;
+
+&lt;p&gt;این حلقه تنها به اندازه‌ی مقداری که در فیلد post_num در فایل config.yml مشخص کرده‌اید از مختوای هر طبقه را در خود ذخیره می‌کند.
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH Floors.values }}
+  {{ name }}
+  {{ description }}
+
+  {{ FOREACH posts }}
+    &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
+    &amp;lt;h4&amp;gt;{{ CALENDAR.day }}-{{ CALENDAR.month_name }}-{{ CALENDAR.year }}&amp;lt;/h4&amp;gt;
+    &amp;lt;p&amp;gt;{{ body.less }}&amp;lt;/p&amp;gt;
+  {{ END }}
+
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;UTIDS&lt;/h3&gt;
+
+&lt;p&gt;کلید نام تمام محتوای موجود در سایت مرتب شده بر اساس مقدار utid هر پست، برابر با utid هر پست، در UTIDS ذخیره شده، برای لود کردن محتوا در برچسب Entries قابل استفاده است.&lt;/p&gt;
+
+&lt;p&gt;این برچسب تنها مختص به main.tt2 میباشد&lt;/p&gt;
+
+&lt;p&gt;تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن Entries.$id نیز قابل استفاده هستند
+نحوه‌ی استفاده به همراه Entries&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH id IN UTIDS }}
+   &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ Entries.$id.url }}&quot;&amp;gt;{{ Entries.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
+   &amp;lt;h4&amp;gt;{{ Entries.$id.CALENDAR.day }}-{{ Entries.$id.CALENDAR.month_name }}-{{ Entries.$id.CALENDAR.year }}&amp;lt;/h4&amp;gt;
+   &amp;lt;p&amp;gt;{{ body.less }}&amp;lt;/p&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;تمام محتوای تولید شده، نمایش داده خواهند شد، تاکید میکنم، &lt;strong&gt;تمام محتوا&lt;/strong&gt;، اگر در میرا پنج سایت(طبقه) ساخته باشید و در هرکدام ۱۰۰ پست باشد، این کد تمام ۵۰۰ نوشته‌ی شما را به ترتیب مقدار عددی utid نمایش خواهد داد. &lt;br /&gt;
+برای محدود کردن نمایش تعداد پست‌ها میتوان از کدهای کنترل کننده حلقه استفاده کرد، مثال:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH id IN UTIDS }}
+   do any thing
+   {{ LAST IF loop.count == 10 }}
+{{ END }}
+بعد از ۱۰ بار تکرار حلقه تمام خواهد شد.
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-02-16 02:42:28</pubDate>
+          <link>/guide-fa/main-template/</link>
+          <guid isPermaLink="true">/guide-fa/main-template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>پوسته و اجزای تشکیل دهنده</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;بعد از انجام تمام تنظیمات و تولید محتوا، مطمینا نیازمند خروجی برای محتوای تولید شده خواهیم بود، قالب یا template یا همان پوسته‌های خروجی، به ما برای ساختن ظاهر خروجی مطابق سلیقه و نیازهایمان کمک خواهند کرد.&lt;/p&gt;
+
+&lt;p&gt;هر قالب یک دایرکتوری است در شاخه‌ی template از شاخه‌ی اصلی. برای استفاده از قالب ها نام این دایرکتوری را در فایل تنظیمات در مقابل فیلد template وارد کنید.&lt;/p&gt;
+
+&lt;p&gt;اجزای اصلی تشکیل دهنده هر قالب، این پنج فایل هستند&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/template/THEME/
+.
+├── archive.tt2
+├── atom.tt2
+├── index.tt2
+├── main.tt2
+└── post.tt2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;همچنین دایرکتوری به نام include هم در شاخه‌ی پوسته، هنگام پردازش نهایی دیده میشود و اگر بخواهید ماژول‌هایی مانند header یا sidebar در نظر داشته باشید میتوانید در این شاخه آن‌ها را ذخیره کنید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/template/THEME/
+.
+├── archive.tt2
+├── atom.tt2
+├── include
+│   ├── footer
+│   ├── header
+│   ├── navbar
+│   ├── sidebar
+│   ├── some
+│   ├── thing
+│   └── else
+├── index.tt2
+├── main.tt2
+└── post.tt2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در کل همان پنج فایل با پسوند tt2 اجزای اصلی تشکیل دهنده یک پوسته هستند و وجودشان الزامیست، تنها باید به این نکته اشاره کرد که آرشیو و post را میتوان به هر تعداد نام دیگر که بخواهید تکثیر کنید، که در ادامه در این مورد هم خواهیم خواند.&lt;/p&gt;
+
+&lt;p&gt;اما این پنج فایل چه هستند و چه میکنند؟&lt;/p&gt;
+
+&lt;h3&gt;main&lt;/h3&gt;
+
+&lt;p&gt;الگویی است که صفحه‌ی مشترک بین تمام طبقات براساس آن ساخته میشود، یا همان صفحه اصلی که زمان باز کردن سایت در شاخه‌ی پیش فرض دیده میشود.
+اگر در فایل config.yml مقدار url را برابر SITE.com قرارداده باشید و root را مساوی / تنظیم کنید، main در این صفحه تشکیل میشود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SITE.com/index.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;index&lt;/h3&gt;
+
+&lt;p&gt;الگوی سازنده‌ی صفحات اول هر طبقه و صفحات ادامه‌ی صفحه‌ی اصلی، در root هر طبقه ساخته خواهد شد &lt;br /&gt;
+اگر root در فایل
+&lt;code&gt;config/blog.yml&lt;/code&gt;
+مساوی با
+&lt;code&gt;/blog&lt;/code&gt;
+تنظیم شده باشد، index.tt2 الگوی سازنده‌ی این صفحات است&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Site.com/blog/
+Site.com/blog/page/2/
+Site.com/blog/page/3/
+Site.com/blog/page/...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;archive&lt;/h3&gt;
+
+&lt;p&gt;الگوی عمومی برای ساختن صفحات آرشیو&lt;/p&gt;
+
+&lt;p&gt;آرشیو زمانی و هر نوع آرشیو دیگری که در فیلد lists در فایل تنظیمات مشخص کرده باشید بر اساس این فایل ساخته می‌شوند.
+برای مثال اگر در سربرگ نوشته‌هایتان فیلد date موجود باشد و در فایل تنظیمات این آرشیو‌ها را مشخص کرده باشید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;lists:
+ - categories
+ - tags
+ - author
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;این الگو این صفحات را خواهد ساخت&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Site.com/blog/archive/2017
+Site.com/blog/archive/2017/01/
+Site.com/blog/archive/2017/02/
+Site.com/blog/archive/...
+
+Site.com/blog/author/kiavash/
+Site.com/blog/author/...
+
+Site.com/blog/categories/CAT1/
+Site.com/blog/categories/CAT2/
+Site.com/blog/categories/CAT3/
+Site.com/blog/categories/....
+
+Site.com/blog/tagss/TAG1/
+Site.com/blog/tagss/TAG2/
+Site.com/blog/tagss/TAG3/
+Site.com/blog/tagss/...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;قبلا گفته شد که صفحات آرشیو را به هر تعداد که بخواهید میتوانید تکثیر کنید &lt;br /&gt;
+اگر بخواهید هر کدام از آرشیو‌هایی که دارید، قالب متفاوتی داشته باشد، میتوانید هم‌نام آن آرشیو مثل categories یا هر چیز دیگری، یک فایل با پسوند tt2 در شاخه‌ی پوسته در کنار ساید فایل‌های tt2 قرار دهید، چیزی مثل این:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;template/THEME/categories.tt2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از این به بعد آرشیو موضوعی categories به جای archive.tt2 از الگویی که در categories.tt2 تنظیم کرده‌اید برای ساختن خروجی استفاده خواهد کرد.&lt;/p&gt;
+
+&lt;h3&gt;post&lt;/h3&gt;
+
+&lt;p&gt;هر فایل محتوایی که میسازید یک آدرس ثابت و ایستا برای خود دارد، که خروجی آن بر اساس این الگو تولید میشود. &lt;br /&gt;
+برای مثال ممحتوایی در طبقه blog با این مشخصه ها را در نظر داشته باشید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;_index: 5start hotels
+_permalink: :year/:title
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;خروجی آن در این آدرس تولید میشود&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/blog/2017/5star-hotels/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;تمام آدرس‌های ثابت محتوای تولید شده از الگویی که در فایل post.tt2 تعریف کرده‌اید برای ساخت استفاده میکنند&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;یک قابلیت آزمایشی&lt;/strong&gt; &lt;br /&gt;
+در صورتیکه در سربرگ پست، فیلد &lt;code&gt;_layout&lt;/code&gt; را با نام یک فایل معتبر در شاخه‌ی قالب مقدار دهی کنید، به جای post.tt2 آن پست با استفاده از فایل جدید تولید میشود&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;_layout: custom_page.tt2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر در شاخه‌ی قالب فایل custom.tt2 موجود باشد، به جای post.tt2 از آن استفاده خواهد شد.  &lt;/p&gt;
+
+&lt;h3&gt;atom&lt;/h3&gt;
+
+&lt;p&gt;فید یا همان feed.xml با استفاده از این الگو ساخته میشود، از آنجا که نحوه‌ی تولید فیدها از یک استاندارد مشخص پیروی میکنند، معمولا نیازی به تغییر ندارد، مگر اینکه بخواهید برای خروجی‌های متفاوتی مثل پادکست یا از این دست آن را بهینه سازی کنید.&lt;/p&gt;
+
+&lt;h3&gt;برچسب‌های مورد استفاده در پوسته&lt;/h3&gt;
+
+&lt;p&gt;برای ساخت و ویرایش الگوهایی که در موردشان به شکل کلی توضیح داده شد، از اجزایی که به آن‌ها برچسب‌های قالب میگوییم استفاده می‌شود، تعدادی از این برچسب‌ها در تمام صفحات با مقدار قابت معتبر هستند، برخی در هر الگو مقداری متفاوت به خود میگیرند و تعدادی هم تنها متعلق به یک الگوی خاص میباشند. توضیح این جزییات را در ادامه بخش قالب بخوانید&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2&gt;برچسب‌های موجود&lt;/h2&gt;
+
+&lt;p&gt;هر یک از این برچسب ها برای لود شدن باید بین دوآکولاد باز و بسته شوند:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ ROOT }}
+{{ TITLE }}
+{{ SomeThingElse }}
+...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;MainTITLE&lt;/h3&gt;
+
+&lt;p&gt;تیتر اصلی سایت ذخیره شده در فایل تنظیمات مرکزی یا همان config.yml
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainTITLE }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;MainDESCRIPTION&lt;/h3&gt;
+
+&lt;p&gt;توضیحات اصلی سایت ذخیره شده در فایل تنظیمات مرکزی یا همان config.yml
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainDESCRIPTION }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;MainURL&lt;/h3&gt;
+
+&lt;p&gt;آدرس اصلی سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال: YOURSITE.com
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainURL }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;MainROOT&lt;/h3&gt;
+
+&lt;p&gt;ریشه اصلی سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال: /
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainROOT }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;MainSTATIC&lt;/h3&gt;
+
+&lt;p&gt;شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال:
+&lt;code&gt;/statics&lt;/code&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainSTATIC }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;MainIMAGEURL&lt;/h3&gt;
+
+&lt;p&gt;شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال:
+&lt;code&gt;/statics/images&lt;/code&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainIMAGEURL }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;MainAUTHOR&lt;/h3&gt;
+
+&lt;p&gt;نام نویسنده ذخیره شده در فایل تنظیمات مرکزی
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainAUTHOR }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;MainEMAIL&lt;/h3&gt;
+
+&lt;p&gt;ایمیل نویسنده
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainEMAIL }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;PageTITLE&lt;/h3&gt;
+
+&lt;p&gt;تیتر صفحه، در صورتیکه از ماژولی شبیه به header برای لود کردن قسمت بالایی صفحات html به شکل ثابت در تمام صفحات استفاده کنید این برچسب کمک بسیاری برای تگ &amp;lt;title&amp;gt; خواهد کرد، برای مثال در main.tt2 مقداری برابر TITLE و در index.tt2 مساوی FloorTITLE خواهد داشت
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ PageTitle }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;FLOORS&lt;/h3&gt;
+
+&lt;p&gt;نام تمام طبقات موجود در سایت به همراه توضیحاتشان و تعداد مشخصی از پست‌ها که در فیلد post_num در فایل تنظیمات مشخص کرده‌اید&lt;/p&gt;
+
+&lt;p&gt;مقادیر موجود در این برچسب:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;name
+description
+
+posts (list)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ش posts شامل تعداد مشخص از آخرین ارسال‌های شماست، تعداد ارسال‌های موجود در این کلید از config.yml و فیلد post_num برداشت میشود. &lt;br /&gt;
+تمام مقادیری که برای POSTS که در قسمت‌های بعد توضیح داده میشود در مورد لیست posts در Floors نیز قابل استفاده است&lt;/p&gt;
+
+&lt;p&gt;نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH Floors.values }}
+  {{ name }}
+  {{ description }}
+
+  {{ FOREACH posts }}
+    &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
+    &amp;lt;h4&amp;gt;{{ CALENDAR.day }}-{{ CALENDAR.month_name }}-{{ CALENDAR.year }}&amp;lt;/h4&amp;gt;
+    &amp;lt;p&amp;gt;{{ body.less }}&amp;lt;/p&amp;gt;
+  {{ END }}
+
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;ENTRIES&lt;/h3&gt;
+
+&lt;p&gt;کلید-مقداری از تمام محتوای تولید شده در سایت، در مورد کارکرد این برچسب، توضیحات UTIDS را بخوانید&lt;/p&gt;
+
+&lt;h3&gt;UTIDS&lt;/h3&gt;
+
+&lt;p&gt;کلید نام تمام محتوای موجود در سایت مرتب شده بر اساس مقدار utid هر پست، برابر با utid هر پست، برای لود کردن محتوا در برچسب Entries قابل استفاده است.&lt;/p&gt;
+
+&lt;p&gt;این برچسب تنها مختص به main.tt2 میباشد&lt;/p&gt;
+
+&lt;p&gt;تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن Entries.$id نیز قابل استفاده هستند
+نحوه‌ی استفاده به همراه Entries&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH id IN UTIDS }}
+   &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ Entries.$id.url }}&quot;&amp;gt;{{ Entries.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
+   &amp;lt;h4&amp;gt;{{ Entries.$id.CALENDAR.day }}-{{ Entries.$id.CALENDAR.month_name }}-{{ Entries.$id.CALENDAR.year }}&amp;lt;/h4&amp;gt;
+   &amp;lt;p&amp;gt;{{ Entries.$id.body.less }}&amp;lt;/p&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h3&gt;TITLE&lt;/h3&gt;
+
+&lt;p&gt;تیتر اصلی طبقه، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ TITLE }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;DESCRIPTION&lt;/h3&gt;
+
+&lt;p&gt;توضیحات طبقه، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ DESCRIPTION }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;URL&lt;/h3&gt;
+
+&lt;p&gt;آدرس سایتی که طبقه در آن منتشر میشود، ذخیره شده در فیلد url فایل تنظیمات طبقه.  &lt;/p&gt;
+
+&lt;p&gt;نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ URL }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;ROOT&lt;/h3&gt;
+
+&lt;p&gt;آدرس شاخه‌ی ریشه، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ ROOT }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;AUTHOR&lt;/h3&gt;
+
+&lt;p&gt;نام نویسنده، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ AUTHOR }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;EMAIL&lt;/h3&gt;
+
+&lt;p&gt;نام نوسنده، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ EMAIL }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;BUILD&lt;/h3&gt;
+
+&lt;p&gt;اطلاعات زمان ساختن آخرین نسخه از سایت، یا تاریخ زمانی که mira build را اجرا میکنید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ BUILD.date }} : 2017-03-25 18:44:03
+{{ BUILD.year }}
+{{ BUILD.month }}
+{{ BUILD.month_name }}
+{{ BUILD.month_abbr }}
+{{ BUILD.day }}
+{{ BUILD.day_name }}
+{{ BUILD.day_abbr }}
+{{ BUILD.hour }}
+{{ BUILD.minute }}
+{{ BUILD.second }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;ARCHIVES&lt;/h3&gt;
+
+&lt;p&gt;تمام آرشیوهای موجود در طبقه&lt;/p&gt;
+
+&lt;p&gt;در صورتیکه از یک پوسته یکسان برای چند طبقه که آرشیوهایی با فیلدها و نام‌های متفاوت دارند استفاده میکنید، میتوانید برای نمایش تمام آرشیو‌ها، بدون اهمیت اینکه چه نامی دارند از این برچسب استفاده کنید.&lt;/p&gt;
+
+&lt;p&gt;مقدار این برچسب چیزی شبیه به این است:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;'categories' =&amp;gt; {
+          &quot;CAT1&quot; =&amp;gt; {
+                'name' =&amp;gt; &quot;CAT1&quot;,
+                    'url' =&amp;gt; &quot;/FLOOR/categories/CAT1namespace/&quot;,
+                    'posts' =&amp;gt; [
+                               '20170210173327',
+                               '20170210173313',
+                               '20170210174503',
+                               '20170210172431',
+                               '20170210173319'
+                             ]
+              },
+          &quot;CAT2&quot; =&amp;gt; {
+                'name' =&amp;gt; &quot;CAT2&quot;,
+                    'url' =&amp;gt; &quot;/FLOOR/categories/CAT2namespace/&quot;,
+                    'posts' =&amp;gt; [
+                               '20170210173327',
+                               '20170210173313',
+                               '20170210174503',
+                               '20170210172431',
+                               '20170210173319'
+                             ]
+             }
+},
+'date' =&amp;gt; {
+      '201702' =&amp;gt; {
+              'year' =&amp;gt; '2017',
+              'month' =&amp;gt; '02',
+              'url' =&amp;gt; '/fa/archive/2017/02/',
+              'name' =&amp;gt; 'February 2017',
+              'number' =&amp;gt; '2017 - 02',
+              'posts' =&amp;gt; [
+                         '20170210173327',
+                         '20170210173313',
+                         '20170210174503',
+                         '20170210172431',
+                         '20170210173319'
+                       ]
+              }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;با استفاده از IF میتوانید رفتار متفاوتی را برای هر نوع آرشیو در صورت وجود تعریف کنید&lt;/p&gt;
+
+&lt;p&gt;نحوه استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH archive IN Archives.pairs }}
+  {{ archive.key }} نام آرشیو
+  &amp;lt;hr&amp;gt;
+  {{ FOREACH item IN archive.value.values }}
+    &amp;lt;a href=&quot;{{ item.url }}&quot;&amp;gt;{{ item.name }}&amp;lt;/a&amp;gt;
+    {{ IF (archive.key == 'categories') }}&amp;lt;br&amp;gt;{{ END }}
+    {{ IF (archive.key == 'date') or (archive.key == 'jdate') }}&amp;lt;br&amp;gt;{{ END }}
+    {{ IF (archive.key == 'author') }}&amp;lt;br&amp;gt;{{ END }}
+    {{ IF (archive.key == 'tags') }}&amp;amp;nbsp;-&amp;amp;nbsp;{{ END }}
+  {{- END }}
+  &amp;lt;br&amp;gt;
+{{- END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;سایر برچسب‌ها برای آرشیو&lt;/h2&gt;
+
+&lt;p&gt;میرا برای هر آرشیو، همنام با همان آرشیو، مقداری برای قالب تولید میکند، برای مثال اگر در فایل تنظیمات برای آرشیو ها فیلد categories را به عنوان آٰشیو مشخص کرده باشید، حلقه‌ای به نام CATEGORIES_ARCHIVE نیز در قالب قابل استفاده خواهد بود، یا برای tags، میتوانید از TAGS_ARCHIVE استفاده کنید.&lt;/p&gt;
+
+&lt;p&gt;اطلاعات موجود در هرکدام از این مقادیر، شبیه به این خواهند بود&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CATEGORIES_ARCHIVE = [
+          {
+            'name' =&amp;gt; &quot;CAT1&quot;,
+            'url' =&amp;gt; &quot;/FLOOR/categories/CAT1namespace/&quot;,
+            'posts' =&amp;gt; [
+                         '20170210172431',
+                         '20170210174503',
+                         '20170210173327',
+                         '20170210173313',
+                         '20170210173319'
+                       ]
+          },
+          {
+            'name' =&amp;gt; &quot;CAT2&quot;,
+            'url' =&amp;gt; &quot;/FLOOR/categories/CAT2namespace/&quot;,
+            'posts' =&amp;gt; [
+                         '20170210172431',
+                         '20170210174503',
+                         '20170210173327',
+                         '20170210173313',
+                         '20170210173319'
+                       ]
+          },
+        ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای استفاده از این برچسب‌ها باید در حلقه‌ای که با FOREACH تولید میکنید از آن‌ها استفاده کنید&lt;/p&gt;
+
+&lt;p&gt;نحوه استفاده برای فیلد فرضی categories&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH CATEGORIES_ARCHIVE.values }}
+  &amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH cat IN CATEGORIES_ARCHIVE.values }}
+  &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ cat.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;همانطور که مشخص است در posts، تمام utid ها برگشت داده شده، پس برای نمایش تک تک فایل‌های موجود در هر دسته میتوان از ENTRIES کمک گرفت &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH CATEGORIES_ARCHIVE.values }}
+  &amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+  {{ FOREACH id IN posts.sort }}
+    &amp;lt;h5&amp;gt;&amp;lt;a href=&quot;{{ ENTRIES.$id.url }}&quot;&amp;gt;{{ ENTRIES.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;/h5&amp;gt;
+  {{ END }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;مثلما به جای id و $id از هر نام دیگری که بخواهید میتوانید استفاده کنید.&lt;/p&gt;</description>
+          <pubDate>2017-02-16 01:03:56</pubDate>
+          <link>/guide-fa/template/</link>
+          <guid isPermaLink="true">/guide-fa/template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>بدنه اصلی محتوا</title>
+          <description>&lt;p&gt;بدنه قسمت اصلی محتوای شماست، هر چیزی که در مورد آن میخواهید بنویسید در این قسمت قرار میگیرد.&lt;/p&gt;
+
+&lt;p&gt;برای نوشتن بدنه می‌توانید از Mrkup Language هایی که میرا پشتیبانی میکند، کدهای html یا متن‌های خالص استفاده کنید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;markdown
+md
+textile
+bbcode
+html
+text
+txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;تنها به یاد داشته باشید که برای نمایش صحیح متن، در فیلد &lt;code&gt;_markup&lt;/code&gt; در سربرگ هر فایل یا فایل تنظیمات، مشخص کرده باشید که دقیقا از چه مارک‌آپی برای نوشتن متن استفاده کرده‌اید.&lt;/p&gt;
+
+&lt;h2&gt;قسمت‌های بدنه&lt;/h2&gt;
+
+&lt;p&gt;بدنه هنگام پردازش به دو قسمت less و more تقسیم میشود، less خلاصه یا توضیحی از متنی است که مینویسید و more شامل تمام متن نوشته شده می‌شود&lt;/p&gt;
+
+&lt;p&gt;به شکل پیش فرض میرا ۶۰۰ حرف ابتدایی هر متن را بعد از حذف کردن تمام کدهای HTML که ممکن است در آن نوشته شده باشد و نادیده گرفتن تمام قواعد MarkUPی که استفاده کرده‌اید، به عنوان less مشخص می‌کند، اما در صورتیکه بخواهید مقدار less را می‌توانید خودتان مشخص کنید، کافی است هر جا که خواستید در متن‌تان این عبارت را بنویسید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- more --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;تعداد فاصله ها مهم نیستند، میتوانید اینطور بنویسید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!--        more               --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;تمام قسمت‌های قبل از آن به عنوان less مشخص می‌شوند، در این حالت کدهای HTML نیز از متن حذف نخواهند شد&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;خلاصه‌ای از متن
+یا همان
+less
+در این قسمت نوشته شده
+
+&amp;lt;!--     more     --&amp;gt;
+
+ادامه متن
+را در این قسمت
+مینویسیم
+کل متن قبل و بعد از نشانه گذار
+به عنوان
+more
+شناخته خواهد شد
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;br /&gt;
+به یاد داشته باشید more شامل تمام متن، قبل و بعد از نشانه گذار
+    &lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+می‌باشد.&lt;/p&gt;</description>
+          <pubDate>2017-02-16 00:40:55</pubDate>
+          <link>/guide-fa/content-body/</link>
+          <guid isPermaLink="true">/guide-fa/content-body/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>استراکچر</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;گفته شد که در هر سربرگ تعدادی فیلد به صورت پیش فرض وجود دارند و هر تعداد فیلد که بخواهید در زمان نوشتن محتوا میتوانید به سربرگ خود اضافه کنید، اما ممکن است بخواهید تمام محتوای تولید شده در یک طبقه تعدادی فیلد انتخابی را به صورت یکپارچه در خود داشته باشد، اگر بخواهید هر بار که محتوای جدیدی تولید میکنید، این فیلد ها را هم بنویسید، ممکن است کمی حوصله سر بر باشد، یا یک فیلد را موقتا فراموش کنید و در یکی از یربرگ‌ها جا بماند.
+برای حل این مشکل میتوانید از دایرکتوری structure در شاخه‌ی اصلی برنامه کمک بگیرید. &lt;br /&gt;
+فایلی هم نام طبقه‌ی مورد نظر در این شاخه بسازید و فیلدهایی که میخواهید در سربرگ آن طبقه باشند را در آن بنویسید. برای مثال این اسناد در طبقه‌ای به نام &lt;strong&gt;doc-fa&lt;/strong&gt; قرار دارند، پس فایل استراکچری به این نام برای آن میسازیم
+&lt;code&gt;/structure/doc-fa&lt;/code&gt;
+و محتوای فایل را به این صورت ویرایش می‌کنیم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;_permalink:
+chapter:
+chaptername:
+tags:
+  - 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا هر بار که از دستور mira new برای طبقه‌ی doc-fa استفاده کنیم، فایلی شبیه به این تولید خواهد شد&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170216003954
+date: 2017-02-16 00:39:54
+title:
+_index:
+_permalink:
+chapter:
+chaptername:
+tags:
+  - 
+author: kiavash
+_markup: markdown
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر بخواهید تمام طبقاتی که فایل استراکچر ندارند از یک شکل واحد پیروی کنند هم میتوانید فایلی به نام default را در این شاخه ویرایش کنید. به این ترتیب هر طبقه که فایل استراکچر نداشته باشد از این فایل استفاده خواهد کرد.&lt;/p&gt;</description>
+          <pubDate>2017-02-16 00:39:54</pubDate>
+          <link>/guide-fa/structure/</link>
+          <guid isPermaLink="true">/guide-fa/structure/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>آرشیو</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در صورتیکه بخواهید بر اساس هر کدام از مقادیر سربرگ آٰشیو بسازید، مثل دسته بندی‌ها و ... باید حتما در فایل تنظیمات در قسمت lists نام فیلد را وارد کنید، مثل tags یا categories یا هر نوع آرشیو دیگری که مایل باشید. &lt;br /&gt;
+مقادیر آرشیو میتوانند لیست یا تکی باشند.&lt;/p&gt;
+
+&lt;p&gt;برای مثال برای ساختن صفحات این اسناد از دو نوع لیست استفاده شده، chapter و tags که در chapter نام دسته‌ای که مطالب در آن نوشته شده به صورت تکی مشخص شده مثل تنظیمات و شروع و در tags، بر چسب هایی که برای هر نوشته در نظر گرفته‌ام، یا همان هش‌تگ ها&lt;/p&gt;</description>
+          <pubDate>2017-02-16 00:35:42</pubDate>
+          <link>/guide-fa/archive/</link>
+          <guid isPermaLink="true">/guide-fa/archive/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>لیست ها</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;اگر بخواهید فیلدهایی را با مقداری بیشتر از یک آیتم داشته باشید، باید آن‌ها را به صورت لیست‌هایی با این دستور زبان بسازید:  &lt;/p&gt;
+
+&lt;p&gt;نام فیلد، دونقطه، اینتر، فاصله، خط تیره، فاصله، مقدار&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;categories:
+ - cat1
+ - cat2
+
+tags:
+ - tag1
+ - tag2
+ - tag3
+ - tag4
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-02-16 00:34:17</pubDate>
+          <link>/guide-fa/lists/</link>
+          <guid isPermaLink="true">/guide-fa/lists/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>فیلدهای انتخابی</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;به جز موارد ذکر شده از هر فیلد دیگری که بخواهید میتوانید در سربرگ استفاده کنید، مثلا اگر بخواهید برای هر نوشته یک عکس ثابت برای صفحه ایستای آن در کنار عنوان داشته باشید یا اگر مطالبی که مینویسید ترجمه‌ای از منابع مختلف است و میخواهید از نام منبع به شکل ثابتی در قالب جدا از بدنه نوشته استفاده کنید، یا هر چیز دیگر. &lt;br /&gt;
+میتوانید در سر برگ نوشته فیلدی برای این منظور ها بسازید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;thumbs: address.com/img/image.jpg
+source: other.com/post.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از این فیلدها در قالب در زیر مجموعه‌ی حلقه‌ی POSTS با برچسب‌هایی هم نام همین فیلدها میتوانید استفاده کنید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH POSTS }}
+    &amp;lt;a href=&quot;{{ url }}#more&amp;gt;{{ title }}&amp;lt;/a&amp;gt;
+    {{ author }}
+    &amp;lt;img src=&quot;{{ thumbs }}&quot;&amp;gt;
+    &amp;lt;a href =&quot;{{ source }}&quot;&amp;gt;منبع&amp;lt;/a&amp;gt;
+    &amp;lt;div class=&quot;content&quot;&amp;gt;
+        {{ body.less}}
+    &amp;lt;/div&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-02-16 00:33:14</pubDate>
+          <link>/guide-fa/other-fields/</link>
+          <guid isPermaLink="true">/guide-fa/other-fields/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>_type</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در صورتیکه در هر پست به این فیلد مقدار page بدهید، پست مورد نظر، در صفحات اول سایت و کلیدهای page next و page prev پست‌ها لیست نمیشود.&lt;/p&gt;
+
+&lt;p&gt;استفاده از این فیلد و فیلدهای layout و permalink برای ساختن صفحات در سایت مفید هست، برای مثال اگر بخواهید یک صفحه به نام «درباره من» بسازید که در صفحات سایت به صورت سریالی بین سایر نوشته‌ها نمایش داده نشود، میتوانید تنظیماتی شبیه به این در هدر آن داشته باشید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;title: درباره من
+_type: page
+_layout: about.tt2
+_index: about
+_permalink: /:title/
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-03-12 19:18:15</pubDate>
+          <link>/guide-fa/_type/</link>
+          <guid isPermaLink="true">/guide-fa/_type/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>_layout</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;میرا برای تولید خروجی نهایی تمام پست‌ها، به شکل پیش فرض از فایلی به نام post.tt2 در پوسته‌ای که در تنظیمات مشخص کرده‌اید استفاده می‌کند، اما اگر به این فیلد مقدار بدهید، پست مورد نظر، از یک قالب اختصاصی می‌تواند استفاده می‌کند.&lt;/p&gt;</description>
+          <pubDate>2017-03-12 19:18:09</pubDate>
+          <link>/guide-fa/_layout/</link>
+          <guid isPermaLink="true">/guide-fa/_layout/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>_permalink</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در حالت پیش فرض آدرس ایستای هر نوشته با مقداری که به فیلد permalink در فایل تنظیمات داده‌اید ساخته میشود، با مقدار دهی به این فیلد مقدار موجود در فایل تنظیمات نادیده گرفته میشود و از این مقدار استفاده خواهد شد. &lt;br /&gt;
+برای تنظیم این فیلد، دقیقا از همان مقادیری که برای فیلد permalink در فایل تنظیمات توضیح داده شده می‌توانید استفاده کنید.&lt;/p&gt;</description>
+          <pubDate>2017-02-16 00:32:11</pubDate>
+          <link>/guide-fa/_permalink/</link>
+          <guid isPermaLink="true">/guide-fa/_permalink/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>_markup</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;فرمتی که با آن بدنه محتوا را مینویسید، یا همان markup language. به شکل پیش فرض با مقداری که به فیلدی با نام default_markup در فایل تنظیمات مشخص کرده‌اید پر خواهد شد، اما برای هر پست میتوانید آن را تغییر دهید. &lt;br /&gt;
+اگر در فایل تنظیمات مقداری برای این فیلد مشخص نکرده باشید و در سربرگ هم به آن مقداری ندهید میرا به شکل پیش فرض از markdown برای پردازش نهایی استفاده میکند.  &lt;/p&gt;
+
+&lt;p&gt;مقادیری که میرا برای این فیلد می‌شناسد، این‌ها هستند:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;markdown
+md
+textile
+bbcode
+html
+text
+txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;مقادیر md و markdown یکی هستند، همچنین txt و text نیز یکی هستند.
+اگر میخواهید فقط از کدهای html در بدنه‌ی نوشته‌تان استفاده کنید و مقدار را برابر html قرار دهید، دقیقا همان متنی که در بدنه نوشته اید به همان شکل در فایل خروجی نیز استفاده خواهد شد
+اگر از text یا txt به عنوان مقدار استفاده کنید دقیقا همان متن در خروجی استفاده میشود تنها در انتهای هر خط کاراکتر خط جدید به &lt;br&gt; تبدیل خواهد شد. استفاده از کدهای html در این حالت نیز مجاز است.&lt;/p&gt;</description>
+          <pubDate>2017-02-16 00:28:09</pubDate>
+          <link>/guide-fa/_markup/</link>
+          <guid isPermaLink="true">/guide-fa/_markup/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>author</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;نام نویسنده مطلب، به صورت پیش فرض با فیلدی که به همین نام در فایل تنظیمات مشخص کرده‌اید پر خواهد شد. &lt;br /&gt;
+در صورت عدم نیاز میتواند خالی بماند یا حذف شود  &lt;/p&gt;
+
+&lt;p&gt;قابل بازیابی در قالب در حلقه‌ی POSTS با استفاده از این برچسب:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ author }}
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-02-16 00:27:23</pubDate>
+          <link>/guide-fa/author/</link>
+          <guid isPermaLink="true">/guide-fa/author/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>_index</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;همانطور که در مورد فیلد title خواندید، آدرس نهایی پست شما با استفاده از آن ساخته خواهد شد، اما در صورتیکه عنوان بیش از حدی که مایل باشید طولانی باشد و نخواهید آدرس طولانی داشته باشید، یا از چیزی به جز اعداد و حروف نوشتاری در عنوان استفاده کردید که وجودشان برای مفهوم بودن معنی ضروری است و میخواهید در آدرس از نام آنها به جای علامتشان استفاده کنید(مثلا به جای * در تیتر، در آدرس بنویسید star) یا حتی تیتر به زبان فارسی نوشته شده اما میخواهید آدرس به انگلیسی ساخته شود، میتوانید از این فیلد کمک بگیرید.&lt;/p&gt;
+
+&lt;p&gt;برای مثال اگر عنوان پست شما چیزی شبیه به این باشد:  &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;یک تیتر خیلی خیلی طولانی در مورد هتل‌های ۵* در سفر به آسیا&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;آدرس نهایی چیزی شبیه به این خواهد بود&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ADDRESS.COM/FLOOR/2017/02/یک-تیتر-خیلی-خیلی-طولانی-در-مورد-هتل‌های-۵-در-سفر-به-آسیا/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا اگر به _index مقداری شبیه به این بدهیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;_index: 5start hotels
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;آدرس به این صورت تغییر خواهد کرد&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ADDRESS.COM/FLOOR/2017/02/5star-hotels/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;این فیلد در صورت عدم نیاز میتواند خالی بماند یا حذف شود&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;توجه:&lt;/strong&gt; اگر صفحات شما در الگویی که تنها حاوی نام تیتر است تولید می‌شوند:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/:title/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از این نام‌ها برای تیتر یا ایندکس استفاده نکنید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;archives
+page
+نام هر فیلدی که در لیست‌های آرشیو مشخص کرده اید، مثل
+categories, tags...
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-02-16 00:26:36</pubDate>
+          <link>/guide-fa/_index/</link>
+          <guid isPermaLink="true">/guide-fa/_index/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+
+
+    </channel>
+</rss>

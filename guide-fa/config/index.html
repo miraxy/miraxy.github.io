@@ -1,0 +1,505 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="اسناد راهنما برای شروع کار با میرا">
+    <meta name="author" content="kiavash">
+
+    <title>تنظیمات - راهنمای میرا</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/mira-doc/style-rtl.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v7.0.0/dist/font-face.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/samim-font/v1.0.2/dist/font-face.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/shabnam-font/v1.1.0/dist/font-face.css">
+    <link href="/static/mira-theme/fonts/font-sahel/css/font-sahel.css" rel="stylesheet" type="text/css">
+    <link href="/static/mira-theme/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div class="custom-rtl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <div class="brand-centered">
+                <a class="navbar-brand" href="/"><img src="/static/img/mira-c.png" class="img-responsive mira-header" alt="mira"></a>
+              </div>
+            </div>
+
+
+                       <!-- Collect the nav links, forms, and other content for toggling
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav navbar-right">
+               
+                 <li>
+                     <a href="http://localhost:80" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://localhost:80" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://localhost:80" name="راهنمای شروع به کار با میرا">شروع</a>
+                 </li>
+               
+             </ul>
+           </div>
+            /.navbar-collapse -->
+
+
+        </div>
+
+  </nav>
+
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7 col-lg-offset-1 col-md-8">
+      
+      <a name="تنظیمات"></a>
+         <h2><a href="/guide-fa/config/">تنظیمات</a></h2>
+         <a name="more"></a><br><h2>درباره فایل‌های تنظیم</h2>
+
+<p>میرا، میتواند برای هر طبقه یک فایل تنظیم مجزا داشته باشد یا اینکه تمام طبقات از یک تنظیم مشترک استفاده کنند یا ترکیبی از این دو، یعنی بعضی از طبقات تنظیم شخصی خودرا داشته باشند و بعضی از تنظیمات مرکزی پیروی کنند.
+فایل تنظیم مرکزی در شاخه اصلی برنامه به نام <strong>config.yml</strong> ذخیره شده و برای هر طبقه که بخواهید تنظیمات مجزا داشته باشید در شاخه <strong>config</strong> یک فایل به نام آن طبقه(هم‌نام با شاخه‌ی آن طبقه در شاخه content) با پسوند <strong>yml</strong> بسازید. <br />
+<strong>نکته:</strong> تعدادی از تنظیمات تنها متعلق به فایل اصلی هستند و تغییر آن‌ها در تنظیمات طبقات نادیده گرفته میشوند، این تنظیمات در ادامه با برچسب مرکزی مشخص میشوند. <br />
+<strong>توجه:</strong> تنظیمات با استاندارد برچسب زنی yaml نوشته میشوند، به فاصله‌ها، کاراکتر خط جدید و هر چیز ظاهری دیگر توجه داشته باشید. <br />
+اکثر تنظیمات باید تنها در یک خط نوشته شوند مگر تنظیماتی که به صورت لیستی از نام‌ها یا کلید-مقدار باید مقدار دهی شوند <br />
+<strong>توجه:</strong> لیست‌ها با فرمت YAML باید نوشته شوند: حداقل یک فاصله، یک خط تیره، یک فاصله، نام لیست  </p>
+
+<h3>title</h3>
+
+<p>عنوان سایت شماست، هر طبقه به عنوان یک سایت مجزا میتواند عنوان خود را داشته باشد</p>
+
+<h3>description</h3>
+
+<p>متنی برای توضیح یا معرفی سایت یا فعالیت‌های آن</p>
+
+<h3>author</h3>
+
+<p>نام پیش فرض نویسنده یا نویسنده‌ها
+به عنوان فیلد در هدر نوشته‌ها ظاهر میشود، همچنین در قالب هم به عنوان فیلد author در زیر هر پست، یا به صورت عمومی قابل نمایش است
+در صورتی که مایل باشید در هر نوشته میتوانید این نام را تغییر دهید، مثلاً اگر نویسنده پیش‌فرض سایت نام خودتان است اما میخواهید مطلب یک نویسنده مهمان را منتشر کنید</p>
+
+<h3>email</h3>
+
+<p>دقیقاً مانند نام نویسنده، با این تفاوت که در هدر پست هم به صورت پیش‌فرض نمایش داده نمیشود. برای استفاده در هدر یا بدنه قالب</p>
+
+<h3>url</h3>
+
+<p>آدرس سایت شما، چیزی شبیه به YOURADDRESS.com</p>
+
+<p>در صورتیکه در تنظیمات طبقه وجود نداشته باشید برابر با</p>
+
+<pre><code>YOURADDRESS.com/FLOOR_NAME
+</code></pre>
+
+<p>خواهد بود</p>
+
+<h3>root</h3>
+
+<p>دقیقاً مانند url، تنها برای نام شاخه ریشه‌ی شما، مثلاً اگر سایت قرار است در همان ریشه اصلی سایت yoursite.com نمایش داده شود root را با / مقدار دهی کنید، یا اگر قرار است در شاخه‌ی yoursite.com/blog منتشر شود آن را با</p>
+
+<pre><code>/blog/
+</code></pre>
+
+<p>مقدار دهی کنید.</p>
+
+<p>اگر در تنظیم طبقات وجود نداشته باشد با </p>
+
+<pre><code>/FLOOR_NAME/
+</code></pre>
+
+<p>برابر خواهد بود.</p>
+
+<h3>static</h3>
+
+<p>آدرسی که میخواهید محتوای شاخه‌ی statics در ریشه اصلی دایرکتوری سایت شما به آن منتقل شود، مثلاً اگر تصمیم دارید در yoursite.com/static باشد، مقدار را برابر با</p>
+
+<pre><code>/static
+</code></pre>
+
+<p>اگر در تنظیم طبقات وجود نداشته باشد با </p>
+
+<pre><code>/FLOOR_NAME/static
+</code></pre>
+
+<p>برابر خواهد بود.</p>
+
+<p><strong>توجه:</strong> محتوای شاخه‌ی statics کامل در مسیری که برای این فیلد در config.yml مشخص میکند قرار میگیرد
+در صورتی که در تنظیمات طبقات این فیلد را مقدار دهی کنید، شاخه‌ای به نام <code>_static</code> در ریشه‌ی طبقه به آدرس مشخص شده منتقل میشود.</p>
+
+<h3>imageurl</h3>
+
+<p>در حال حاضر تنها یک اشاره‌گر است برای استفاده در قالب به آدرسی که به آن می‌دهید</p>
+
+<h3>permalink</h3>
+
+<p>فرمتی که میخواهید آدرس یکتای نوشته‌های شما باشد، و از این عناصر می‌تواند بهره ببرد</p>
+
+<pre><code>:year
+سال انتشار پست
+:month
+ماه انتشار
+:day
+روز انتشار
+:title
+عنوان پست
+:FIELD_NAME
+نام هر فیلدی که محتوای تک خطی داشته باشد(لیست نباشد) و در هدر فایل پست با مقدار معتبر وجود داشته باشد
+
+/some/thing/else
+هرچیزی که بخواهید به آدرس شما اضافه شود
+</code></pre>
+
+<p>مثال:</p>
+
+<pre><code>/a/:year/abcd/:month/:chapter/wxyz/:day/else/:title
+</code></pre>
+
+<h2>default_markup</h2>
+
+<p>در صورتی که در هدر پست، فرمت مارک‌آپ بدنه را مشخص نکنید، برای آن پست از مقدار این فیلد استفاده خواهد شد، در صورتی که نه در هدر و نه در تنظیمات چیزی را مشخص نکرده باشید به عنوان پیش‌فرض markdown انتخاب خواهد شد</p>
+
+<h2>post_num</h2>
+
+<p>تعداد پست‌هایی که در صفحه اصلی میخواهید نمایش داده شود، میتوانید یک عدد یا گزینه‌ی all را به عنوان مقدار در نظر بگیرید</p>
+
+<pre><code>post_num: 7
+post_num: all
+</code></pre>
+
+<h2>archive_post_num</h2>
+
+<p>تعداد پست‌هایی که در صفحه ایندکس هر آرشیوها و برچسب‌ها نمایش داده خواهد شد، 
+میتوانید یک عدد یا گزینه‌ی all را به عنوان مقدار در نظر بگیرید</p>
+
+<pre><code>archive_post_num: 7
+archive_post_num: all
+</code></pre>
+
+<h2>post_sort</h2>
+
+<p>به شکل پیش فرض نوشته‌ها به ترتیب از آخر به اول مرتب میشوند، یعنی جدیدترین پست‌ها در بالا قرار میگیرند، برای تغییر این حالت میتوانید به این کلید مقدار <strong>reverse</strong> را بدهید، برای استفاده از پیش‌فرض این کلید را حذف کنید یا هر مقداری به جز reverse به آن بدهید</p>
+
+<h2>default_floor</h2>
+
+<p>اگر هنگام ساختن پست جدید سوییچ f یا floor را انتخاب نکنید، این مقدار به عنوان پیش فرض برای سوییچ در نظر گرفته می‌شود. <br />
+برای مثال اگر مقدار را برابر blog قرار دهید، هنگام ساختن پست جدید با این دستور:</p>
+
+<pre><code>mira new -t hello
+</code></pre>
+
+<p>نوشته جدید با تیتر hello در طبفه blog ایجاد می‌شود.</p>
+
+<p><strong>توجه:</strong> فقط تنظیمات مرکزی</p>
+
+<h2>template</h2>
+
+<p>نام قالبی که میخواهید بر اساس آن صفحات html شما ساخته شوند، این مقدار باید برابر با <strong>نام دایرکتوری قالب مورد نظر شما در شاخه‌ی templates</strong> باشد</p>
+
+<h2>lists</h2>
+
+<p>هر کدام از فیلدهای پست که میخواهید یک لیست آرشیو بر اساس آن بسازید
+مثال:</p>
+
+<pre><code>lists:
+  - categories
+  - tags
+  - author
+</code></pre>
+
+<h2>namespace</h2>
+
+<p>در صورتی که بر اساس فیلدهای خود آرشیو میسازید و میخواهید نام متفاوتی با مقدار آن فیلد برای آدرس در نظر بگیرید در این قسمت آن را مشخص کنید
+مثال:</p>
+
+<pre><code>namespace:
+  veryverylongarchivename : vlan
+  آموزش: learn
+  کتاب: book
+  درباره: about
+  شخصی: personal
+  ترمینال: terminal
+</code></pre>
+
+<p>اگر در tag های خود از آموزش استفاده کنید آدرس آن به این صورت خواهد بود
+    yoursite/FLOOR/tag/آموزش/index.html
+اما اگر در namespace کلید و مقدار</p>
+
+<pre><code>آموزش: learn
+</code></pre>
+
+<p>را اضافه کرده باشید این آدرس به این صورت تغییر خواهد کرد
+    yoursite/FLOOR/tag/learn/index.html</p>
+
+<h2>plugins</h2>
+
+<p>نام پلاگین‌هایی که میخواهید فعال باشند</p>
+
+<pre><code>plugins:
+  - Jdate
+</code></pre>
+
+<p>در حال حاضر تنها پلاگین موجود، پلاگین جلالی است، که تاریخ هجری شمسی را به نوشته‌های شما اضافه میکند، در صورتی که بخواهید آرشیو بر اساس تاریخ شمسی هم داشته باشید، مقدار jdate را به lists نیز اضافه کنید.</p>
+
+<h2>default_extension</h2>
+
+<p>پسوند فایل‌های محتوای جدید که با استفاده از دستور mira new میسازید، به شکل پیش فرض این پسوند برابر md است، اما میتوانید آن را در این قسمت تغییر دهید</p>
+
+<h2>output_extension</h2>
+
+<p>هنگام build، فایل‌های خروجی با پسوند html تولید می‌شوند، مقدار دادن به این فیلد، پیش فرض html را تغییر میدهد.</p>
+      
+    </div>
+
+    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">
+<ul class="nav">
+  <li><h2><a href="/guide-fa/">راهنمای میرا</a></h2></li>
+  <li><h5>اسناد راهنما برای شروع کار با میرا</h5></li>
+
+    
+      
+        <h3>شروع</h3>
+      
+      <h5><a href="#نصب">نصب</a></h5>
+<!--      <h5><a href="#/guide-fa/install/">نصب</a></h5> -->
+    
+      
+      <h5><a href="#شروع">شروع</a></h5>
+<!--      <h5><a href="#/guide-fa/start/">شروع</a></h5> -->
+    
+      
+      <h5><a href="#اولین نوشته">اولین نوشته</a></h5>
+<!--      <h5><a href="#/guide-fa/first-post/">اولین نوشته</a></h5> -->
+    
+      
+      <h5><a href="#اولین انتشار">اولین انتشار</a></h5>
+<!--      <h5><a href="#/guide-fa/first-build/">اولین انتشار</a></h5> -->
+    
+      
+      <h5><a href="#پیش نمایش">پیش نمایش</a></h5>
+<!--      <h5><a href="#/guide-fa/preview/">پیش نمایش</a></h5> -->
+    
+    
+      
+        <h3>تنظیمات</h3>
+      
+      <h5><a href="#تنظیمات">تنظیمات</a></h5>
+<!--      <h5><a href="#/guide-fa/config/">تنظیمات</a></h5> -->
+    
+      
+      <h5><a href="#استفاده از تنظیمات در قالب">استفاده از تنظیمات در قالب</a></h5>
+<!--      <h5><a href="#/guide-fa/configs-in-templates/">استفاده از تنظیمات در قالب</a></h5> -->
+    
+    
+      
+        <h3>محتوا</h3>
+      
+      <h5><a href="#مقدمه">مقدمه</a></h5>
+<!--      <h5><a href="#/guide-fa/content/">مقدمه</a></h5> -->
+    
+      
+      <h5><a href="#تولید">تولید</a></h5>
+<!--      <h5><a href="#/guide-fa/creat/">تولید</a></h5> -->
+    
+      
+      <h5><a href="#سربرگ">سربرگ</a></h5>
+<!--      <h5><a href="#/guide-fa/header/">سربرگ</a></h5> -->
+    
+      
+      <h5><a href="#utid">utid</a></h5>
+<!--      <h5><a href="#/guide-fa/utid/">utid</a></h5> -->
+    
+      
+      <h5><a href="#date">date</a></h5>
+<!--      <h5><a href="#/guide-fa/date/">date</a></h5> -->
+    
+      
+      <h5><a href="#title">title</a></h5>
+<!--      <h5><a href="#/guide-fa/title/">title</a></h5> -->
+    
+      
+      <h5><a href="#_index">_index</a></h5>
+<!--      <h5><a href="#/guide-fa/_index/">_index</a></h5> -->
+    
+      
+      <h5><a href="#author">author</a></h5>
+<!--      <h5><a href="#/guide-fa/author/">author</a></h5> -->
+    
+      
+      <h5><a href="#_markup">_markup</a></h5>
+<!--      <h5><a href="#/guide-fa/_markup/">_markup</a></h5> -->
+    
+      
+      <h5><a href="#_permalink">_permalink</a></h5>
+<!--      <h5><a href="#/guide-fa/_permalink/">_permalink</a></h5> -->
+    
+      
+      <h5><a href="#_layout">_layout</a></h5>
+<!--      <h5><a href="#/guide-fa/_layout/">_layout</a></h5> -->
+    
+      
+      <h5><a href="#فیلدهای انتخابی">فیلدهای انتخابی</a></h5>
+<!--      <h5><a href="#/guide-fa/other-fields/">فیلدهای انتخابی</a></h5> -->
+    
+      
+      <h5><a href="#لیست ها">لیست ها</a></h5>
+<!--      <h5><a href="#/guide-fa/lists/">لیست ها</a></h5> -->
+    
+      
+      <h5><a href="#آرشیو">آرشیو</a></h5>
+<!--      <h5><a href="#/guide-fa/archive/">آرشیو</a></h5> -->
+    
+      
+      <h5><a href="#استراکچر">استراکچر</a></h5>
+<!--      <h5><a href="#/guide-fa/structure/">استراکچر</a></h5> -->
+    
+      
+      <h5><a href="#بدنه اصلی محتوا">بدنه اصلی محتوا</a></h5>
+<!--      <h5><a href="#/guide-fa/content-body/">بدنه اصلی محتوا</a></h5> -->
+    
+    
+      
+        <h3>قالب</h3>
+      
+      <h5><a href="#_type">_type</a></h5>
+<!--      <h5><a href="#/guide-fa/_type/">_type</a></h5> -->
+    
+      
+      <h5><a href="#پوسته و اجزای تشکیل دهنده">پوسته و اجزای تشکیل دهنده</a></h5>
+<!--      <h5><a href="#/guide-fa/template/">پوسته و اجزای تشکیل دهنده</a></h5> -->
+    
+      
+      <h5><a href="#main.tt2">main.tt2</a></h5>
+<!--      <h5><a href="#/guide-fa/main-template/">main.tt2</a></h5> -->
+    
+      
+      <h5><a href="#index.tt2 و atom.tt2">index.tt2 و atom.tt2</a></h5>
+<!--      <h5><a href="#/guide-fa/indextemplate/">index.tt2 و atom.tt2</a></h5> -->
+    
+      
+      <h5><a href="#archive.tt2">archive.tt2</a></h5>
+<!--      <h5><a href="#/guide-fa/archive-template/">archive.tt2</a></h5> -->
+    
+      
+      <h5><a href="#post-template">post-template</a></h5>
+<!--      <h5><a href="#/guide-fa/post-template/">post-template</a></h5> -->
+    
+      
+      <h5><a href="#نمایش محتوا، با استفاده از POSTS">نمایش محتوا، با استفاده از POSTS</a></h5>
+<!--      <h5><a href="#/guide-fa/show-posts/">نمایش محتوا، با استفاده از POSTS</a></h5> -->
+    
+      
+      <h5><a href="#استفاده از فیلدهای فایل‌های تنظیمات در قالب">استفاده از فیلدهای فایل‌های تنظیمات در قالب</a></h5>
+<!--      <h5><a href="#/guide-fa/config-fields/">استفاده از فیلدهای فایل‌های تنظیمات در قالب</a></h5> -->
+    
+    
+      
+        <h3>parser</h3>
+      
+      <h5><a href="#پارسرهای داخلی میرا">پارسرهای داخلی میرا</a></h5>
+<!--      <h5><a href="#/guide-fa/parser/">پارسرهای داخلی میرا</a></h5> -->
+    
+      
+      <h5><a href="#img">img</a></h5>
+<!--      <h5><a href="#/guide-fa/img-parser/">img</a></h5> -->
+    
+</ul>
+</div>
+
+
+  </div>
+</div>
+
+<br>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                  <li>
+                    <a href="mailto: kiavash@gmail.com">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//twitter.com/kiavash">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//gitlab.com/kiavash/mira">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//github.com/kiamazi/mira">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+                <p><i class="fa fa-copyright" aria-hidden="true"></i>&nbsp; GPLv3</p>
+              </div>
+          </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript
+    <script src="/static/js/clean-blog.js"></script> -->
+
+</div>
+    <script type="text/javascript" src="/static/js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="/static/js/run.js"></script>
+
+</body>
+
+</html>
+

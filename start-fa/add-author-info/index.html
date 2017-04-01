@@ -10,7 +10,7 @@
     <meta name="description" content="راهنمای شروع به کار با میرا">
     <meta name="author" content="kiavash">
 
-    <title>شروع - 01</title>
+    <title>افزودن مشخصات نویسنده مطلب - شروع</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
@@ -82,17 +82,54 @@
 <!-- Main Content -->
 <div class="container">
   <div class="row">
-    <div class="col-lg-7 col-lg-offset-1 col-md-7 col-md-offset-1">
+    <div class="col-lg-7 col-lg-offset-1 col-md-8">
       
-        <h4><a href="/start-fa/attach/">ضمیمه‌ها</a> - <small>2017-03-28 10:29:12</small></h4>
-        <h4><a href="/start-fa/define/">تعریف کردن یک پروژه جدید</a> - <small>2017-03-27 22:14:49</small></h4>
-        <h4><a href="/start-fa/init/">پیکربندی</a> - <small>2017-03-27 22:07:32</small></h4>
-        <h4><a href="/start-fa/start/">ابتدا</a> - <small>2017-03-27 21:18:44</small></h4>
+      <a name="افزودن مشخصات نویسنده مطلب"></a>
+         <h2><a href="/start-fa/add-author-info/">افزودن مشخصات نویسنده مطلب</a></h2>
+         <a name="more"></a><br><p>اگر به یاد داشته باشید در سایت آموزش لینوکس، بیشتر از یک نویسنده برای مطالبمان داشتیم، حالا میخواهیم یک اطلاعات کلی از هرکدام را به سایدبار در زیر آرشیو نام‌هایشان اضافه کنیم، ابتدا linux-learn.yml را ویرایش میکنیم و خطوط زیر را در آن می‌نویسیم:</p>
 
-      <ul class="pager">
-        
-        
-      </ul>
+<pre><code>authors:
+ -
+  name: farbodgame
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+ -
+  name: MrNull
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+ -
+  name: rmasoumvand
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+</code></pre>
+
+<blockquote>
+  <p>به فاصله‌ها دقت کنید، هر بخش که داخل رفتیم، یک خط فاصله اضافه شده است، authors در ابتدای خط است، قبل از هر خط تیره - یک space وجود دارد و یک مرحله فرورفتگی ایجاد شده و بعد، قبل از name، desc و twitter دو خط فاصله یا همان space هست، یعنی دو مرحله فرورفتگی.</p>
+</blockquote>
+
+<p>بعد قالب index.tt2 را باز کنید و در sidebar، بلوک کد {{ IF AUTHOR_ARCHIVE }} را پیدا کنید و به جای آن کدهای زیر را کپی کنید:</p>
+
+<pre><code>{{ IF AUTHOR_ARCHIVE }}
+&lt;h3&gt;author archive&lt;/h3&gt;
+{{ FOREACH author IN AUTHOR_ARCHIVE }}
+  &lt;a href="{{ author.url }}"&gt;{{ author.name }}&lt;/a&gt; - &lt;small&gt;{{ author.posts.size }}&lt;/small&gt;
+&lt;!-- این قسمت به کد اضافه شده است --&gt;
+  {{ IF SITE.authors }}
+  {{ FOREACH auth IN SITE.authors }}
+  {{ IF author.name == auth.name }}
+    &lt;ul&gt;
+    &lt;li&gt;{{ auth.desc }}&lt;/li&gt;
+    &lt;li&gt;&lt;a href="{{ auth.twitter }}"&gt;twitter&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  {{ END }}
+  {{ END }}
+  {{ END }}
+&lt;!-- تا اینجا --&gt;
+{{ END }}
+&lt;hr&gt;
+{{ END }}
+</code></pre>
+      
     </div>
 
     <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">

@@ -58,15 +58,15 @@
              <ul class="nav navbar-nav navbar-right">
                
                  <li>
+                     <a href="http://localhost:80" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
+                 </li>
+               
+                 <li>
                      <a href="http://localhost:80" name="راهنمای شروع به کار با میرا">شروع</a>
                  </li>
                
                  <li>
                      <a href="http://localhost:80" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
-                 </li>
-               
-                 <li>
-                     <a href="http://localhost:80" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
                  </li>
                
              </ul>
@@ -1948,6 +1948,100 @@ SITE_ADDRESS.com/category/test/
 SITE_ADDRESS.com/category/book/
 </code></pre>
        
+       <a name="اضافه کردن لینک شبکه‌های اجتماعی"></a>
+          <h2><a href="/start-fa/add-social-links/">اضافه کردن لینک شبکه‌های اجتماعی</a></h2>
+          <a name="more"></a><br><p>برای افزودن لینک خودمان در شبکه‌های اجتماعی به جایی مثل ساید باز هم میرویم سراغ کانفیگ‌ها و اضافه کردن چند خط به هرکدامشان</p>
+
+<p>فرض میکنیم لینکی که می‌خواهیم برای شبکه‌های اجتماعی در نظر بگیریم در تمام سایت‌ها ثابت نیست و برای هر سایت یک کانال، یا اکانت جدا در شبکه‌های اجتماعی و یک کانال در پیام رسان تلگرام را ساخته‌ایم.</p>
+
+<p>از اینجای مثال فقط برای وبلاگ فارسی همه چیز را در نظر می‌گیریم، اما می‌توانید برای سه سایت دیگر هم به همین شکل کار را انجام دهید یا کلا این همه چیز را به جای تنظیم اختصاصی هر سایت در تنظیم‌های عمومی بگنجانید و در همه‌ی سایت‌ها از همان تنظیم استفاده کنید.</p>
+
+<p>آدرس ها را هم این‌ها در نظر میگیریم:</p>
+
+<h4>وبلاگ فارسی:</h4>
+
+<p>twitter.com/@MY_FA_BLOG_MIRA
+telegram.me/MY_FA_BLOG_MIRA</p>
+
+<p>حالا به blog-fa.yml  کدهای زیر را اضافه می‌کنیم:</p>
+
+<p><code>~/mira/config/blog-fa.yml</code></p>
+
+<pre><code>socials:
+ -
+  name: twitter
+  url: https://twitter.com/MY_FA_BLOG_MIRA
+ -
+  name: instagram
+  url: https://instagram.com/MY_FA_BLOG_MIRA
+ -
+  name: github
+  url: https://github.com/MY_FA_BLOG_MIRA
+</code></pre>
+
+<blockquote>
+  <p>به فاصله‌ها دقت کنید، هر بخش که داخل رفتیم، یک خط فاصله اضافه شده است، socials در ابتدای خط است، قبل از هر خط تیره - یک space وجود دارد و یک مرحله فرورفتگی ایجاد شده و بعد، قبل از name و url دو خط فاصله یا همان space هست، یعنی دو مرحله فرورفتگی.</p>
+</blockquote>
+
+<p>حالا در my-theme فایل index.tt2 را باز می‌کینم و هر کجا که خواستیم شبکه‌های اجتماعی را نمایش دهیم این کدها را به آن اضافه می‌کنیم، مثلا در بالاترین قسمت sidebar:</p>
+
+<pre><code>&lt;td width="30%" valign="top"&gt;
+{{ IF SITE.socials }}
+    &lt;h3&gt;socials&lt;/h3&gt;
+    {{ FOREACH social IN SITE.socials }}
+        &lt;a href="{{ social.url }}"&gt;{{ social.name }}&lt;/a&gt;&gt;ذق&lt;
+    {{ END }}
+{{ END }}
+</code></pre>
+
+<p>برای هر کدام از چهار سایت دیگر هم می‌توان همین کار را تکرار کرد، یا اینکه برای همه سایت‌ها از یک آدرس مشترک در شبکه‌های اجتماعی استفاده کنیم و همه اطلاعات را در config.yml وارد کنیم، در این حالت برای نمایش لینک‌ها در سایت، به جای SITE.socials باید از MAIN.socials استفاده کرد.</p>
+       
+       <a name="افزودن مشخصات نویسنده مطلب"></a>
+          <h2><a href="/start-fa/add-author-info/">افزودن مشخصات نویسنده مطلب</a></h2>
+          <a name="more"></a><br><p>اگر به یاد داشته باشید در سایت آموزش لینوکس، بیشتر از یک نویسنده برای مطالبمان داشتیم، حالا میخواهیم یک اطلاعات کلی از هرکدام را به سایدبار در زیر آرشیو نام‌هایشان اضافه کنیم، ابتدا linux-learn.yml را ویرایش میکنیم و خطوط زیر را در آن می‌نویسیم:</p>
+
+<pre><code>authors:
+ -
+  name: farbodgame
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+ -
+  name: MrNull
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+ -
+  name: rmasoumvand
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+</code></pre>
+
+<blockquote>
+  <p>به فاصله‌ها دقت کنید، هر بخش که داخل رفتیم، یک خط فاصله اضافه شده است، authors در ابتدای خط است، قبل از هر خط تیره - یک space وجود دارد و یک مرحله فرورفتگی ایجاد شده و بعد، قبل از name، desc و twitter دو خط فاصله یا همان space هست، یعنی دو مرحله فرورفتگی.</p>
+</blockquote>
+
+<p>بعد قالب index.tt2 را باز کنید و در sidebar، بلوک کد {{ IF AUTHOR_ARCHIVE }} را پیدا کنید و به جای آن کدهای زیر را کپی کنید:</p>
+
+<pre><code>{{ IF AUTHOR_ARCHIVE }}
+&lt;h3&gt;author archive&lt;/h3&gt;
+{{ FOREACH author IN AUTHOR_ARCHIVE }}
+  &lt;a href="{{ author.url }}"&gt;{{ author.name }}&lt;/a&gt; - &lt;small&gt;{{ author.posts.size }}&lt;/small&gt;
+&lt;!-- این قسمت به کد اضافه شده است --&gt;
+  {{ IF SITE.authors }}
+  {{ FOREACH auth IN SITE.authors }}
+  {{ IF author.name == auth.name }}
+    &lt;ul&gt;
+    &lt;li&gt;{{ auth.desc }}&lt;/li&gt;
+    &lt;li&gt;&lt;a href="{{ auth.twitter }}"&gt;twitter&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  {{ END }}
+  {{ END }}
+  {{ END }}
+&lt;!-- تا اینجا --&gt;
+{{ END }}
+&lt;hr&gt;
+{{ END }}
+</code></pre>
+       
     </div>
 
     <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">
@@ -2094,6 +2188,14 @@ SITE_ADDRESS.com/category/book/
       
       <h5><a href="#تغییر آدرس آرشیو‌ها">تغییر آدرس آرشیو‌ها</a></h5>
 <!--      <h5><a href="#/start-fa/namespcae/">تغییر آدرس آرشیو‌ها</a></h5> -->
+    
+      
+      <h5><a href="#اضافه کردن لینک شبکه‌های اجتماعی">اضافه کردن لینک شبکه‌های اجتماعی</a></h5>
+<!--      <h5><a href="#/start-fa/add-social-links/">اضافه کردن لینک شبکه‌های اجتماعی</a></h5> -->
+    
+      
+      <h5><a href="#افزودن مشخصات نویسنده مطلب">افزودن مشخصات نویسنده مطلب</a></h5>
+<!--      <h5><a href="#/start-fa/add-author-info/">افزودن مشخصات نویسنده مطلب</a></h5> -->
     
 </ul>
 </div>

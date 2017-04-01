@@ -12,6 +12,118 @@
 
       
         <item>
+          <title>افزودن مشخصات نویسنده مطلب</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;اگر به یاد داشته باشید در سایت آموزش لینوکس، بیشتر از یک نویسنده برای مطالبمان داشتیم، حالا میخواهیم یک اطلاعات کلی از هرکدام را به سایدبار در زیر آرشیو نام‌هایشان اضافه کنیم، ابتدا linux-learn.yml را ویرایش میکنیم و خطوط زیر را در آن می‌نویسیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;authors:
+ -
+  name: farbodgame
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+ -
+  name: MrNull
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+ -
+  name: rmasoumvand
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;به فاصله‌ها دقت کنید، هر بخش که داخل رفتیم، یک خط فاصله اضافه شده است، authors در ابتدای خط است، قبل از هر خط تیره - یک space وجود دارد و یک مرحله فرورفتگی ایجاد شده و بعد، قبل از name، desc و twitter دو خط فاصله یا همان space هست، یعنی دو مرحله فرورفتگی.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;بعد قالب index.tt2 را باز کنید و در sidebar، بلوک کد {{ IF AUTHOR_ARCHIVE }} را پیدا کنید و به جای آن کدهای زیر را کپی کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ IF AUTHOR_ARCHIVE }}
+&amp;lt;h3&amp;gt;author archive&amp;lt;/h3&amp;gt;
+{{ FOREACH author IN AUTHOR_ARCHIVE }}
+  &amp;lt;a href=&quot;{{ author.url }}&quot;&amp;gt;{{ author.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ author.posts.size }}&amp;lt;/small&amp;gt;
+&amp;lt;!-- این قسمت به کد اضافه شده است --&amp;gt;
+  {{ IF SITE.authors }}
+  {{ FOREACH auth IN SITE.authors }}
+  {{ IF author.name == auth.name }}
+    &amp;lt;ul&amp;gt;
+    &amp;lt;li&amp;gt;{{ auth.desc }}&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;{{ auth.twitter }}&quot;&amp;gt;twitter&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;/ul&amp;gt;
+  {{ END }}
+  {{ END }}
+  {{ END }}
+&amp;lt;!-- تا اینجا --&amp;gt;
+{{ END }}
+&amp;lt;hr&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-04-01 22:01:50</pubDate>
+          <link>/start-fa/add-author-info/</link>
+          <guid isPermaLink="true">/start-fa/add-author-info/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>اضافه کردن لینک شبکه‌های اجتماعی</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;برای افزودن لینک خودمان در شبکه‌های اجتماعی به جایی مثل ساید باز هم میرویم سراغ کانفیگ‌ها و اضافه کردن چند خط به هرکدامشان&lt;/p&gt;
+
+&lt;p&gt;فرض میکنیم لینکی که می‌خواهیم برای شبکه‌های اجتماعی در نظر بگیریم در تمام سایت‌ها ثابت نیست و برای هر سایت یک کانال، یا اکانت جدا در شبکه‌های اجتماعی و یک کانال در پیام رسان تلگرام را ساخته‌ایم.&lt;/p&gt;
+
+&lt;p&gt;از اینجای مثال فقط برای وبلاگ فارسی همه چیز را در نظر می‌گیریم، اما می‌توانید برای سه سایت دیگر هم به همین شکل کار را انجام دهید یا کلا این همه چیز را به جای تنظیم اختصاصی هر سایت در تنظیم‌های عمومی بگنجانید و در همه‌ی سایت‌ها از همان تنظیم استفاده کنید.&lt;/p&gt;
+
+&lt;p&gt;آدرس ها را هم این‌ها در نظر میگیریم:&lt;/p&gt;
+
+&lt;h4&gt;وبلاگ فارسی:&lt;/h4&gt;
+
+&lt;p&gt;twitter.com/@MY_FA_BLOG_MIRA
+telegram.me/MY_FA_BLOG_MIRA&lt;/p&gt;
+
+&lt;p&gt;حالا به blog-fa.yml  کدهای زیر را اضافه می‌کنیم:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;~/mira/config/blog-fa.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;socials:
+ -
+  name: twitter
+  url: https://twitter.com/MY_FA_BLOG_MIRA
+ -
+  name: instagram
+  url: https://instagram.com/MY_FA_BLOG_MIRA
+ -
+  name: github
+  url: https://github.com/MY_FA_BLOG_MIRA
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;به فاصله‌ها دقت کنید، هر بخش که داخل رفتیم، یک خط فاصله اضافه شده است، socials در ابتدای خط است، قبل از هر خط تیره - یک space وجود دارد و یک مرحله فرورفتگی ایجاد شده و بعد، قبل از name و url دو خط فاصله یا همان space هست، یعنی دو مرحله فرورفتگی.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;حالا در my-theme فایل index.tt2 را باز می‌کینم و هر کجا که خواستیم شبکه‌های اجتماعی را نمایش دهیم این کدها را به آن اضافه می‌کنیم، مثلا در بالاترین قسمت sidebar:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;td width=&quot;30%&quot; valign=&quot;top&quot;&amp;gt;
+{{ IF SITE.socials }}
+    &amp;lt;h3&amp;gt;socials&amp;lt;/h3&amp;gt;
+    {{ FOREACH social IN SITE.socials }}
+        &amp;lt;a href=&quot;{{ social.url }}&quot;&amp;gt;{{ social.name }}&amp;lt;/a&amp;gt;&amp;gt;ذق&amp;lt;
+    {{ END }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای هر کدام از چهار سایت دیگر هم می‌توان همین کار را تکرار کرد، یا اینکه برای همه سایت‌ها از یک آدرس مشترک در شبکه‌های اجتماعی استفاده کنیم و همه اطلاعات را در config.yml وارد کنیم، در این حالت برای نمایش لینک‌ها در سایت، به جای SITE.socials باید از MAIN.socials استفاده کرد.&lt;/p&gt;</description>
+          <pubDate>2017-04-01 21:14:19</pubDate>
+          <link>/start-fa/add-social-links/</link>
+          <guid isPermaLink="true">/start-fa/add-social-links/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
           <title>تغییر آدرس آرشیو‌ها</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;دیدیم که در تنظیم کردن هر سایت برای آدرس‌دهی به هر پست می‌توانیم از مشخصات آن پست استفاده کنیم، برای مثال:&lt;/p&gt;
 
@@ -1507,74 +1619,6 @@ image: /blog/assets/article_images/hello.jpg
           <pubDate>2017-03-28 12:55:39</pubDate>
           <link>/start-fa/general-statics/</link>
           <guid isPermaLink="true">/start-fa/general-statics/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>توضیح فایل‌های ضمیمه</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;فایل‌های ضمیمه فایل‌های ثابتی هستند که در محتوا از آن‌ها استفاده می‌کنیم اما نیازی به پردازش توسط برنامه‌ی میرا ندارند، مثل عکس‌ها یا فایل‌های pdf، موسیقی، استایل شیت‌های قالب، فایل‌های جاوا اسکریپت یا هر چیز دیگری که در انتشار محتوا از آن‌ها استفاده کنیم یا بخواهیم به آن‌ها لینک بدهیم.&lt;/p&gt;
-
-&lt;p&gt;میرا یک پوشه‌ی عمومی برای ضمیمه‌ها در ریشه‌ی اصلی در شاخه‌ی statics دارد&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/mira/statics
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;و بی‌نهایت پوشه‌ی دیگر برای هرسایت در شاخه‌ی content هر طبقه.&lt;/p&gt;</description>
-          <pubDate>2017-03-28 12:52:56</pubDate>
-          <link>/start-fa/statics/</link>
-          <guid isPermaLink="true">/start-fa/statics/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>چند نکته و پیشنهاد در مورد محتوا</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: &lt;br /&gt;
-نام و پسوند فایل‌ها در دایرکتوری محتوا یا content در پردازش نهایی هیچ تاثیری نخواهند داشت، به هر شکلی که می‌خواهید می‌توانید آن‌ها را تغییر دهید، برای مثال این نام فایل را ممکن است دوست نداشته باشید:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/mira/content/linux-learn/2017-3-23-یک-ویژگی-جدید-در-آخرین-نسخه-هسته-که-تازه-دیروز-منتشر-شده-و-به-نظرم-خیلی-جالب-بود.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;آن‌را به هر چیزی که می‌خواهید تغییر دهید، مثلا:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/mira/content/linux-learn/new-update.markdown
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: &lt;br /&gt;
-همانطور که گفته شد نام و پسوند فایل محتوا تاثیری در پردازش آن ندارد، اما این مورد یک استثنا هم دارد، فایل‌هایی با پسوند .draft نادیده گرفته می‌شوند و از وجودشان چشم‌پوشی خواهد شد.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;پیشنهاد&lt;/strong&gt; &lt;br /&gt;
-برای ساختن فایل‌های جدید با دستور mira new از تیتر مورد نظرتان استفاده &lt;strong&gt;نکنید&lt;/strong&gt;، از یک نام ساده استفاده کنید و بعد تیتر و index را در هدر فایل مشخص کنید، برای مثال به جای این دستور:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mira new -t 'یک ویژگی جدید در آخرین نسخه هسته که تازه دیروز منتشر شده و به نظرم خیلی جالب بود' -f linux-learn
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;از چیزی شبیه به این استفاده کنید:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mira new -t 'new update' -f linux-learn
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: &lt;br /&gt;
-مسیر ذخیره شدن و نام فایل در پوشه‌ی محتوای هر سایت از نظر میرا اهمیتی ندارد و با تمام فایل‌های محتوایی که در هر عمقی پیدا میکند، یکسان و تنها با توجه به سربرگ فایل‌ها و تنظیمات ذخیره شده برخورد می‌کند. برای مثال تمام این مسیرها برای فایل مثال بالا یکسان می‌باشند و همه در همان آدرس و به همان صورت منتشر می‌شوند:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/mira/content/linux-learn/2017-3-23-new-update.markdown
-~/mira/content/linux-learn/new-update.md
-~/mira/content/linux-learn/new.txt
-~/mira/content/linux-learn/deep/2017-3-23-new-update.markdown
-~/mira/content/linux-learn/folder/sub/folder/2017-3-23-new-update.markdown
-~/mira/content/linux-learn/update/deep/more/deep/2017-3-23-new-update.markdown
-~/mira/content/linux-learn/update/deep/more/deep/new.txt
-&lt;/code&gt;&lt;/pre&gt;</description>
-          <pubDate>2017-03-28 12:44:32</pubDate>
-          <link>/start-fa/more-about-content/</link>
-          <guid isPermaLink="true">/start-fa/more-about-content/</guid>
 
 
         <category>

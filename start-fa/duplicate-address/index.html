@@ -10,7 +10,7 @@
     <meta name="description" content="راهنمای شروع به کار با میرا">
     <meta name="author" content="kiavash">
 
-    <title>چند نکته و پیشنهاد در مورد محتوا - شروع</title>
+    <title>آدرس‌های تکراری - شروع</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
@@ -84,44 +84,105 @@
   <div class="row">
     <div class="col-lg-7 col-lg-offset-1 col-md-8">
       
-      <a name="چند نکته و پیشنهاد در مورد محتوا"></a>
-         <h2><a href="/start-fa/more-about-content/">چند نکته و پیشنهاد در مورد محتوا</a></h2>
-         <a name="more"></a><br><p><strong>نکته</strong>: <br />
-نام و پسوند فایل‌ها در دایرکتوری محتوا یا content در پردازش نهایی هیچ تاثیری نخواهند داشت، به هر شکلی که می‌خواهید می‌توانید آن‌ها را تغییر دهید، برای مثال این نام فایل را ممکن است دوست نداشته باشید:</p>
+      <a name="آدرس‌های تکراری"></a>
+         <h2><a href="/start-fa/duplicate-address/">آدرس‌های تکراری</a></h2>
+         <a name="more"></a><br><p>همیشه این امکان وجود دارد که دو نوشته شما یک آدرس مشابه به خود بیرند، مخصوصا وقتی که در سیستم آدرس‌دهی برای هر نوشته، به جز تیتر آن هیچ شرط دیگری مثل تاریخ یا دسته بندی و... را ذکر نمی‌کنید، مثل کاری که در این مثال برای انتشار داستان‌ها کردیم.</p>
 
-<pre><code>~/mira/content/linux-learn/2017-3-23-یک-ویژگی-جدید-در-آخرین-نسخه-هسته-که-تازه-دیروز-منتشر-شده-و-به-نظرم-خیلی-جالب-بود.md
+<p>به هر حال همیشه این احتمال وجود دارد که دو پست آدرس یکسیانی به ود بگیرند، فرض کنیم که در فایل کانفیگ سایت فیلد permalink را به این شکل ساخته باشیم:</p>
+
+<pre><code>permalink: :year/:month/:day/:title/
 </code></pre>
 
-<p>آن‌را به هر چیزی که می‌خواهید تغییر دهید، مثلا:</p>
+<p>و در یک روز دو پست را با این مشخصات نوشته باشیم:
+<code>post1:</code></p>
 
-<pre><code>~/mira/content/linux-learn/new-update.markdown
+<pre><code>---
+utid: 20170325151121
+date: 2017/03/25
+title: آزمایش
+_index: test
+category: آموزش
+tags:
+ - یک
+ - دو
+---
 </code></pre>
 
-<p><strong>نکته</strong>: <br />
-همانطور که گفته شد نام و پسوند فایل محتوا تاثیری در پردازش آن ندارد، اما این مورد یک استثنا هم دارد، فایل‌هایی با پسوند .draft نادیده گرفته می‌شوند و از وجودشان چشم‌پوشی خواهد شد.</p>
+<p><code>post2:</code></p>
 
-<p><strong>پیشنهاد</strong> <br />
-برای ساختن فایل‌های جدید با دستور mira new از تیتر مورد نظرتان استفاده <strong>نکنید</strong>، از یک نام ساده استفاده کنید و بعد تیتر و index را در هدر فایل مشخص کنید، برای مثال به جای این دستور:</p>
-
-<pre><code>mira new -t 'یک ویژگی جدید در آخرین نسخه هسته که تازه دیروز منتشر شده و به نظرم خیلی جالب بود' -f linux-learn
+<pre><code>---
+utid: 20170325162308
+date: 2017/03/25
+title: test
+category: learn
+tags:
+ - one
+ - two
+---
 </code></pre>
 
-<p>از چیزی شبیه به این استفاده کنید:</p>
+<p>هر دو پست دقیقا در یک روز منتشر شده‌اند، اولی _index با مقدار test دارد و دومی هم که index ندارد، از تیتر test استفاده کرده، پس با توجه به مقدار permalink در کانفیگ، آدرس هر دو پست این آدرس خواهد بود:</p>
 
-<pre><code>mira new -t 'new update' -f linux-learn
+<pre><code>/2017/03/25/test/
 </code></pre>
 
-<p><strong>نکته</strong>: <br />
-مسیر ذخیره شدن و نام فایل در پوشه‌ی محتوای هر سایت از نظر میرا اهمیتی ندارد و با تمام فایل‌های محتوایی که در هر عمقی پیدا میکند، یکسان و تنها با توجه به سربرگ فایل‌ها و تنظیمات ذخیره شده برخورد می‌کند. برای مثال تمام این مسیرها برای فایل مثال بالا یکسان می‌باشند و همه در همان آدرس و به همان صورت منتشر می‌شوند:</p>
+<p>میرا برای حل این مشکل یک راه حل ساده دارد، اگر با آدرس‌های تکراری مواجه بشود، به ترتیب شماره‌ی utid آن‌ها از کوچک به بزرگ این آدرس‌ها را شماره گذاری می‌کند. پست اول عدد utid کوچک‌تری دارد، آدرس اصلی به آن تعلق می‌گیرد و پست دوم یک اندیس شماره 2 می‌گیرد، پس آدرس پست‌های ما در اصل این‌ها خواهند بود:</p>
 
-<pre><code>~/mira/content/linux-learn/2017-3-23-new-update.markdown
-~/mira/content/linux-learn/new-update.md
-~/mira/content/linux-learn/new.txt
-~/mira/content/linux-learn/deep/2017-3-23-new-update.markdown
-~/mira/content/linux-learn/folder/sub/folder/2017-3-23-new-update.markdown
-~/mira/content/linux-learn/update/deep/more/deep/2017-3-23-new-update.markdown
-~/mira/content/linux-learn/update/deep/more/deep/new.txt
+<pre><code>post1: &gt;  /2017/03/25/test/
+post2: &gt;  /2017/03/25/test/2/
 </code></pre>
+
+<p>در صورتی هم که permalink به جای آدرس خالص، از نام فایل در آن استفاده شده باشد، مثل:</p>
+
+<pre><code>permalink: :year/:month/:day/:title.html
+</code></pre>
+
+<p>آدرس‌ها به این صورت ساخته خواهند شد:</p>
+
+<pre><code>post1: &gt;  /2017/03/25/test.html
+post2: &gt;  /2017/03/25/2/test.html
+</code></pre>
+
+<p>اما اگر نخواهید میرا برای شما آدرس‌ها را بسازد، مثلا بخواهید به جای 2 از 'second edition' در آدرس استفاده کنید، می‌توانید در هدر همان پست فیلد _permalink ار مقدار دهی کنید، برای مثال میتوانیم دو پست را به این شکل داشته باشیم:</p>
+
+<p><code>post1:</code></p>
+
+<pre><code>---
+utid: 20170325151121
+date: 2017/03/25
+title: آزمایش
+_index: test
+category: آموزش
+tags:
+ - یک
+ - دو
+---
+</code></pre>
+
+<p><code>post2:</code></p>
+
+<pre><code>---
+utid: 20170325162308
+date: 2017/03/25
+title: test
+_permalink: :year/:month/:day/:title/second-edition/
+category: learn
+tags:
+ - one
+ - two
+---
+</code></pre>
+
+<p>یا حتی از یک فرمول به جز فرمول کانفیگ سایت استفاده کنیم:</p>
+
+<pre><code>_permalink: :category/:title/second-edition/
+یا
+_permalink: :year/second-edition/:title/
+یا
+_permalink: :title/
+</code></pre>
+
+<p>اگر فایل‌های این مثال را دانلود کرده باشید، در وبلاگ فارسی و داستان، دو مطلب تکراری وجود دارد که آدرس مشابه میگیرند، آن‌ها را هر طور که دوست دارید اصلاح کنید.</p>
       
     </div>
 

@@ -58,15 +58,15 @@
              <ul class="nav navbar-nav navbar-right">
                
                  <li>
-                     <a href="http://localhost:80" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
-                 </li>
-               
-                 <li>
                      <a href="http://localhost:80" name="راهنمای شروع به کار با میرا">شروع</a>
                  </li>
                
                  <li>
                      <a href="http://localhost:80" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://localhost:80" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
                  </li>
                
              </ul>
@@ -1769,6 +1769,185 @@ _permalink: /:title/
 <pre><code>/blog/about/
 </code></pre>
        
+       <a name="آدرس‌های تکراری"></a>
+          <h2><a href="/start-fa/duplicate-address/">آدرس‌های تکراری</a></h2>
+          <a name="more"></a><br><p>همیشه این امکان وجود دارد که دو نوشته شما یک آدرس مشابه به خود بیرند، مخصوصا وقتی که در سیستم آدرس‌دهی برای هر نوشته، به جز تیتر آن هیچ شرط دیگری مثل تاریخ یا دسته بندی و... را ذکر نمی‌کنید، مثل کاری که در این مثال برای انتشار داستان‌ها کردیم.</p>
+
+<p>به هر حال همیشه این احتمال وجود دارد که دو پست آدرس یکسیانی به ود بگیرند، فرض کنیم که در فایل کانفیگ سایت فیلد permalink را به این شکل ساخته باشیم:</p>
+
+<pre><code>permalink: :year/:month/:day/:title/
+</code></pre>
+
+<p>و در یک روز دو پست را با این مشخصات نوشته باشیم:
+<code>post1:</code></p>
+
+<pre><code>---
+utid: 20170325151121
+date: 2017/03/25
+title: آزمایش
+_index: test
+category: آموزش
+tags:
+ - یک
+ - دو
+---
+</code></pre>
+
+<p><code>post2:</code></p>
+
+<pre><code>---
+utid: 20170325162308
+date: 2017/03/25
+title: test
+category: learn
+tags:
+ - one
+ - two
+---
+</code></pre>
+
+<p>هر دو پست دقیقا در یک روز منتشر شده‌اند، اولی _index با مقدار test دارد و دومی هم که index ندارد، از تیتر test استفاده کرده، پس با توجه به مقدار permalink در کانفیگ، آدرس هر دو پست این آدرس خواهد بود:</p>
+
+<pre><code>/2017/03/25/test/
+</code></pre>
+
+<p>میرا برای حل این مشکل یک راه حل ساده دارد، اگر با آدرس‌های تکراری مواجه بشود، به ترتیب شماره‌ی utid آن‌ها از کوچک به بزرگ این آدرس‌ها را شماره گذاری می‌کند. پست اول عدد utid کوچک‌تری دارد، آدرس اصلی به آن تعلق می‌گیرد و پست دوم یک اندیس شماره 2 می‌گیرد، پس آدرس پست‌های ما در اصل این‌ها خواهند بود:</p>
+
+<pre><code>post1: &gt;  /2017/03/25/test/
+post2: &gt;  /2017/03/25/test/2/
+</code></pre>
+
+<p>در صورتی هم که permalink به جای آدرس خالص، از نام فایل در آن استفاده شده باشد، مثل:</p>
+
+<pre><code>permalink: :year/:month/:day/:title.html
+</code></pre>
+
+<p>آدرس‌ها به این صورت ساخته خواهند شد:</p>
+
+<pre><code>post1: &gt;  /2017/03/25/test.html
+post2: &gt;  /2017/03/25/2/test.html
+</code></pre>
+
+<p>اما اگر نخواهید میرا برای شما آدرس‌ها را بسازد، مثلا بخواهید به جای 2 از 'second edition' در آدرس استفاده کنید، می‌توانید در هدر همان پست فیلد _permalink ار مقدار دهی کنید، برای مثال میتوانیم دو پست را به این شکل داشته باشیم:</p>
+
+<p><code>post1:</code></p>
+
+<pre><code>---
+utid: 20170325151121
+date: 2017/03/25
+title: آزمایش
+_index: test
+category: آموزش
+tags:
+ - یک
+ - دو
+---
+</code></pre>
+
+<p><code>post2:</code></p>
+
+<pre><code>---
+utid: 20170325162308
+date: 2017/03/25
+title: test
+_permalink: :year/:month/:day/:title/second-edition/
+category: learn
+tags:
+ - one
+ - two
+---
+</code></pre>
+
+<p>یا حتی از یک فرمول به جز فرمول کانفیگ سایت استفاده کنیم:</p>
+
+<pre><code>_permalink: :category/:title/second-edition/
+یا
+_permalink: :year/second-edition/:title/
+یا
+_permalink: :title/
+</code></pre>
+
+<p>اگر فایل‌های این مثال را دانلود کرده باشید، در وبلاگ فارسی و داستان، دو مطلب تکراری وجود دارد که آدرس مشابه میگیرند، آن‌ها را هر طور که دوست دارید اصلاح کنید.</p>
+       
+       <a name="تغییر آدرس آرشیو‌ها"></a>
+          <h2><a href="/start-fa/namespcae/">تغییر آدرس آرشیو‌ها</a></h2>
+          <a name="more"></a><br><p>دیدیم که در تنظیم کردن هر سایت برای آدرس‌دهی به هر پست می‌توانیم از مشخصات آن پست استفاده کنیم، برای مثال:</p>
+
+<pre><code>permalink: :category/:title.html
+یا
+permalink: :author/:year/:title
+</code></pre>
+
+<p>حالا ممکن است دسته بندی موضوعی به نام <strong>آموزشی</strong> داشته باشیم، آدرس ثابت با استفاده از مدل اول این خواهد بود:</p>
+
+<pre><code>SITE_ADDRESS.com/آموزش/post-title.html
+</code></pre>
+
+<p>و اگر آرشیوی بر اساس category ساخته باشیم هم آدرس مطالب دسته بندی <strong>آموزشی</strong> این خواهد بود:</p>
+
+<pre><code>SITE_ADDRESS.com/category/آموزش/
+</code></pre>
+
+<p>یا نام نویسنده مطلب محمد محمدی باشد، در مدل دوم آدرس شبیه به این ساخته خواهد شد:</p>
+
+<pre><code>SITE_ADDRESS.com/محمد-محمدی/post-title/
+</code></pre>
+
+<p>و آدرس آرشیو این نویسنده:</p>
+
+<pre><code>SITE_ADDRESS.com/author/محمد-محمدی/
+</code></pre>
+
+<p>یا اینکه یک دسته بندی با نام طولانی داشته باشیم، مثلا نام دسته بندی این نام باشد: learn use vim in gnu linux systems <br />
+آدرسذها این شکلی خواهتد بود:</p>
+
+<pre><code>SITE_ADDRESS.com/learn-use-vim-in-gnu-linux-systems/post-title.html
+و 
+SITE_ADDRESS.com/category/learn-use-vim-in-gnu-linux-systems/
+</code></pre>
+
+<p>شاید استفاده از نام‌های طولانی یا حروف فارسی در آدرس را دوست نداشته باشید یا سروری که از آن استفاده می‌کنید محدودیت داشته باشد برای پذیرفتن نام‌های غیر لاتین. راه حل استفاده از namespace در فایل کانفیگ عمومی یا اختصاصی هر سایت است.</p>
+
+<p>حالا برای تمرین این مثال، در وبلاگ فارسی یک نوشته جدید به جود بیاورید و در قسمت category مقدار آزمایش را وارید کنید.</p>
+
+<pre><code>---
+utid: 20170326160744
+date: 2017-03-26 16:07:44
+title: فضای نام
+_index: namespace
+category: آزمایش
+---
+</code></pre>
+
+<p>آدرسی که به این پست اختصاص داده می‌شود:</p>
+
+<pre><code>YOUR_ADDRESS.COM/آزمایش/a2017/03/26/namespace.html
+</code></pre>
+
+<p>حالا اگر میخواهید از فضای نام‌ها تمام سایت‌ها به شکل عمومی استفاده کنند در فایل config.yml و اگر میخواهید تنها در وبلاگ فارسی این فضای نام فعال باشد در فایل config/blog-fa.yml فیبدی به نام namespace را به این شکل به وجود بیاورید:</p>
+
+<pre><code>namespace:
+  آزمایش: test
+  آموزش: learn
+  کتاب: book
+  شخصی: personal
+  عمومی: general
+  محمد محمدی: mohamad mohamadi
+</code></pre>
+
+<p>از این به بعد میرا هرجا با یکی از این‌ها در آرشیو مواجه شود، برای ساختن آدرس آن از نام اختصاصی‌اش در فضای نام‌ها استفاده می‌کند. مثلا پست آزمایشی که کمی‌قبل‌تر ساختیم، آدرسی مشابه این آدرس خواهد گرفت:</p>
+
+<pre><code>YOUR_ADDRESS.COM/test/2017/03/26/namespace.html
+و آدرس آرشیو:
+SITE_ADDRESS.com/category/test/
+</code></pre>
+
+<p>یا اگر دسته بندی <strong>کتاب</strong> داشته باشیم:</p>
+
+<pre><code>YOUR_ADDRESS.COM/book/2010/10/10/post-title.html
+SITE_ADDRESS.com/category/book/
+</code></pre>
+       
     </div>
 
     <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">
@@ -1907,6 +2086,14 @@ _permalink: /:title/
       
       <h5><a href="#ساختن صفحات">ساختن صفحات</a></h5>
 <!--      <h5><a href="#/start-fa/pages/">ساختن صفحات</a></h5> -->
+    
+      
+      <h5><a href="#آدرس‌های تکراری">آدرس‌های تکراری</a></h5>
+<!--      <h5><a href="#/start-fa/duplicate-address/">آدرس‌های تکراری</a></h5> -->
+    
+      
+      <h5><a href="#تغییر آدرس آرشیو‌ها">تغییر آدرس آرشیو‌ها</a></h5>
+<!--      <h5><a href="#/start-fa/namespcae/">تغییر آدرس آرشیو‌ها</a></h5> -->
     
 </ul>
 </div>

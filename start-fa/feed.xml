@@ -37,7 +37,7 @@
 &lt;pre&gt;&lt;code&gt;publishDIR: docs
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;از این به بعد بعد از هر باز اجرا کردن mira build، به جای public، میرا خروجی تولید شده را در دایرکتوری docs ذخیره می‌کند.&lt;/p&gt;
+&lt;p&gt;از این به بعد، پس از هر باز اجرا کردن mira build، به جای public، میرا خروجی تولید شده را در دایرکتوری docs ذخیره می‌کند.&lt;/p&gt;
 
 &lt;p&gt;شاخه‌ی master را push کنید به مخزن remote و در قسمت setting پروژه در گیت هاب، مشخص کنید که از دایرکتوری docs برای انتشار صفحات استفاده می‌کنید:&lt;/p&gt;
 

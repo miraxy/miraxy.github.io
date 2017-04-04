@@ -62,11 +62,11 @@
                  </li>
                
                  <li>
-                     <a href="http://localhost:80" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
+                     <a href="http://localhost:80" name="راهنمای شروع به کار با میرا">شروع</a>
                  </li>
                
                  <li>
-                     <a href="http://localhost:80" name="راهنمای شروع به کار با میرا">شروع</a>
+                     <a href="http://localhost:80" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
                  </li>
                
              </ul>
@@ -599,6 +599,19 @@ archive_post_num: all
 <h2>output_extension</h2>
 
 <p>هنگام build، فایل‌های خروجی با پسوند html تولید می‌شوند، مقدار دادن به این فیلد، پیش فرض html را تغییر میدهد.</p>
+
+<h2>pubishDIR</h2>
+
+<p>به شکل پیش فرض دایرکتوری public به عنوان محل ساخته شدن محتوای خروجی در نظر گرفته می‌شود، اما با مقدار دادن به این فیلد، می‌توانید خروجی را تغییر دهید.</p>
+
+<p>برای مثال:</p>
+
+<pre><code>publishDIR: docs
+</code></pre>
+
+<p>با اضافه کردن خط بالا به config.yml، خروجی را از public به docs تغییر دادیم.</p>
+
+<p><strong>توجه</strong>: فقط تنظیمات مرکزی</p>
        
        <a name="استفاده از تنظیمات در قالب"></a>
           <h2><a href="/guide-fa/configs-in-templates/">استفاده از تنظیمات در قالب</a></h2>
@@ -671,8 +684,8 @@ AUTHOR
 EMAIL
 </code></pre>
        
-       <a name="مقدمه"></a>
-          <h2><a href="/guide-fa/content/">مقدمه</a></h2>
+       <a name="توضیح کلی در باره محتوا"></a>
+          <h2><a href="/guide-fa/content/">توضیح کلی در باره محتوا</a></h2>
           <a name="more"></a><br><p>محتوا مهم‌ترین قسمت تشکیل دهنده‌ی سایت شماست، دقیق‌تر تنها دلیل استفاده از میرا مدیریت کردن و تولید خروجی برای محتوای شماست.</p>
 
 <p>محل نگهداری محتوای خام در شاخه‌ی content است، هر دایرکتوری در content یک طبقه‌ی مجزا از داده‌هاست که میتواند تنظیمات، دسته بندی‌ها و قالب خروجی اختصاصی خودش را داشته باشد.برای مثال blog یا document یا هرچیز دیگری. هر فایل موجود در این طبقات، یک محتوای خام قابل انتشار به حساب می‌آید.
@@ -755,9 +768,6 @@ CONTENT BODY
 <pre><code>utid
 date
 title
-_index
-author
-_markup
 </code></pre>
        
        <a name="utid"></a>
@@ -779,7 +789,7 @@ _markup
 YOURSITE.com/blog/2017/hello/2/        &gt; utid 20171213141516
 </code></pre>
 
-<p>همانطور که گفته شد، به شکل پیش فرض و در هنگام ساختن هر پست جدید یک شناسه چهارده رقمی از کنار هم قرار دادن سال، ماه، روز، ساعت، دقیقه و ثانیه تولید هر پست به عنوان مقدار utid اختصاص داده میشود، اما باید به این نکته اشاره کنم که هیچ اجباری در حفظ این فرمت وجود ندارد و تا زمانی که مقادیر utid تکراری نشود به هر شکل که بخواهید میتوانید utid را ویرایش کنید، تنها به این نکته دقت کنید که میرا مقادیر عددی را برای این فیلد میخواند، پس اگر به utid همچین مقداری بدهید</p>
+<p>همانطور که گفته شد، به شکل پیش فرض و در هنگام ساختن هر پست جدید یک شناسه چهارده رقمی از کنار هم قرار دادن سال، ماه، روز، ساعت، دقیقه و ثانیه تولید هر پست به عنوان مقدار utid اختصاص داده میشود، اما باید به این نکته اشاره کنم که هیچ اجباری در حفظ این فرمت وجود ندارد و تا زمانی که مقادیر utid تکراری نشود به هر شکل که بخواهید میتوانید utid را ویرایش کنید، تنها به این نکته دقت کنید که میرا مقادیر عددی را برای این فیلد میخواند، پس اگر به utid مقداری شبیه به این بدهید:</p>
 
 <pre><code>s1-c3/p145(l3)
 </code></pre>
@@ -1548,27 +1558,29 @@ posts (list)
 {{ MainURL }}
 {{ MainROOT }}
 {{ MainSTATIC }}
-{{ MainIMGURL }}
+{{ MainIMAGEURL }}
 {{ MainAUTHOR }}
 {{ MainEMAIL }}
 {{ MainPageTitle }}
 </code></pre>
 
-<p>تنها راه نمایش محتوا در صفحه‌ی main، استفاده از حلقه‌ی Floors به صورت مستقل، یا حلقه‌ی Entries و کلیدهای UTIDS می‌باشد، POSTS در این صفحه معتبر نیست.</p>
+<p>تنها راه نمایش محتوا در صفحه‌ی main، استفاده از حلقه‌ی FLOORS به صورت مستقل، یا حلقه‌ی ENTRIES و کلیدهای UTIDS می‌باشد.</p>
+
+<p>برای انتشار محتوا در هر سایت از حلقه‌ی POSTS استفاده خواهیم کرد، دقت کنید این حلقه در main معتبر نیست. اما posts به عنوان یک حلقه زیر مجموعه FLOORS معتبر است.</p>
 
 <h3>FLOORS</h3>
 
-<p>این حلقه تنها به اندازه‌ی مقداری که در فیلد post_num در فایل config.yml مشخص کرده‌اید از مختوای هر طبقه را در خود ذخیره می‌کند.
+<p>این حلقه تنها به اندازه‌ی مقداری که در فیلد post_num در فایل config.yml مشخص کرده‌اید از محتوای هر طبقه را در خود ذخیره می‌کند.
 نحوه‌ استفاده:</p>
 
-<pre><code>{{ FOREACH Floors.values }}
+<pre><code>{{ FOREACH FLOORS.values }}
   {{ name }}
   {{ description }}
 
-  {{ FOREACH posts }}
-    &lt;h2&gt;&lt;a href="{{ url }}"&gt;{{ title }}&lt;/a&gt;&lt;h2&gt;
-    &lt;h4&gt;{{ CALENDAR.day }}-{{ CALENDAR.month_name }}-{{ CALENDAR.year }}&lt;/h4&gt;
-    &lt;p&gt;{{ body.less }}&lt;/p&gt;
+  {{ FOREACH post IN posts }}
+    &lt;h2&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;h2&gt;
+    &lt;h4&gt;{{ post.CALENDAR.day }}-{{ post.CALENDAR.month_name }}-{{ post.CALENDAR.year }}&lt;/h4&gt;
+    &lt;p&gt;{{ post.body.less }}&lt;/p&gt;
   {{ END }}
 
 {{ END }}
@@ -1576,17 +1588,18 @@ posts (list)
 
 <h3>UTIDS</h3>
 
-<p>کلید نام تمام محتوای موجود در سایت مرتب شده بر اساس مقدار utid هر پست، برابر با utid هر پست، در UTIDS ذخیره شده، برای لود کردن محتوا در برچسب Entries قابل استفاده است.</p>
+<p>کلید نام تمام محتوای موجود در سایت مرتب شده بر اساس مقدار utid هر پست، برابر با utid هر پست، در UTIDS ذخیره شده، برای لود کردن محتوا در برچسب ENTRIES قابل استفاده است.</p>
 
 <p>این برچسب تنها مختص به main.tt2 میباشد</p>
 
-<p>تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن Entries.$id نیز قابل استفاده هستند
-نحوه‌ی استفاده به همراه Entries</p>
+<p>تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن ENTRIES.$id نیز قابل استفاده هستند.</p>
+
+<p>نحوه‌ی استفاده به همراه ENTRIES</p>
 
 <pre><code>{{ FOREACH id IN UTIDS }}
-   &lt;h2&gt;&lt;a href="{{ Entries.$id.url }}"&gt;{{ Entries.$id.title }}&lt;/a&gt;&lt;h2&gt;
-   &lt;h4&gt;{{ Entries.$id.CALENDAR.day }}-{{ Entries.$id.CALENDAR.month_name }}-{{ Entries.$id.CALENDAR.year }}&lt;/h4&gt;
-   &lt;p&gt;{{ body.less }}&lt;/p&gt;
+   &lt;h2&gt;&lt;a href="{{ ENTRIES.$id.url }}"&gt;{{ ENTRIES.$id.title }}&lt;/a&gt;&lt;h2&gt;
+   &lt;h4&gt;{{ ENTRIES.$id.CALENDAR.day }}-{{ ENTRIES.$id.CALENDAR.month_name }}-{{ ENTRIES.$id.CALENDAR.year }}&lt;/h4&gt;
+   &lt;p&gt;{{ ENTRIES.$id.body.less }}&lt;/p&gt;
 {{ END }}
 </code></pre>
 
@@ -1609,23 +1622,29 @@ posts (list)
 {{ MianURL }}
 {{ MianROOT }}
 {{ MianSTATIC }}
-{{ MianIMGURL }}
+{{ MainIMAGEURL }}
 {{ MianAUTHOR }}
 {{ MianEMAIL }}
-{{ PageTitle }}
+{{ PageTITLE }}
 
 {{ TITLE }}
 {{ DESCRIPTION }}
 {{ URL }}
 {{ ROOT }}
+{{ STATIC }}
+{{ IMAGEURL }}
 {{ AUTHOR }}
 {{ EMAIL }}
 
-Archives:
+{{ ARCHIVES}} :
 {{ FOREACH archive IN ARCHIVES.pairs }}
 </code></pre>
 
-<p>برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند، کارکرد این برچسب را صفحات archive متفاوت است.  </p>
+<p>برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند، کارکرد این برچسب با صفحات archive متفاوت است.</p>
+
+<pre><code>{{ ENTRIES }}
+{{ FLOORS }}
+</code></pre>
        
        <a name="archive.tt2"></a>
           <h2><a href="/guide-fa/archive-template/">archive.tt2</a></h2>
@@ -1636,7 +1655,7 @@ Archives:
 {{ MainURL }}
 {{ MainROOT }}
 {{ MainSTATIC }}
-{{ MainIMGURL }}
+{{ MainIMAGEURL }}
 {{ MainAUTHOR }}
 {{ MainEMAIL }}
 {{ MainPageTitle }}
@@ -1645,10 +1664,15 @@ Archives:
 {{ DESCRIPTION }}
 {{ URL }}
 {{ ROOT }}
+{{ STATIC }}
+{{ IMAGEURL }}
 {{ AUTHOR }}
 {{ EMAIL }}
 
 {{ ArchiveTITLE }}
+
+{{ ENTRIES }}
+{{ FLOORS }}
 </code></pre>
        
        <a name="post-template"></a>
@@ -1671,16 +1695,21 @@ Archives:
 {{ DESCRIPTION }}
 {{ URL }}
 {{ ROOT }}
+{{ STATIC }}
+{{ IMAGEURL }}
 {{ AUTHOR }}
 {{ EMAIL }}
 
-Archives:
+{{ ARCHIVES}} :
 {{ FOREACH archive IN ARCHIVES.pairs }}
 </code></pre>
 
-<p>برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند.</p>
+<p>برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند، کارکرد این برچسب با صفحات archive متفاوت است.</p>
 
-<pre><code>{{PostTITLE}}
+<pre><code>{{ ENTRIES }}
+{{ FLOORS }}
+
+{{PostTITLE}}
 </code></pre>
        
        <a name="نمایش محتوا، با استفاده از POSTS"></a>
@@ -1969,8 +1998,8 @@ ftp://
       
         <h3>محتوا</h3>
       
-      <h5><a href="#مقدمه">مقدمه</a></h5>
-<!--      <h5><a href="#/guide-fa/content/">مقدمه</a></h5> -->
+      <h5><a href="#توضیح کلی در باره محتوا">توضیح کلی در باره محتوا</a></h5>
+<!--      <h5><a href="#/guide-fa/content/">توضیح کلی در باره محتوا</a></h5> -->
     
       
       <h5><a href="#تولید">تولید</a></h5>

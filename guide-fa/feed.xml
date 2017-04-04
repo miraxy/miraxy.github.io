@@ -308,16 +308,21 @@ ftp://
 {{ DESCRIPTION }}
 {{ URL }}
 {{ ROOT }}
+{{ STATIC }}
+{{ IMAGEURL }}
 {{ AUTHOR }}
 {{ EMAIL }}
 
-Archives:
+{{ ARCHIVES}} :
 {{ FOREACH archive IN ARCHIVES.pairs }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند.&lt;/p&gt;
+&lt;p&gt;برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند، کارکرد این برچسب با صفحات archive متفاوت است.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{PostTITLE}}
+&lt;pre&gt;&lt;code&gt;{{ ENTRIES }}
+{{ FLOORS }}
+
+{{PostTITLE}}
 &lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2017-02-16 05:46:45</pubDate>
           <link>/guide-fa/post-template/</link>
@@ -338,7 +343,7 @@ Archives:
 {{ MainURL }}
 {{ MainROOT }}
 {{ MainSTATIC }}
-{{ MainIMGURL }}
+{{ MainIMAGEURL }}
 {{ MainAUTHOR }}
 {{ MainEMAIL }}
 {{ MainPageTitle }}
@@ -347,10 +352,15 @@ Archives:
 {{ DESCRIPTION }}
 {{ URL }}
 {{ ROOT }}
+{{ STATIC }}
+{{ IMAGEURL }}
 {{ AUTHOR }}
 {{ EMAIL }}
 
 {{ ArchiveTITLE }}
+
+{{ ENTRIES }}
+{{ FLOORS }}
 &lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2017-02-16 05:39:37</pubDate>
           <link>/guide-fa/archive-template/</link>
@@ -371,23 +381,29 @@ Archives:
 {{ MianURL }}
 {{ MianROOT }}
 {{ MianSTATIC }}
-{{ MianIMGURL }}
+{{ MainIMAGEURL }}
 {{ MianAUTHOR }}
 {{ MianEMAIL }}
-{{ PageTitle }}
+{{ PageTITLE }}
 
 {{ TITLE }}
 {{ DESCRIPTION }}
 {{ URL }}
 {{ ROOT }}
+{{ STATIC }}
+{{ IMAGEURL }}
 {{ AUTHOR }}
 {{ EMAIL }}
 
-Archives:
+{{ ARCHIVES}} :
 {{ FOREACH archive IN ARCHIVES.pairs }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند، کارکرد این برچسب را صفحات archive متفاوت است.  &lt;/p&gt;</description>
+&lt;p&gt;برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 از POSTS استفاده می‌کند، کارکرد این برچسب با صفحات archive متفاوت است.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ ENTRIES }}
+{{ FLOORS }}
+&lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2017-02-16 03:55:43</pubDate>
           <link>/guide-fa/indextemplate/</link>
           <guid isPermaLink="true">/guide-fa/indextemplate/</guid>
@@ -407,27 +423,29 @@ Archives:
 {{ MainURL }}
 {{ MainROOT }}
 {{ MainSTATIC }}
-{{ MainIMGURL }}
+{{ MainIMAGEURL }}
 {{ MainAUTHOR }}
 {{ MainEMAIL }}
 {{ MainPageTitle }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;تنها راه نمایش محتوا در صفحه‌ی main، استفاده از حلقه‌ی Floors به صورت مستقل، یا حلقه‌ی Entries و کلیدهای UTIDS می‌باشد، POSTS در این صفحه معتبر نیست.&lt;/p&gt;
+&lt;p&gt;تنها راه نمایش محتوا در صفحه‌ی main، استفاده از حلقه‌ی FLOORS به صورت مستقل، یا حلقه‌ی ENTRIES و کلیدهای UTIDS می‌باشد.&lt;/p&gt;
+
+&lt;p&gt;برای انتشار محتوا در هر سایت از حلقه‌ی POSTS استفاده خواهیم کرد، دقت کنید این حلقه در main معتبر نیست. اما posts به عنوان یک حلقه زیر مجموعه FLOORS معتبر است.&lt;/p&gt;
 
 &lt;h3&gt;FLOORS&lt;/h3&gt;
 
-&lt;p&gt;این حلقه تنها به اندازه‌ی مقداری که در فیلد post_num در فایل config.yml مشخص کرده‌اید از مختوای هر طبقه را در خود ذخیره می‌کند.
+&lt;p&gt;این حلقه تنها به اندازه‌ی مقداری که در فیلد post_num در فایل config.yml مشخص کرده‌اید از محتوای هر طبقه را در خود ذخیره می‌کند.
 نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FOREACH Floors.values }}
+&lt;pre&gt;&lt;code&gt;{{ FOREACH FLOORS.values }}
   {{ name }}
   {{ description }}
 
-  {{ FOREACH posts }}
-    &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
-    &amp;lt;h4&amp;gt;{{ CALENDAR.day }}-{{ CALENDAR.month_name }}-{{ CALENDAR.year }}&amp;lt;/h4&amp;gt;
-    &amp;lt;p&amp;gt;{{ body.less }}&amp;lt;/p&amp;gt;
+  {{ FOREACH post IN posts }}
+    &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ post.url }}&quot;&amp;gt;{{ post.title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
+    &amp;lt;h4&amp;gt;{{ post.CALENDAR.day }}-{{ post.CALENDAR.month_name }}-{{ post.CALENDAR.year }}&amp;lt;/h4&amp;gt;
+    &amp;lt;p&amp;gt;{{ post.body.less }}&amp;lt;/p&amp;gt;
   {{ END }}
 
 {{ END }}
@@ -435,17 +453,18 @@ Archives:
 
 &lt;h3&gt;UTIDS&lt;/h3&gt;
 
-&lt;p&gt;کلید نام تمام محتوای موجود در سایت مرتب شده بر اساس مقدار utid هر پست، برابر با utid هر پست، در UTIDS ذخیره شده، برای لود کردن محتوا در برچسب Entries قابل استفاده است.&lt;/p&gt;
+&lt;p&gt;کلید نام تمام محتوای موجود در سایت مرتب شده بر اساس مقدار utid هر پست، برابر با utid هر پست، در UTIDS ذخیره شده، برای لود کردن محتوا در برچسب ENTRIES قابل استفاده است.&lt;/p&gt;
 
 &lt;p&gt;این برچسب تنها مختص به main.tt2 میباشد&lt;/p&gt;
 
-&lt;p&gt;تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن Entries.$id نیز قابل استفاده هستند
-نحوه‌ی استفاده به همراه Entries&lt;/p&gt;
+&lt;p&gt;تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن ENTRIES.$id نیز قابل استفاده هستند.&lt;/p&gt;
+
+&lt;p&gt;نحوه‌ی استفاده به همراه ENTRIES&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ FOREACH id IN UTIDS }}
-   &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ Entries.$id.url }}&quot;&amp;gt;{{ Entries.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
-   &amp;lt;h4&amp;gt;{{ Entries.$id.CALENDAR.day }}-{{ Entries.$id.CALENDAR.month_name }}-{{ Entries.$id.CALENDAR.year }}&amp;lt;/h4&amp;gt;
-   &amp;lt;p&amp;gt;{{ body.less }}&amp;lt;/p&amp;gt;
+   &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ ENTRIES.$id.url }}&quot;&amp;gt;{{ ENTRIES.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
+   &amp;lt;h4&amp;gt;{{ ENTRIES.$id.CALENDAR.day }}-{{ ENTRIES.$id.CALENDAR.month_name }}-{{ ENTRIES.$id.CALENDAR.year }}&amp;lt;/h4&amp;gt;
+   &amp;lt;p&amp;gt;{{ ENTRIES.$id.body.less }}&amp;lt;/p&amp;gt;
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 

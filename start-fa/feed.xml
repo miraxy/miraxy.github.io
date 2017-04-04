@@ -12,6 +12,207 @@
 
       
         <item>
+          <title>استفاده از گیت‌هاب برای انتشار</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;هدف در این بخش از راهنما شرح دادن چگونگی منتشر کردن سایتی که با میرا ساخته‌اید بر روی گیت هاب است. برای بهتر متوجه شدن این قسمت نیاز به یک آشنایی حداقلی با گیت‌هاب و چگونگی ساختن مخازن جدید در آن و دانستن مفاهیم و تفاوت‌های مخزن (repository یا repo) با شاخه یا انشعاب یا همان branch دارید.&lt;/p&gt;
+
+&lt;p&gt;برای آشنایی بیشتر با صفحات گیتهاب میتوانید مستندات آنرا در این لینک بخوانید:
+&lt;a href=&quot;https://help.github.com/articles/user-organization-and-project-pages/&quot;&gt;User, Organization, and Project Pages&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;گیت‌هاب برای استفاده از سرویس pages، سه راه حل متفاوت دارد، برای انتشار می‌توانید از سه branch مختلف یکی را انتخاب کنید:&lt;/p&gt;
+
+&lt;p&gt;۱- استفاده از دایرکتوری docs در branch master&lt;/p&gt;
+
+&lt;p&gt;۲- استفاده از branch فرعی با نام gh-pages&lt;/p&gt;
+
+&lt;p&gt;۳- انتشار کامل محتوای ذخیره شده در master برای انتشار در USER.github.io&lt;/p&gt;
+
+&lt;p&gt;در زیر به شکل کلی در مورد این سه روش می‌خوانیم و در ادامه برای استفاده از هرکدام به شکل اختصاصی برای استفاده در میرا یک راه حل و مثال را پیاده می‌کنیم.&lt;/p&gt;
+
+&lt;h1&gt;انتشار با استفاده از دایرکتوری /docs در شاخه‌ی master&lt;/h1&gt;
+
+&lt;p&gt;بر اساس &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch&quot;&gt;راهنمای صفحات گیت هاب&lt;/a&gt;، در صفحات گیت‌هاب با استفاده از docs می‌توان دست به انتشار محتوا زد، راه حل داشتن یک دایرکتوری به نام docs در شاخه‌ی master هر مخزن است.&lt;/p&gt;
+
+&lt;p&gt;اگر خواستید از این روش استفاده کنید، باید دایرکتوری public را به docs تغییر نام دهید. برای این‌که هربار که سایت‌تان را با کمک میرا می‌سازید، نیاز به تغییر نام شاخه public نداشته باشید، تنها کافی است در config.yml این خط را اضافه کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;publishDIR: docs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از این به بعد بعد از هر باز اجرا کردن mira build، به جای public، میرا خروجی تولید شده را در دایرکتوری docs ذخیره می‌کند.&lt;/p&gt;
+
+&lt;p&gt;شاخه‌ی master را push کنید به مخزن remote و در قسمت setting پروژه در گیت هاب، مشخص کنید که از دایرکتوری docs برای انتشار صفحات استفاده می‌کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Settings -&amp;gt; GitHub Pages -&amp;gt; Source -&amp;gt; Select master branch /docs folder
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;دایرکتوری که mira را در آن پیکربندی کردید را کلا به عنوان شاخه‌ی master از مخزن اصلی تعریف کنید و مخزنی که روی گیت‌هاب برای آن ساخته‌اید را به عنوان remote به گیت معرفی کنید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git init
+git add --all
+git commit -m 'start'
+git add remote GITHUB_REPO_ADDRESS
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از این به بعد، پس از هر بار اجرا کردن mira build و ساخته شدن سایتتان، تغییرات را به گیت اضافه و publish کنید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira build
+git add --all
+git commit -m 'publish'
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از حالا به بعد اگر آدرس مخزنی که روی گیت هاب ساخته بودید چیزی شبیه به این آدرس بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;github.com/USER/REPO.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری docs منتشر خواهد شد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;USER.github.io/REPO
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1&gt;انتشار به وسیله‌ی شاخه‌ی gh-pages&lt;/h1&gt;
+
+&lt;p&gt;راه دیگر انتشار محتوا به وسیله‌ی یک شاخه‌ی جدا به نام gh-pages در مخزن گیت است. آماده سازی آن نسبت به استفاده از شاخه‌ی docs پیچیده‌تر است، اما در مقابل مزایای بیشتری هم دارد.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;محتوای خام و تنظیمات در شاخه‌ای جدا از خروجی قابل انتشار نگهداری می‌شوند.&lt;/li&gt;
+&lt;li&gt;تاریحچه منبع محتوا و صفحات منتشر شده کاملا جدا از هم نگهداری می‌شود.&lt;/li&gt;
+&lt;li&gt;از دایرکتوری public به شکل پیش‌فرض استفاده می‌کنیم.&lt;/li&gt;
+&lt;li&gt;برای تنظیم کردن پیکربندی انعطاف بیشتری داریم.&lt;/li&gt;
+&lt;li&gt;و...&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;آماده سازی&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;توضیح: این قسمت را تنها نیاز داریم یک بار انجام دهیم، در طول توضیحات فرض این است که نام remote که استفاده میکنیم origin است، اگر از نام دیگری استفاده میکنید، آن‌ را با origin جایگزین کنید.&lt;/p&gt;
+
+&lt;p&gt;قبل از شروع هرکاری، دایرکتوری public را پاک می‌کنیم.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rm -rf public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا اگر در ویندوز باشیم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rd /s /q public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اول گیت را پیکربندی می‌کنیم و دایرکتوری public را به gitignore اضافه میکنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git init
+echo &quot;public&quot; &amp;gt; .gitignore
+git add --all
+git commit -m 'start'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;آدرس مخزنی که در گیت‌هاب ساخته‌اید را به عنوان remote به پروژه اضافه می‌کنیم و شاخه‌ی master را push می‌کنیم.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add remote GITHUB_REPO_ADDRESS
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;سپس شاخه‌ی gh-pages را می‌سازیم و به شکل خالی مقداردهی می‌کنیم و به مخزن remote هم آن‌را اضافه میکنیم.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m &quot;Initializing gh-pages&quot;
+git push upstream gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;به شاخه‌ی master بر می‌گردیم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و دایرکتوری public را به عنوان worktree برای شاخه‌ی gh-pages مشخص می‌کنیم.(دقت کنید که دایرکتوری public را پاک کرده باشید و هنگام اجرای این دستور وجود نداشته باشد)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git worktree add -B gh-pages public origin/gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر همه مراحل بالا بدون اشکال پیش رفته باشد، حالا همه چیز آماده است. از این به بعد بعد از هر بار اضافه کردن محتوا یک بار مخزن را به روز کنید و بعد از هر build کردن سایت هم یک بار دیگر. ترتیب دستورها چیزی شبیه به این خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira new -t 'post title' -f blog
+ویرایش و تولید محتوا و قرار دادن عکس یا سایر ضمیمه‌ها در شاخه استاتیک
+git add .
+git commit -m 'add content'
+ساختن خروجی:
+mira build
+cd public
+git add .
+git commit -m 'publish'
+cd ..
+به روز کردن مخزن گیت‌هاب پروژه
+git push origin master gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از حالا به بعد اگر آدرس مخزنی که روی گیت هاب ساخته بودید چیزی شبیه به این آدرس بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;github.com/USER/REPO.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری docs منتشر خواهد شد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;USER.github.io/REPO
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و اگر می‌خواهید از نام دامین اختصاصی خودتان برای نمایش محتوا استفاده کنید، فایلی به نام CNAME را در public بسازید و نام دامنه‌ی خودتان را در آن بنویسید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo YOUR_DOMAIN_NAME.com &amp;gt; CNAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1&gt;ادامه دارد...&lt;/h1&gt;</description>
+          <pubDate>2017-04-04 01:55:23</pubDate>
+          <link>/start-fa/use-github-for-publish/</link>
+          <guid isPermaLink="true">/start-fa/use-github-for-publish/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>انتشار روی فضای شخصی</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;اگر فضای میزبانی یا همان هاست شخصی خودتان را دارید، کار زیادی لازم نیست انجام بدهید، محتوای دایرکتوری public را پس از ساخته شدن به public_html یا www یا هر دایرکتوری دیگری که برای انتشار محتوای سایتتان مشخص کرده‌اید منتقل کنید.&lt;/p&gt;
+
+&lt;p&gt;اگر از سرور خودتان استفاده می‌کنید و میرا را روی سرور اجرا می‌کنید، آدرس همین دایرکتوری public را به عنوان root در تنظیمات سرور مشخص کنید.&lt;/p&gt;
+
+&lt;p&gt;یا اینکه mira view را روی هر portی که می‌خواهید اجرا کنید و مشخصات listen را برای سایتتان با port میرا یکی کنید.&lt;/p&gt;
+
+&lt;h4&gt;این قسمت ادامه خواهد داشت، برای تعییر فایل‌های تنظیم سرور و... که در بالا در موردشان صحبت شد چند مثال و توضیح، در آینده اضافه خواهد شد.&lt;/h4&gt;</description>
+          <pubDate>2017-04-04 01:43:34</pubDate>
+          <link>/start-fa/personal-host-publish/</link>
+          <guid isPermaLink="true">/start-fa/personal-host-publish/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>انتخاب محل انتشار</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;برای منتشر کردن خروجی تولید شده توسط میرا روی وب انتخاب‌های متعددی دارید، و بسته به انتخابی که می‌کنید، راه‌های متفاوتی پیش رو خواهید داشت.&lt;/p&gt;
+
+&lt;p&gt;می‌توانید از یکی از سرویس‌هایی که فایل‌های استاتیک را برای انتشار پشتیبانی می‌کنند مثل گیت‌هاب، استفاده کنید و یک دامین روی همان سرویس‌ها انتخاب کنید، یا از یک دامین شخصی و فضای ارايه شده توسط سرویس‌ها استفاده کنید، یا کلا از فضا و دامنه شخصی استفاده کنید.&lt;/p&gt;
+
+&lt;p&gt;در این قسمت سعی می‌کنیم برای انتخاب کردن هر یک از سه راه بالا، یک راه‌حل پیدا کنیم.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;پیش نیاز&lt;/strong&gt;: قبل از ادامه این بخش:&lt;/p&gt;
+
+&lt;p&gt;۱- اگر گیت را روی کامپیوترتان نصب نکرده‌اید، آن‌را نصب کنید، &lt;a href=&quot;https://git-scm.com/downloads&quot;&gt;دانلود گیت&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;۲- اگر روی گیت‌هاب اکانت ندارید، یک اکانت بسازید. &lt;a href=&quot;https://git-scm.com/downloads&quot;&gt;GitHub&lt;/a&gt;&lt;/p&gt;</description>
+          <pubDate>2017-04-04 01:19:54</pubDate>
+          <link>/start-fa/start-publish/</link>
+          <guid isPermaLink="true">/start-fa/start-publish/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
           <title>افزودن مشخصات نویسنده مطلب</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;اگر به یاد داشته باشید در سایت آموزش لینوکس، بیشتر از یک نویسنده برای مطالبمان داشتیم، حالا میخواهیم یک اطلاعات کلی از هرکدام را به سایدبار در زیر آرشیو نام‌هایشان اضافه کنیم، ابتدا linux-learn.yml را ویرایش میکنیم و خطوط زیر را در آن می‌نویسیم:&lt;/p&gt;
 
@@ -1474,151 +1675,6 @@ address.com/linux/ ...
           <pubDate>2017-03-28 13:24:05</pubDate>
           <link>/start-fa/template/</link>
           <guid isPermaLink="true">/start-fa/template/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>مسیر تصاویر یا imageurl</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در تنظیمات یک فیلد دیگر را به نام imageurl مقدار دهی کرده بودیم، برخلاف فیلد static که در تنظیمات عمومی تاثیر گذار بود و در تنظیمات اختصاصی تنها برای دسترسی در قالب استفاده می‌شد، این فیلد در تنظیمات عمومی استفاده‌ی خاصی ندارد و فقط برای دسترسی در قالب تعریف شده، اما در تنظیمات اختصاصی تاثیر گذار است.&lt;/p&gt;
-
-&lt;p&gt;مورد استفاده این فیلد در پارسرهای داخلی میرا و هنگلم نوشتن متن محتوا است، در تنظیمات وبلاگ فارسی به این فیلد این مقدار را داده بودیم:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;imageurl: /blog/assets/article_images
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;حالا در هر کدام از نوشته‌های این سایت اگر از تگ {{ img }} استفاده کنیم، میرا دنبال تصاویر در این مسیر میگردد. &lt;br /&gt;
-نحوه‌ی استفاده از {{ img }} به این شکل است:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{{ img image/address/pic.jpg [alt] [title] }}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;اولین نوشته در وبلاگ فارسی را به یاد دارید؟&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/mira/content/blog-fa/2017-3-23-سلام-دنیا.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;بیایید یک‌بار دیگر آن‌را ویرایش کنیم:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;---
-utid: 20170323112305
-date: 2017-03-23 11:23:05
-title: سلام دنیا
-_index: hello world
-category: آزمایش
-image: /blog/assets/article_images/hello.jpg
----
-سلام دنیا  
-این اولین نوشته من است که برای تست کردن نوشته شده.
-
-{{ img /future/sky.jpg [image alt] [pic title] }}
-
-این یک متن آزمایشی است.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;نتیجه‌ی نهایی برای انتشار این‌گونه خواهد بود:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;سلام دنیا&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;این اولین نوشته من است که برای تست کردن نوشته شده.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;img src=&quot;/blog/assets/article_images/future/sky.jpg&quot; alt=&quot;image alt&quot; title=&quot;pic title&quot;&amp;gt;&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;این یک متن آزمایشی است.&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;در برچسب {{ img }} مقادیر [alt] و [title] اختیاری هستند و می‌توانید از آن‌ها چشم پوشی کنید.&lt;/p&gt;</description>
-          <pubDate>2017-03-28 13:03:29</pubDate>
-          <link>/start-fa/images-statics/</link>
-          <guid isPermaLink="true">/start-fa/images-statics/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>ضمیمه‌های اختصاصی هر طبقه</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در پوشه‌ی محتوای هر سایت در شاخه‌ی content هر پوشه‌ای که نامش با خط زیر یا همان آندرلاین _ شروع شود از نظر میرا یک پوشه‌ی ضمیمه به حساب می‌آید و تمام محتویات آن‌را بدون هیچ بررسی به مسیر اصلی سایت منتقل میکند.&lt;/p&gt;
-
-&lt;p&gt;یک مثال: &lt;br /&gt;
-در بخش تنظیمات برای وبلاگ فارسی(blog-fa) در فیلدهای url و root مسیر blog را برای انتشار مشخص کردیم، پس هر پوشه‌ای که در مسیر blog-fa با ـ شروع شود به عنوان ضمیمه در مسیر blog آدرس دهی میشود، به این مثال‌ها دقت کنید:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~mira/content/blog-fa/_assets
-/blog/assets/
-
-~mira/content/blog-fa/_statics
-/blog/statics/
-
-~mira/content/blog-fa/deep/_image
-/blog/deep/image
-
-~mira/content/blog-fa/more/deep/folder/_attach
-/blog/more/deep/folder/attach
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;دقت داشته باشید قبل از رسیدن به پوشه‌ی ضمیمه، اگر فایل محتوایی موجود باشد، برای انتشار آماده می‌شود، تنها بعد از رسیدن به اولین شاخه‌ای که با _ شروع شده باشد، میرا دست از نفوذ به عمق شاخه‌ها می‌کشد. برای مثال مسیرهای زیر را در نظر بگیرید&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~mira/content/blog-fa/more/content.md
-~mira/content/blog-fa/more/deep/post.txt
-~mira/content/blog-fa/more/deep/folder/contetnt.md
-~mira/content/blog-fa/more/deep/folder/_attach
-~mira/content/blog-fa/more/deep/folder/_attach/post.markdown
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;میرا سه فایل اول را که قبل از رسیدن به
-&lt;code&gt;~mira/content/blog-fa/more/deep/folder/_attach&lt;/code&gt;
-قرار دارند، برای انتشار بررسی و آماده می‌کند، اما فایل آخر
-&lt;code&gt;~mira/content/blog-fa/more/deep/folder/_attach/post.markdown&lt;/code&gt;
-را به عنوان یک فایل ضمیمه می‌شناسد و تنها آن را همان شکلی که هست به مسیر انتشار انتقال می‌دهد.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: &lt;br /&gt;
-احتمالا متوجه شدید که فیلد static در فایل تنظیمات اختصاصی هیچ تاثری در انتقال و آدرس‌دهی به مسیر فایل‌ها و پوشه‌های ضمیمه برای سایت‌ها ندارد.&lt;/p&gt;
-
-&lt;p&gt;این فیلد تنها جهت سهولت دسترسی در قالب و استفاده در قالب سایت با تگ
-&lt;code&gt;{{ STATIC }}&lt;/code&gt;
-یا
-&lt;code&gt;{{ SITE.static }}&lt;/code&gt;
-می‌باشد.&lt;/p&gt;
-
-&lt;h4&gt;اگر فایل مثال برای content را دانلود کرده باشید، محتوای اختصاصی static هر سایت، همراه با فایل content دانلود شده&lt;/h4&gt;</description>
-          <pubDate>2017-03-28 12:56:32</pubDate>
-          <link>/start-fa/specific-statics/</link>
-          <guid isPermaLink="true">/start-fa/specific-statics/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>ضمیمه‌های عمومی</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;هنگام استفاده از میرا، در مسیر statics در شاخه‌ی اصلی که پیکربندی شده، فایل‌های ثابت و ضمیمه‌ی عمومی را می‌توانید نگهداری کنید.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;~/mira/statics&lt;/code&gt;
-محتویات این پوشه به مسیری که در فایل تنظیمات
-&lt;code&gt;~/mira/config.yml&lt;/code&gt;
-و فیلد static مسیر دهی کرده‌اید منتقل می‌شود و در قالب با استفاده از کد
-&lt;code&gt;{{ MainSTATIC }}&lt;/code&gt;
-یا
-&lt;code&gt;{{ MAIN.static }}&lt;/code&gt;
-قابل دسترسی خواهد بود.&lt;/p&gt;
-
-&lt;p&gt;برای مثال اگر فیلد static در فایل config.yml مساوی
-&lt;code&gt;/attach&lt;/code&gt;
-باشد و سایت‌مان را قرار باشد در address.com منتشر کنیم، نتیحه مسیری شبیه به این خواهد بود:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/mira/config.yml  &amp;gt;       static: /attach
- ‌
-~/mira/statics     &amp;gt;       http://address.com/attach/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;دانلود &lt;a href=&quot;https://raw.githubusercontent.com/miraxy/sample/master/statics.zip&quot;&gt;شاخه عمومی statics&lt;/a&gt;&lt;/h4&gt;</description>
-          <pubDate>2017-03-28 12:55:39</pubDate>
-          <link>/start-fa/general-statics/</link>
-          <guid isPermaLink="true">/start-fa/general-statics/</guid>
 
 
         <category>

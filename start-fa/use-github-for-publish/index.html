@@ -10,7 +10,7 @@
     <meta name="description" content="راهنمای شروع به کار با میرا">
     <meta name="author" content="kiavash">
 
-    <title>تنظیمات عمومی - شروع</title>
+    <title>استفاده از گیت‌هاب برای انتشار - شروع</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
@@ -84,62 +84,155 @@
   <div class="row">
     <div class="col-lg-7 col-lg-offset-1 col-md-8">
       
-      <a name="تنظیمات عمومی"></a>
-         <h2><a href="/start-fa/general-config/">تنظیمات عمومی</a></h2>
-         <a name="more"></a><br><p>ابتدا چند فرض عمومی را در نظر میگیریم:</p>
+      <a name="استفاده از گیت‌هاب برای انتشار"></a>
+         <h2><a href="/start-fa/use-github-for-publish/">استفاده از گیت‌هاب برای انتشار</a></h2>
+         <a name="more"></a><br><p>هدف در این بخش از راهنما شرح دادن چگونگی منتشر کردن سایتی که با میرا ساخته‌اید بر روی گیت هاب است. برای بهتر متوجه شدن این قسمت نیاز به یک آشنایی حداقلی با گیت‌هاب و چگونگی ساختن مخازن جدید در آن و دانستن مفاهیم و تفاوت‌های مخزن (repository یا repo) با شاخه یا انشعاب یا همان branch دارید.</p>
 
-<p>فرض می‌گیریم تمام این موارد برای هر چهار سایت مقدار یکسانی باید داشته باشند:</p>
+<p>برای آشنایی بیشتر با صفحات گیتهاب میتوانید مستندات آنرا در این لینک بخوانید:
+<a href="https://help.github.com/articles/user-organization-and-project-pages/">User, Organization, and Project Pages</a></p>
 
-<ul>
-<li>نام نویسنده مطالب</li>
-<li>آدرس ایمیل</li>
-<li>تصویر نویسنده</li>
-<li>لوگوی سایت</li>
-</ul>
+<p>گیت‌هاب برای استفاده از سرویس pages، سه راه حل متفاوت دارد، برای انتشار می‌توانید از سه branch مختلف یکی را انتخاب کنید:</p>
 
-<p>می‌خواهیم مقادیر بالا برای هر چهار سایت یکسان و ثابت باشند، مگر اینکه در هدر هر پست تغییر کنند(مثل قسمت آموزش لینوکس که مطالب ممکن بود نویسنده جدا داشته باشند)</p>
+<p>۱- استفاده از دایرکتوری docs در branch master</p>
 
-<ul>
-<li>هر چهار سایت از یک قالب مشترک استفاده می‌کنند. template</li>
-</ul>
+<p>۲- استفاده از branch فرعی با نام gh-pages</p>
 
-<p>برای قالب انتشار هر چهار سایت را با استفاده از یک قالب منتشر می‌کنیم، می‌خواهیم در ادامه قالب خودمان را با نام my-theme بسازیم، فعلاً فقط به مقداردهی اولیه اکتفا میکنیم و فیلد template را مقدار دهی میکنیم. این قالب را در ادامه همراه هم به وجود می‌آوریم.</p>
+<p>۳- انتشار کامل محتوای ذخیره شده در master برای انتشار در USER.github.io</p>
 
-<ul>
-<li>سایت‌هایمان را قرار است در ریشه‌ی آدرس address.com منتشر کنیم. url و root</li>
-<li>محل ذخیره فایل‌های ضمیمه عمومی یا همان static را address.com/static مشخص می‌کینم. static</li>
-<li>محل ذخیره تصاویر مشترک مثل لوگو و... را address.com/static/imagesدر نظر می‌گیریم. imageurl</li>
-</ul>
+<p>در زیر به شکل کلی در مورد این سه روش می‌خوانیم و در ادامه برای استفاده از هرکدام به شکل اختصاصی برای استفاده در میرا یک راه حل و مثال را پیاده می‌کنیم.</p>
 
-<p>در گام پنجم در مورد فیال‌های ضمیمه و static کامل‌تر و با چند مثال صحبت خواهیم کرد.</p>
+<h1>انتشار با استفاده از دایرکتوری /docs در شاخه‌ی master</h1>
 
-<ul>
-<li>تعداد پست‌هایی که در صفحه‌ی مشترک بین سایت‌ها میخواهیم نمایش دهیم را ۵ در نظر می‌گیریم. post_num</li>
-<li>متن اصلی محتوا برای هر چهار سایت را با استفاده از فرمت markdown می‌خواهیم بنویسیم. default_markup</li>
-<li>در صورتیکه هنگام استفاده از دستور mira new برای ایجاد پست جدید سوییچ -f را برای مشخص کردن طبقه(یا همان سایت) وارد نکنیم، به شکل پیش‌فرض نوشته جدید در وبلاگ فارسی به وجود بیاید. default_floor</li>
-</ul>
+<p>بر اساس <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch">راهنمای صفحات گیت هاب</a>، در صفحات گیت‌هاب با استفاده از docs می‌توان دست به انتشار محتوا زد، راه حل داشتن یک دایرکتوری به نام docs در شاخه‌ی master هر مخزن است.</p>
 
-<p>فایل config.yml را با هر ویرایشگر متنی که دوست دارید باز کنید، تمام محتویات آن را پاک کنید و با مقادیر زیر جایگزین کنید:</p>
+<p>اگر خواستید از این روش استفاده کنید، باید دایرکتوری public را به docs تغییر نام دهید. برای این‌که هربار که سایت‌تان را با کمک میرا می‌سازید، نیاز به تغییر نام شاخه public نداشته باشید، تنها کافی است در config.yml این خط را اضافه کنید:</p>
 
-<p><code>~/mira/config.yml</code></p>
-
-<pre><code>title: نوشته های من 
-description: نوشته‌های من در باره‌ی تجربیات روزانه و سفرهایم، آهنگ‌هایی که شنیدم و داستان‌هایی که مینویسم
-
-author: اسم شما
-email: Your@Email.com
-url: http://www.address.com/
-root: /
-static: /static
-imageurl: /static/images
-default_markup: markdown
-default_floor: blog-fa
-post_num: 5
-template: my-theme
-
-logo: /static/images/logo.png
-author_image: /static/images/author_image.png
+<pre><code>publishDIR: docs
 </code></pre>
+
+<p>از این به بعد بعد از هر باز اجرا کردن mira build، به جای public، میرا خروجی تولید شده را در دایرکتوری docs ذخیره می‌کند.</p>
+
+<p>شاخه‌ی master را push کنید به مخزن remote و در قسمت setting پروژه در گیت هاب، مشخص کنید که از دایرکتوری docs برای انتشار صفحات استفاده می‌کنید:</p>
+
+<pre><code>Settings -&gt; GitHub Pages -&gt; Source -&gt; Select master branch /docs folder
+</code></pre>
+
+<p>دایرکتوری که mira را در آن پیکربندی کردید را کلا به عنوان شاخه‌ی master از مخزن اصلی تعریف کنید و مخزنی که روی گیت‌هاب برای آن ساخته‌اید را به عنوان remote به گیت معرفی کنید.</p>
+
+<pre><code>git init
+git add --all
+git commit -m 'start'
+git add remote GITHUB_REPO_ADDRESS
+</code></pre>
+
+<p>از این به بعد، پس از هر بار اجرا کردن mira build و ساخته شدن سایتتان، تغییرات را به گیت اضافه و publish کنید.</p>
+
+<pre><code>mira build
+git add --all
+git commit -m 'publish'
+git push origin master
+</code></pre>
+
+<p>از حالا به بعد اگر آدرس مخزنی که روی گیت هاب ساخته بودید چیزی شبیه به این آدرس بود:</p>
+
+<pre><code>github.com/USER/REPO.git
+</code></pre>
+
+<p>محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری docs منتشر خواهد شد:</p>
+
+<pre><code>USER.github.io/REPO
+</code></pre>
+
+<h1>انتشار به وسیله‌ی شاخه‌ی gh-pages</h1>
+
+<p>راه دیگر انتشار محتوا به وسیله‌ی یک شاخه‌ی جدا به نام gh-pages در مخزن گیت است. آماده سازی آن نسبت به استفاده از شاخه‌ی docs پیچیده‌تر است، اما در مقابل مزایای بیشتری هم دارد.</p>
+
+<ul>
+<li>محتوای خام و تنظیمات در شاخه‌ای جدا از خروجی قابل انتشار نگهداری می‌شوند.</li>
+<li>تاریحچه منبع محتوا و صفحات منتشر شده کاملا جدا از هم نگهداری می‌شود.</li>
+<li>از دایرکتوری public به شکل پیش‌فرض استفاده می‌کنیم.</li>
+<li>برای تنظیم کردن پیکربندی انعطاف بیشتری داریم.</li>
+<li>و...</li>
+</ul>
+
+<p><strong>آماده سازی</strong>:</p>
+
+<p>توضیح: این قسمت را تنها نیاز داریم یک بار انجام دهیم، در طول توضیحات فرض این است که نام remote که استفاده میکنیم origin است، اگر از نام دیگری استفاده میکنید، آن‌ را با origin جایگزین کنید.</p>
+
+<p>قبل از شروع هرکاری، دایرکتوری public را پاک می‌کنیم.</p>
+
+<pre><code>rm -rf public
+</code></pre>
+
+<p>یا اگر در ویندوز باشیم</p>
+
+<pre><code>rd /s /q public
+</code></pre>
+
+<p>اول گیت را پیکربندی می‌کنیم و دایرکتوری public را به gitignore اضافه میکنیم:</p>
+
+<pre><code>git init
+echo "public" &gt; .gitignore
+git add --all
+git commit -m 'start'
+</code></pre>
+
+<p>آدرس مخزنی که در گیت‌هاب ساخته‌اید را به عنوان remote به پروژه اضافه می‌کنیم و شاخه‌ی master را push می‌کنیم.</p>
+
+<pre><code>git add remote GITHUB_REPO_ADDRESS
+git push origin master
+</code></pre>
+
+<p>سپس شاخه‌ی gh-pages را می‌سازیم و به شکل خالی مقداردهی می‌کنیم و به مخزن remote هم آن‌را اضافه میکنیم.</p>
+
+<pre><code>git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m "Initializing gh-pages"
+git push upstream gh-pages
+</code></pre>
+
+<p>به شاخه‌ی master بر می‌گردیم</p>
+
+<pre><code>git checkout master
+</code></pre>
+
+<p>و دایرکتوری public را به عنوان worktree برای شاخه‌ی gh-pages مشخص می‌کنیم.(دقت کنید که دایرکتوری public را پاک کرده باشید و هنگام اجرای این دستور وجود نداشته باشد)</p>
+
+<pre><code>git worktree add -B gh-pages public origin/gh-pages
+</code></pre>
+
+<p>اگر همه مراحل بالا بدون اشکال پیش رفته باشد، حالا همه چیز آماده است. از این به بعد بعد از هر بار اضافه کردن محتوا یک بار مخزن را به روز کنید و بعد از هر build کردن سایت هم یک بار دیگر. ترتیب دستورها چیزی شبیه به این خواهد بود:</p>
+
+<pre><code>mira new -t 'post title' -f blog
+ویرایش و تولید محتوا و قرار دادن عکس یا سایر ضمیمه‌ها در شاخه استاتیک
+git add .
+git commit -m 'add content'
+ساختن خروجی:
+mira build
+cd public
+git add .
+git commit -m 'publish'
+cd ..
+به روز کردن مخزن گیت‌هاب پروژه
+git push origin master gh-pages
+</code></pre>
+
+<p>از حالا به بعد اگر آدرس مخزنی که روی گیت هاب ساخته بودید چیزی شبیه به این آدرس بود:</p>
+
+<pre><code>github.com/USER/REPO.git
+</code></pre>
+
+<p>محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری docs منتشر خواهد شد:</p>
+
+<pre><code>USER.github.io/REPO
+</code></pre>
+
+<p>و اگر می‌خواهید از نام دامین اختصاصی خودتان برای نمایش محتوا استفاده کنید، فایلی به نام CNAME را در public بسازید و نام دامنه‌ی خودتان را در آن بنویسید</p>
+
+<pre><code>echo YOUR_DOMAIN_NAME.com &gt; CNAME
+</code></pre>
+
+<h1>ادامه دارد...</h1>
       
     </div>
 

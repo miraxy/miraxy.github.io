@@ -274,6 +274,60 @@ git push origin master gh-pages
         </item>
       
         <item>
+          <title>تغییر آدرس انتشار سایت‌ها</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در تنظیمات دیدیم که ریشه‌ی اصلی سایت را برای یک صفحه‌ی مشترک بین تمام سایت‌ها در نظر گرفتیم و بعد برای هر سایت یک آدرس در لول پایینتر مشخص کردیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;your-address.com/          &amp;gt;    صفحه مشترک بین هر چهار سایت
+your-address.com/blog/     &amp;gt;    وبلاگ فارسی
+your-address.com/en/       &amp;gt;    وبلاگ انگلیسی
+your-address.com/story/    &amp;gt;    داستان‌ها
+your-address.com/linux/    &amp;gt;    آموزش لینوکس
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اما شاید بخواهید ریشه اصلی سایت را برای وبلاگ فارسی در نظر بگیرید و صفحه‌ی مشترک را در زیر آدرس دیگری بسازید، مثل این:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;your-address.com/main/     &amp;gt;    صفحه مشترک بین هر چهار سایت
+your-address.com/          &amp;gt;    وبلاگ فارسی
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای این منظور config.yml و config/blog-fa.yml را ویرایش کنید و url و root را تغییر دهید:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;config.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;url: your-address.com/main
+root: /main
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;config/blog-fa.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;url: your-address.com/
+root: /
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا شاید اصلا نخواهید صفحه‌ی مشترک را داشته باشید، برای اینکار url و root را در config.yml با مقدار url و root در config/blog-fa.yml یکی قرار دهید. در صورت مساوی شدن مقدار این دو فیلد بین main و طبقات، اولویت با طبقات است. در این صورت دیگر صفحه مشترکی نخواهید داشت. میتوانید main.tt2 را هم از قالبتان پاک کنید.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;config.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;url: your-address.com/
+root: /
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;config/blog-fa.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;url: your-address.com/
+root: /
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-04-06 00:49:59</pubDate>
+          <link>/start-fa/change-publish-address/</link>
+          <guid isPermaLink="true">/start-fa/change-publish-address/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
           <title>افزودن مشخصات نویسنده مطلب</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;اگر به یاد داشته باشید در سایت آموزش لینوکس، بیشتر از یک نویسنده برای مطالبمان داشتیم، حالا میخواهیم یک اطلاعات کلی از هرکدام را به سایدبار در زیر آرشیو نام‌هایشان اضافه کنیم، ابتدا linux-learn.yml را ویرایش میکنیم و خطوط زیر را در آن می‌نویسیم:&lt;/p&gt;
 
@@ -1683,59 +1737,6 @@ address.com/linux/ ...
           <pubDate>2017-03-28 19:06:14</pubDate>
           <link>/start-fa/main-template/</link>
           <guid isPermaLink="true">/start-fa/main-template/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>توضیح ساختار قالب در میرا</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;هر قالب در میرا یک پوشه است در شخه‌ی template&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~mira/template/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;گفتیم که در این مثال می‌خواهیم یک قالب جدید با نام my-theme را برای استفاده در سایت‌مان بسازیم. پس نیاز به یک دایرکتوری جدید به همین نام در مسیر فوق داریم:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/mira/template/my-theme/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;هر قالب در میرا از تعدادی فایل پوسته تشکیل می‌شود، پنج فایل به شکل پیش فرض تعریف شده‌اند و هر تعداد که بخواهید فایل‌های فرعی.&lt;/p&gt;
-
-&lt;p&gt;پنج فایلی که برای داشتن یک قالب کامل مورد نیاز هستند این ها هستند: main.tt2 و index.tt2 و archive.tt2 و post.tt2 و atom.tt2&lt;/p&gt;
-
-&lt;p&gt;یک توضیح مختصر در مورد اینکه هر کدام از این‌فایل‌ها برای چه کاری مورد استفاده قرار می‌گیرند:&lt;/p&gt;
-
-&lt;p&gt;فایل main.tt2 برای ساختن یک قالب مشترک بین تمام سایت‌هاست، یک صفحه ارتباطی. در اصل پوسته‌ی سازنده‌ی root عمومی که در config.yml تعریف کردیم. در این مثال address.com/index.html با این پوسته ساخته می‌شود.&lt;/p&gt;
-
-&lt;p&gt;فایل index.tt2 برای ساختن صفحه‌ی اصلی هر سایت در آدرسی است که برای آن در فیلدهای url و root تنظیماتش مشخص کرده‌اید استفاده می‌شود.&lt;/p&gt;
-
-&lt;p&gt;فایل archive.tt2 حاوی قالب ساخت تمام صفحات آرشیو است.&lt;/p&gt;
-
-&lt;p&gt;فایل post.tt2 برای ساختن قالب تکی پست‌ها و نوشته‌ها در آدرسی است که در فیلد permalink در تنظیمات سایت مشخص کرده‌ایم.&lt;/p&gt;
-
-&lt;p&gt;فایل atom.tt2 برای ساختن فید مطالب هر سایت به کار می‌رود.&lt;/p&gt;
-
-&lt;p&gt;پنج فایل جدید در شاخه‌ی قالب my-theme بسازید.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/mira/template/my-theme/
-.
-│
-├── archive.tt2
-├── atom.tt2
-├── index.tt2
-├── main.tt2
-└── post.tt2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;می‌توانید قالبی را که در ادامه به ساختن آن می‌پردازیم را از این جا دانلود کنید:&lt;/p&gt;
-
-&lt;h4&gt;دانلود &lt;a href=&quot;https://raw.githubusercontent.com/miraxy/sample/master/template.zip&quot;&gt;شاخه template&lt;/a&gt;&lt;/h4&gt;</description>
-          <pubDate>2017-03-28 13:24:05</pubDate>
-          <link>/start-fa/template/</link>
-          <guid isPermaLink="true">/start-fa/template/</guid>
 
 
         <category>

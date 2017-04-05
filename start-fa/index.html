@@ -2044,6 +2044,51 @@ telegram.me/MY_FA_BLOG_MIRA</p>
 {{ END }}
 </code></pre>
        
+       <a name="تغییر آدرس انتشار سایت‌ها"></a>
+          <h2><a href="/start-fa/change-publish-address/">تغییر آدرس انتشار سایت‌ها</a></h2>
+          <a name="more"></a><br><p>در تنظیمات دیدیم که ریشه‌ی اصلی سایت را برای یک صفحه‌ی مشترک بین تمام سایت‌ها در نظر گرفتیم و بعد برای هر سایت یک آدرس در لول پایینتر مشخص کردیم:</p>
+
+<pre><code>your-address.com/          &gt;    صفحه مشترک بین هر چهار سایت
+your-address.com/blog/     &gt;    وبلاگ فارسی
+your-address.com/en/       &gt;    وبلاگ انگلیسی
+your-address.com/story/    &gt;    داستان‌ها
+your-address.com/linux/    &gt;    آموزش لینوکس
+</code></pre>
+
+<p>اما شاید بخواهید ریشه اصلی سایت را برای وبلاگ فارسی در نظر بگیرید و صفحه‌ی مشترک را در زیر آدرس دیگری بسازید، مثل این:</p>
+
+<pre><code>your-address.com/main/     &gt;    صفحه مشترک بین هر چهار سایت
+your-address.com/          &gt;    وبلاگ فارسی
+</code></pre>
+
+<p>برای این منظور config.yml و config/blog-fa.yml را ویرایش کنید و url و root را تغییر دهید:</p>
+
+<p><code>config.yml</code></p>
+
+<pre><code>url: your-address.com/main
+root: /main
+</code></pre>
+
+<p><code>config/blog-fa.yml</code></p>
+
+<pre><code>url: your-address.com/
+root: /
+</code></pre>
+
+<p>یا شاید اصلا نخواهید صفحه‌ی مشترک را داشته باشید، برای اینکار url و root را در config.yml با مقدار url و root در config/blog-fa.yml یکی قرار دهید. در صورت مساوی شدن مقدار این دو فیلد بین main و طبقات، اولویت با طبقات است. در این صورت دیگر صفحه مشترکی نخواهید داشت. میتوانید main.tt2 را هم از قالبتان پاک کنید.</p>
+
+<p><code>config.yml</code></p>
+
+<pre><code>url: your-address.com/
+root: /
+</code></pre>
+
+<p><code>config/blog-fa.yml</code></p>
+
+<pre><code>url: your-address.com/
+root: /
+</code></pre>
+       
        <a name="انتخاب محل انتشار"></a>
           <h2><a href="/start-fa/start-publish/">انتخاب محل انتشار</a></h2>
           <a name="more"></a><br><p>برای منتشر کردن خروجی تولید شده توسط میرا روی وب انتخاب‌های متعددی دارید، و بسته به انتخابی که می‌کنید، راه‌های متفاوتی پیش رو خواهید داشت.</p>
@@ -2433,6 +2478,10 @@ git push origin master gh-pages
       
       <h5><a href="#افزودن مشخصات نویسنده مطلب">افزودن مشخصات نویسنده مطلب</a></h5>
 <!--      <h5><a href="#/start-fa/add-author-info/">افزودن مشخصات نویسنده مطلب</a></h5> -->
+    
+      
+      <h5><a href="#تغییر آدرس انتشار سایت‌ها">تغییر آدرس انتشار سایت‌ها</a></h5>
+<!--      <h5><a href="#/start-fa/change-publish-address/">تغییر آدرس انتشار سایت‌ها</a></h5> -->
     
     
       

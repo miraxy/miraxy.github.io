@@ -10,7 +10,7 @@
     <meta name="description" content="راهنمای شروع به کار با میرا">
     <meta name="author" content="kiavash">
 
-    <title>اضافه کردن لینک شبکه‌های اجتماعی - شروع</title>
+    <title>تغییر آدرس انتشار سایت‌ها - شروع</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
@@ -84,53 +84,50 @@
   <div class="row">
     <div class="col-lg-7 col-lg-offset-1 col-md-8">
       
-      <a name="اضافه کردن لینک شبکه‌های اجتماعی"></a>
-         <h2><a href="/start-fa/add-social-links/">اضافه کردن لینک شبکه‌های اجتماعی</a></h2>
-         <a name="more"></a><br><p>برای افزودن لینک خودمان در شبکه‌های اجتماعی به جایی مثل ساید باز هم میرویم سراغ کانفیگ‌ها و اضافه کردن چند خط به هرکدامشان</p>
+      <a name="تغییر آدرس انتشار سایت‌ها"></a>
+         <h2><a href="/start-fa/change-publish-address/">تغییر آدرس انتشار سایت‌ها</a></h2>
+         <a name="more"></a><br><p>در تنظیمات دیدیم که ریشه‌ی اصلی سایت را برای یک صفحه‌ی مشترک بین تمام سایت‌ها در نظر گرفتیم و بعد برای هر سایت یک آدرس در لول پایینتر مشخص کردیم:</p>
 
-<p>فرض میکنیم لینکی که می‌خواهیم برای شبکه‌های اجتماعی در نظر بگیریم در تمام سایت‌ها ثابت نیست و برای هر سایت یک کانال، یا اکانت جدا در شبکه‌های اجتماعی و یک کانال در پیام رسان تلگرام را ساخته‌ایم.</p>
-
-<p>از اینجای مثال فقط برای وبلاگ فارسی همه چیز را در نظر می‌گیریم، اما می‌توانید برای سه سایت دیگر هم به همین شکل کار را انجام دهید یا کلا این همه چیز را به جای تنظیم اختصاصی هر سایت در تنظیم‌های عمومی بگنجانید و در همه‌ی سایت‌ها از همان تنظیم استفاده کنید.</p>
-
-<p>آدرس ها را هم این‌ها در نظر میگیریم:</p>
-
-<h4>وبلاگ فارسی:</h4>
-
-<p>twitter.com/@MY_FA_BLOG_MIRA
-telegram.me/MY_FA_BLOG_MIRA</p>
-
-<p>حالا به blog-fa.yml  کدهای زیر را اضافه می‌کنیم:</p>
-
-<p><code>~/mira/config/blog-fa.yml</code></p>
-
-<pre><code>socials:
- -
-  name: twitter
-  url: https://twitter.com/MY_FA_BLOG_MIRA
- -
-  name: instagram
-  url: https://instagram.com/MY_FA_BLOG_MIRA
- -
-  name: github
-  url: https://github.com/MY_FA_BLOG_MIRA
+<pre><code>your-address.com/          &gt;    صفحه مشترک بین هر چهار سایت
+your-address.com/blog/     &gt;    وبلاگ فارسی
+your-address.com/en/       &gt;    وبلاگ انگلیسی
+your-address.com/story/    &gt;    داستان‌ها
+your-address.com/linux/    &gt;    آموزش لینوکس
 </code></pre>
 
-<blockquote>
-  <p>به فاصله‌ها دقت کنید، هر بخش که داخل رفتیم، یک خط فاصله اضافه شده است، socials در ابتدای خط است، قبل از هر خط تیره - یک space وجود دارد و یک مرحله فرورفتگی ایجاد شده و بعد، قبل از name و url دو خط فاصله یا همان space هست، یعنی دو مرحله فرورفتگی.</p>
-</blockquote>
+<p>اما شاید بخواهید ریشه اصلی سایت را برای وبلاگ فارسی در نظر بگیرید و صفحه‌ی مشترک را در زیر آدرس دیگری بسازید، مثل این:</p>
 
-<p>حالا در my-theme فایل index.tt2 را باز می‌کینم و هر کجا که خواستیم شبکه‌های اجتماعی را نمایش دهیم این کدها را به آن اضافه می‌کنیم، مثلا در بالاترین قسمت sidebar:</p>
-
-<pre><code>&lt;td width="30%" valign="top"&gt;
-{{ IF SITE.socials }}
-    &lt;h3&gt;socials&lt;/h3&gt;
-    {{ FOREACH social IN SITE.socials }}
-        &lt;a href="{{ social.url }}"&gt;{{ social.name }}&lt;/a&gt;&gt;ذق&lt;
-    {{ END }}
-{{ END }}
+<pre><code>your-address.com/main/     &gt;    صفحه مشترک بین هر چهار سایت
+your-address.com/          &gt;    وبلاگ فارسی
 </code></pre>
 
-<p>برای هر کدام از چهار سایت دیگر هم می‌توان همین کار را تکرار کرد، یا اینکه برای همه سایت‌ها از یک آدرس مشترک در شبکه‌های اجتماعی استفاده کنیم و همه اطلاعات را در config.yml وارد کنیم، در این حالت برای نمایش لینک‌ها در سایت، به جای SITE.socials باید از MAIN.socials استفاده کرد.</p>
+<p>برای این منظور config.yml و config/blog-fa.yml را ویرایش کنید و url و root را تغییر دهید:</p>
+
+<p><code>config.yml</code></p>
+
+<pre><code>url: your-address.com/main
+root: /main
+</code></pre>
+
+<p><code>config/blog-fa.yml</code></p>
+
+<pre><code>url: your-address.com/
+root: /
+</code></pre>
+
+<p>یا شاید اصلا نخواهید صفحه‌ی مشترک را داشته باشید، برای اینکار url و root را در config.yml با مقدار url و root در config/blog-fa.yml یکی قرار دهید. در صورت مساوی شدن مقدار این دو فیلد بین main و طبقات، اولویت با طبقات است. در این صورت دیگر صفحه مشترکی نخواهید داشت. میتوانید main.tt2 را هم از قالبتان پاک کنید.</p>
+
+<p><code>config.yml</code></p>
+
+<pre><code>url: your-address.com/
+root: /
+</code></pre>
+
+<p><code>config/blog-fa.yml</code></p>
+
+<pre><code>url: your-address.com/
+root: /
+</code></pre>
       
     </div>
 

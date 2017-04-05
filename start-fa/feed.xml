@@ -47,27 +47,28 @@
 &lt;p&gt;دایرکتوری که mira را در آن پیکربندی کردید را کلا به عنوان شاخه‌ی master از مخزن اصلی تعریف کنید و مخزنی که روی گیت‌هاب برای آن ساخته‌اید را به عنوان remote به گیت معرفی کنید.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git init
+git remote add origin git@github.com:USER/YOUR-SITE-mira.git
 git add --all
 git commit -m 'start'
-git add remote GITHUB_REPO_ADDRESS
+git push origin master
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;از این به بعد، پس از هر بار اجرا کردن mira build و ساخته شدن سایتتان، تغییرات را به گیت اضافه و publish کنید.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;mira build
 git add --all
-git commit -m 'publish'
+git commit -m 'add new content and publish'
 git push origin master
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;از حالا به بعد اگر آدرس مخزنی که روی گیت هاب ساخته بودید چیزی شبیه به این آدرس بود:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;github.com/USER/REPO.git
+&lt;pre&gt;&lt;code&gt;github.com/USER/YOUR-SITE-mira.git
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری docs منتشر خواهد شد:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;USER.github.io/REPO
+&lt;pre&gt;&lt;code&gt;USER.github.io/YOUR-SITE-mira
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;و اگر می‌خواهید از نام دامین اختصاصی خودتان برای نمایش محتوا استفاده کنید، فایلی به نام CNAME را در docs بسازید و نام دامنه‌ی خودتان را در آن بنویسید&lt;/p&gt;
@@ -111,7 +112,7 @@ git commit -m 'start'
 
 &lt;p&gt;آدرس مخزنی که در گیت‌هاب ساخته‌اید را به عنوان remote به پروژه اضافه می‌کنیم و شاخه‌ی master را push می‌کنیم.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;git add remote GITHUB_REPO_ADDRESS
+&lt;pre&gt;&lt;code&gt;git remote add origin git@github.com:USER/YOUR-SITE-mira.git
 git push origin master
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -120,7 +121,7 @@ git push origin master
 &lt;pre&gt;&lt;code&gt;git checkout --orphan gh-pages
 git reset --hard
 git commit --allow-empty -m &quot;Initializing gh-pages&quot;
-git push upstream gh-pages
+git push origin gh-pages
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;به شاخه‌ی master بر می‌گردیم&lt;/p&gt;
@@ -152,12 +153,12 @@ git push origin master gh-pages
 
 &lt;p&gt;از حالا به بعد اگر آدرس مخزنی که روی گیت هاب ساخته بودید چیزی شبیه به این آدرس بود:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;github.com/USER/REPO.git
+&lt;pre&gt;&lt;code&gt;github.com/USER/YOUR-SITE-mira.git
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری public منتشر خواهد شد:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;USER.github.io/REPO
+&lt;pre&gt;&lt;code&gt;USER.github.io/YOUR-SITE-mira
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;و اگر می‌خواهید از نام دامین اختصاصی خودتان برای نمایش محتوا استفاده کنید، فایلی به نام CNAME را در public بسازید و نام دامنه‌ی خودتان را در آن بنویسید&lt;/p&gt;
@@ -181,7 +182,7 @@ git push origin master gh-pages
 &lt;pre&gt;&lt;code&gt;~/mira/public$&amp;gt; git init
 ~/mira/public$&amp;gt; git add .
 ~/mira/public$&amp;gt; git commit -m 'publish'
-~/mira/public$&amp;gt; git add remote git@github.com:USER/USER.github.io.git
+~/mira/public$&amp;gt; git remote add origin git@github.com:USER/USER.github.io.git
 ~/mira/public$&amp;gt; git push origin master
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -206,13 +207,14 @@ git push origin master gh-pages
 
 &lt;p&gt;تمام شد، حالا بعد از هر بار mira build، یک بار در شاخه اصلی و یک بار در شاخه public همه چیز را به گیت اضافه کنید و push کنید&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;~/mira$&amp;gt; git add .
-~/mira$&amp;gt; git commit -m 'add content'
-~/mira$&amp;gt; git push origin master
-~/mira$&amp;gt; cd public
+&lt;pre&gt;&lt;code&gt;~/mira$&amp;gt; cd public
 ~/mira/public$&amp;gt; git add .
 ~/mira/public$&amp;gt; git commit -m 'publish'
 ~/mira/public$&amp;gt; git push origin master
+~/mira/public$&amp;gt; cd ..
+~/mira$&amp;gt; git add .
+~/mira$&amp;gt; git commit -m 'add content'
+~/mira$&amp;gt; git push origin master
 &lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2017-04-04 01:55:23</pubDate>
           <link>/start-fa/use-github-for-publish/</link>

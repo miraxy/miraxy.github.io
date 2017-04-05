@@ -3,8 +3,8 @@
   <channel>
     <title>شروع</title>
     <description>راهنمای شروع به کار با میرا</description>
-    <link>http://localhost:80</link>
-    <atom:link href="http://localhost:80/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://miraxy.github.io/start-fa</link>
+    <atom:link href="http://miraxy.github.io/start-fa/feed.xml" rel="self" type="application/rss+xml" />
     <pubDate></pubDate>
     <lastBuildDate></lastBuildDate>
     <generator>mira</generator>
@@ -18,13 +18,13 @@
 &lt;p&gt;برای آشنایی بیشتر با صفحات گیتهاب میتوانید مستندات آنرا در این لینک بخوانید:
 &lt;a href=&quot;https://help.github.com/articles/user-organization-and-project-pages/&quot;&gt;User, Organization, and Project Pages&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;گیت‌هاب برای استفاده از سرویس pages، سه راه حل متفاوت دارد، برای انتشار می‌توانید از سه branch مختلف یکی را انتخاب کنید:&lt;/p&gt;
+&lt;p&gt;گیت‌هاب برای استفاده از سرویس pages، راه‌های متفاوتی ارائه می‌کند.&lt;/p&gt;
 
 &lt;p&gt;۱- استفاده از دایرکتوری docs در branch master&lt;/p&gt;
 
 &lt;p&gt;۲- استفاده از branch فرعی با نام gh-pages&lt;/p&gt;
 
-&lt;p&gt;۳- انتشار کامل محتوای ذخیره شده در master برای انتشار در USER.github.io&lt;/p&gt;
+&lt;p&gt;۳- انتشار محتوای ذخیره شده در master&lt;/p&gt;
 
 &lt;p&gt;در زیر به شکل کلی در مورد این سه روش می‌خوانیم و در ادامه برای استفاده از هرکدام به شکل اختصاصی برای استفاده در میرا یک راه حل و مثال را پیاده می‌کنیم.&lt;/p&gt;
 
@@ -70,6 +70,11 @@ git push origin master
 &lt;pre&gt;&lt;code&gt;USER.github.io/REPO
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;و اگر می‌خواهید از نام دامین اختصاصی خودتان برای نمایش محتوا استفاده کنید، فایلی به نام CNAME را در docs بسازید و نام دامنه‌ی خودتان را در آن بنویسید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo YOUR_DOMAIN_NAME.com &amp;gt; CNAME
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h1&gt;انتشار به وسیله‌ی شاخه‌ی gh-pages&lt;/h1&gt;
 
 &lt;p&gt;راه دیگر انتشار محتوا به وسیله‌ی یک شاخه‌ی جدا به نام gh-pages در مخزن گیت است. آماده سازی آن نسبت به استفاده از شاخه‌ی docs پیچیده‌تر است، اما در مقابل مزایای بیشتری هم دارد.&lt;/p&gt;
@@ -93,7 +98,7 @@ git push origin master
 
 &lt;p&gt;یا اگر در ویندوز باشیم&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;rd /s /q public
+&lt;pre&gt;&lt;code&gt;rd public /s /q
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;اول گیت را پیکربندی می‌کنیم و دایرکتوری public را به gitignore اضافه میکنیم:&lt;/p&gt;
@@ -159,7 +164,46 @@ git push origin master gh-pages
 &lt;pre&gt;&lt;code&gt;echo YOUR_DOMAIN_NAME.com &amp;gt; CNAME
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h1&gt;ادامه دارد...&lt;/h1&gt;</description>
+&lt;h1&gt;انتشار در USER.github.io&lt;/h1&gt;
+
+&lt;p&gt;در راهنمای صفحات گیت هاب، در کنار ساختن صفحات پروژه، یکی دیگر از راه‌هایی که به آن اشاره شده ساختن صفحات شخصی است. قاعده کلی این صفحات به این صورت است:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;در آدرسی که با نام کاربری شما در گیت هاب ساخته شده قابل انتشار هستند: USER.github.io&lt;/li&gt;
+&lt;li&gt;محتوا تنها از شاخه‌ی master در مخزنی با نام USER.github.io برای انتشار استفاده می‌شود.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;پس برای استفاده از این راه، تنها کافی است دایرکتوری public را به عنوان شاخه master در مخزن USER.github.io معرفی کنید.&lt;/p&gt;
+
+&lt;p&gt;ابتدا در گیت هاب مخزنی را با مشخصات اشاره شده بسازید و بعد در دایرکتوری public این کدها را وارد کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/public$&amp;gt; git init
+~/mira/public$&amp;gt; git add .
+~/mira/public$&amp;gt; git commit -m 'publish'
+~/mira/public$&amp;gt; git add remote git@github.com:USER/USER.github.io.git
+~/mira/public$&amp;gt; git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;تکمیل&lt;/h2&gt;
+
+&lt;p&gt;البته یک ایراد وجود دارد، در این حالت فایل‌های محتویات و تنظیمات و تاریخچه آن‌ها و... را در هیچ مخزنی نداریم. برای حال این مشکل از یک راه حل دیگر استفاده می‌کنیم:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;دایرکتوری public را کاملا پاک کنید &lt;code&gt;rm -rf public&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;روی گیت هاب مخزنی با نام کاربری خود برای انتشار محتوا بسازید: USER.github.io&lt;/li&gt;
+&lt;li&gt;روی گیت هاب مخزنی با نام سایت خود بسازید، مثلا YOUR-SITE-mira&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;گیت را در دایرکتوری ریشه‌ای که میرا را در آن استفاده می‌کنید، پیکربندی کنید و مخزن YOUR-SITE-mira را به عنوان remote به پروژه اضافه کنید.&lt;/p&gt;
+
+&lt;p&gt;~/mira$&gt; git init
+~/mira/public$&gt; echo &quot;public&quot; &gt; .gitignore
+~/mira$&gt; git remote add origin git@github.com:USER/YOUR-SITE-mira-content.git
+~/mira$&gt; git add .
+~/mira$&gt; git commit -m 'start'&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;حالا مخزن YOUR-SITE-mira را به عنوان remote به گیت دایرکتوری میرا اضافه کنید&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;حالا public را به عنوان یک ساب ماژول به این مخزن معرفی میکنیم:&lt;/p&gt;
+
+&lt;p&gt;git submodule add -b master git@github.com:USER/USER.github.io.git public&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
           <pubDate>2017-04-04 01:55:23</pubDate>
           <link>/start-fa/use-github-for-publish/</link>
           <guid isPermaLink="true">/start-fa/use-github-for-publish/</guid>

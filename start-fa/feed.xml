@@ -133,14 +133,15 @@ git push upstream gh-pages
 &lt;pre&gt;&lt;code&gt;git worktree add -B gh-pages public origin/gh-pages
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;strong&gt;انتشار&lt;/strong&gt;:&lt;/p&gt;
+
 &lt;p&gt;اگر همه مراحل بالا بدون اشکال پیش رفته باشد، حالا همه چیز آماده است. از این به بعد بعد از هر بار اضافه کردن محتوا یک بار مخزن را به روز کنید و بعد از هر build کردن سایت هم یک بار دیگر. ترتیب دستورها چیزی شبیه به این خواهد بود:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;mira new -t 'post title' -f blog
 ویرایش و تولید محتوا و قرار دادن عکس یا سایر ضمیمه‌ها در شاخه استاتیک
+mira build
 git add .
 git commit -m 'add content'
-ساختن خروجی:
-mira build
 cd public
 git add .
 git commit -m 'publish'
@@ -154,7 +155,7 @@ git push origin master gh-pages
 &lt;pre&gt;&lt;code&gt;github.com/USER/REPO.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری docs منتشر خواهد شد:&lt;/p&gt;
+&lt;p&gt;محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری public منتشر خواهد شد:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;USER.github.io/REPO
 &lt;/code&gt;&lt;/pre&gt;

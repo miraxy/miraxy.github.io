@@ -2250,15 +2250,24 @@ git push origin master gh-pages
 <li><p>گیت را در دایرکتوری ریشه‌ای که میرا را در آن استفاده می‌کنید، پیکربندی کنید و مخزن YOUR-SITE-mira را به عنوان remote به پروژه اضافه کنید.</p>
 
 <p>~/mira$> git init
-~/mira/public$> echo "public" > .gitignore
 ~/mira$> git remote add origin git@github.com:USER/YOUR-SITE-mira-content.git
 ~/mira$> git add .
 ~/mira$> git commit -m 'start'</p></li>
-<li><p>حالا مخزن YOUR-SITE-mira را به عنوان remote به گیت دایرکتوری میرا اضافه کنید</p></li>
 <li><p>حالا public را به عنوان یک ساب ماژول به این مخزن معرفی میکنیم:</p>
 
 <p>git submodule add -b master git@github.com:USER/USER.github.io.git public</p></li>
 </ul>
+
+<p>تمام شد، حالا بعد از هر بار mira build، یک بار در شاخه اصلی و یک بار در شاخه public همه چیز را به گیت اضافه کنید و push کنید</p>
+
+<pre><code>~/mira$&gt; git add .
+~/mira$&gt; git commit -m 'add content'
+~/mira$&gt; git push origin master
+~/mira$&gt; cd public
+~/mira/public$&gt; git add .
+~/mira/public$&gt; git commit -m 'publish'
+~/mira/public$&gt; git push origin master
+</code></pre>
        
     </div>
 

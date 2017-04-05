@@ -195,15 +195,24 @@ git push origin master gh-pages
 &lt;li&gt;&lt;p&gt;گیت را در دایرکتوری ریشه‌ای که میرا را در آن استفاده می‌کنید، پیکربندی کنید و مخزن YOUR-SITE-mira را به عنوان remote به پروژه اضافه کنید.&lt;/p&gt;
 
 &lt;p&gt;~/mira$&gt; git init
-~/mira/public$&gt; echo &quot;public&quot; &gt; .gitignore
 ~/mira$&gt; git remote add origin git@github.com:USER/YOUR-SITE-mira-content.git
 ~/mira$&gt; git add .
 ~/mira$&gt; git commit -m 'start'&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;حالا مخزن YOUR-SITE-mira را به عنوان remote به گیت دایرکتوری میرا اضافه کنید&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;حالا public را به عنوان یک ساب ماژول به این مخزن معرفی میکنیم:&lt;/p&gt;
 
 &lt;p&gt;git submodule add -b master git@github.com:USER/USER.github.io.git public&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;/ul&gt;
+
+&lt;p&gt;تمام شد، حالا بعد از هر بار mira build، یک بار در شاخه اصلی و یک بار در شاخه public همه چیز را به گیت اضافه کنید و push کنید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira$&amp;gt; git add .
+~/mira$&amp;gt; git commit -m 'add content'
+~/mira$&amp;gt; git push origin master
+~/mira$&amp;gt; cd public
+~/mira/public$&amp;gt; git add .
+~/mira/public$&amp;gt; git commit -m 'publish'
+~/mira/public$&amp;gt; git push origin master
+&lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2017-04-04 01:55:23</pubDate>
           <link>/start-fa/use-github-for-publish/</link>
           <guid isPermaLink="true">/start-fa/use-github-for-publish/</guid>

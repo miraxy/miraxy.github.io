@@ -2190,6 +2190,8 @@ git push origin master
 <li>و...</li>
 </ul>
 
+<p><strong>توجه کنید</strong>: اگر چندان با گیت آشنا نیستید و دقیقا می‌خواهید قدم به قدم با مثال‌های گیت این راهنما پیش بروید، مخازنی را که در گیت‌هاب می‌سازید، کاملا خالی باشند، هنگام ساختن مخزن در گیت‌هاب، اجازه ساخته شدن فایل README یا gitignore و... را ندهید.</p>
+
 <p><strong>آماده سازی</strong>:</p>
 
 <p>توضیح: این قسمت را تنها نیاز داریم یک بار انجام دهیم، در طول توضیحات فرض این است که نام remote که استفاده میکنیم origin است، اگر از نام دیگری استفاده میکنید، آن‌ را با origin جایگزین کنید.</p>
@@ -2266,6 +2268,69 @@ git push origin master gh-pages
 <p>و اگر می‌خواهید از نام دامین اختصاصی خودتان برای نمایش محتوا استفاده کنید، فایلی به نام CNAME را در public بسازید و نام دامنه‌ی خودتان را در آن بنویسید</p>
 
 <pre><code>echo YOUR_DOMAIN_NAME.com &gt; CNAME
+</code></pre>
+
+<h2>استفاده از یک اسکریپت:</h2>
+
+<p>برای اتومامتیک انجام شدن تمام مراحل بالا، این اسکریپت را دانلود کنید.</p>
+
+<p><a href="https://raw.githubusercontent.com/kiamazi/mira-tools/master/gh-pages/gh-pages.pl">اسکریپت gh-pages.pl</a></p>
+
+<p>حالا یا آن را در دایرکتوری ریشه‌ی میرا کپی کنید، یا در مسیری که در path شما باشد، مثلا دایرکتوری bin در home، و آن را اجرایی کنید
+<code>chmod +x gh-pages.pl</code>
+البته اگر آن را در مسیر میرای خودتان کپی کردید بدون اجرایی کردن آن هم مشکلی نخواهید داشت.</p>
+
+<p>این اسکریپت دو عملکرد دارد، init و push، دقیقا مثل توضیحات بالا که همه چیز را خودمان انجام میدادیم، init را فقط کافی است یک بار اجرا کنید و بعد از آن فقط از push استفاده میکنیم.</p>
+
+<p>اگر آن‌را اجرایی نکرده باشید:</p>
+
+<pre><code>~/mira$&gt; perl gh-pages.pl --init
+</code></pre>
+
+<p>و اگر اجرایی شده باشد:</p>
+
+<pre><code>~/mira$&gt; gh-pages.pl --init
+</code></pre>
+
+<p>شاخه‌ی gh-pages ساخته شد و دایرکتوری public به عنوان worktree آن معرفی شد.</p>
+
+<p>حالا یک مخزن remote خالی در github می‌سازیم و به پروژه اضافه می‌کنیم:</p>
+
+<pre><code>git remote add origin git@github.com:USER/REPO_NAME.git
+</code></pre>
+
+<p>آماده سازی تمام شد، از این به بعد با اجرای دستور زیر:</p>
+
+<pre><code>~/mira$&gt; perl gh-pages.pl --push
+یا
+~/mira$&gt; gh-pages.pl --push
+</code></pre>
+
+<p>تمام مراحل add و commit و push به طور خودکار برای هر دو شاخه انجام می‌شود، محتویات تمام دایرکتوری‌های میرا به جز public به شاخه master و محتویات public به شاخه‌ی gh-pages اضافه می‌شوند و دستور push برای هر دو شاخه اجرا می‌شود.</p>
+
+<p><strong>یک نکته</strong>: اسکریپت فوق یک سوییچ دیگر هم دارد
+<code>--worktree | -w</code>
+اگر زمانی خواستید شاخه‌ی دیگری به جز public به عنوان worktree برای شاخه‌ی gh-pages استفاده شود، میتوانید این سوییچ را هم مورد استفاده قرار دهید.</p>
+
+<pre><code>~/mira$&gt; perl gh-pages.pl --init -w public/other
+~/mira$&gt; gh-pages.pl --push -w other/path/
+</code></pre>
+
+<p>اگر مقدار سوییچ worktree با / شروع بشود، اسکریپت اتوماتیک مسیر را در دایرکتوری public در نظر می‌گیرد:</p>
+
+<pre><code>~/mira$&gt; gh-pages.pl --push --worktree='/path/other'
+برابر است با
+~/mira$&gt; gh-pages.pl --push -w public/path/other
+</code></pre>
+
+<p>اگر نمی‌خواهید هر سری سوییچ -w را استفاده کنید، اسکریپت را ویرایش کنید و در خط ۱۷ مقدار پیش‌فرض را از public به آدرس مورد نظرتان تغییر دهید:</p>
+
+<pre><code>worktree =&gt; 'public'
+تغییر دهید به
+worktree =&gt; 'public/deep/path/'
+یا
+worktree =&gt; 'doc'
+worktree =&gt; 'another/path'
 </code></pre>
 
 <h1>انتشار در USER.github.io</h1>

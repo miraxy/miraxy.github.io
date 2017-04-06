@@ -1320,7 +1320,7 @@ posts (list)
 
 <p>نحوه‌ استفاده:</p>
 
-<pre><code>{{ FOREACH Floors.values }}
+<pre><code>{{ FOREACH FLOORS.values }}
   {{ name }}
   {{ description }}
 
@@ -1343,13 +1343,13 @@ posts (list)
 
 <p>این برچسب تنها مختص به main.tt2 میباشد</p>
 
-<p>تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن Entries.$id نیز قابل استفاده هستند
-نحوه‌ی استفاده به همراه Entries</p>
+<p>تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن ENTRIES.$id نیز قابل استفاده هستند
+نحوه‌ی استفاده به همراه ENTRIES</p>
 
 <pre><code>{{ FOREACH id IN UTIDS }}
-   &lt;h2&gt;&lt;a href="{{ Entries.$id.url }}"&gt;{{ Entries.$id.title }}&lt;/a&gt;&lt;h2&gt;
-   &lt;h4&gt;{{ Entries.$id.CALENDAR.day }}-{{ Entries.$id.CALENDAR.month_name }}-{{ Entries.$id.CALENDAR.year }}&lt;/h4&gt;
-   &lt;p&gt;{{ Entries.$id.body.less }}&lt;/p&gt;
+   &lt;h2&gt;&lt;a href="{{ ENTRIES.$id.url }}"&gt;{{ ENTRIES.$id.title }}&lt;/a&gt;&lt;h2&gt;
+   &lt;h4&gt;{{ ENTRIES.$id.CALENDAR.day }}-{{ ENTRIES.$id.CALENDAR.month_name }}-{{ ENTRIES.$id.CALENDAR.year }}&lt;/h4&gt;
+   &lt;p&gt;{{ ENTRIES.$id.body.less }}&lt;/p&gt;
 {{ END }}
 </code></pre>
 
@@ -1475,7 +1475,7 @@ posts (list)
 
 <p>نحوه استفاده:</p>
 
-<pre><code>{{ FOREACH archive IN Archives.pairs }}
+<pre><code>{{ FOREACH archive IN ARCHIVES.pairs }}
   {{ archive.key }} نام آرشیو
   &lt;hr&gt;
   {{ FOREACH item IN archive.value.values }}

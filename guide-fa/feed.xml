@@ -731,7 +731,7 @@ posts (list)
 
 &lt;p&gt;نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FOREACH Floors.values }}
+&lt;pre&gt;&lt;code&gt;{{ FOREACH FLOORS.values }}
   {{ name }}
   {{ description }}
 
@@ -754,13 +754,13 @@ posts (list)
 
 &lt;p&gt;این برچسب تنها مختص به main.tt2 میباشد&lt;/p&gt;
 
-&lt;p&gt;تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن Entries.$id نیز قابل استفاده هستند
-نحوه‌ی استفاده به همراه Entries&lt;/p&gt;
+&lt;p&gt;تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن ENTRIES.$id نیز قابل استفاده هستند
+نحوه‌ی استفاده به همراه ENTRIES&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ FOREACH id IN UTIDS }}
-   &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ Entries.$id.url }}&quot;&amp;gt;{{ Entries.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
-   &amp;lt;h4&amp;gt;{{ Entries.$id.CALENDAR.day }}-{{ Entries.$id.CALENDAR.month_name }}-{{ Entries.$id.CALENDAR.year }}&amp;lt;/h4&amp;gt;
-   &amp;lt;p&amp;gt;{{ Entries.$id.body.less }}&amp;lt;/p&amp;gt;
+   &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ ENTRIES.$id.url }}&quot;&amp;gt;{{ ENTRIES.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
+   &amp;lt;h4&amp;gt;{{ ENTRIES.$id.CALENDAR.day }}-{{ ENTRIES.$id.CALENDAR.month_name }}-{{ ENTRIES.$id.CALENDAR.year }}&amp;lt;/h4&amp;gt;
+   &amp;lt;p&amp;gt;{{ ENTRIES.$id.body.less }}&amp;lt;/p&amp;gt;
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -886,7 +886,7 @@ posts (list)
 
 &lt;p&gt;نحوه استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FOREACH archive IN Archives.pairs }}
+&lt;pre&gt;&lt;code&gt;{{ FOREACH archive IN ARCHIVES.pairs }}
   {{ archive.key }} نام آرشیو
   &amp;lt;hr&amp;gt;
   {{ FOREACH item IN archive.value.values }}

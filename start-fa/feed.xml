@@ -1463,185 +1463,6 @@ suggests
         </item>
       
         <item>
-          <title>مثال‌هایی برای محتوا</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;برای اینکه مثال‌های کامل‌تری داشته باشیم، محتوای سایت‌هایمان را با استفاده از تعدادی از نوشته‌های سایت‌های زیر تکمیل می‌کنیم.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;behroozam.com برای استفاده در وبلاگ فارسی&lt;/li&gt;
-&lt;li&gt;sallar.me وبلاگ انگلیسی&lt;/li&gt;
-&lt;li&gt;morde.ir داستان‌ها&lt;/li&gt;
-&lt;li&gt;linuxiha.ir آموزش لینوکس&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;&lt;a href=&quot;https://raw.githubusercontent.com/miraxy/sample/master/content.zip&quot;&gt;دانلود شاخهcontent&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;توضیح&lt;/strong&gt;: مثال‌هایی که در ادامه این بخش میخوانید در این فایل موجود نیستند، بهتر است برای کپی کردن این مثال‌ها در سایت آزمایشیتان، تا آخر این گام صبر کنید و پس از خواندن این بخش و ساختن فایل‌های مثال خودتان، محتویات را جایگزین کنید.&lt;/p&gt;</description>
-          <pubDate>2017-03-28 13:08:55</pubDate>
-          <link>/start-fa/content-dl/</link>
-          <guid isPermaLink="true">/start-fa/content-dl/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>تنظیمات اختصاصی برای هر سایت</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;&lt;strong&gt;می‌خواهیم هر کدام از این چهار سایت را در این آدرس‌ها منتشر کنیم:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;وبلاگ فارسی: address.com/blog&lt;/li&gt;
-&lt;li&gt;وبلاگ انگلیسی: address.com/en&lt;/li&gt;
-&lt;li&gt;داستان دنباله‌دار: address.com/story&lt;/li&gt;
-&lt;li&gt;آموزش لینوکس: address.com/linux&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;برای این منظور باید فیلدهای url و root را مقدار دهی کنیم.&lt;/p&gt;
-
-&lt;p&gt;در مورد &lt;strong&gt;آدرس نهایی هر پست&lt;/strong&gt;: &lt;br /&gt;
-به یاد داشته باشید آدرس‌ها میتوانند به شکل پوشه یا فایل تولید شوند، برای دیدن تفاوت این دو مورد، در پایان گام تنظیمات، تفاوت فیلد permalink در فایل‌های تنظیمات وبلاگ فارسی با سایر سایت‌ها را ببینید.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;تصمیم داریم نوشته‌های وبلاگ فارسی در آدرس‌هایی که براساس تاریخ انتشار و دسته بندی موضوعی تولید شده‌اند منتشر شوند و در آدرس نهایی category و تاریخ‌ها به شکل مسیر باشند و تیتر مطلب به شکل یک فایل باشد.&lt;/li&gt;
-&lt;li&gt;پست‌های وبلاگ انگلیسی از تاریخ انتشار در آدرس ثایت استفاده کنند. آدرس به شکل یک مسیر باشد.&lt;/li&gt;
-&lt;li&gt;برای داستان‌ها تنها نام داستان در آدرس باشد. آدرس به شکل یک مسیر باشد.&lt;/li&gt;
-&lt;li&gt;در آموزش لینوکس، در آدرس‌ هر پست نام نویسنده هم ذکر شده باشد. آدرس به شکل یک مسیر باشد.
-برای تنظیم این موارد در فایل تنظیمات فیلد permalink را باید مقدار دهی کنیم&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;لیست‌های آرشیوی مورد نظرمان:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;برای وبلاگ فارسی category و آرشیو زمانی بر اساس تاریخ شمسی&lt;/li&gt;
-&lt;li&gt;برای وبلاگ انگلیسی tags و آرشیو زمانی بر اساس تاریخ میلادی&lt;/li&gt;
-&lt;li&gt;برای داستان هیچ لیست آرشیوی در نظر نداریم&lt;/li&gt;
-&lt;li&gt;و در آموزش هم tags, categories, author&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;برای این‌کار باید فیلد lists را مقدار دهی کنیم.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;نمایش تعداد نوشته‌ها در هر صفحه:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;برای وبلاگ‌های فارسی و انگلیسی، در صفحه اول میخواهیم ۵ نوشته آخر نوشته شده باشند، و در صفحات آرشیو هم تیتر ۱۰ نوشته آخر در هر صفحه باشد.&lt;/li&gt;
-&lt;li&gt;برای آموزش‌ها میخواهیم در صفحه اصلی ۱۰ نوشته آخر نمایش داده شوند و در صفحات آرشیو تمام پست‌ها در یک صفحه برای هر آرشیو باشند.&lt;/li&gt;
-&lt;li&gt;برای داستان دنباله دارمان هم میخواهیم تمام داستان‌هایی که تا به حال نوشته‌ایم در همان صفحه اول باشند، و ترتیب نمایششان هم برعکس باشد، به این ترتیب که نوشته‌های قدیمی‌تر در بالا باشند.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;برای نمایش تعداد هر پست در صفحه اول به فیلد post_num مقدار دهی میکنیم و برای تعداد پست‌ها در هر صفحه آرشیو هم archive_post_num &lt;br /&gt;
-برای ترتیب نمایش هم فیلد post_sort &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;فایل‌های ضمیمه&lt;/strong&gt; وبلاگ‌های فارسی و انگلیسی را هم در زیر شاخه‌ی آدرس خودشان در شاخه‌ی assets می‌خواهیم ذخیره کنیم، اما ضمیمه‌های آموزش لینوکس و داستان را در زیرشاخه‌ی آدرس خود سایت اما در شاخه‌ی static.&lt;/p&gt;
-
-&lt;p&gt;در آخر برای هر سه سایتی که به فارسی مینویسیم می‌خواهیم تاریخ هجری شمسی را هم داشته باشیم، برای این منظور باید پلاگین Jdate را فعال کنیم. و در وبلاگ فارسی آرشیو بر اساس تاریخ شمسی هم می‌خواهیم داشته باشیم.&lt;/p&gt;
-
-&lt;p&gt;برای تنظیمات عمومی فایل config.yml در ریشه اصلی از قبل موجود است، برای ذخیره کردن تنظیمات مشخص شده برای هر سایت هم، در دایرکتوری config هم‌نام با نام هر سایت در شاخه یک فایل جدید با پسوند yml میسازیم&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;~/mira/config/blog-fa.yml
-~/mira/config/blog-en.yml
-~/mira/config/story.yml
-~/mira/config/linux-learn.yml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;با توجه به تمام مواردی که در بالا برای تنظیمات در نظر گرفتیم هر کدارم از این چهار فایل باید اینگونه باشند:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;~/mira/config/blog-fa.yml&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;title: وبلاگ فارسی من
-description: اینجا وبلاگ فارسی من است
-url: http://www.address.com/blog/
-root: /blog/
-static: /blog/assets
-imageurl: /blog/assets/article_images
-permalink: :category/:year/:month/:day/:title.html
-post_num: 5
-archive_post_num: 10
-lists:
- - category
- - jdate
-plugins:
- - Jdate
-lang: fa
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;~/mira/config/blog-en.yml&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;title: my english blog
-description: this is my english blog
-
-url: http://www.address.com/en/
-root: /en/
-static: /en/assets
-imageurl: /en/assets/images
-permalink: :year/:month/:day/:title/
-post_num: 5
-archive_post_num: 10
-lists:
- - tags
- - date
-lang: en
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;~/mira/config/story.yml&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;title: دنباله دار
-description: توضیحاتی در مورد داستان دنباله دار من
-url: http://www.address.com/story/
-root: /story/
-static: /story/static
-imageurl: /story/static/images
-permalink: /:title/
-post_num: all
-post_sort: reverse
-lists:
-plugins:
- - Jdate
-lang: fa
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;~/mira/config/linux-learn.yml&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;title: آموزش لینوکس
-description: مطالبی که روزانه در مورد لینوکس یاد میگیریم و دوست داریم با دیگران به اشتراک بگذاریم
-
-url: http://www.address.com/linux/
-root: /linux/
-static: /linux/static
-imageurl: /linux/static/images
-permalink: :author/:title/
-default_markup: markdown
-post_num: 10
-archive_post_num: all
-lists:
- - categories
- - tags
- - author
-plugins:
- - Jdate
-lang: fa
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;به فایل تنظیمات سایت «دنباله دار» نگاه کنید، فیلد lists وجود دارد، اما به آن مقداری داده نشده، این یعنی میخواهید هیچ آرشیوی نداشته باشید، اگر فیلد lists را به جای خالی رها کردن، کلا در تنظیمات وارد نمی‌کردیم، به معنی وجود نداشتن هیچ آرشیوی نیست، بلکه به این معنی بود که هر مقداری که فایل تنظیمات عمومی برای آرشیو در خود دارد برای این سایت هم همان مقدار در نظر گرفته شود.&lt;/p&gt;
-
-&lt;p&gt;همانطور که میبینید در هیچ کدام از فایل‌های تنظیم اختصاصی template و default_markup وجود ندارد، اما در فایل تنظیمات عمومی، config.yml در شاخه‌ی اصلی این فیلد هم وجود دارد و هم مقدار دارد، وجود نداشتن یک فیلد در &lt;strong&gt;تنظیمات اختصاصی&lt;/strong&gt; به این معنی است که می‌خواهیم برای آن فیلد از تنظیمات عمومی پیروی کنیم. پس مقدار my-theme و markdown در config.yml، برای تمام سایت‌ها معتبر است.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;نکته:&lt;/strong&gt; در تنظیمات وبلاگ انگلیسی فیلدی را اضافه کرده‌ایم برای مشخص کردن زبان
-&lt;code&gt;lang: en&lt;/code&gt;
-و در سایر سایت‌ها
-&lt;code&gt;lang: fa&lt;/code&gt;
-این یک فیلد شخصی است که در تنظیمات هیچ تعریف مشخصی ندارد و روی تنظیمات تاثیری نمی‌گذارد، این فیلد را برای استفاده در قالب نهایی در آینده نوشته‌ایم، فعلا کاری با آن نداریم.&lt;/p&gt;</description>
-          <pubDate>2017-03-28 11:41:43</pubDate>
-          <link>/start-fa/specific-config/</link>
-          <guid isPermaLink="true">/start-fa/specific-config/</guid>
-
-
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
           <title>index template</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;فایل index.tt2 برای ساختن صفحه‌ی اصلی هر سایت در آدرسی است که برای آن در فیلدهای url و root تنظیماتش مشخص کرده‌اید.&lt;/p&gt;
 
@@ -1802,6 +1623,116 @@ address.com/linux/ ...
           <pubDate>2017-03-28 19:06:14</pubDate>
           <link>/start-fa/main-template/</link>
           <guid isPermaLink="true">/start-fa/main-template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>توضیح ساختار قالب در میرا</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;هر قالب در میرا یک پوشه است در شخه‌ی template&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~mira/template/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;گفتیم که در این مثال می‌خواهیم یک قالب جدید با نام my-theme را برای استفاده در سایت‌مان بسازیم. پس نیاز به یک دایرکتوری جدید به همین نام در مسیر فوق داریم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/template/my-theme/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;هر قالب در میرا از تعدادی فایل پوسته تشکیل می‌شود، پنج فایل به شکل پیش فرض تعریف شده‌اند و هر تعداد که بخواهید فایل‌های فرعی.&lt;/p&gt;
+
+&lt;p&gt;پنج فایلی که برای داشتن یک قالب کامل مورد نیاز هستند این ها هستند: main.tt2 و index.tt2 و archive.tt2 و post.tt2 و atom.tt2&lt;/p&gt;
+
+&lt;p&gt;یک توضیح مختصر در مورد اینکه هر کدام از این‌فایل‌ها برای چه کاری مورد استفاده قرار می‌گیرند:&lt;/p&gt;
+
+&lt;p&gt;فایل main.tt2 برای ساختن یک قالب مشترک بین تمام سایت‌هاست، یک صفحه ارتباطی. در اصل پوسته‌ی سازنده‌ی root عمومی که در config.yml تعریف کردیم. در این مثال address.com/index.html با این پوسته ساخته می‌شود.&lt;/p&gt;
+
+&lt;p&gt;فایل index.tt2 برای ساختن صفحه‌ی اصلی هر سایت در آدرسی است که برای آن در فیلدهای url و root تنظیماتش مشخص کرده‌اید استفاده می‌شود.&lt;/p&gt;
+
+&lt;p&gt;فایل archive.tt2 حاوی قالب ساخت تمام صفحات آرشیو است.&lt;/p&gt;
+
+&lt;p&gt;فایل post.tt2 برای ساختن قالب تکی پست‌ها و نوشته‌ها در آدرسی است که در فیلد permalink در تنظیمات سایت مشخص کرده‌ایم.&lt;/p&gt;
+
+&lt;p&gt;فایل atom.tt2 برای ساختن فید مطالب هر سایت به کار می‌رود.&lt;/p&gt;
+
+&lt;p&gt;پنج فایل جدید در شاخه‌ی قالب my-theme بسازید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/template/my-theme/
+.
+│
+├── archive.tt2
+├── atom.tt2
+├── index.tt2
+├── main.tt2
+└── post.tt2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;می‌توانید قالبی را که در ادامه به ساختن آن می‌پردازیم را از این جا دانلود کنید:&lt;/p&gt;
+
+&lt;h4&gt;دانلود &lt;a href=&quot;https://raw.githubusercontent.com/miraxy/sample/master/template.zip&quot;&gt;شاخه template&lt;/a&gt;&lt;/h4&gt;</description>
+          <pubDate>2017-03-28 13:24:05</pubDate>
+          <link>/start-fa/template/</link>
+          <guid isPermaLink="true">/start-fa/template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>مسیر تصاویر یا imageurl</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در تنظیمات یک فیلد دیگر را به نام imageurl مقدار دهی کرده بودیم، برخلاف فیلد static که در تنظیمات عمومی تاثیر گذار بود و در تنظیمات اختصاصی تنها برای دسترسی در قالب استفاده می‌شد، این فیلد در تنظیمات عمومی استفاده‌ی خاصی ندارد و فقط برای دسترسی در قالب تعریف شده، اما در تنظیمات اختصاصی تاثیر گذار است.&lt;/p&gt;
+
+&lt;p&gt;مورد استفاده این فیلد در پارسرهای داخلی میرا و هنگلم نوشتن متن محتوا است، در تنظیمات وبلاگ فارسی به این فیلد این مقدار را داده بودیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;imageurl: /blog/assets/article_images
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا در هر کدام از نوشته‌های این سایت اگر از تگ {{ img }} استفاده کنیم، میرا دنبال تصاویر در این مسیر میگردد. &lt;br /&gt;
+نحوه‌ی استفاده از {{ img }} به این شکل است:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ img image/address/pic.jpg [alt] [title] }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اولین نوشته در وبلاگ فارسی را به یاد دارید؟&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/content/blog-fa/2017-3-23-سلام-دنیا.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;بیایید یک‌بار دیگر آن‌را ویرایش کنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170323112305
+date: 2017-03-23 11:23:05
+title: سلام دنیا
+_index: hello world
+category: آزمایش
+image: /blog/assets/article_images/hello.jpg
+---
+سلام دنیا  
+این اولین نوشته من است که برای تست کردن نوشته شده.
+
+{{ img /future/sky.jpg [image alt] [pic title] }}
+
+این یک متن آزمایشی است.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;نتیجه‌ی نهایی برای انتشار این‌گونه خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;سلام دنیا&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;این اولین نوشته من است که برای تست کردن نوشته شده.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;img src=&quot;/blog/assets/article_images/future/sky.jpg&quot; alt=&quot;image alt&quot; title=&quot;pic title&quot;&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;این یک متن آزمایشی است.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در برچسب {{ img }} مقادیر [alt] و [title] اختیاری هستند و می‌توانید از آن‌ها چشم پوشی کنید.&lt;/p&gt;</description>
+          <pubDate>2017-03-28 13:03:29</pubDate>
+          <link>/start-fa/images-statics/</link>
+          <guid isPermaLink="true">/start-fa/images-statics/</guid>
 
 
         <category>

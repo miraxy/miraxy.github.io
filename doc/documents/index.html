@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mira Documents">
+    <meta name="author" content="kiavash">
+
+    <title>documents - documents</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/mira-doc/style-ltr.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v7.0.0/dist/font-face.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/samim-font/v1.0.2/dist/font-face.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/shabnam-font/v1.1.0/dist/font-face.css">
+    <link href="/static/mira-theme/fonts/font-sahel/css/font-sahel.css" rel="stylesheet" type="text/css">
+    <link href="/static/mira-theme/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div class="custom-rtl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <div class="brand-centered">
+                <a class="navbar-brand" href="/"><img src="/static/img/mira-c.png" class="img-responsive mira-header" alt="mira"></a>
+              </div>
+            </div>
+
+
+                       <!-- Collect the nav links, forms, and other content for toggling
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav navbar-right">
+               
+                 <li>
+                     <a href="http://miraxy.github.io/doc" name="Mira Documents">documents</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/fa" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/guide-fa" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/start-fa" name="راهنمای شروع به کار با میرا">شروع</a>
+                 </li>
+               
+             </ul>
+           </div>
+            /.navbar-collapse -->
+
+
+        </div>
+
+  </nav>
+
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7 col-lg-offset-1 col-md-8">
+      
+      <a name="documents"></a>
+         <h2><a href="/doc/documents/">documents</a></h2>
+         <a name="more"></a>
+<h2>config files
+</h2>
+
+<ul><li><p>title
+</p></li><li><p>description
+</p></li><li><p>url
+</p></li><li><p>root
+</p></li><li><p>static
+</p></li><li><p>imageurl
+</p></li><li><p>publishDIR
+</p><p> default is 'public'
+</p></li><li><p>post_num
+</p><p> number or 'all'
+</p></li><li><p>archive_post_num
+</p><p> number or 'all'
+</p></li><li><p>feed_post_num
+</p><p> number or 'all'
+</p></li><li><p>post_sort
+</p><p> can set 'reverse'
+</p></li><li><p>default_floor
+</p></li><li><p>permalink
+</p><p> /:year/:month/:day/:FIELD_NAME/every_thing_else/:title .html or .php or .xhtnl or any extension you like
+</p></li><li><p>default_markup
+</p><ul><li>markdown -or- md
+</li><li>githubmarkdown -or- github -or- ghmd
+</li><li>bbcode
+</li><li>textile
+</li><li>text -or- txt   just add &lt;br&gt; in enlines
+</li><li>html
+</li></ul></li><li><p>default_extension
+</p><p> default extension for new content files, default is md
+</p></li><li><p>output_extension
+</p><p> default extension for output files, default is html
+</p></li><li><p>time_zone
+</p></li><li><p>t_start_tag
+</p><p> template tag for use in theme, default is {{
+</p></li><li><p>t_end_tag
+</p><p> template tag for use in theme, default is }}
+</p></li><li><p>t_outline_tag
+</p></li></ul>
+
+<h2>post
+</h2>
+
+<ol><li><h3>header
+</h3><ul><li><p>utid
+</p><p> master key of posts, dont edit it
+</p></li><li><p>date
+</p></li><li><p>title
+</p></li><li><p>_index
+</p><p> change value for :title, if empty, title will be used for output name
+</p></li><li><p>_permalink
+</p><p> change default permalink just for this post
+</p></li><li><p>_type
+</p><p> default is post, but can set 'page'
+</p></li><li><p>_markup
+</p><p> change body markup language just for this post
+</p></li><li><p>selective personal fields
+ like categories, tags, keywords, author and ...
+</p></li></ul></li><li><h3>body
+</h3><p>  post content body 
+</p></li></ol>
+
+<h2>template
+</h2>
+
+<ol><li><h3>variables
+</h3><ol><li><h4>general variables
+</h4><ul><li><p>MainTITLE
+</p></li><li><p>MainDESCRIPTION
+</p></li><li><p>MainURL
+</p></li><li><p>MainROOT
+</p></li><li><p>MainSTATIC
+</p></li><li><p>MainIMAGEURL
+</p></li><li><p>MainAUTHOR
+</p></li><li><p>MainEMAIL
+</p></li><li><p>///////////////
+</p></li><li><p>TITLE
+</p></li><li><p>DESCRIPTION
+</p></li><li><p>URL
+</p></li><li><p>ROOT
+</p></li><li><p>STATIC
+</p></li><li><p>IMAGEURL
+</p></li><li><p>AUTHOR
+</p></li><li><p>EMAIL
+</p></li><li><p>///////////////
+</p></li><li><p>MAIN : config.yml variables
+</p></li><li><p>SITE : /config/FLOORNAME.yml
+</p></li><li><p>///////////////
+</p></li><li><p>PageTITLE
+</p></li><li><p>///////////////
+</p></li><li><p>ENTRIES
+</p><p>all entries in content folder
+</p></li><li><p>FLOORS
+</p><p>all FLOORS in content folder, with config.yml(post_number) posts
+</p><pre><code>{{ FOREACH site IN FLOORS.values.sort('name') }}
+
+   {{ IF site.SITE.direction == 'right' }}
+&#9;&#9;&lt;div dir=&quot;rtl&quot;&gt;
+   {{ ELSE }}
+&#9;&#9;&lt;div dir=&quot;ltr&quot;&gt;
+   {{ END }}
+
+   &lt;a href=&quot;{{ site.root }}&quot;&gt;{{ site.name }}&lt;/a&gt;
+   &lt;p&gt;{{ site.description }}&lt;/p&gt;
+
+   {{ FOREACH post IN site.posts }}
+&#9;&#9;&lt;a href=&quot;{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt;
+&#9;&#9;&lt;p&gt;{{ post.body.less }}&lt;/p&gt;
+   {{ END }}
+
+{{ END }}</code></pre><p>​
+</p><ul><li>description
+</li><li>name
+</li><li>root
+</li><li>url
+</li><li>SITE : config file variables
+</li><li>posts
+</li><li>all POSTS loop fields is valid
+</li></ul></li><li><p>ARCHIVES
+</p><pre><code>{{ FOREACH archive IN ARCHIVES.pairs }}
+   {{ archive.key }}
+   {{ FOREACH item IN archive.value.values.sort('name').sort('number') }}
+      {{ item.name }}
+      {{ item.url }}
+      {{ item.posts.size }}
+      {{ FOREACH utid IN item.posts }}
+         {{ ENTRIES.$utid.url }}
+         {{ ENTRIES.$utid.title }}
+      {{ END }}
+   {{ END }}
+{{ END }}</code></pre><p>​
+</p><ul><li>name
+</li><li>url
+</li><li>furl
+</li><li>posts
+</li><li><strong>if header fields</strong>
+</li><li>showname : namespace name
+</li><li><strong>if date archive</strong>
+</li><li><p>number
+</p></li><li><p>year
+</p></li><li><p>month
+</p></li><li><p>month_name
+</p></li><li><p>number : YearMonth-&gt;201705
+</p></li></ul></li><li><p>BUILD
+</p><ul><li>BUILD.date
+</li><li>BUILD.year
+</li><li>BUILD.month
+</li><li>BUILD.month_name
+</li><li>BUILD.month_abbr
+</li><li>BUILD.day
+</li><li>BUILD.day_name
+</li><li>BUILD.day_abbr
+</li><li>BUILD.hour
+</li><li>BUILD.minute
+</li><li>BUILD.second
+</li></ul></li><li><p>///////////////
+</p></li><li><p>POSTS
+</p><p>is not valid in main.tt2
+</p><pre><code>{{ FOREACH post IN POSTS }}
+   &lt;a href=&quot;{{ post.url }}&quot;&gt;{{ post.title }}&lt;/a&gt;
+   {{ post.CALENDAR.day_name }}
+   {{ post.CALENDAR.day }}{{ post.CALENDAR.month_name }}{{ post.CALENDAR.year }}
+   {{ IF post.image }}&lt;img src=&quot;{{ post.image }}&quot;&gt;{{ END }}
+   {{ post.body.more }}
+
+   {{ IF post.category }}
+   {{ FOREACH cat IN post.category }}
+      &lt;a href=&quot;{{ cat.url }}&quot;&gt;{{ cat.name }}&lt;/a&gt;{{ END }}&lt;br&gt;
+   {{ END }}
+
+{{ END }}</code></pre><p>​
+</p><ul><li>post.utid
+</li><li>post.title
+</li><li>post.slug
+</li><li><strong>post.url</strong>  : /floor_name/permalink/
+</li><li><strong>post.furl</strong> : your_url.com/floor_name/permalink/
+</li><li>post.date
+</li><li>post.CALENDAR.year
+</li><li>post.CALENDAR.month
+</li><li>post.CALENDAR.month_name
+</li><li>post.CALENDAR.month_abbr
+</li><li>post.CALENDAR.day
+</li><li>post.CALENDAR.day_name
+</li><li>post.CALENDAR.day_abbr
+</li><li>post.CALENDAR.hour
+</li><li>post.CALENDAR.minute
+</li><li>post.CALENDAR.second
+</li><li><strong>post.body.less</strong> : abstract post
+</li><li><strong>post.body.more</strong> : full post
+</li><li><p>post.($archive_list)
+</p><p>   ```
+   for example, if tags is a archive field in post's header
+</p><p>   {{ FOREACH tag IN post.tags }}
+  <a href="&quot;{{" tag.url }}">{{ tag.name }}</a>
+   {{ END }}
+   ```
+</p></li><li>name
+</li><li>showname (if have namespace)
+</li><li>url
+</li><li>furl
+</li></ul></li><li><p>($listname)_ARCHIVE
+</p><pre><code>if category is a archive list
+
+{{ FOREACH cat IN CATEGORY_ARCHIVE }}
+
+   &lt;a href=&quot;{{ cat.url }}&quot;&gt;{{ cat.name }}&lt;/a&gt; - {{ cat.posts.size }}
+
+   {{ FOREACH utid IN cat.posts }}
+      {{ ENTRIES.$utid.url }}
+      {{ ENTRIES.$utid.title }}
+   {{ END }}
+
+{{ END }}</code></pre><p>​
+</p></li><li><p>($date)_ARCHIVE
+</p><pre><code>{{ FOREACH date IN DATE_ARCHIVE }}
+
+   like $listname_ARCHIVES
+
+{{ END }}</code></pre><p>​
+</p></li><li><p>PAGE
+</p><ul><li>PAGE.number
+</li><li>PAGE.total
+</li><li>PAGE.next.url
+</li><li>PAGE.next.title
+</li><li>PAGE.prev.url
+</li><li>PAGE.prev.title
+</li></ul></li></ul></li><li><h4>templates variables
+</h4><ol><li><p>main.tt2
+</p><ul><li><p>IS_MAIN
+</p></li><li><p>UTIDS : all posts's utid field
+</p><p>  ```
+  {{ FOREACH utid IN UTIDS }}
+ {{ ENTRIES.$utid.url }}
+ {{ ENTRIES.$utid.title }}
+</p><p> all variables in POSTS is valid
+</p><p>  {{ END }}}
+  ```
+</p><p>  ​
+</p></li></ul></li><li><p>index.tt2
+</p><ul><li>IS_INDEX
+</li></ul></li><li><p>archive.tt2
+</p><ul><li><p>ArchiveTITLE
+</p></li><li><p>ARCH
+</p></li><li><p>ARCH.name
+</p></li><li><p>ARCH.url
+</p></li><li><p>ARCH.furl
+</p></li><li><p>ARCH.posts
+</p><pre><code>{{ FOREACH utid IN ARCH.posts }}
+      {{ ENTRIES.$utid.url }}
+      {{ ENTRIES.$utid.title }}
+{{ END }}</code></pre></li><li><p><strong>if field archive</strong>
+</p><ul><li>ARCH.showname  (if namespca)
+</li></ul></li><li><p><strong>if date archive</strong>
+</p><ul><li>ARCH.year
+</li><li>ARCH.month
+</li><li>ARCH.month_name
+</li><li>ARCH.number : YearMonth -&gt; 201608
+</li></ul></li><li><p><strong>if field archive</strong>
+</p></li><li><p>IS_ARCHIVE
+</p></li><li><p><strong>if date archive</strong>
+</p></li><li><p>IS_DATE_ARCHIVE
+</p></li></ul></li><li><p>post.tt2
+</p><ul><li>Post_TITLE
+</li><li>IS_POST
+</li><li>IS_PAGE, if _type: page
+</li></ul></li></ol></li></ol></li></ol>
+
+      
+    </div>
+
+    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">
+<ul class="nav">
+  <li><h2><a href="/doc/">documents</a></h2></li>
+  <li><h5>Mira Documents</h5></li>
+
+
+</ul>
+</div>
+
+
+  </div>
+</div>
+
+<br>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                  <li>
+                    <a href="mailto: kiavash@gmail.com">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//twitter.com/kiavash">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//gitlab.com/kiavash/mira">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//github.com/kiamazi/mira">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+                <p><i class="fa fa-copyright" aria-hidden="true"></i>&nbsp; GPLv3</p>
+              </div>
+          </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript
+    <script src="/static/js/clean-blog.js"></script> -->
+
+</div>
+    <script type="text/javascript" src="/static/js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="/static/js/run.js"></script>
+
+</body>
+
+</html>
+

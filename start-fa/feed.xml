@@ -13,7 +13,8 @@
       
         <item>
           <title>استفاده از گیت‌هاب برای انتشار</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;هدف در این بخش از راهنما شرح دادن چگونگی منتشر کردن سایتی که با میرا ساخته‌اید بر روی گیت هاب است. برای بهتر متوجه شدن این قسمت نیاز به یک آشنایی حداقلی با گیت‌هاب و چگونگی ساختن مخازن جدید در آن و دانستن مفاهیم و تفاوت‌های مخزن (repository یا repo) با شاخه یا انشعاب یا همان branch دارید.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;هدف در این بخش از راهنما شرح دادن چگونگی منتشر کردن سایتی که با میرا ساخته‌اید بر روی گیت هاب است. برای بهتر متوجه شدن این قسمت نیاز به یک آشنایی حداقلی با گیت‌هاب و چگونگی ساختن مخازن جدید در آن و دانستن مفاهیم و تفاوت‌های مخزن (repository یا repo) با شاخه یا انشعاب یا همان branch دارید.&lt;/p&gt;
 
 &lt;p&gt;برای آشنایی بیشتر با صفحات گیتهاب میتوانید مستندات آنرا در این لینک بخوانید:
 &lt;a href=&quot;https://help.github.com/articles/user-organization-and-project-pages/&quot;&gt;User, Organization, and Project Pages&lt;/a&gt;&lt;/p&gt;
@@ -298,7 +299,8 @@ worktree =&amp;gt; 'another/path'
       
         <item>
           <title>انتشار روی فضای شخصی</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;اگر فضای میزبانی یا همان هاست شخصی خودتان را دارید، کار زیادی لازم نیست انجام بدهید، محتوای دایرکتوری public را پس از ساخته شدن به public_html یا www یا هر دایرکتوری دیگری که برای انتشار محتوای سایتتان مشخص کرده‌اید منتقل کنید.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;اگر فضای میزبانی یا همان هاست شخصی خودتان را دارید، کار زیادی لازم نیست انجام بدهید، محتوای دایرکتوری public را پس از ساخته شدن به public_html یا www یا هر دایرکتوری دیگری که برای انتشار محتوای سایتتان مشخص کرده‌اید منتقل کنید.&lt;/p&gt;
 
 &lt;p&gt;اگر از سرور خودتان استفاده می‌کنید و میرا را روی سرور اجرا می‌کنید، آدرس همین دایرکتوری public را به عنوان root در تنظیمات سرور مشخص کنید.&lt;/p&gt;
 
@@ -317,7 +319,8 @@ worktree =&amp;gt; 'another/path'
       
         <item>
           <title>انتخاب محل انتشار</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;برای منتشر کردن خروجی تولید شده توسط میرا روی وب انتخاب‌های متعددی دارید، و بسته به انتخابی که می‌کنید، راه‌های متفاوتی پیش رو خواهید داشت.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;برای منتشر کردن خروجی تولید شده توسط میرا روی وب انتخاب‌های متعددی دارید، و بسته به انتخابی که می‌کنید، راه‌های متفاوتی پیش رو خواهید داشت.&lt;/p&gt;
 
 &lt;p&gt;می‌توانید از یکی از سرویس‌هایی که فایل‌های استاتیک را برای انتشار پشتیبانی می‌کنند مثل گیت‌هاب، استفاده کنید و یک دامین روی همان سرویس‌ها انتخاب کنید، یا از یک دامین شخصی و فضای ارايه شده توسط سرویس‌ها استفاده کنید، یا کلا از فضا و دامنه شخصی استفاده کنید.&lt;/p&gt;
 
@@ -340,7 +343,8 @@ worktree =&amp;gt; 'another/path'
       
         <item>
           <title>تغییر آدرس انتشار سایت‌ها</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در تنظیمات دیدیم که ریشه‌ی اصلی سایت را برای یک صفحه‌ی مشترک بین تمام سایت‌ها در نظر گرفتیم و بعد برای هر سایت یک آدرس در لول پایینتر مشخص کردیم:&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;در تنظیمات دیدیم که ریشه‌ی اصلی سایت را برای یک صفحه‌ی مشترک بین تمام سایت‌ها در نظر گرفتیم و بعد برای هر سایت یک آدرس در لول پایینتر مشخص کردیم:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;your-address.com/          &amp;gt;    صفحه مشترک بین هر چهار سایت
 your-address.com/blog/     &amp;gt;    وبلاگ فارسی
@@ -394,7 +398,8 @@ root: /
       
         <item>
           <title>افزودن مشخصات نویسنده مطلب</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;اگر به یاد داشته باشید در سایت آموزش لینوکس، بیشتر از یک نویسنده برای مطالبمان داشتیم، حالا میخواهیم یک اطلاعات کلی از هرکدام را به سایدبار در زیر آرشیو نام‌هایشان اضافه کنیم، ابتدا linux-learn.yml را ویرایش میکنیم و خطوط زیر را در آن می‌نویسیم:&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;اگر به یاد داشته باشید در سایت آموزش لینوکس، بیشتر از یک نویسنده برای مطالبمان داشتیم، حالا میخواهیم یک اطلاعات کلی از هرکدام را به سایدبار در زیر آرشیو نام‌هایشان اضافه کنیم، ابتدا linux-learn.yml را ویرایش میکنیم و خطوط زیر را در آن می‌نویسیم:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;authors:
  -
@@ -449,7 +454,8 @@ root: /
       
         <item>
           <title>اضافه کردن لینک شبکه‌های اجتماعی</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;برای افزودن لینک خودمان در شبکه‌های اجتماعی به جایی مثل ساید باز هم میرویم سراغ کانفیگ‌ها و اضافه کردن چند خط به هرکدامشان&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;برای افزودن لینک خودمان در شبکه‌های اجتماعی به جایی مثل ساید باز هم میرویم سراغ کانفیگ‌ها و اضافه کردن چند خط به هرکدامشان&lt;/p&gt;
 
 &lt;p&gt;فرض میکنیم لینکی که می‌خواهیم برای شبکه‌های اجتماعی در نظر بگیریم در تمام سایت‌ها ثابت نیست و برای هر سایت یک کانال، یا اکانت جدا در شبکه‌های اجتماعی و یک کانال در پیام رسان تلگرام را ساخته‌ایم.&lt;/p&gt;
 
@@ -506,7 +512,8 @@ telegram.me/MY_FA_BLOG_MIRA&lt;/p&gt;
       
         <item>
           <title>تغییر آدرس آرشیو‌ها</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;دیدیم که در تنظیم کردن هر سایت برای آدرس‌دهی به هر پست می‌توانیم از مشخصات آن پست استفاده کنیم، برای مثال:&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;دیدیم که در تنظیم کردن هر سایت برای آدرس‌دهی به هر پست می‌توانیم از مشخصات آن پست استفاده کنیم، برای مثال:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;permalink: :category/:title.html
 یا
@@ -594,7 +601,8 @@ SITE_ADDRESS.com/category/book/
       
         <item>
           <title>آدرس‌های تکراری</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;همیشه این امکان وجود دارد که دو نوشته شما یک آدرس مشابه به خود بیرند، مخصوصا وقتی که در سیستم آدرس‌دهی برای هر نوشته، به جز تیتر آن هیچ شرط دیگری مثل تاریخ یا دسته بندی و... را ذکر نمی‌کنید، مثل کاری که در این مثال برای انتشار داستان‌ها کردیم.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;همیشه این امکان وجود دارد که دو نوشته شما یک آدرس مشابه به خود بیرند، مخصوصا وقتی که در سیستم آدرس‌دهی برای هر نوشته، به جز تیتر آن هیچ شرط دیگری مثل تاریخ یا دسته بندی و... را ذکر نمی‌کنید، مثل کاری که در این مثال برای انتشار داستان‌ها کردیم.&lt;/p&gt;
 
 &lt;p&gt;به هر حال همیشه این احتمال وجود دارد که دو پست آدرس یکسیانی به ود بگیرند، فرض کنیم که در فایل کانفیگ سایت فیلد permalink را به این شکل ساخته باشیم:&lt;/p&gt;
 
@@ -703,7 +711,8 @@ _permalink: :title/
       
         <item>
           <title>ساختن صفحات</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;برای ساختن صفحات ثابت جدا از روند اصلی سایت، مثل صفحه درباره یا تماس و ... با اضافه کردن فیلد type و مقدار page در هدر هر پست، آن پست را به عنوان صفحه ثابت به میرا معرفی می‌کنیم، این کار باعث میشود که پست مورد نظر از لیست‌های مطالب برای نمایش در صفحه اول یا سایر صفحه‌های سایت و page.next و page.prev برای حرکت بین پست‌ها حذف شده و تنها با وارد کردن آدرس مستقیم آن نمایش داده شود.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;برای ساختن صفحات ثابت جدا از روند اصلی سایت، مثل صفحه درباره یا تماس و ... با اضافه کردن فیلد type و مقدار page در هدر هر پست، آن پست را به عنوان صفحه ثابت به میرا معرفی می‌کنیم، این کار باعث میشود که پست مورد نظر از لیست‌های مطالب برای نمایش در صفحه اول یا سایر صفحه‌های سایت و page.next و page.prev برای حرکت بین پست‌ها حذف شده و تنها با وارد کردن آدرس مستقیم آن نمایش داده شود.&lt;/p&gt;
 
 &lt;p&gt;در وبلاگ فارسی یک پست جدید بسازید:&lt;/p&gt;
 
@@ -787,7 +796,8 @@ _permalink: /:title/
       
         <item>
           <title>پوسته‌های بیشتر برای هر قالب و تغییر آدرس</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;پیش از این گفتیم که علاوه بر پنج فایل پایه‌ی هر قالب، میتوان به هر تعداد دیگر پوسته برای یک قالب تعریف کرد. در میرا می‌توان برای هر آرشیو یا هر پست یک قالب مجزا داشت.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;پیش از این گفتیم که علاوه بر پنج فایل پایه‌ی هر قالب، میتوان به هر تعداد دیگر پوسته برای یک قالب تعریف کرد. در میرا می‌توان برای هر آرشیو یا هر پست یک قالب مجزا داشت.&lt;/p&gt;
 
 &lt;h4&gt;پوسته‌های متفاوت برای هر آرشیو&lt;/h4&gt;
 
@@ -832,7 +842,8 @@ _permalink: some/thing/else/:title.php
       
         <item>
           <title>مرتب کردن چیدمان</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;اگر تا این مرحله دستور build را اجرا نکردید، حتما یک بار آن را امتحان کنید&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;اگر تا این مرحله دستور build را اجرا نکردید، حتما یک بار آن را امتحان کنید&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;mira build
 &lt;/code&gt;&lt;/pre&gt;
@@ -941,7 +952,8 @@ body {
       
         <item>
           <title>تکمیل کردن قالب post</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;زمانی که داشتیم سربرگ‌ها را تنظیم می‌کردیم برای سایت داستان ها یا همان دنباله دار، یک فیلد به نام suggests برای نمایش دادن داستان‌های مشابه تعریف کردیم که تا اینجا از آن استفاده نکردیم، حالا وقت آن رسیده که این فلد را هم به قالبمان اضافه کنیم.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;زمانی که داشتیم سربرگ‌ها را تنظیم می‌کردیم برای سایت داستان ها یا همان دنباله دار، یک فیلد به نام suggests برای نمایش دادن داستان‌های مشابه تعریف کردیم که تا اینجا از آن استفاده نکردیم، حالا وقت آن رسیده که این فلد را هم به قالبمان اضافه کنیم.&lt;/p&gt;
 
 &lt;p&gt;در فایلی که برای محتوا دانلود کردید، به این شاخه‌ی story بروید و این دو فایل را باز کنید:&lt;/p&gt;
 
@@ -1009,7 +1021,8 @@ keywords: {{ FOREACH kw IN post.keywords }}{{ kw }}/{{ END }}&amp;lt;br&amp;gt;
       
         <item>
           <title>ساختن یک ساید بار</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;حالا وقت آن رسیده که با ساختن یک ساید بار آرشیوهایی که برای هر سایت را داشتیم را هم به نمایش درآوریم، برای این کار قبلا در میانه‌های قالب‌های index، archive و post یک قسمت را آماده گذشاته بودیم:&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;حالا وقت آن رسیده که با ساختن یک ساید بار آرشیوهایی که برای هر سایت را داشتیم را هم به نمایش درآوریم، برای این کار قبلا در میانه‌های قالب‌های index، archive و post یک قسمت را آماده گذشاته بودیم:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;!-- sidebar --&amp;gt;
 &amp;lt;td width=&quot;30%&quot;&amp;gt;
@@ -1148,7 +1161,8 @@ keywords: {{ FOREACH kw IN post.keywords }}{{ kw }}/{{ END }}&amp;lt;br&amp;gt;
       
         <item>
           <title>feed template</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;آخرین فایل atom.tt2 که برای ساختن فید مطالب هر سایت به کار می‌رود، البته میتوانید با هر یک از استانداردهای مورد قبول که دوست دارید فید خود را بسازید و الزامی به atom بودن آن نیست، نهایتا خروجی این فایل، فایل feed.xml در شاخه اصلی هر سایت خواهد بود.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;آخرین فایل atom.tt2 که برای ساختن فید مطالب هر سایت به کار می‌رود، البته میتوانید با هر یک از استانداردهای مورد قبول که دوست دارید فید خود را بسازید و الزامی به atom بودن آن نیست، نهایتا خروجی این فایل، فایل feed.xml در شاخه اصلی هر سایت خواهد بود.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
 &amp;lt;rss version=&quot;2.0&quot; xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot;&amp;gt;
@@ -1230,7 +1244,8 @@ keywords: {{ FOREACH kw IN post.keywords }}{{ kw }}/{{ END }}&amp;lt;br&amp;gt;
       
         <item>
           <title>post template</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;فایل post.tt2 برای ساختن قالب تکی پست‌ها و نوشته در آدرسی است که در فیلد permalink در تنظیمات سایت مشخص کرده‌ایم استفاده می‌شود.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;فایل post.tt2 برای ساختن قالب تکی پست‌ها و نوشته در آدرسی است که در فیلد permalink در تنظیمات سایت مشخص کرده‌ایم استفاده می‌شود.&lt;/p&gt;
 
 &lt;p&gt;در این مثال، آدرس‌های زیر با استفاده از این قالب ساخته می‌شوند:&lt;/p&gt;
 
@@ -1391,7 +1406,8 @@ suggests
       
         <item>
           <title>archive template</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;فایل archive.tt2 حاوی قالب ساخت تمام صفحات آرشیو است، برای مثال این صفحه‌ها:&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;فایل archive.tt2 حاوی قالب ساخت تمام صفحات آرشیو است، برای مثال این صفحه‌ها:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;/blog/category/anime/
 /blog/archive/1395/08/
@@ -1464,7 +1480,8 @@ suggests
       
         <item>
           <title>index template</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;فایل index.tt2 برای ساختن صفحه‌ی اصلی هر سایت در آدرسی است که برای آن در فیلدهای url و root تنظیماتش مشخص کرده‌اید.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;فایل index.tt2 برای ساختن صفحه‌ی اصلی هر سایت در آدرسی است که برای آن در فیلدهای url و root تنظیماتش مشخص کرده‌اید.&lt;/p&gt;
 
 &lt;p&gt;در این مثال، آدرس‌های زیر با استفاده از این قالب ساخته می‌شوند:&lt;/p&gt;
 
@@ -1549,7 +1566,8 @@ address.com/linux/ ...
       
         <item>
           <title>main template</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;فایل main.tt2 برای ساختن یک قالب مشترک بین تمام سایت‌هاست، یک صفحه ارتباطی.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;فایل main.tt2 برای ساختن یک قالب مشترک بین تمام سایت‌هاست، یک صفحه ارتباطی.&lt;/p&gt;
 
 &lt;p&gt;مسیری که به عنوان url و root در فایل config.yml مشخص کرده باشید با استفاده از این قالب ساخته می‌شود.&lt;/p&gt;
 
@@ -1632,7 +1650,8 @@ address.com/linux/ ...
       
         <item>
           <title>توضیح ساختار قالب در میرا</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;هر قالب در میرا یک پوشه است در شخه‌ی template&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;هر قالب در میرا یک پوشه است در شخه‌ی template&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;~mira/template/
 &lt;/code&gt;&lt;/pre&gt;
@@ -1685,7 +1704,8 @@ address.com/linux/ ...
       
         <item>
           <title>مسیر تصاویر یا imageurl</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;در تنظیمات یک فیلد دیگر را به نام imageurl مقدار دهی کرده بودیم، برخلاف فیلد static که در تنظیمات عمومی تاثیر گذار بود و در تنظیمات اختصاصی تنها برای دسترسی در قالب استفاده می‌شد، این فیلد در تنظیمات عمومی استفاده‌ی خاصی ندارد و فقط برای دسترسی در قالب تعریف شده، اما در تنظیمات اختصاصی تاثیر گذار است.&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;در تنظیمات یک فیلد دیگر را به نام imageurl مقدار دهی کرده بودیم، برخلاف فیلد static که در تنظیمات عمومی تاثیر گذار بود و در تنظیمات اختصاصی تنها برای دسترسی در قالب استفاده می‌شد، این فیلد در تنظیمات عمومی استفاده‌ی خاصی ندارد و فقط برای دسترسی در قالب تعریف شده، اما در تنظیمات اختصاصی تاثیر گذار است.&lt;/p&gt;
 
 &lt;p&gt;مورد استفاده این فیلد در پارسرهای داخلی میرا و هنگلم نوشتن متن محتوا است، در تنظیمات وبلاگ فارسی به این فیلد این مقدار را داده بودیم:&lt;/p&gt;
 

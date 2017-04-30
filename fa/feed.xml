@@ -13,7 +13,8 @@
       
         <item>
           <title>نصب</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;h3&gt;اگر از cpan minus استفاده میکنید&lt;/h3&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3&gt;اگر از cpan minus استفاده میکنید&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;$ cpanm Mira&lt;/code&gt;&lt;/p&gt;
 
@@ -50,14 +51,13 @@ $ mira init&lt;/code&gt;&lt;/p&gt;
 
         <category>
           
-            معرفی
-            
         </category>
         </item>
       
         <item>
           <title>قابل انعصاف</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;هیچ محدودیتی برای ساختن لیست‌های آرشیو مثل دسته بندی موضوعی، برچسب، فصل‌های کتاب و امثال این‌ها وجود ندارد، هر تعداد لیست که میخواهید بسازید. همچنین برای ساختن فیلدهای تکی مثل تیتر، تیتردوم، عکس، نام نویسنده و غیره هم محدودیتی دست و پایتان را نمیبندد، به هر رویایی که برای انتشار محتوایتان دارید ادامه دهید، میرا آن‌را عملی خواهد کرد&lt;/p&gt;</description>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;هیچ محدودیتی برای ساختن لیست‌های آرشیو مثل دسته بندی موضوعی، برچسب، فصل‌های کتاب و امثال این‌ها وجود ندارد، هر تعداد لیست که میخواهید بسازید. همچنین برای ساختن فیلدهای تکی مثل تیتر، تیتردوم، عکس، نام نویسنده و غیره هم محدودیتی دست و پایتان را نمیبندد، به هر رویایی که برای انتشار محتوایتان دارید ادامه دهید، میرا آن‌را عملی خواهد کرد&lt;/p&gt;</description>
           <pubDate>2017-02-10 17:33:27</pubDate>
           <link>/fa/قابل-انعصاف/</link>
           <guid isPermaLink="true">/fa/قابل-انعصاف/</guid>
@@ -65,14 +65,13 @@ $ mira init&lt;/code&gt;&lt;/p&gt;
 
         <category>
           
-            معرفی
-            
         </category>
         </item>
       
         <item>
           <title>مدرن</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;بدنه‌ی محتوایتان را به هر شکلی که دوست دارید بنویسید، MarkDown, Textile, BBCode, HTML یا متن های ساده&lt;/p&gt;</description>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;بدنه‌ی محتوایتان را به هر شکلی که دوست دارید بنویسید، MarkDown, Textile, BBCode, HTML یا متن های ساده&lt;/p&gt;</description>
           <pubDate>2017-02-10 17:33:19</pubDate>
           <link>/fa/مدرن/</link>
           <guid isPermaLink="true">/fa/مدرن/</guid>
@@ -80,14 +79,13 @@ $ mira init&lt;/code&gt;&lt;/p&gt;
 
         <category>
           
-            معرفی
-            
         </category>
         </item>
       
         <item>
           <title>ساده</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;برای استفاده از میرا نیاز به نصب هیچ برنامه‌ی اضاف مانند دیتابیس‌ها ندارید. تنها و تنها محتوایی که مینویسید و یک قالب برای ساختن خروجی وب‌سایت. میرا تمام کارهای باقی‌مانده را برای شما انجام خواهد داد&lt;/p&gt;</description>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;برای استفاده از میرا نیاز به نصب هیچ برنامه‌ی اضاف مانند دیتابیس‌ها ندارید. تنها و تنها محتوایی که مینویسید و یک قالب برای ساختن خروجی وب‌سایت. میرا تمام کارهای باقی‌مانده را برای شما انجام خواهد داد&lt;/p&gt;</description>
           <pubDate>2017-02-10 17:33:13</pubDate>
           <link>/fa/ساده/</link>
           <guid isPermaLink="true">/fa/ساده/</guid>
@@ -95,14 +93,13 @@ $ mira init&lt;/code&gt;&lt;/p&gt;
 
         <category>
           
-            معرفی
-            
         </category>
         </item>
       
         <item>
           <title>معرفی</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;میرا یک چارچوب یکپارچه مدیریت محتوا جهت ساختن وب‌سایتهای مجزا و چنگانه است&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;میرا یک چارچوب یکپارچه مدیریت محتوا جهت ساختن وب‌سایتهای مجزا و چنگانه است&lt;/p&gt;
 
 &lt;p&gt;با استفاده از میرا میتوانید همزمان و در کنار هم وبلاگ، فوتوبلاگ، گالری عکس، پادکست، کتاب، رزومه، معرفی‌کارها، صفحات پروژه، صفحات راهنما و ... را در طبقات ساختمان میرا مدیریت کنید.
 هر طبقه یک وب‌سایت مستقل است که با سایر طبقات در تعامل می‌باشد و می‌تواند تنظیم، قالب و اجزای خود را داشته باشد یا از خصوصیات طبقه‌ی مرکزی پیروی کند.&lt;/p&gt;</description>
@@ -113,8 +110,6 @@ $ mira init&lt;/code&gt;&lt;/p&gt;
 
         <category>
           
-            معرفی
-            
         </category>
         </item>
       

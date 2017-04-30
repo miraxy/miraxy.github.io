@@ -208,7 +208,7 @@
 &lt;/p&gt;&lt;p&gt;   ```
    for example, if tags is a archive field in post's header
 &lt;/p&gt;&lt;p&gt;   {{ FOREACH tag IN post.tags }}
-  &lt;a href=&quot;&amp;quot;{{&quot; tag.url }}&quot;&gt;{{ tag.name }}&lt;/a&gt;
+  &lt;a }}&quot; href=&quot;&amp;quot;{{&quot; tag.url&gt;{{ tag.name }}&lt;/a&gt;
    {{ END }}
    ```
 &lt;/p&gt;&lt;/li&gt;&lt;li&gt;name

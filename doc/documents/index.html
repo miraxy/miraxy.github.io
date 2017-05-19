@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="English">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mira Documents">
+
+    <title>documents - documents</title>
+
+    <link href="/static/newsprint/newsprint.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7 col-lg-offset-1 col-md-8">
+      
+      <a name="documents"></a>
+         <h2><a href="/doc/documents/">documents</a></h2>
+         <a name="more"></a>
+<h2 id="configfiles">config files</h2>
+
+<ul>
+<li><p>title</p></li>
+<li><p>description</p></li>
+<li><p>url</p></li>
+<li><p>root</p></li>
+<li><p>static</p></li>
+<li><p>imageurl</p></li>
+<li><p>publishDIR</p>
+
+<p>default is 'public'</p></li>
+<li><p>post_num</p>
+
+<p>number or 'all'</p></li>
+<li><p>archive_post_num</p>
+
+<p>number or 'all'</p></li>
+<li><p>feed_post_num</p>
+
+<p>number or 'all'</p></li>
+<li><p>post_sort</p>
+
+<p>can set 'reverse'</p></li>
+<li><p>default_floor</p></li>
+<li><p>permalink</p>
+
+<p>/:year/:month/:day/:FIELD_NAME/every_thing_else/:title .html or .php or .xhtnl or any extension you like</p></li>
+<li><p>default_markup</p>
+
+<ul>
+<li>markdown -or- md</li>
+<li>mmd (mira markdown parser based on multimarkdown 2.0.b6)</li>
+<li>bbcode</li>
+<li>textile</li>
+<li>text -or- txt   just add \<br> in enlines</li>
+<li>html</li>
+</ul></li>
+<li><p>default_extension</p>
+
+<p>default extension for new content files, default is md</p></li>
+<li><p>output_extension</p>
+
+<p>default extension for output files, default is html</p></li>
+<li><p>time_zone</p></li>
+<li><p>t_start_tag</p>
+
+<p>template tag for use in theme, default is {{</p></li>
+<li><p>t_end_tag</p>
+
+<p>template tag for use in theme, default is }}</p></li>
+<li><p>t_outline_tag</p></li>
+</ul>
+
+<h2 id="post">post</h2>
+
+<ol>
+<li><h3 id="header">header</h3>
+
+<ul>
+<li><p>utid</p>
+
+<p>master key of posts, dont edit it</p></li>
+<li><p>date</p></li>
+<li><p>title</p></li>
+<li><p>_index</p>
+
+<p>change value for :title, if empty, title will be used for output name</p></li>
+<li><p>_permalink</p>
+
+<p>change default permalink just for this post</p></li>
+<li><p>_type</p>
+
+<p>default is post, but can set 'page'</p></li>
+<li><p>_markup</p>
+
+<p>change body markup language just for this post</p></li>
+<li><p>selective personal fields
+ like categories, tags, keywords, author and ...</p></li>
+</ul></li>
+<li><h3 id="body">body</h3>
+
+<p>post content body </p></li>
+</ol>
+
+<h2 id="template">template</h2>
+
+<ol>
+<li><h3 id="variables">variables</h3>
+
+<ol>
+<li><h4 id="generalvariables">general variables</h4>
+
+<ul>
+<li><p>MainTITLE</p></li>
+<li><p>MainDESCRIPTION</p></li>
+<li><p>MainURL</p></li>
+<li><p>MainROOT</p></li>
+<li><p>MainSTATIC</p></li>
+<li><p>MainIMAGEURL</p></li>
+<li><p>MainAUTHOR</p></li>
+<li><p>MainEMAIL</p></li>
+<li><p>///////////////</p></li>
+<li><p>TITLE</p></li>
+<li><p>DESCRIPTION</p></li>
+<li><p>URL</p></li>
+<li><p>ROOT</p></li>
+<li><p>STATIC</p></li>
+<li><p>IMAGEURL</p></li>
+<li><p>AUTHOR</p></li>
+<li><p>EMAIL</p></li>
+<li><p>///////////////</p></li>
+<li><p>MAIN : config.yml variables</p></li>
+<li><p>SITE : /config/FLOORNAME.yml</p></li>
+<li><p>///////////////</p></li>
+<li><p>PageTITLE</p></li>
+<li><p>///////////////</p></li>
+<li><p>ENTRIES</p>
+
+<p>all entries in content folder</p></li>
+<li><p>FLOORS</p>
+
+<p>all FLOORS in content folder, with config.yml(post_number) posts</p>
+
+<pre><code>{{ FOREACH site IN FLOORS.values.sort('name') }}
+
+
+   {{ IF site.SITE.direction == 'right' }}
+        &lt;div dir="rtl"&gt;
+   {{ ELSE }}
+        &lt;div dir="ltr"&gt;
+   {{ END }}
+
+
+   &lt;a href="{{ site.root }}"&gt;{{ site.name }}&lt;/a&gt;
+   &lt;p&gt;{{ site.description }}&lt;/p&gt;
+
+
+   {{ FOREACH post IN site.posts }}
+        &lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;
+        &lt;p&gt;{{ post.body.less }}&lt;/p&gt;
+   {{ END }}
+
+
+{{ END }}
+</code></pre>
+
+<p>​</p>
+
+<ul>
+<li>description</li>
+<li>name</li>
+<li>root</li>
+<li>url</li>
+<li>SITE : config file variables</li>
+<li>posts
+<ul>
+<li>all POSTS loop fields is valid</li>
+</ul></li>
+</ul></li>
+<li><p>ARCHIVES</p>
+
+<pre><code>{{ FOREACH archive IN ARCHIVES.pairs }}
+   {{ archive.key }}
+   {{ FOREACH item IN archive.value.values.sort('name').sort('number') }}
+      {{ item.name }}
+      {{ item.url }}
+      {{ item.posts.size }}
+      {{ FOREACH utid IN item.posts }}
+         {{ ENTRIES.$utid.url }}
+         {{ ENTRIES.$utid.title }}
+      {{ END }}
+   {{ END }}
+{{ END }}
+</code></pre>
+
+<p>​</p>
+
+<ul>
+<li>name</li>
+<li>url</li>
+<li>furl</li>
+<li>posts</li>
+<li><strong>if header fields</strong>
+<ul>
+<li>showname : namespace name</li>
+</ul></li>
+<li><p><strong>if date archive</strong></p>
+
+<ul>
+<li><p>number</p></li>
+<li><p>year</p></li>
+<li><p>month</p></li>
+<li><p>month_name</p></li>
+<li><p>number : YearMonth->201705</p></li>
+</ul></li>
+</ul></li>
+<li><p>BUILD</p>
+
+<ul>
+<li>BUILD.date</li>
+<li>BUILD.year</li>
+<li>BUILD.month</li>
+<li>BUILD.month_name</li>
+<li>BUILD.month_abbr</li>
+<li>BUILD.day</li>
+<li>BUILD.day_name</li>
+<li>BUILD.day_abbr</li>
+<li>BUILD.hour</li>
+<li>BUILD.minute</li>
+<li>BUILD.second</li>
+</ul></li>
+<li><p>///////////////</p></li>
+<li><p>POSTS</p>
+
+<p>is not valid in main.tt2</p>
+
+<pre><code>{{ FOREACH post IN POSTS }}
+   &lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;
+   {{ post.CALENDAR.day_name }}
+   {{ post.CALENDAR.day }}{{ post.CALENDAR.month_name }}{{ post.CALENDAR.year }}
+   {{ IF post.image }}&lt;img src="{{ post.image }}"&gt;{{ END }}
+   {{ post.body.more }}
+
+
+   {{ IF post.category }}
+   {{ FOREACH cat IN post.category }}
+      &lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt;{{ END }}&lt;br&gt;
+   {{ END }}
+
+
+{{ END }}
+</code></pre>
+
+<p>​</p>
+
+<ul>
+<li>post.utid</li>
+<li>post.title</li>
+<li>post.slug</li>
+<li><strong>post.url</strong>  : /floor_name/permalink/</li>
+<li><strong>post.furl</strong> : your_url.com/floor_name/permalink/</li>
+<li>post.date</li>
+<li>post.CALENDAR.year</li>
+<li>post.CALENDAR.month</li>
+<li>post.CALENDAR.month_name</li>
+<li>post.CALENDAR.month_abbr</li>
+<li>post.CALENDAR.day</li>
+<li>post.CALENDAR.day_name</li>
+<li>post.CALENDAR.day_abbr</li>
+<li>post.CALENDAR.hour</li>
+<li>post.CALENDAR.minute</li>
+<li>post.CALENDAR.second</li>
+<li><strong>post.body.less</strong> : abstract post</li>
+<li><strong>post.body.more</strong> : full post</li>
+<li><p>post.($archive_list)</p>
+
+<pre><code>for example, if tags is a archive field in post's header
+
+
+{{ FOREACH tag IN post.tags }}
+  &lt;a href="{{ tag.url }}"&gt;{{ tag.name }}&lt;/a&gt;
+{{ END }}
+</code></pre>
+
+<ul>
+<li>name</li>
+<li>showname (if have namespace)</li>
+<li>url</li>
+<li>furl</li>
+</ul></li>
+</ul></li>
+<li><p>($listname)_ARCHIVE</p>
+
+<pre><code>if category is a archive list
+
+
+{{ FOREACH cat IN CATEGORY_ARCHIVE }}
+
+
+   &lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt; - {{ cat.posts.size }}
+
+
+   {{ FOREACH utid IN cat.posts }}
+      {{ ENTRIES.$utid.url }}
+      {{ ENTRIES.$utid.title }}
+   {{ END }}
+
+
+{{ END }}
+</code></pre>
+
+<p>​</p></li>
+<li><p>($date)_ARCHIVE</p>
+
+<pre><code>{{ FOREACH date IN DATE_ARCHIVE }}
+
+
+   like $listname_ARCHIVES
+
+
+{{ END }}
+</code></pre>
+
+<p>​</p></li>
+<li><p>PAGE</p>
+
+<ul>
+<li>PAGE.number</li>
+<li>PAGE.total</li>
+<li>PAGE.next.url</li>
+<li>PAGE.next.title</li>
+<li>PAGE.prev.url</li>
+<li>PAGE.prev.title</li>
+</ul></li>
+</ul></li>
+<li><h4 id="templatesvariables">templates variables</h4>
+
+<ol>
+<li><p>main.tt2</p>
+
+<ul>
+<li><p>IS_MAIN</p></li>
+<li><p>UTIDS : all posts's utid field</p>
+
+<pre><code>{{ FOREACH utid IN UTIDS }}
+ {{ ENTRIES.$utid.url }}
+ {{ ENTRIES.$utid.title }}
+
+
+ all variables in POSTS is valid
+
+
+{{ END }}}
+</code></pre>
+
+<p>​</p></li>
+</ul></li>
+<li><p>index.tt2</p>
+
+<ul>
+<li>IS_INDEX</li>
+</ul></li>
+<li><p>archive.tt2</p>
+
+<ul>
+<li><p>ArchiveTITLE</p></li>
+<li><p>ARCH</p>
+
+<ul>
+<li><p>ARCH.name</p></li>
+<li><p>ARCH.url</p></li>
+<li><p>ARCH.furl</p></li>
+<li><p>ARCH.posts</p></li>
+</ul>
+
+<pre><code>{{ FOREACH utid IN ARCH.posts }}
+      {{ ENTRIES.$utid.url }}
+      {{ ENTRIES.$utid.title }}
+{{ END }}
+</code></pre>
+
+<ul>
+<li><p><strong>if field archive</strong></p></li>
+<li><p>ARCH.showname  (if namespca)</p></li>
+<li><p><strong>if date archive</strong></p></li>
+<li><p>ARCH.year</p></li>
+<li>ARCH.month</li>
+<li>ARCH.month_name</li>
+<li>ARCH.number : YearMonth -> 201608</li>
+</ul></li>
+<li><p><strong>if field archive</strong></p>
+
+<ul>
+<li>IS_ARCHIVE</li>
+</ul></li>
+<li><p><strong>if date archive</strong></p>
+
+<ul>
+<li>IS_DATE_ARCHIVE</li>
+</ul></li>
+</ul></li>
+<li><p>post.tt2</p>
+
+<ul>
+<li>Post_TITLE</li>
+<li>IS_POST</li>
+<li>IS_PAGE, if _type: page</li>
+</ul></li>
+</ol></li>
+</ol></li>
+</ol>
+
+      
+    </div>
+
+    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">
+<ul class="nav">
+  <li><h2><a href="/doc/">documents</a></h2></li>
+  <li><h5>Mira Documents</h5></li>
+
+
+</ul>
+</div>
+
+  </div>
+</div>
+
+</body>
+
+</html>

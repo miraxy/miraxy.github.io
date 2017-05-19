@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="راهنمای شروع به کار با میرا">
+    <meta name="author" content="kiavash">
+
+    <title>استفاده از ایندکس برای داشتن آدرس مرتب و کوتاه - شروع</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/mira-doc/style-rtl.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v7.0.0/dist/font-face.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/samim-font/v1.0.2/dist/font-face.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/shabnam-font/v1.1.0/dist/font-face.css">
+    <link href="/static/mira-theme/fonts/font-sahel/css/font-sahel.css" rel="stylesheet" type="text/css">
+    <link href="/static/mira-theme/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div class="custom-rtl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <div class="brand-centered">
+                <a class="navbar-brand" href="/"><img src="/static/img/mira-c.png" class="img-responsive mira-header" alt="mira"></a>
+              </div>
+            </div>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav navbar-right">
+               
+                 <li>
+                     <a href="http://miraxy.github.io/doc" name="Mira Documents">documents</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/doc-fa" name="اسناد میرا">اسناد</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/fa" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/guide-fa" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/start-fa" name="راهنمای شروع به کار با میرا">شروع</a>
+                 </li>
+               
+             </ul>
+           </div>
+            /.navbar-collapse -->
+
+        </div>
+
+  </nav>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7 col-lg-offset-1 col-md-8">
+      
+      <a name="استفاده از ایندکس برای داشتن آدرس مرتب و کوتاه"></a>
+         <h2><a href="/start-fa/index-content/">استفاده از ایندکس برای داشتن آدرس مرتب و کوتاه</a></h2>
+         <a name="more"></a>
+<p>اگر به یاد داشته باشید، برای ساختن فایل‌های استراکچر در سربرگ هر سایت، فیلدی به نام index را قرار داده بودیم:
+<code>_index:</code></p>
+
+<p>اما فیلد _index که در چیست و به چه دردی می‌خورد؟</p>
+
+<p>با توجه به آنچه در تنظیمات قرار دادیم، هر کدام از چهار پستی که در قسمت قبل به وجود آوردیم، آدرس‌های به این صورت خواهند داشت:</p>
+
+<pre><code>/blog/CATEGORY/a2017/03/23/سلام-دنیا.html
+/en/2017/03/23/first-post/
+/linux/AUTHOR/یک-ویژگی-جدید-در-آخرین-نسخه-هسته-که-تازه-دیروز-منتشر-شده-و-به-نظرم-خیلی-جالب-بود/
+/story/آغاز/
+</code></pre>
+
+<p>نکته: در آدرس‌هایی که برای مثال در بالا نوشته شده‌اند، CATEGORY و AUTHOR با مقداری که در هدر هر پست هست جایگزین می‌شود، فعلا چون در تمام قسمت‌ها مطلبی ننوشتیم از نام فیلدها استفاده کردیم.</p>
+
+<p>به جز وبلاگ انگلیسی، در سه وبلاگ دیگر که تیترهایشان فارسی هستند، آدرس نهایی هم به زبان فارسی ساخته شده و آدرس مطلبی که در آموزش لینوکس نوشتیم هم که خیلی خیلی طولانی است. اما شاید بخواهید آدرس‌ها همه به لاتین باشند و یا کوتاه، index اینجا به کمک ما می‌آید، نوشته ها را یک بار دیگر ویرایش کنید و این‌بار به index مقدار بدهید:</p>
+
+<p><code>~/mira/content/blog-fa/2017-3-23-سلام-دنیا.md</code></p>
+
+<pre><code>---
+utid: 20170323112305
+date: 2017-03-23 11:23:05
+title: سلام دنیا
+_index: hello world
+category: آزمایش
+image: /blog/assets/article_images/hello.jpg
+---
+سلام دنیا  
+این اولین نوشته من است که برای تست کردن نوشته شده.  
+این یک متن آزمایشی است.
+</code></pre>
+
+<p>و</p>
+
+<p><code>~/mira/content/blog-en/first-post.md</code></p>
+
+<pre><code>---
+utid: 20170323112351
+date: 2017-03-23 11:23:51
+title: first post
+_index:
+tags:
+ - first
+ - test
+---
+hello world  
+this is my first post  
+</code></pre>
+
+<p>و</p>
+
+<p><code>~/mira/content/story/2017-3-23-آغاز.md</code></p>
+
+<pre><code>---
+utid: 20170323112408
+date: 2017-03-23 11:24:08
+title: آغاز
+_index: start
+keywords:
+ - مقدمه
+ - شروع
+ - آغاز
+suggests:
+image: /story/assets/first.jpg
+---
+### مقدمه
+شروع داستان نویسی من از این نقطه است و از این به بعد سعی می‌کنم هر هفته یک داستان جدید به داستان‌هایم اضافه کنم  
+
+امیدوارم از خواندن آن‌ها لذت ببرید
+</code></pre>
+
+<p>این اولین پست ما بود، هنوز داستان مشابهی برای لینک دادن نداریم، فعلا suggests را خالی می‌گذاریم. <br />
+و</p>
+
+<p><code>~/mira/content/linux-learn/2017-3-23-یک-ویژگی-جدید-در-آخرین-نسخه-هسته-که-تازه-دیروز-منتشر-شده-و-به-نظرم-خیلی-جالب-بود.md</code></p>
+
+<pre><code>---
+utid: 20170323112534
+date: 2017-03-23 11:25:34
+title: یک ویژگی جدید در آخرین نسخه هسته که تازه دیروز منتشر شده و به نظرم خیلی جالب بود
+_index: amazing update
+description: چند ویژگی جدید که در آخرین نسخه به هسته اضافه شده و انعطاف پذیری را چندین برابر افزایش می‌دهد
+categories: 
+ - هسته
+ - لینوکس
+tags:
+ - هسته
+ - لینوکس
+ - آپدیت هسته
+ - ویژگی جدید
+ - هسته لینوکس
+image: /linux/static/feutured/core.jpg
+author: someone
+---
+این آپدیت که تازه دیروز منتشر شده بسیار بسیار هیجان انگیز است  
+و چند ویژگی جدید را در خود دارد که شامل این‌ها هستند:
+ - ...
+ - ...
+</code></pre>
+
+<p>حالا آدرس نهایی تولید شده برای هرکدام از این پست‌ها به این شکل خواهند بود:</p>
+
+<pre><code>/blog/آزمایش/i2017/03/23/hello-world.html
+/en/2017/03/23/first-post/
+/linux-learn/someone/amazing-update/
+/story/start/
+</code></pre>
+
+<p>به آدرس‌ها دقت کنید، وبلاگ فارسی با یک نام فایل با پسوند html تمام شده است، اما مابقی یک آدرس کامل بدون هیچ فایلی هستند، این آدرس‌ها در اصل این‌ها هستند:</p>
+
+<pre><code>/en/2017/03/23/first-post/index.html
+/linux-learn/someone/amazing-update/index.html
+/story/start/index.html
+</code></pre>
+      
+    </div>
+
+    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">
+<ul class="nav">
+  <li><h2><a href="/start-fa/">شروع</a></h2></li>
+  <li><h5>راهنمای شروع به کار با میرا</h5></li>
+
+
+    
+      
+        <h3>آغاز کار</h3>
+      
+      
+      <h5><a href="#ابتدا">ابتدا</a></h5>
+<!--      <h5><a href="#/start-fa/start/">ابتدا</a></h5> -->
+    
+      
+      
+      <h5><a href="#پیکربندی">پیکربندی</a></h5>
+<!--      <h5><a href="#/start-fa/init/">پیکربندی</a></h5> -->
+    
+      
+      
+      <h5><a href="#تعریف کردن یک پروژه جدید">تعریف کردن یک پروژه جدید</a></h5>
+<!--      <h5><a href="#/start-fa/define/">تعریف کردن یک پروژه جدید</a></h5> -->
+    
+      
+      
+      <h5><a href="#ضمیمه‌ها">ضمیمه‌ها</a></h5>
+<!--      <h5><a href="#/start-fa/attach/">ضمیمه‌ها</a></h5> -->
+    
+
+    
+      
+        <h3>گام اول: مشخص کردن نام‌ها</h3>
+      
+      
+      <h5><a href="#تعیین نام و محل ذخیره محتوا">تعیین نام و محل ذخیره محتوا</a></h5>
+<!--      <h5><a href="#/start-fa/step1/">تعیین نام و محل ذخیره محتوا</a></h5> -->
+    
+
+    
+      
+        <h3>گام دوم: استراکچر</h3>
+      
+      
+      <h5><a href="#مشخص کردن فیلدهای پیش‌فرض برای هر سایت">مشخص کردن فیلدهای پیش‌فرض برای هر سایت</a></h5>
+<!--      <h5><a href="#/start-fa/step2/">مشخص کردن فیلدهای پیش‌فرض برای هر سایت</a></h5> -->
+    
+
+    
+      
+        <h3>گام سوم: تنظیم پیکربندی یا کانفیگ کردن</h3>
+      
+      
+      <h5><a href="#توضیح تنظیمات در میرا">توضیح تنظیمات در میرا</a></h5>
+<!--      <h5><a href="#/start-fa/config/">توضیح تنظیمات در میرا</a></h5> -->
+    
+      
+      
+      <h5><a href="#تنظیمات عمومی">تنظیمات عمومی</a></h5>
+<!--      <h5><a href="#/start-fa/general-config/">تنظیمات عمومی</a></h5> -->
+    
+      
+      
+      <h5><a href="#تنظیمات اختصاصی برای هر سایت">تنظیمات اختصاصی برای هر سایت</a></h5>
+<!--      <h5><a href="#/start-fa/specific-config/">تنظیمات اختصاصی برای هر سایت</a></h5> -->
+    
+
+    
+      
+        <h3>گام چهارم: تولید محتوا</h3>
+      
+      
+      <h5><a href="#نوشتن اولین پست">نوشتن اولین پست</a></h5>
+<!--      <h5><a href="#/start-fa/content/">نوشتن اولین پست</a></h5> -->
+    
+      
+      
+      <h5><a href="#استفاده از ایندکس برای داشتن آدرس مرتب و کوتاه">استفاده از ایندکس برای داشتن آدرس مرتب و کوتاه</a></h5>
+<!--      <h5><a href="#/start-fa/index-content/">استفاده از ایندکس برای داشتن آدرس مرتب و کوتاه</a></h5> -->
+    
+      
+      
+      <h5><a href="#چند نکته و پیشنهاد در مورد محتوا">چند نکته و پیشنهاد در مورد محتوا</a></h5>
+<!--      <h5><a href="#/start-fa/more-about-content/">چند نکته و پیشنهاد در مورد محتوا</a></h5> -->
+    
+
+    
+      
+        <h3>گام پنجم: فایل‌ها و پوشه‌های ضمیمه یا statics</h3>
+      
+      
+      <h5><a href="#توضیح فایل‌های ضمیمه">توضیح فایل‌های ضمیمه</a></h5>
+<!--      <h5><a href="#/start-fa/statics/">توضیح فایل‌های ضمیمه</a></h5> -->
+    
+      
+      
+      <h5><a href="#ضمیمه‌های عمومی">ضمیمه‌های عمومی</a></h5>
+<!--      <h5><a href="#/start-fa/general-statics/">ضمیمه‌های عمومی</a></h5> -->
+    
+      
+      
+      <h5><a href="#ضمیمه‌های اختصاصی هر طبقه">ضمیمه‌های اختصاصی هر طبقه</a></h5>
+<!--      <h5><a href="#/start-fa/specific-statics/">ضمیمه‌های اختصاصی هر طبقه</a></h5> -->
+    
+      
+      
+      <h5><a href="#مسیر تصاویر یا imageurl">مسیر تصاویر یا imageurl</a></h5>
+<!--      <h5><a href="#/start-fa/images-statics/">مسیر تصاویر یا imageurl</a></h5> -->
+    
+
+    
+      
+        <h3>گام ششم: ساختن قالب</h3>
+      
+      
+      <h5><a href="#توضیح ساختار قالب در میرا">توضیح ساختار قالب در میرا</a></h5>
+<!--      <h5><a href="#/start-fa/template/">توضیح ساختار قالب در میرا</a></h5> -->
+    
+      
+      
+      <h5><a href="#main template">main template</a></h5>
+<!--      <h5><a href="#/start-fa/main-template/">main template</a></h5> -->
+    
+      
+      
+      <h5><a href="#index template">index template</a></h5>
+<!--      <h5><a href="#/start-fa/index-template/">index template</a></h5> -->
+    
+      
+      
+      <h5><a href="#archive template">archive template</a></h5>
+<!--      <h5><a href="#/start-fa/archive-template/">archive template</a></h5> -->
+    
+      
+      
+      <h5><a href="#post template">post template</a></h5>
+<!--      <h5><a href="#/start-fa/post-template/">post template</a></h5> -->
+    
+      
+      
+      <h5><a href="#feed template">feed template</a></h5>
+<!--      <h5><a href="#/start-fa/feed-template/">feed template</a></h5> -->
+    
+      
+      
+      <h5><a href="#ساختن یک ساید بار">ساختن یک ساید بار</a></h5>
+<!--      <h5><a href="#/start-fa/sidebar/">ساختن یک ساید بار</a></h5> -->
+    
+      
+      
+      <h5><a href="#تکمیل کردن قالب post">تکمیل کردن قالب post</a></h5>
+<!--      <h5><a href="#/start-fa/post-subjoin/">تکمیل کردن قالب post</a></h5> -->
+    
+      
+      
+      <h5><a href="#مرتب کردن چیدمان">مرتب کردن چیدمان</a></h5>
+<!--      <h5><a href="#/start-fa/layout/">مرتب کردن چیدمان</a></h5> -->
+    
+      
+      
+      <h5><a href="#پوسته‌های بیشتر برای هر قالب و تغییر آدرس">پوسته‌های بیشتر برای هر قالب و تغییر آدرس</a></h5>
+<!--      <h5><a href="#/start-fa/more-templates/">پوسته‌های بیشتر برای هر قالب و تغییر آدرس</a></h5> -->
+    
+
+    
+      
+        <h3>گام هفتم: شخصی سازی بیشتر</h3>
+      
+      
+      <h5><a href="#ساختن صفحات">ساختن صفحات</a></h5>
+<!--      <h5><a href="#/start-fa/pages/">ساختن صفحات</a></h5> -->
+    
+      
+      
+      <h5><a href="#آدرس‌های تکراری">آدرس‌های تکراری</a></h5>
+<!--      <h5><a href="#/start-fa/duplicate-address/">آدرس‌های تکراری</a></h5> -->
+    
+      
+      
+      <h5><a href="#تغییر آدرس آرشیو‌ها">تغییر آدرس آرشیو‌ها</a></h5>
+<!--      <h5><a href="#/start-fa/namespcae/">تغییر آدرس آرشیو‌ها</a></h5> -->
+    
+      
+      
+      <h5><a href="#اضافه کردن لینک شبکه‌های اجتماعی">اضافه کردن لینک شبکه‌های اجتماعی</a></h5>
+<!--      <h5><a href="#/start-fa/add-social-links/">اضافه کردن لینک شبکه‌های اجتماعی</a></h5> -->
+    
+      
+      
+      <h5><a href="#افزودن مشخصات نویسنده مطلب">افزودن مشخصات نویسنده مطلب</a></h5>
+<!--      <h5><a href="#/start-fa/add-author-info/">افزودن مشخصات نویسنده مطلب</a></h5> -->
+    
+      
+      
+      <h5><a href="#تغییر آدرس انتشار سایت‌ها">تغییر آدرس انتشار سایت‌ها</a></h5>
+<!--      <h5><a href="#/start-fa/change-publish-address/">تغییر آدرس انتشار سایت‌ها</a></h5> -->
+    
+
+    
+      
+        <h3>گام هشتم: انتشار</h3>
+      
+      
+      <h5><a href="#انتخاب محل انتشار">انتخاب محل انتشار</a></h5>
+<!--      <h5><a href="#/start-fa/start-publish/">انتخاب محل انتشار</a></h5> -->
+    
+      
+      
+      <h5><a href="#انتشار روی فضای شخصی">انتشار روی فضای شخصی</a></h5>
+<!--      <h5><a href="#/start-fa/personal-host-publish/">انتشار روی فضای شخصی</a></h5> -->
+    
+      
+      
+      <h5><a href="#استفاده از گیت‌هاب برای انتشار">استفاده از گیت‌هاب برای انتشار</a></h5>
+<!--      <h5><a href="#/start-fa/use-github-for-publish/">استفاده از گیت‌هاب برای انتشار</a></h5> -->
+    
+
+</ul>
+</div>
+
+  </div>
+</div>
+
+<br>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                  <li>
+                    <a href="mailto: kiavash@gmail.com">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//twitter.com/kiavash">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//gitlab.com/kiavash/mira">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//github.com/kiamazi/mira">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+                <p><i class="fa fa-copyright" aria-hidden="true"></i>&nbsp; GPLv3</p>
+              </div>
+          </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript
+    <script src="/static/js/clean-blog.js"></script> -->
+
+</div>
+    <script type="text/javascript" src="/static/js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="/static/js/run.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,2957 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="راهنمای شروع به کار با میرا">
+    <meta name="author" content="kiavash">
+
+    <title>شروع</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/mira-doc/style-rtl.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v7.0.0/dist/font-face.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/samim-font/v1.0.2/dist/font-face.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/shabnam-font/v1.1.0/dist/font-face.css">
+    <link href="/static/mira-theme/fonts/font-sahel/css/font-sahel.css" rel="stylesheet" type="text/css">
+    <link href="/static/mira-theme/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div class="custom-rtl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <div class="brand-centered">
+                <a class="navbar-brand" href="/"><img src="/static/img/mira-c.png" class="img-responsive mira-header" alt="mira"></a>
+              </div>
+            </div>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav navbar-right">
+               
+                 <li>
+                     <a href="http://miraxy.github.io/doc" name="Mira Documents">documents</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/doc-fa" name="اسناد میرا">اسناد</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/fa" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/guide-fa" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/start-fa" name="راهنمای شروع به کار با میرا">شروع</a>
+                 </li>
+               
+             </ul>
+           </div>
+            /.navbar-collapse -->
+
+        </div>
+
+  </nav>
+
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8">
+       
+
+       
+      	<h2>آغاز کار</h2>
+       
+
+       
+
+       <h1>
+       <a name="ابتدا"></a>
+          <h2><a href="/start-fa/start/">ابتدا</a></h2>
+          <a name="more"></a>
+<p>این یک راهنمای قدم به قدم برای شروع به کار با میراست، در این راهنما، در کنار هم میرا را نصب میکنیم، آن را در یک شاخه‌ی جدید پیکربندی می‌کنیم، سپس چهار سایت را با مشخصات متفاوت تعریف می‌کینم، آن‌ها را تنظیم می‌کنیم و گام به گام شروع به ساختن آن‌ها در کنار هم می‌کنیم.</p>
+
+<h2>البته این راهنما در حال تکمیل است و به مرور، قسمت‌های بیشتری به آن افزوده می‌شود.</h2>
+
+<h3>نصب میرا</h3>
+
+<p>میرا برای نصب به پرل نسخه 5.12 به بالا نیاز دارد</p>
+
+<p>برای تست این که پرل را روی سیستم خود از قبل نصب شده دارید یا نه، terminal یا command line را باز کنید و تایپ کنید <code>perl -v</code>
+اگر پرل از قبل نصب شده باشد متنی شبیه به این را خواهید دید که ورژن پرل نصب شده را به شما نشان خواهد داد</p>
+
+<pre><code>This is perl 5, version 24, subversion 1 (v5.24.1)
+</code></pre>
+
+<p>اگر پرل را ندارید از این طریق آن‌را نصب کنید:</p>
+
+<h4>ویندوز</h4>
+
+<p>اگر از ویندوز استفاده میکنید <a href="http://strawberryperl.com/" title="Strawberry Perl">Strawberry Perl</a> یا «پرل توت فرنگی» را ابتدا نصب کنید <br />
+توت فرنگی cpan minus را به شکل توکار همراه خود دارد، برای نصب میرا تایپ کنید:</p>
+
+<pre><code>cpanm Mira
+</code></pre>
+
+<h4>*نیکس (لینوکس، mac، BSD و ...)</h4>
+
+<p>اکثر این توزیع‌ها به شکل توکار پرل را در خود دارند، اما اگر نیاز به نصب مجدد یا نصب نسخه‌ی بالاتری که در توزیع شما نصب نیست دارید به این صفحه مراجعه کنید
+<a href="https://www.perl.org/get.html" title="Perl">getperl</a>  </p>
+
+<p>برای نصب میرا میتوانید از شل پرل یا cpan.pm استفاده کنید و یا آن را با استفاده از cpan minus نصب کنید، توصیه میکنم از cpan minus استفاده کنید </p>
+
+<p><strong>۱- capn minus</strong>
+اگر capan minus را ندارید آن‌را نصب کنید</p>
+
+<pre><code>curl -L https://cpanmin.us | perl - --sudo App::cpanminus
+</code></pre>
+
+<p>یا </p>
+
+<pre><code>cpan App::cpanminus 
+</code></pre>
+
+<p>و بعد برای نصب میرا</p>
+
+<pre><code>sudo cpanm Mira
+</code></pre>
+
+<p><strong>۲- نصب از طریق شل:</strong>
+در ترمینال دستور زیر را وارد کنید:</p>
+
+<pre><code>perl -MCPAN -e shell
+</code></pre>
+
+<p>و سپس تایپ کنید:</p>
+
+<pre><code>install Mira
+</code></pre>
+
+<p>یا به جای دو خط بالا، تنها از خط زیر استفاده کنید:</p>
+
+<pre><code>cpan Mira
+</code></pre>
+
+<p>ممکن است برای اجرای دستورهای بالای به دسترسی root نیاز پیدا کنید.</p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="پیکربندی"></a>
+          <h2><a href="/start-fa/init/">پیکربندی</a></h2>
+          <a name="more"></a>
+<h3>پیکربندی میرا در یک مسیر جدید</h3>
+
+<p>ابتدا یک دایرکتوری جدید بسازید، نام آن را هر چه دوست دارید بگذارید، مثلا mira
+اگر در ویندوز هستید:</p>
+
+<pre><code>md mira
+</code></pre>
+
+<p>در لینوکس و مک:</p>
+
+<pre><code>mkdir mira
+</code></pre>
+
+<p>حالا وارد مسیر جدید شوید:</p>
+
+<pre><code>cd mira
+</code></pre>
+
+<p>و میرا را در این مسیر پیکر بندی کنید:</p>
+
+<pre><code>~/mira:&gt;  mira init 
+</code></pre>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="تعریف کردن یک پروژه جدید"></a>
+          <h2><a href="/start-fa/define/">تعریف کردن یک پروژه جدید</a></h2>
+          <a name="more"></a>
+<p>میرا مانند یک ساختمان است که طبقات متعددی دارد، هر سایت در میرا یک طبقه مجزا به حساب می‌آید که در کنار مستقل بودن، می‌تواند فضایی عمومی در کنار سایر طبقات داشته باشد و از محتوای طبقات دیگر نیز استفاده کند یا از خصوصیات عمومی برخوردار باشد. در طول این مثال اگر جایی از طبقه یا طبقات نام بردیم، منظورمان یکی یا تمام سایت‌هایی است که در زیر تعریف می‌کنیم.</p>
+
+<p>برای نوشتن این مثال‌ با این فرض پیش می‌رویم که قصد داریم چهار سایت در کنار هم داشته باشیم:</p>
+
+<blockquote>
+  <p>۱- وبلاگ به زبان فارسی. <br />
+  ۲- وبلاگ به زبان انگلیسی. <br />
+  ۳- یک سایت برای نوشتن داستان‌های کوتاه، نام «دنباله‌دار» را برای این سایت در نظر می‌گیریم. <br />
+  ۴- یک سایت برای نوشتن مطالب آموزشی در مورد لینوکس.</p>
+</blockquote>
+
+<p>در طول این راهنما سعی میکنیم این چهار سایت را در کنار هم در میرا بسازیم، تنظیم کنیم، قالب دهی کنیم و در نهایت منتشر کنیم.
+اما در ابتدا بیایید برای هر کدام با توجه به ورودی و خروجی مورد نظرمان یک تعریف مشخص کینم.</p>
+
+<blockquote>
+  <p>محتوا را در چه پوشه‌ای می‌خواهیم ذخیره کنیم <br />
+  چه فیلدهای مشخصی باید داشته باشند <br />
+  هر سایت چه دسته بندی‌هایی داشته باشد و چه دسته بندی‌هایی را می‌خواهیم آرشیو کنیم، مثل دسته بندی موضوعی، آرشیو زمانی و غیره <br />
+  برای نوشتن متن‌ها از مارک‌آپ میخواهیم استفاده کنیم یا نه و اگر جواب مثبت بود از کدامیک از مارک‌آپ هایی که میرا پشتیبانی میکند <br />
+  در چه آدرسی میخواهیم منتشر شوند <br />
+  فایل‌های ضمیمه‌شان مثل عکس‌ها و غیره در کجا ذخیره شوند  </p>
+</blockquote>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="ضمیمه‌ها"></a>
+          <h2><a href="/start-fa/attach/">ضمیمه‌ها</a></h2>
+          <a name="more"></a>
+<p>در این راهنما، برای هر بخش فایل‌های مورد نیاز را با هم می‌سازیم یا ویرایش می‌کنیم، اما اگر نمی‌خواهید خودتان فایل‌ها را بسازید یا ویرایش کنید و تنها قصد مطالعه این راهنما را دارید، اما علاقه‌مند هستید که نتیجه نهایی را تست کنید، میتوانید نتیجه تکمیل شده مربوط به هر بخش را به شکل فایل‌های فشرده دانلود کنید و در مسیر پروژه کپی کنید.</p>
+
+<p>فایل‌های پروژه اینها هستند:</p>
+
+<ul>
+<li><a href="https://raw.githubusercontent.com/miraxy/sample/master/structure.zip">شاخه structure</a></li>
+<li><a href="https://raw.githubusercontent.com/miraxy/sample/master/config.zip">فایل config.yml و شاخه config</a></li>
+<li><a href="https://raw.githubusercontent.com/miraxy/sample/master/content.zip">شاخه content</a></li>
+<li><a href="https://raw.githubusercontent.com/miraxy/sample/master/statics.zip">شاخه عمومی statics</a> </li>
+<li><a href="https://raw.githubusercontent.com/miraxy/sample/master/template.zip">شاخه template</a></li>
+</ul>
+       
+
+       
+      	<h2>گام اول: مشخص کردن نام‌ها</h2>
+       
+
+       
+
+       <h1>
+       <a name="تعیین نام و محل ذخیره محتوا"></a>
+          <h2><a href="/start-fa/step1/">تعیین نام و محل ذخیره محتوا</a></h2>
+          <a name="more"></a>
+<p>برای این که فایل‌های تنظیم، پیکربندی و پوشه‌های محتوا را به وجود بیاوریم، نیاز داریم که هر سایت برای معرفی شدن به میرا، یک نام مجزا، ترجیحا به حرف لاتین، داشته باشد. برای هر کدام از این سایت‌ها نام‌های زیر را مشخص میکنیم.  </p>
+
+<p>وبلاگ فارسی: blog-fa <br />
+وبلاگ انگلیسی: blog-en <br />
+داستان دنباله‌دار: story <br />
+آموزش لینوکس: linux-learn  </p>
+
+<h4>محل ذخیره محتوا:</h4>
+
+<p>پس از پیکربندی میرا چند پوشه برای شما ایجاد شده، یکی از این پوشه‌ها content است، محل اصلی ذخیره محتوا همین پوشه است، هر پوشه‌ی جدید در مسیر ریشه‌ی این مسیر، یک سایت جدید خواهد بود.
+پس در content این <strong>پوشه‌</strong>ها را ایجاد میکنیم:</p>
+
+<pre><code>~/mira/content/blog-fa/
+~/mira/content/blog-en/
+~/mira/content/story/
+~/mira/content/linux-learn/
+</code></pre>
+
+<p>هر فایل یا دایرکتوری داخل هرکدام از این مسیرها، محتویات آن سایت را تشکیل خواهد داد</p>
+       
+
+       
+      	<h2>گام دوم: استراکچر</h2>
+       
+
+       
+
+       <h1>
+       <a name="مشخص کردن فیلدهای پیش‌فرض برای هر سایت"></a>
+          <h2><a href="/start-fa/step2/">مشخص کردن فیلدهای پیش‌فرض برای هر سایت</a></h2>
+          <a name="more"></a>
+<p>۱- فرض را بر این میگیریم که برای هر نوشته در وبلاگ فارسی، تصمیم داریم یک عکس اختصاصی در نظر بگیریم، آن را در هدر در فیلدی به اسم image مشخص می‌کنیم. <br />
+همچنین در وبلاگ فارسی در نظر داریم دسته بندی براساس موضوع داشته باشیم category.</p>
+
+<p>۲- در وبلاگ انگلیسی دسته بندی بر اساس تگ‌ها tags را مد نظر داریم.</p>
+
+<p>۳- در مورد داستان‌هایمان بر اساس کلمات و موضوع داستان، کلمات کلیدی هر داستان را می‌خواهیم مشخص کنیم keywords
+همچنین میخواهیم اگر داستان دیگری هم نوشته‌ایم که شبیه به این داستان باشد، به آن لینک بدهیم suggests.</p>
+
+<p>۴- در مورد آموزش‌ها هم میخواهیم این فیلدها را داشته باشیم: کلمات کلیدی tags، یک فیلد توضیحات برای کامل کردن تیتر description، دسته بندیهای موضوعی categories، یک عکس برای توضیح مطلب image، و از آنجا که بیشتر از یک نفر در قرار است آموزش‌هایشان را بنویسند، نام نویسنده author.</p>
+
+<p>میتوانیم هر بارکه پست جدیدی را با دستور new میسازیم، موارد مورد نیاز را به هدر اضافه یا حذف کنیم. اما احتمالاً اینکار سخت خواهد بود، شاید یک بار فراموش کنیم فیلدی را اضافه کنیم یا با غلط املایی آن را تایپ کنیم یا هر چیز دیگری، اما راه حل برای اجتناب از این تکرار چیست؟
+جواب استفاده کردن از شاخه‌ی structure است.</p>
+
+<p>برای فیلدهای اختصاصی هر پست، میرا در شاخه‌ی structure برنامه ابتدا به دنبال نام فایلی هم نام با نام طبقه شما میگردد، اگر این فایل موجود باشد، به جز فیلدهایی که بالا نوشته شدند، محتوییات آن فایل نیز به هدر شما اضافه میشود، اگر این فایل موجود نبود، برای محتویات آن طبقه برنامه از فایل default استفاده میکند.</p>
+
+<p>چهار <strong>فایل</strong> در شاخه‌ی structure همنام بانام سایت‌ها میسازیم</p>
+
+<pre><code>~/mira/structure/blog-fa
+~/mira/structure/blog-en
+~/mira/structure/story
+~/mira/structure/linux-learn
+</code></pre>
+
+<p>محتوای هر یک از این چهار فایل را به این صورت مشخص میکنیم:</p>
+
+<p><code>~/mira/structure/blog-fa</code></p>
+
+<pre><code>_index:
+category:
+image:
+</code></pre>
+
+<p><code>~/mira/structure/blog-en</code></p>
+
+<pre><code>_index:
+tags:
+ - 
+</code></pre>
+
+<p><code>~/mira/structure/story</code></p>
+
+<pre><code>_index:
+keywords:
+ - 
+suggests:
+ - 
+</code></pre>
+
+<p><code>~/mira/structure/linux-learn</code></p>
+
+<pre><code>_index:
+description:
+categories:
+ - 
+tags:
+ - 
+image:
+author:
+</code></pre>
+
+<p>در مورد فیلد _index و کاربرد آن در ادامه خواهیم خواند. فعلا فقط آن را در فایل‌های استراکچر می‌گذاریم باشد.</p>
+
+<p>حالا محتویات شاخه استراکچر این‌ها خواهند بود</p>
+
+<pre><code>~/mira/structure/
+.
+│
+├── 
+├── blog-en
+├── blog-fa
+├── default
+├── linux-learn
+└── story
+</code></pre>
+
+<h2><a href="https://raw.githubusercontent.com/miraxy/sample/master/structure.zip">دانلود شاخه structure</a></h2>
+       
+
+       
+      	<h2>گام سوم: تنظیم پیکربندی یا کانفیگ کردن</h2>
+       
+
+       
+
+       <h1>
+       <a name="توضیح تنظیمات در میرا"></a>
+          <h2><a href="/start-fa/config/">توضیح تنظیمات در میرا</a></h2>
+          <a name="more"></a>
+<p>حالا باید مشخص کنیم هر کدام از این سایت‌ها را میخواهیم در چه آدرسی و به چه شکل منتشر کنیم، بدنه اصلی نوشته‌هایمان را چگونه بنویسیم، آدرس نهایی برای هر پست به چه شکلی باشد و …</p>
+
+<p>برای مشخص کردن خصوصیات عمومی و خصوصی ساختمان و طبقات میرا، باید از فایل‌های config استفاده کنیم.</p>
+
+<p>در میرا دو نوع فایل برای تنظیم پیکربندی‌ها داریم:</p>
+
+<p><strong>۱- تنظیم عمومی</strong></p>
+
+<p>تنظیم مشخصات عمومی و مشترک بین تمام طبقات.</p>
+
+<p>فایل تنظیمات عمومی در شاخه اصلی که میرا را پیکر بندی کردیم با نام config.yml وجود دارد.</p>
+
+<pre><code>~/mira/config.yml
+</code></pre>
+
+<p><strong>۲- تنظیم اختصاصی برای هر سایت یا طبقه</strong></p>
+
+<p>تنظیم‌ها اختصاصی هر طبقه در شاخه‌ی config و هم‌نام با نامی که برای آن طبقه یا سایت در شاخه‌ی content ساختیم به همراه پسوند yml.</p>
+
+<p>در این مثال فایل‌های تنظیم اختصاصی با توجه به نام‌هایی که در گام دوم انتخاب کرده بودیم این‌ها خواهند بود:</p>
+
+<pre><code>~/mira/config/blog-fa.yml
+~/mira/config/blog-en.yml
+~/mira/config/story.yml
+~/mira/config/linux-learn.yml
+</code></pre>
+
+<h2><a href="https://raw.githubusercontent.com/miraxy/sample/master/config.zip">دانلود فایل config.yml و شاخه config</a></h2>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="تنظیمات عمومی"></a>
+          <h2><a href="/start-fa/general-config/">تنظیمات عمومی</a></h2>
+          <a name="more"></a>
+<p>ابتدا چند فرض عمومی را در نظر میگیریم:</p>
+
+<p>فرض می‌گیریم تمام این موارد برای هر چهار سایت مقدار یکسانی باید داشته باشند:</p>
+
+<ul>
+<li>نام نویسنده مطالب</li>
+<li>آدرس ایمیل</li>
+<li>تصویر نویسنده</li>
+<li>لوگوی سایت</li>
+</ul>
+
+<p>می‌خواهیم مقادیر بالا برای هر چهار سایت یکسان و ثابت باشند، مگر اینکه در هدر هر پست تغییر کنند(مثل قسمت آموزش لینوکس که مطالب ممکن بود نویسنده جدا داشته باشند)</p>
+
+<ul>
+<li>هر چهار سایت از یک قالب مشترک استفاده می‌کنند. template</li>
+</ul>
+
+<p>برای قالب انتشار هر چهار سایت را با استفاده از یک قالب منتشر می‌کنیم، می‌خواهیم در ادامه قالب خودمان را با نام my-theme بسازیم، فعلاً فقط به مقداردهی اولیه اکتفا میکنیم و فیلد template را مقدار دهی میکنیم. این قالب را در ادامه همراه هم به وجود می‌آوریم.</p>
+
+<ul>
+<li>سایت‌هایمان را قرار است در ریشه‌ی آدرس address.com منتشر کنیم. url و root</li>
+<li>محل ذخیره فایل‌های ضمیمه عمومی یا همان static را address.com/static مشخص می‌کینم. static</li>
+<li>محل ذخیره تصاویر مشترک مثل لوگو و... را address.com/static/imagesدر نظر می‌گیریم. imageurl</li>
+</ul>
+
+<p>در گام پنجم در مورد فیال‌های ضمیمه و static کامل‌تر و با چند مثال صحبت خواهیم کرد.</p>
+
+<ul>
+<li>تعداد پست‌هایی که در صفحه‌ی مشترک بین سایت‌ها میخواهیم نمایش دهیم را ۵ در نظر می‌گیریم. post_num</li>
+<li>متن اصلی محتوا برای هر چهار سایت را با استفاده از فرمت markdown می‌خواهیم بنویسیم. default_markup</li>
+<li>در صورتیکه هنگام استفاده از دستور mira new برای ایجاد پست جدید سوییچ -f را برای مشخص کردن طبقه(یا همان سایت) وارد نکنیم، به شکل پیش‌فرض نوشته جدید در وبلاگ فارسی به وجود بیاید. default_floor</li>
+</ul>
+
+<p>فایل config.yml را با هر ویرایشگر متنی که دوست دارید باز کنید، تمام محتویات آن را پاک کنید و با مقادیر زیر جایگزین کنید:</p>
+
+<p><code>~/mira/config.yml</code></p>
+
+<pre><code>title: نوشته های من 
+description: نوشته‌های من در باره‌ی تجربیات روزانه و سفرهایم، آهنگ‌هایی که شنیدم و داستان‌هایی که مینویسم
+
+author: اسم شما
+email: Your@Email.com
+url: http://www.address.com/
+root: /
+static: /static
+imageurl: /static/images
+default_markup: markdown
+default_floor: blog-fa
+post_num: 5
+template: my-theme
+
+logo: /static/images/logo.png
+author_image: /static/images/author_image.png
+</code></pre>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="تنظیمات اختصاصی برای هر سایت"></a>
+          <h2><a href="/start-fa/specific-config/">تنظیمات اختصاصی برای هر سایت</a></h2>
+          <a name="more"></a>
+<p><strong>می‌خواهیم هر کدام از این چهار سایت را در این آدرس‌ها منتشر کنیم:</strong></p>
+
+<ul>
+<li>وبلاگ فارسی: address.com/blog</li>
+<li>وبلاگ انگلیسی: address.com/en</li>
+<li>داستان دنباله‌دار: address.com/story</li>
+<li>آموزش لینوکس: address.com/linux</li>
+</ul>
+
+<p>برای این منظور باید فیلدهای url و root را مقدار دهی کنیم.</p>
+
+<p>در مورد <strong>آدرس نهایی هر پست</strong>: <br />
+به یاد داشته باشید آدرس‌ها میتوانند به شکل پوشه یا فایل تولید شوند، برای دیدن تفاوت این دو مورد، در پایان گام تنظیمات، تفاوت فیلد permalink در فایل‌های تنظیمات وبلاگ فارسی با سایر سایت‌ها را ببینید.</p>
+
+<ul>
+<li>تصمیم داریم نوشته‌های وبلاگ فارسی در آدرس‌هایی که براساس تاریخ انتشار و دسته بندی موضوعی تولید شده‌اند منتشر شوند و در آدرس نهایی category و تاریخ‌ها به شکل مسیر باشند و تیتر مطلب به شکل یک فایل باشد.</li>
+<li>پست‌های وبلاگ انگلیسی از تاریخ انتشار در آدرس ثایت استفاده کنند. آدرس به شکل یک مسیر باشد.</li>
+<li>برای داستان‌ها تنها نام داستان در آدرس باشد. آدرس به شکل یک مسیر باشد.</li>
+<li>در آموزش لینوکس، در آدرس‌ هر پست نام نویسنده هم ذکر شده باشد. آدرس به شکل یک مسیر باشد.
+برای تنظیم این موارد در فایل تنظیمات فیلد permalink را باید مقدار دهی کنیم</li>
+</ul>
+
+<p><strong>لیست‌های آرشیوی مورد نظرمان:</strong></p>
+
+<ul>
+<li>برای وبلاگ فارسی category و آرشیو زمانی بر اساس تاریخ شمسی</li>
+<li>برای وبلاگ انگلیسی tags و آرشیو زمانی بر اساس تاریخ میلادی</li>
+<li>برای داستان هیچ لیست آرشیوی در نظر نداریم</li>
+<li>و در آموزش هم tags, categories, author</li>
+</ul>
+
+<p>برای این‌کار باید فیلد lists را مقدار دهی کنیم.</p>
+
+<p><strong>نمایش تعداد نوشته‌ها در هر صفحه:</strong></p>
+
+<ul>
+<li>برای وبلاگ‌های فارسی و انگلیسی، در صفحه اول میخواهیم ۵ نوشته آخر نوشته شده باشند، و در صفحات آرشیو هم تیتر ۱۰ نوشته آخر در هر صفحه باشد.</li>
+<li>برای آموزش‌ها میخواهیم در صفحه اصلی ۱۰ نوشته آخر نمایش داده شوند و در صفحات آرشیو تمام پست‌ها در یک صفحه برای هر آرشیو باشند.</li>
+<li>برای داستان دنباله دارمان هم میخواهیم تمام داستان‌هایی که تا به حال نوشته‌ایم در همان صفحه اول باشند، و ترتیب نمایششان هم برعکس باشد، به این ترتیب که نوشته‌های قدیمی‌تر در بالا باشند.</li>
+</ul>
+
+<p>برای نمایش تعداد هر پست در صفحه اول به فیلد post_num مقدار دهی میکنیم و برای تعداد پست‌ها در هر صفحه آرشیو هم archive_post_num <br />
+برای ترتیب نمایش هم فیلد post_sort </p>
+
+<p><strong>فایل‌های ضمیمه</strong> وبلاگ‌های فارسی و انگلیسی را هم در زیر شاخه‌ی آدرس خودشان در شاخه‌ی assets می‌خواهیم ذخیره کنیم، اما ضمیمه‌های آموزش لینوکس و داستان را در زیرشاخه‌ی آدرس خود سایت اما در شاخه‌ی static.</p>
+
+<p>در آخر برای هر سه سایتی که به فارسی مینویسیم می‌خواهیم تاریخ هجری شمسی را هم داشته باشیم، برای این منظور باید پلاگین Jdate را فعال کنیم. و در وبلاگ فارسی آرشیو بر اساس تاریخ شمسی هم می‌خواهیم داشته باشیم.</p>
+
+<p>برای تنظیمات عمومی فایل config.yml در ریشه اصلی از قبل موجود است، برای ذخیره کردن تنظیمات مشخص شده برای هر سایت هم، در دایرکتوری config هم‌نام با نام هر سایت در شاخه یک فایل جدید با پسوند yml میسازیم</p>
+
+<pre><code>~/mira/config/blog-fa.yml
+~/mira/config/blog-en.yml
+~/mira/config/story.yml
+~/mira/config/linux-learn.yml
+</code></pre>
+
+<p>با توجه به تمام مواردی که در بالا برای تنظیمات در نظر گرفتیم هر کدارم از این چهار فایل باید اینگونه باشند:</p>
+
+<p><code>~/mira/config/blog-fa.yml</code></p>
+
+<pre><code>title: وبلاگ فارسی من
+description: اینجا وبلاگ فارسی من است
+url: http://www.address.com/blog/
+root: /blog/
+static: /blog/assets
+imageurl: /blog/assets/article_images
+permalink: :category/:year/:month/:day/:title.html
+post_num: 5
+archive_post_num: 10
+lists:
+ - category
+ - jdate
+plugins:
+ - Jdate
+lang: fa
+</code></pre>
+
+<p><code>~/mira/config/blog-en.yml</code></p>
+
+<pre><code>title: my english blog
+description: this is my english blog
+
+url: http://www.address.com/en/
+root: /en/
+static: /en/assets
+imageurl: /en/assets/images
+permalink: :year/:month/:day/:title/
+post_num: 5
+archive_post_num: 10
+lists:
+ - tags
+ - date
+lang: en
+</code></pre>
+
+<p><code>~/mira/config/story.yml</code></p>
+
+<pre><code>title: دنباله دار
+description: توضیحاتی در مورد داستان دنباله دار من
+url: http://www.address.com/story/
+root: /story/
+static: /story/static
+imageurl: /story/static/images
+permalink: /:title/
+post_num: all
+post_sort: reverse
+lists:
+plugins:
+ - Jdate
+lang: fa
+</code></pre>
+
+<p><code>~/mira/config/linux-learn.yml</code></p>
+
+<pre><code>title: آموزش لینوکس
+description: مطالبی که روزانه در مورد لینوکس یاد میگیریم و دوست داریم با دیگران به اشتراک بگذاریم
+
+url: http://www.address.com/linux/
+root: /linux/
+static: /linux/static
+imageurl: /linux/static/images
+permalink: :author/:title/
+default_markup: markdown
+post_num: 10
+archive_post_num: all
+lists:
+ - categories
+ - tags
+ - author
+plugins:
+ - Jdate
+lang: fa
+</code></pre>
+
+<p>به فایل تنظیمات سایت «دنباله دار» نگاه کنید، فیلد lists وجود دارد، اما به آن مقداری داده نشده، این یعنی میخواهید هیچ آرشیوی نداشته باشید، اگر فیلد lists را به جای خالی رها کردن، کلا در تنظیمات وارد نمی‌کردیم، به معنی وجود نداشتن هیچ آرشیوی نیست، بلکه به این معنی بود که هر مقداری که فایل تنظیمات عمومی برای آرشیو در خود دارد برای این سایت هم همان مقدار در نظر گرفته شود.</p>
+
+<p>همانطور که میبینید در هیچ کدام از فایل‌های تنظیم اختصاصی template و default_markup وجود ندارد، اما در فایل تنظیمات عمومی، config.yml در شاخه‌ی اصلی این فیلد هم وجود دارد و هم مقدار دارد، وجود نداشتن یک فیلد در <strong>تنظیمات اختصاصی</strong> به این معنی است که می‌خواهیم برای آن فیلد از تنظیمات عمومی پیروی کنیم. پس مقدار my-theme و markdown در config.yml، برای تمام سایت‌ها معتبر است.</p>
+
+<p><strong>نکته:</strong> در تنظیمات وبلاگ انگلیسی فیلدی را اضافه کرده‌ایم برای مشخص کردن زبان
+<code>lang: en</code>
+و در سایر سایت‌ها
+<code>lang: fa</code>
+این یک فیلد شخصی است که در تنظیمات هیچ تعریف مشخصی ندارد و روی تنظیمات تاثیری نمی‌گذارد، این فیلد را برای استفاده در قالب نهایی در آینده نوشته‌ایم، فعلا کاری با آن نداریم.</p>
+       
+
+       
+      	<h2>گام چهارم: تولید محتوا</h2>
+       
+
+       
+
+       <h1>
+       <a name="نوشتن اولین پست"></a>
+          <h2><a href="/start-fa/content/">نوشتن اولین پست</a></h2>
+          <a name="more"></a>
+<p>حالا که تمام کارهای اولیه را انجام دادیم شروع به نوشتن چند پست میکنیم در هر سایت می‌کنیم</p>
+
+<pre><code>mira new -t 'سلام دنیا' -f blog-fa
+</code></pre>
+
+<p>با دستور بالا یک نوشته جدید در وبلاگ فارسی اضافه کردیم، پس از نوشتن دستور بالا، پیامی شبیه به این نمایش داده می‌شود:</p>
+
+<pre><code>~/mira/content/blog-fa/2017-3-23-سلام-دنیا.md created
+</code></pre>
+
+<p>که در اصل مسیری است که فایل ساخته شده در آن ذخیره شده، این فایل را با هر ویرایشگری که دوست دارید باز کنید و ویرایش کنید، محتویات آن بعد از ویرایش باید تقریبا شبیه به این باشد:</p>
+
+<pre><code>---
+utid: 20170323112305
+date: 2017-03-23 11:23:05
+title: سلام دنیا
+_index:
+category: آزمایش
+image: /blog/assets/article_images/hello.jpg
+---
+سلام دنیا  
+این اولین نوشته من است که برای تست کردن نوشته شده.  
+این یک متن آزمایشی است.
+</code></pre>
+
+<p><strong>اخطار</strong>: <br />
+فیلد utid را به هیچ عنوان حذف یا ویرایش نکنید، این فیلد یک کلید برای خواندن، مسیردهی در حافظه، چینش، اولویت بندی و تمام کارهای دیگری است که میرا با محتوا می‌کند، هر فایلی بدون این فیلد از نظر میرا یک فایل محتوا به حساب نمی‌آید و از وجود آن چشم پوشی می‌کند.</p>
+
+<p>چند پست دیگر را هم بنویسید،</p>
+
+<pre><code>mira new -t 'first post' -f blog-en
+mira new -t 'یک ویژگی جدید در آخرین نسخه هسته که تازه دیروز منتشر شده و به نظرم خیلی جالب بود' -f linux-learn
+mira new -t 'آغاز' -f story
+</code></pre>
+       
+
+       
+      	<h2></h2>
+       
+
+       
+
+       <h1>
+       <a name="مثال‌هایی برای محتوا"></a>
+          <h2><a href="/start-fa/content-dl/">مثال‌هایی برای محتوا</a></h2>
+          <a name="more"></a>
+<p>برای اینکه مثال‌های کامل‌تری داشته باشیم، محتوای سایت‌هایمان را با استفاده از تعدادی از نوشته‌های سایت‌های زیر تکمیل می‌کنیم.</p>
+
+<ul>
+<li>behroozam.com برای استفاده در وبلاگ فارسی</li>
+<li>sallar.me وبلاگ انگلیسی</li>
+<li>morde.ir داستان‌ها</li>
+<li>linuxiha.ir آموزش لینوکس</li>
+</ul>
+
+<h2><a href="https://raw.githubusercontent.com/miraxy/sample/master/content.zip">دانلود شاخهcontent</a></h2>
+
+<p><strong>توضیح</strong>: مثال‌هایی که در ادامه این بخش میخوانید در این فایل موجود نیستند، بهتر است برای کپی کردن این مثال‌ها در سایت آزمایشیتان، تا آخر این گام صبر کنید و پس از خواندن این بخش و ساختن فایل‌های مثال خودتان، محتویات را جایگزین کنید.</p>
+       
+
+       
+      	<h2>گام چهارم: تولید محتوا</h2>
+       
+
+       
+
+       <h1>
+       <a name="استفاده از ایندکس برای داشتن آدرس مرتب و کوتاه"></a>
+          <h2><a href="/start-fa/index-content/">استفاده از ایندکس برای داشتن آدرس مرتب و کوتاه</a></h2>
+          <a name="more"></a>
+<p>اگر به یاد داشته باشید، برای ساختن فایل‌های استراکچر در سربرگ هر سایت، فیلدی به نام index را قرار داده بودیم:
+<code>_index:</code></p>
+
+<p>اما فیلد _index که در چیست و به چه دردی می‌خورد؟</p>
+
+<p>با توجه به آنچه در تنظیمات قرار دادیم، هر کدام از چهار پستی که در قسمت قبل به وجود آوردیم، آدرس‌های به این صورت خواهند داشت:</p>
+
+<pre><code>/blog/CATEGORY/a2017/03/23/سلام-دنیا.html
+/en/2017/03/23/first-post/
+/linux/AUTHOR/یک-ویژگی-جدید-در-آخرین-نسخه-هسته-که-تازه-دیروز-منتشر-شده-و-به-نظرم-خیلی-جالب-بود/
+/story/آغاز/
+</code></pre>
+
+<p>نکته: در آدرس‌هایی که برای مثال در بالا نوشته شده‌اند، CATEGORY و AUTHOR با مقداری که در هدر هر پست هست جایگزین می‌شود، فعلا چون در تمام قسمت‌ها مطلبی ننوشتیم از نام فیلدها استفاده کردیم.</p>
+
+<p>به جز وبلاگ انگلیسی، در سه وبلاگ دیگر که تیترهایشان فارسی هستند، آدرس نهایی هم به زبان فارسی ساخته شده و آدرس مطلبی که در آموزش لینوکس نوشتیم هم که خیلی خیلی طولانی است. اما شاید بخواهید آدرس‌ها همه به لاتین باشند و یا کوتاه، index اینجا به کمک ما می‌آید، نوشته ها را یک بار دیگر ویرایش کنید و این‌بار به index مقدار بدهید:</p>
+
+<p><code>~/mira/content/blog-fa/2017-3-23-سلام-دنیا.md</code></p>
+
+<pre><code>---
+utid: 20170323112305
+date: 2017-03-23 11:23:05
+title: سلام دنیا
+_index: hello world
+category: آزمایش
+image: /blog/assets/article_images/hello.jpg
+---
+سلام دنیا  
+این اولین نوشته من است که برای تست کردن نوشته شده.  
+این یک متن آزمایشی است.
+</code></pre>
+
+<p>و</p>
+
+<p><code>~/mira/content/blog-en/first-post.md</code></p>
+
+<pre><code>---
+utid: 20170323112351
+date: 2017-03-23 11:23:51
+title: first post
+_index:
+tags:
+ - first
+ - test
+---
+hello world  
+this is my first post  
+</code></pre>
+
+<p>و</p>
+
+<p><code>~/mira/content/story/2017-3-23-آغاز.md</code></p>
+
+<pre><code>---
+utid: 20170323112408
+date: 2017-03-23 11:24:08
+title: آغاز
+_index: start
+keywords:
+ - مقدمه
+ - شروع
+ - آغاز
+suggests:
+image: /story/assets/first.jpg
+---
+### مقدمه
+شروع داستان نویسی من از این نقطه است و از این به بعد سعی می‌کنم هر هفته یک داستان جدید به داستان‌هایم اضافه کنم  
+
+امیدوارم از خواندن آن‌ها لذت ببرید
+</code></pre>
+
+<p>این اولین پست ما بود، هنوز داستان مشابهی برای لینک دادن نداریم، فعلا suggests را خالی می‌گذاریم. <br />
+و</p>
+
+<p><code>~/mira/content/linux-learn/2017-3-23-یک-ویژگی-جدید-در-آخرین-نسخه-هسته-که-تازه-دیروز-منتشر-شده-و-به-نظرم-خیلی-جالب-بود.md</code></p>
+
+<pre><code>---
+utid: 20170323112534
+date: 2017-03-23 11:25:34
+title: یک ویژگی جدید در آخرین نسخه هسته که تازه دیروز منتشر شده و به نظرم خیلی جالب بود
+_index: amazing update
+description: چند ویژگی جدید که در آخرین نسخه به هسته اضافه شده و انعطاف پذیری را چندین برابر افزایش می‌دهد
+categories: 
+ - هسته
+ - لینوکس
+tags:
+ - هسته
+ - لینوکس
+ - آپدیت هسته
+ - ویژگی جدید
+ - هسته لینوکس
+image: /linux/static/feutured/core.jpg
+author: someone
+---
+این آپدیت که تازه دیروز منتشر شده بسیار بسیار هیجان انگیز است  
+و چند ویژگی جدید را در خود دارد که شامل این‌ها هستند:
+ - ...
+ - ...
+</code></pre>
+
+<p>حالا آدرس نهایی تولید شده برای هرکدام از این پست‌ها به این شکل خواهند بود:</p>
+
+<pre><code>/blog/آزمایش/i2017/03/23/hello-world.html
+/en/2017/03/23/first-post/
+/linux-learn/someone/amazing-update/
+/story/start/
+</code></pre>
+
+<p>به آدرس‌ها دقت کنید، وبلاگ فارسی با یک نام فایل با پسوند html تمام شده است، اما مابقی یک آدرس کامل بدون هیچ فایلی هستند، این آدرس‌ها در اصل این‌ها هستند:</p>
+
+<pre><code>/en/2017/03/23/first-post/index.html
+/linux-learn/someone/amazing-update/index.html
+/story/start/index.html
+</code></pre>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="چند نکته و پیشنهاد در مورد محتوا"></a>
+          <h2><a href="/start-fa/more-about-content/">چند نکته و پیشنهاد در مورد محتوا</a></h2>
+          <a name="more"></a>
+<p><strong>نکته</strong>: <br />
+نام و پسوند فایل‌ها در دایرکتوری محتوا یا content در پردازش نهایی هیچ تاثیری نخواهند داشت، به هر شکلی که می‌خواهید می‌توانید آن‌ها را تغییر دهید، برای مثال این نام فایل را ممکن است دوست نداشته باشید:</p>
+
+<pre><code>~/mira/content/linux-learn/2017-3-23-یک-ویژگی-جدید-در-آخرین-نسخه-هسته-که-تازه-دیروز-منتشر-شده-و-به-نظرم-خیلی-جالب-بود.md
+</code></pre>
+
+<p>آن‌را به هر چیزی که می‌خواهید تغییر دهید، مثلا:</p>
+
+<pre><code>~/mira/content/linux-learn/new-update.markdown
+</code></pre>
+
+<p><strong>نکته</strong>: <br />
+همانطور که گفته شد نام و پسوند فایل محتوا تاثیری در پردازش آن ندارد، اما این مورد یک استثنا هم دارد، فایل‌هایی با پسوند .draft نادیده گرفته می‌شوند و از وجودشان چشم‌پوشی خواهد شد.</p>
+
+<p><strong>پیشنهاد</strong> <br />
+برای ساختن فایل‌های جدید با دستور mira new از تیتر مورد نظرتان استفاده <strong>نکنید</strong>، از یک نام ساده استفاده کنید و بعد تیتر و index را در هدر فایل مشخص کنید، برای مثال به جای این دستور:</p>
+
+<pre><code>mira new -t 'یک ویژگی جدید در آخرین نسخه هسته که تازه دیروز منتشر شده و به نظرم خیلی جالب بود' -f linux-learn
+</code></pre>
+
+<p>از چیزی شبیه به این استفاده کنید:</p>
+
+<pre><code>mira new -t 'new update' -f linux-learn
+</code></pre>
+
+<p><strong>نکته</strong>: <br />
+مسیر ذخیره شدن و نام فایل در پوشه‌ی محتوای هر سایت از نظر میرا اهمیتی ندارد و با تمام فایل‌های محتوایی که در هر عمقی پیدا میکند، یکسان و تنها با توجه به سربرگ فایل‌ها و تنظیمات ذخیره شده برخورد می‌کند. برای مثال تمام این مسیرها برای فایل مثال بالا یکسان می‌باشند و همه در همان آدرس و به همان صورت منتشر می‌شوند:</p>
+
+<pre><code>~/mira/content/linux-learn/2017-3-23-new-update.markdown
+~/mira/content/linux-learn/new-update.md
+~/mira/content/linux-learn/new.txt
+~/mira/content/linux-learn/deep/2017-3-23-new-update.markdown
+~/mira/content/linux-learn/folder/sub/folder/2017-3-23-new-update.markdown
+~/mira/content/linux-learn/update/deep/more/deep/2017-3-23-new-update.markdown
+~/mira/content/linux-learn/update/deep/more/deep/new.txt
+</code></pre>
+       
+
+       
+      	<h2>گام پنجم: فایل‌ها و پوشه‌های ضمیمه یا statics</h2>
+       
+
+       
+
+       <h1>
+       <a name="توضیح فایل‌های ضمیمه"></a>
+          <h2><a href="/start-fa/statics/">توضیح فایل‌های ضمیمه</a></h2>
+          <a name="more"></a>
+<p>فایل‌های ضمیمه فایل‌های ثابتی هستند که در محتوا از آن‌ها استفاده می‌کنیم اما نیازی به پردازش توسط برنامه‌ی میرا ندارند، مثل عکس‌ها یا فایل‌های pdf، موسیقی، استایل شیت‌های قالب، فایل‌های جاوا اسکریپت یا هر چیز دیگری که در انتشار محتوا از آن‌ها استفاده کنیم یا بخواهیم به آن‌ها لینک بدهیم.</p>
+
+<p>میرا یک پوشه‌ی عمومی برای ضمیمه‌ها در ریشه‌ی اصلی در شاخه‌ی statics دارد</p>
+
+<pre><code>~/mira/statics
+</code></pre>
+
+<p>و بی‌نهایت پوشه‌ی دیگر برای هرسایت در شاخه‌ی content هر طبقه.</p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="ضمیمه‌های عمومی"></a>
+          <h2><a href="/start-fa/general-statics/">ضمیمه‌های عمومی</a></h2>
+          <a name="more"></a>
+<p>هنگام استفاده از میرا، در مسیر statics در شاخه‌ی اصلی که پیکربندی شده، فایل‌های ثابت و ضمیمه‌ی عمومی را می‌توانید نگهداری کنید.</p>
+
+<p><code>~/mira/statics</code>
+محتویات این پوشه به مسیری که در فایل تنظیمات
+<code>~/mira/config.yml</code>
+و فیلد static مسیر دهی کرده‌اید منتقل می‌شود و در قالب با استفاده از کد
+<code>{{ MainSTATIC }}</code>
+یا
+<code>{{ MAIN.static }}</code>
+قابل دسترسی خواهد بود.</p>
+
+<p>برای مثال اگر فیلد static در فایل config.yml مساوی
+<code>/attach</code>
+باشد و سایت‌مان را قرار باشد در address.com منتشر کنیم، نتیحه مسیری شبیه به این خواهد بود:</p>
+
+<pre><code>~/mira/config.yml  &gt;       static: /attach
+ ‌
+~/mira/statics     &gt;       http://address.com/attach/
+</code></pre>
+
+<h4>دانلود <a href="https://raw.githubusercontent.com/miraxy/sample/master/statics.zip">شاخه عمومی statics</a></h4>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="ضمیمه‌های اختصاصی هر طبقه"></a>
+          <h2><a href="/start-fa/specific-statics/">ضمیمه‌های اختصاصی هر طبقه</a></h2>
+          <a name="more"></a>
+<p>در پوشه‌ی محتوای هر سایت در شاخه‌ی content هر پوشه‌ای که نامش با خط زیر یا همان آندرلاین _ شروع شود از نظر میرا یک پوشه‌ی ضمیمه به حساب می‌آید و تمام محتویات آن‌را بدون هیچ بررسی به مسیر اصلی سایت منتقل میکند.</p>
+
+<p>یک مثال: <br />
+در بخش تنظیمات برای وبلاگ فارسی(blog-fa) در فیلدهای url و root مسیر blog را برای انتشار مشخص کردیم، پس هر پوشه‌ای که در مسیر blog-fa با ـ شروع شود به عنوان ضمیمه در مسیر blog آدرس دهی میشود، به این مثال‌ها دقت کنید:</p>
+
+<pre><code>~mira/content/blog-fa/_assets
+/blog/assets/
+
+~mira/content/blog-fa/_statics
+/blog/statics/
+
+~mira/content/blog-fa/deep/_image
+/blog/deep/image
+
+~mira/content/blog-fa/more/deep/folder/_attach
+/blog/more/deep/folder/attach
+</code></pre>
+
+<p>دقت داشته باشید قبل از رسیدن به پوشه‌ی ضمیمه، اگر فایل محتوایی موجود باشد، برای انتشار آماده می‌شود، تنها بعد از رسیدن به اولین شاخه‌ای که با _ شروع شده باشد، میرا دست از نفوذ به عمق شاخه‌ها می‌کشد. برای مثال مسیرهای زیر را در نظر بگیرید</p>
+
+<pre><code>~mira/content/blog-fa/more/content.md
+~mira/content/blog-fa/more/deep/post.txt
+~mira/content/blog-fa/more/deep/folder/contetnt.md
+~mira/content/blog-fa/more/deep/folder/_attach
+~mira/content/blog-fa/more/deep/folder/_attach/post.markdown
+</code></pre>
+
+<p>میرا سه فایل اول را که قبل از رسیدن به
+<code>~mira/content/blog-fa/more/deep/folder/_attach</code>
+قرار دارند، برای انتشار بررسی و آماده می‌کند، اما فایل آخر
+<code>~mira/content/blog-fa/more/deep/folder/_attach/post.markdown</code>
+را به عنوان یک فایل ضمیمه می‌شناسد و تنها آن را همان شکلی که هست به مسیر انتشار انتقال می‌دهد.</p>
+
+<p><strong>نکته</strong>: <br />
+احتمالا متوجه شدید که فیلد static در فایل تنظیمات اختصاصی هیچ تاثری در انتقال و آدرس‌دهی به مسیر فایل‌ها و پوشه‌های ضمیمه برای سایت‌ها ندارد.</p>
+
+<p>این فیلد تنها جهت سهولت دسترسی در قالب و استفاده در قالب سایت با تگ
+<code>{{ STATIC }}</code>
+یا
+<code>{{ SITE.static }}</code>
+می‌باشد.</p>
+
+<h4>اگر فایل مثال برای content را دانلود کرده باشید، محتوای اختصاصی static هر سایت، همراه با فایل content دانلود شده</h4>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="مسیر تصاویر یا imageurl"></a>
+          <h2><a href="/start-fa/images-statics/">مسیر تصاویر یا imageurl</a></h2>
+          <a name="more"></a>
+<p>در تنظیمات یک فیلد دیگر را به نام imageurl مقدار دهی کرده بودیم، برخلاف فیلد static که در تنظیمات عمومی تاثیر گذار بود و در تنظیمات اختصاصی تنها برای دسترسی در قالب استفاده می‌شد، این فیلد در تنظیمات عمومی استفاده‌ی خاصی ندارد و فقط برای دسترسی در قالب تعریف شده، اما در تنظیمات اختصاصی تاثیر گذار است.</p>
+
+<p>مورد استفاده این فیلد در پارسرهای داخلی میرا و هنگلم نوشتن متن محتوا است، در تنظیمات وبلاگ فارسی به این فیلد این مقدار را داده بودیم:</p>
+
+<pre><code>imageurl: /blog/assets/article_images
+</code></pre>
+
+<p>حالا در هر کدام از نوشته‌های این سایت اگر از تگ {{ img }} استفاده کنیم، میرا دنبال تصاویر در این مسیر میگردد. <br />
+نحوه‌ی استفاده از {{ img }} به این شکل است:</p>
+
+<pre><code>{{ img image/address/pic.jpg [alt] [title] }}
+</code></pre>
+
+<p>اولین نوشته در وبلاگ فارسی را به یاد دارید؟</p>
+
+<pre><code>~/mira/content/blog-fa/2017-3-23-سلام-دنیا.md
+</code></pre>
+
+<p>بیایید یک‌بار دیگر آن‌را ویرایش کنیم:</p>
+
+<pre><code>---
+utid: 20170323112305
+date: 2017-03-23 11:23:05
+title: سلام دنیا
+_index: hello world
+category: آزمایش
+image: /blog/assets/article_images/hello.jpg
+---
+سلام دنیا  
+این اولین نوشته من است که برای تست کردن نوشته شده.
+
+{{ img /future/sky.jpg [image alt] [pic title] }}
+
+این یک متن آزمایشی است.
+</code></pre>
+
+<p>نتیجه‌ی نهایی برای انتشار این‌گونه خواهد بود:</p>
+
+<pre><code>&lt;p&gt;سلام دنیا&lt;/p&gt;
+&lt;p&gt;این اولین نوشته من است که برای تست کردن نوشته شده.&lt;/p&gt;
+&lt;p&gt;&lt;img src="/blog/assets/article_images/future/sky.jpg" alt="image alt" title="pic title"&gt;&lt;/p&gt;
+&lt;p&gt;این یک متن آزمایشی است.&lt;/p&gt;
+</code></pre>
+
+<p>در برچسب {{ img }} مقادیر [alt] و [title] اختیاری هستند و می‌توانید از آن‌ها چشم پوشی کنید.</p>
+       
+
+       
+      	<h2>گام ششم: ساختن قالب</h2>
+       
+
+       
+
+       <h1>
+       <a name="توضیح ساختار قالب در میرا"></a>
+          <h2><a href="/start-fa/template/">توضیح ساختار قالب در میرا</a></h2>
+          <a name="more"></a>
+<p>هر قالب در میرا یک پوشه است در شخه‌ی template</p>
+
+<pre><code>~mira/template/
+</code></pre>
+
+<p>گفتیم که در این مثال می‌خواهیم یک قالب جدید با نام my-theme را برای استفاده در سایت‌مان بسازیم. پس نیاز به یک دایرکتوری جدید به همین نام در مسیر فوق داریم:</p>
+
+<pre><code>~/mira/template/my-theme/
+</code></pre>
+
+<p>هر قالب در میرا از تعدادی فایل پوسته تشکیل می‌شود، پنج فایل به شکل پیش فرض تعریف شده‌اند و هر تعداد که بخواهید فایل‌های فرعی.</p>
+
+<p>پنج فایلی که برای داشتن یک قالب کامل مورد نیاز هستند این ها هستند: main.tt2 و index.tt2 و archive.tt2 و post.tt2 و atom.tt2</p>
+
+<p>یک توضیح مختصر در مورد اینکه هر کدام از این‌فایل‌ها برای چه کاری مورد استفاده قرار می‌گیرند:</p>
+
+<p>فایل main.tt2 برای ساختن یک قالب مشترک بین تمام سایت‌هاست، یک صفحه ارتباطی. در اصل پوسته‌ی سازنده‌ی root عمومی که در config.yml تعریف کردیم. در این مثال address.com/index.html با این پوسته ساخته می‌شود.</p>
+
+<p>فایل index.tt2 برای ساختن صفحه‌ی اصلی هر سایت در آدرسی است که برای آن در فیلدهای url و root تنظیماتش مشخص کرده‌اید استفاده می‌شود.</p>
+
+<p>فایل archive.tt2 حاوی قالب ساخت تمام صفحات آرشیو است.</p>
+
+<p>فایل post.tt2 برای ساختن قالب تکی پست‌ها و نوشته‌ها در آدرسی است که در فیلد permalink در تنظیمات سایت مشخص کرده‌ایم.</p>
+
+<p>فایل atom.tt2 برای ساختن فید مطالب هر سایت به کار می‌رود.</p>
+
+<p>پنج فایل جدید در شاخه‌ی قالب my-theme بسازید.</p>
+
+<pre><code>~/mira/template/my-theme/
+.
+│
+├── archive.tt2
+├── atom.tt2
+├── index.tt2
+├── main.tt2
+└── post.tt2
+</code></pre>
+
+<p>می‌توانید قالبی را که در ادامه به ساختن آن می‌پردازیم را از این جا دانلود کنید:</p>
+
+<h4>دانلود <a href="https://raw.githubusercontent.com/miraxy/sample/master/template.zip">شاخه template</a></h4>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="main template"></a>
+          <h2><a href="/start-fa/main-template/">main template</a></h2>
+          <a name="more"></a>
+<p>فایل main.tt2 برای ساختن یک قالب مشترک بین تمام سایت‌هاست، یک صفحه ارتباطی.</p>
+
+<p>مسیری که به عنوان url و root در فایل config.yml مشخص کرده باشید با استفاده از این قالب ساخته می‌شود.</p>
+
+<p>در این مثال این صفحه با استفاده از این قالب ساخته می‌شود.</p>
+
+<pre><code>address.com/index.html
+</code></pre>
+
+<p>این فایل را با هر ویرایشگری که دوست دارید باز کنید و کدهای زیر را در آن کپی کنید</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="description" content="{{ MainDESCRIPTION }}"&gt;
+    &lt;meta name="author" content="{{ MainAUTHOR }}"&gt;
+    &lt;link rel="shortcut icon" href="{{ MAIN.author_image }}"&gt;
+    &lt;title&gt;{{ PageTITLE }}&lt;/title&gt;
+    &lt;style&gt;
+    entry img {
+    max-width: 100% !important;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;center&gt;
+    &lt;img src="{{ MAIN.logo }}"&gt;
+    &lt;h1&gt;{{ MainTITLE }}&lt;/h1&gt;
+    &lt;h2&gt;{{ MainDESCRIPTION }}&lt;/h2&gt;
+    &lt;/center&gt;
+    &lt;hr&gt;
+    &lt;table&gt;
+    &lt;tr&gt;
+    {{ FOREACH site IN FLOORS.values.sort('name') }}
+      &lt;td style="border-right: 1px solid black; width: 25%;" valign="top"&gt;
+      &lt;h2&gt;&lt;a href="{{ site.root }}"&gt;{{ site.name }}&lt;/a&gt;&lt;/h2&gt;
+      &lt;p&gt;{{ site.description }}&lt;/p&gt;
+      &lt;hr&gt;
+      &lt;ul&gt;
+      {{ FOREACH post IN site.posts }}
+        &lt;li&gt;&lt;h4&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;h4&gt;&lt;/li&gt;
+        {{ post.body.less }}
+      {{ END }}
+      &lt;/ul&gt;
+      &lt;/td&gt;
+    {{ END }}
+    &lt;/tr&gt;
+    &lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><strong>نکته</strong>: تمام مواردی را که در تنظیمات ذخیره شده می‌توان با استفاده از بر چسب‌های MAIN و SITE در قالب نیز فراخوانی کرد، مانند خط ۲۱ همین قالب که با استفاده از {{ MAIN.logo }} مقداری را که در config.yml ذخیره کرده بودیم را فراخوانی کردیم.</p>
+
+<p>همیچنین می‌توان تنظیماتی که در شاخه‌ی config و برای هر سایت مشخص کرده‌ایم را به این شکل فراخوانی کرد: {{ SITE.lang }} و ...</p>
+
+<p>حالا که یک قالب داریم میتوانیم اولین build را انجام دهیم:</p>
+
+<pre><code>mira build
+</code></pre>
+
+<p>یک نسخه‌ی قابل انتشار از سایت در شاخه‌ی public به وجود آمده، حالا با دستور 
+    mira view</p>
+
+<p>یک سرور برای پیش نمایش اجرا می‌کینم.</p>
+
+<p>حالا به این آدرس بروید:</p>
+
+<p><a href="//127.0.0.1:5000">127.0.0.1:5000</a></p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="index template"></a>
+          <h2><a href="/start-fa/index-template/">index template</a></h2>
+          <a name="more"></a>
+<p>فایل index.tt2 برای ساختن صفحه‌ی اصلی هر سایت در آدرسی است که برای آن در فیلدهای url و root تنظیماتش مشخص کرده‌اید.</p>
+
+<p>در این مثال، آدرس‌های زیر با استفاده از این قالب ساخته می‌شوند:</p>
+
+<pre><code>address.com/blog/
+address.com/blog/page/1/ , address.com/blog/page/2/ ...
+
+address.com/en/
+address.com/en/page/1/ , address.com/en/page/1/ ...
+
+address.com/story/ ...
+address.com/linux/ ...
+</code></pre>
+
+<p>کدهای زیر را در index.tt2 کپی کنید:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="description" content="{{ DESCRIPTION }}"&gt;
+    &lt;meta name="author" content="{{ MainAUTHOR }}"&gt;
+    &lt;link rel="shortcut icon" href="{{ MAIN.author_image }}"&gt;
+    &lt;title&gt;{{ PageTITLE }}&lt;/title&gt;
+    &lt;style&gt;
+    entry img {
+    max-width: 100% !important;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;center&gt;
+    &lt;img src="{{ MAIN.logo }}"&gt;
+    &lt;h1&gt;{{ TITLE }}&lt;/h1&gt;
+    &lt;h2&gt;{{ DESCRIPTION }}&lt;/h2&gt;
+    &lt;/center&gt;
+    &lt;hr&gt;
+    &lt;table&gt;
+    &lt;tr&gt;
+&lt;!-- Content --&gt;
+    &lt;td width="70%"&gt;
+    {{ FOREACH post IN POSTS }}
+      &lt;h2&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;/h2&gt;
+      &lt;h5&gt;{{ post.CALENDAR.jday_name }} {{ post.CALENDAR.jday }} {{ post.CALENDAR.jmonth_name }} {{ post.CALENDAR.jyear }}&lt;/h5&gt;
+      &lt;h5&gt;{{ post.CALENDAR.day_name }} {{ post.CALENDAR.day }} {{ post.CALENDAR.month_name }} {{ post.CALENDAR.year }}&lt;/h5&gt;
+      &lt;p&gt;{{ post.body.less }}&lt;/p&gt;
+      &lt;br&gt;
+      &lt;a href="{{ url }}#more"&gt;Continue...&lt;/a&gt;
+      &lt;hr&gt;
+    {{ END }}
+    &lt;/td&gt;
+&lt;!-- sidebar --&gt;
+    &lt;td width="30%"&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;!-- pagination --&gt;
+    &lt;tr&gt;
+      &lt;td width="30%"&gt;
+      {{ IF PAGE.prev }}
+        &lt;a href="{{ PAGE.prev.url }}"&gt;prev: page {{ PAGE.prev.title }}&lt;/a&gt;
+      {{- END }}
+        | page {{ PAGE.number }} of {{PAGE.total}} |
+      {{ IF PAGE.next }}
+            &lt;a href="{{ PAGE.next.url }}"&gt;next: page {{ PAGE.next.title }}&lt;/a&gt;
+      {{- END }}
+      &lt;/td&gt;
+    &lt;/tr&gt;   
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>از آنجا که بدنه اصلی کدهای تشکیل دهنده‌ی index، archive و post تقریبا یکی است، در مورد این کدها بعد از ساختن قالب post بیشتر توضیح می‌دهیم. و توضیحات تکمیلی‌تر را هم بعد از ساختن atom.tt2 با هم مرور می‌کینم.</p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="archive template"></a>
+          <h2><a href="/start-fa/archive-template/">archive template</a></h2>
+          <a name="more"></a>
+<p>فایل archive.tt2 حاوی قالب ساخت تمام صفحات آرشیو است، برای مثال این صفحه‌ها:</p>
+
+<pre><code>/blog/category/anime/
+/blog/archive/1395/08/
+/en/tags/Promise/
+</code></pre>
+
+<p>فایل archive.tt2 را برای ویرایش باز کنید و کدهای زیر را در آن کپی کنید:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="description" content="{{ DESCRIPTION }}"&gt;
+    &lt;meta name="author" content="{{ MainAUTHOR }}"&gt;
+    &lt;link rel="shortcut icon" href="{{ MAIN.author_image }}"&gt;
+    &lt;title&gt;{{ PageTITLE }}&lt;/title&gt;
+    &lt;style&gt;
+    entry img {
+    max-width: 100% !important;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;body&gt;
+    &lt;center&gt;
+    &lt;img src="{{ MAIN.logo }}"&gt;
+    &lt;h1&gt;{{ TITLE }}&lt;/h1&gt;
+    &lt;h2&gt;{{ ArchiveTITLE }}&lt;/h2&gt;
+    &lt;/center&gt;
+    &lt;hr&gt;
+    &lt;table&gt;
+    &lt;tr&gt;
+&lt;!-- Content --&gt;
+    &lt;td width="70%"&gt;
+    {{ FOREACH post IN POSTS }}
+      &lt;h2&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;/h2&gt;
+    {{ END }}
+    &lt;/td&gt;
+&lt;!-- sidebar --&gt;
+    &lt;td width="30%"&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;!-- pagination --&gt;
+    &lt;tr&gt;
+      &lt;td width="30%"&gt;
+      {{ IF PAGE.prev }}
+        &lt;a href="{{ PAGE.prev.url }}"&gt;prev: page {{ PAGE.prev.title }}&lt;/a&gt;
+      {{- END }}
+        | page {{ PAGE.number }} of {{PAGE.total}} |
+      {{ IF PAGE.next }}
+            &lt;a href="{{ PAGE.next.url }}"&gt;next: page {{ PAGE.next.title }}&lt;/a&gt;
+      {{- END }}
+      &lt;/td&gt;
+    &lt;/tr&gt;   
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>اگر به قالب‌های index و archive دقت کنید، تقریبا شبیه به هم هستند و تفاوت‌ها جزیی است، البته در index خلاصه متن را با {{ post.body.less }} فراخوانی کردیم، یا تاریخ‌ها را با برچسب‌های {{ post.CALENDAR }}، اما در قالب archive ما این برچسب‌ها نیستند، که به صورت اختیاری حذف شده‌اند و اگر نیازی داشته باشید می‌توانید از تمامشان استفاده کنید، تنها تفاوت بین این دو قالب {{ ArchiveTITLE }} است که در index یک برچسب نامعتبر به حساب می‌آید.</p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="post template"></a>
+          <h2><a href="/start-fa/post-template/">post template</a></h2>
+          <a name="more"></a>
+<p>فایل post.tt2 برای ساختن قالب تکی پست‌ها و نوشته در آدرسی است که در فیلد permalink در تنظیمات سایت مشخص کرده‌ایم استفاده می‌شود.</p>
+
+<p>در این مثال، آدرس‌های زیر با استفاده از این قالب ساخته می‌شوند:</p>
+
+<pre><code>address.com/blog/category/year/month/day/post_title.html
+address.com/en/year/month/day/post_title/
+address.com/linux/author/post_title/
+address.com/story/category/post_title/
+</code></pre>
+
+<p>اگر به قالب‌های index و archive یک بار دیگر نگاه بیندازید میبینید که پست ها را با استفاده از یک حلقه {{ FOREACH post IN POSTS }} لود کردیم، در مورد post اما استفاده از این حلقه اجباری نیست، یعنی اگر از آن استفاده نکنیم باز هم <strong>post</strong> مقدار معتبری دارد.</p>
+
+<p>هر دو کد زیر برای استفاده در post معتبر هستند:
+    <td>
+    {{ Foreach post IN POSTS }}
+        {{ post.title }}
+    {{ END }}
+    </td></p>
+
+<pre><code>&lt;td&gt;
+    {{ post.title }}
+&lt;/td&gt;
+</code></pre>
+
+<p>در post.tt2 استفاده از حلقه POSTS زمانی مفید است که بخواهید با متغیر دیگری به جز post مقادیر را فراخوانی کنید، مثلا:</p>
+
+<pre><code>&lt;td&gt;
+{{ Foreach entry IN POSTS }}
+    {{ entry.title }}
+{{ END }}
+&lt;/td&gt;
+</code></pre>
+
+<p>به جز این مورد تقریبا تمام برچسب‌های دیگر بین archive، post و index شبیه به هم هستند و معتبر. پس میتوانیم عینا از قالب index برای post هم استفاده کنیم، اما عملا این کار برای قالبی که در حال ساخت آن هستیم مفید نیست، چرا که در قالب index خلاصه نوشته ها را برای نمایش در نظر گرفتیم و نه متن کامل یا در index و archive جزییات زیادی از هر پست را لود نکردیم، مثلا در سایت آموزش لینوکس هر نوشته نام نویسنده‌ی متفاوتی داشت، یا دسته بندی‌هایی که انجام داد بودیم، مثل tag ها در وبلاگ ها یا keywordها در داستان و عکس اختصاصی که برای نوشته‌های وبلاگ فارسی و آموزش لینوکس داشتیم و category ها. البته تمام این موارد را میشود در قالب‌های index یا archive هم نمایش داد، اما برای ساده بودن قالب از آن‌ها چشم پوشی شده.</p>
+
+<p>اما نحوه‌ی اضافه کردن، تمام مشخصات هر نوشته که در هدر به آن نسبت داده شده مثل تاریخ، category، tag و ... در حلقه POSTS قابل بازیابی است، مثلا {{ post.category }}، البته برای لود کردن مقادیر گروهی یا آرشیوها باید از یک حلقه‌ها جدید داخل حلقه قبلی استفاده کنیم:</p>
+
+<pre><code>{{ FOREACH kw IN post.keywords }}
+    {{ kw }}
+{{ END }}
+</code></pre>
+
+<p>و اگر مقداری که فراخوانی میکنیم را قبلا آرشیو کرده باشیم، یعنی مقدارش را در فایل تنظیمات به فیلد lists وارد کرده باشیم:</p>
+
+<pre><code>{{ FOREACH tag IN post.tags.values }}
+    &lt;a href="{{ tag.url }}"&gt;{{ tag.name }}&lt;/a&gt;
+{{ END }}
+</code></pre>
+
+<p>از آنجا که برای تمام سایت‌ها میخواهیم از یک قالب استفاده کنیم و لیست‌های آرشیو و فیلدهای سربرگ که برای هرکدام در نظر گرفتیم با دیگران متفاوت است، از عبارت شرطی {{ IF }} برای تست اینکه آیا فیلد مورد نظر در این پست وجود دارد یا نه کمک میگیریم، مثلا پست‌های وبلاگ داستان فیلد tags را در سربرگ نداشتند.</p>
+
+<pre><code>{{ IF tags }}
+{{ FOREACH tag IN post.tags.values }}
+    &lt;a href="{{ tag.url }}"&gt;{{ tag.name }}&lt;/a&gt;
+{{ END }}
+{{ END }}
+</code></pre>
+
+<p>یک بار دیگر به جزییات سربرگ‌هایی که داشتیم برگردیم، تمام فیلدهایی که برای هر چهار سایت در نظر گرفته بودیم، این فیلدها بودند:</p>
+
+<pre><code>image
+description
+author
+category
+tags
+categories
+keywords
+suggests
+</code></pre>
+
+<p>که به جز keywords و suggests، در story و image در آموزش لینوکس و وبلاگ فارسی، مابقی را به عنوان لیست آرشیو برای سایت‌هایشان هم در نظر گرفته بودیم. با توجه به تمام توضیحاتی که دادیم قالب post را به این صورت می‌سازیم، کدهای زیر را در post.tt2 کپی کنید:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="description" content="{{ DESCRIPTION }}"&gt;
+    &lt;meta name="author" content="{{ MainAUTHOR }}"&gt;
+    &lt;link rel="shortcut icon" href="{{ MAIN.author_image }}"&gt;
+    &lt;title&gt;{{ PageTITLE }}&lt;/title&gt;
+    &lt;style&gt;
+    img {
+    max-width: 100% !important;
+    }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;body&gt;
+    &lt;center&gt;
+    &lt;img src="{{ SITE.author_image }}"&gt;
+    &lt;h1&gt;{{ TITLE }}&lt;/h1&gt;
+    &lt;h2&gt;{{ DESCRIPTION }}&lt;/h2&gt;
+    &lt;/center&gt;
+    &lt;hr&gt;
+    &lt;table&gt;
+    &lt;tr&gt;
+&lt;!-- Content --&gt;
+    &lt;td width="70%"&gt;
+    {{ FOREACH post IN POSTS }}
+      &lt;h2&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;/h2&gt;
+      &lt;h5&gt;{{ post.CALENDAR.jday_name }} {{ post.CALENDAR.jday }} {{ post.CALENDAR.jmonth_name }} {{ post.CALENDAR.jyear }}&lt;/h5&gt;
+      &lt;h5&gt;{{ post.CALENDAR.day_name }} {{ post.CALENDAR.day }} {{ post.CALENDAR.month_name }} {{ post.CALENDAR.year }}&lt;/h5&gt;
+      {{ IF post.description }}description: {{ post.description }}{{ END }}&lt;br&gt;
+      {{ IF post.image }}&lt;img src="{{ post.image }}"&gt;{{ END }}
+      {{ IF post.author }}
+      author: {{ FOREACH author IN post.author.values }}&lt;a href="{{ author.url }}"&gt;{{ author.name }}&lt;/a&gt;{{ END }}&lt;br&gt;
+      {{ END }}
+      &lt;p&gt;{{ post.body.more }}&lt;/p&gt;
+      {{ IF post.category }}
+      category: {{ FOREACH cat IN post.category.values }}&lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt;{{ END }}&lt;br&gt;
+      {{ END }}
+      {{ IF post.tags }}
+      tags: {{ FOREACH tag IN post.tags.values }}&lt;a href="{{ tag.url }}"&gt;{{ tag.name }}&lt;/a&gt;/{{ END }}&lt;br&gt;
+      {{ END }}
+      {{ IF post.categories }}
+      categories: {{ FOREACH cat IN post.categories.values }}&lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt;/{{ END }}&lt;br&gt;
+      {{ END }}
+      {{ IF post.keywords }}
+      keywords: {{ FOREACH kw IN post.keywords }}{{ kw }}/{{ END }}&lt;br&gt;
+      {{ END }}
+      &lt;hr&gt;
+    {{ END }}
+    &lt;/td&gt;
+&lt;!-- sidebar --&gt;
+    &lt;td width="30%"&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;!-- pagination --&gt;
+    &lt;tr&gt;
+      &lt;td width="30%"&gt;
+      {{ IF PAGE.prev }}
+        &lt;a href="{{ PAGE.prev.url }}"&gt;prev: {{ PAGE.prev.title }}&lt;/a&gt;
+      {{- END }}
+        |
+      {{ IF PAGE.next }}
+            &lt;a href="{{ PAGE.next.url }}"&gt;next: {{ PAGE.next.title }}&lt;/a&gt;
+      {{- END }}
+      &lt;/td&gt;
+    &lt;/tr&gt;   
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><strong>نکته</strong>: <br />
+پیش از این در قسمت تنظیمات گفته شد که هر فیلدی که در تنظیمات اختصاصی سایت نباشد، مقدارش برابر با مقداری است که در فایل تنظیمات عمومی وجود دارد، اگر به یاد داشته باشید برای همین هم در تنظیم سایت دنباله دار، فیلد لیست را به صورت خالی وارد کردیم.</p>
+
+<p>حالا خطوط ۷ و ۱۷ قالب post را ببینید، در تنظیمات هیچ‌کدام از سایت‌ها فیلدی به نام author_image وجود نداشت این فیلد را تنها در تنظیمات عمومی نوشته بودیم، اما در خط ۱۷ به جای MAIN که متعلق به تنظیمات عمومی است، با SITE که برای تنظیمات سایت‌هاست، آن را لود کرده‌ایم و مقدار معتبری بر میگرداند. <br />
+البته استفاده از این تگ منطقی نیست و فقط برای مثال و درک بهتر کارکرد فیلدها در تنظیمات به این صورت نوشته شده.</p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="feed template"></a>
+          <h2><a href="/start-fa/feed-template/">feed template</a></h2>
+          <a name="more"></a>
+<p>آخرین فایل atom.tt2 که برای ساختن فید مطالب هر سایت به کار می‌رود، البته میتوانید با هر یک از استانداردهای مورد قبول که دوست دارید فید خود را بسازید و الزامی به atom بودن آن نیست، نهایتا خروجی این فایل، فایل feed.xml در شاخه اصلی هر سایت خواهد بود.</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"&gt;
+  &lt;channel&gt;
+    &lt;title&gt;{{ TITLE }}&lt;/title&gt;
+    &lt;description&gt;{{ DESCRIPTION }}&lt;/description&gt;
+    &lt;link&gt;{{ URL }}&lt;/link&gt;
+    &lt;atom:link href="{{ URL }}/feed.xml" rel="self" type="application/rss+xml" /&gt;
+    &lt;pubDate&gt;{{ Build.date }}&lt;/pubDate&gt;
+    &lt;lastBuildDate&gt;{{ DATE }}&lt;/lastBuildDate&gt;
+    &lt;generator&gt;mira&lt;/generator&gt;
+    {{ FOREACH post IN POSTS }}
+        &lt;item&gt;
+          &lt;title&gt;{{ post.title }}&lt;/title&gt;
+          &lt;description&gt;{{ post.body.more | html }}&lt;/description&gt;
+          &lt;pubDate&gt;{{ post.date }}&lt;/pubDate&gt;
+          &lt;link&gt;{{ post.url }}&lt;/link&gt;
+          &lt;guid isPermaLink="true"&gt;{{ post.url }}&lt;/guid&gt;
+    {{- FOREACH list IN SITE.lists -}}
+        {{ IF post.$list }}
+        &lt;{{ list }}&gt;
+           {{- FOREACH arch IN post.$list.values -}}
+            {{- arch.name -}}
+            {{- IF (loop.index != loop.max) -}},{{- END -}}
+           {{- END -}}
+        &lt;/{{ list }}&gt;
+        {{ END }}
+    {{- END -}}
+        &lt;/item&gt;
+    {{ END }}
+  &lt;/channel&gt;
+&lt;/rss&gt;
+</code></pre>
+
+<p><strong>نکته</strong>: در این قالب چند نکته جدید را می‌بینید، یکی برچسب BUILD که اطلاعات زمان اجرای فرمان build را در خود دارد، مانند CALENDAR برای هر پست</p>
+
+<p>و دیگری استفاده جدید از حلقه ها و متغیرهای آن‌ها، خط هجده را ببینید:</p>
+
+<pre><code>{{- FOREACH list IN SITE.lists -}}
+        {{ IF post.$list }}
+    ...
+    ...
+       {{- FOREACH arch IN post.$list.values -}}
+</code></pre>
+
+<p>در حلقه‌ی اول هر لیستی را که در فایل تنظیمات سایت تنظیم کرده‌ایم را چک می‌کند و از این به بعد با استفاده از علامت $ به جای {{}} میتوانیم از مقدار متغیر در کدهای قالب استفاده کنیم، در خط بعد چک میکنیم اگر این مقدار در پست وجود داشته باشد، در حلقه‌ی جدید نام آن را استخراج می‌کنیم.</p>
+
+<p>حلقه‌ی بالا برای نمایش دادن تمام لیست‌های آرشیو موجود در هر سایت است، یعنی مثلا اگر category در هدر باشد، مقدار یا مقدارهای آن‌را به نمایش در می‌آورد، اما ممکن است بپرسید چرا در قالب post از این روش استفاده نکردیم و با استفاده از IF و FOREACH جدا جدا هر لیست را لود کردیم؟!</p>
+
+<p>جواب ساده است، برای اینکه کنترل بیشتری بر روی مکان هر آرشیو داشته باشیم، میخواستیم ترتیب لیست‌ها و مکان قرار گیریشان در قالب دقیقا تحت کنترل خودمان باشد، مثلا نام نویسنده را قبل از بدنه محتوا قرار بدهیم و دسته بندی ها را بعد از آن. اما برای feed نیازی به این مورد نداشتیم، فقط نیاز داریم همه‌ی لیست‌ها دقیقا بعد از متن نمایش داده شوند.</p>
+
+<p>همچنین از یک شرط جدید هم استفاده شده:</p>
+
+<pre><code>{{- IF (loop.index != loop.max) -}},{{- END -}}
+</code></pre>
+
+<p>با استفاده از loop میتوانیم مشخصات حلقه‌ی در حال اجرا را چک کنیم، loop.index می‌گوید که مرتبه چندم از اجرای حلقه هستیم و loop.max، حداکثر دفعاتی که یک حلقه FOREACH با توجه به سایز لیستی که لود کرده خواهد داشت.</p>
+
+<p>آیتم‌هایی که نمایش داده می‌شوند را با یک کاما بعد از هر کدام از هم جدا کردیم، اما نمیخواستیم که کاما بعد از آخرین آیتم هم نمایش داده شود، پس چک کردیم که اگر در آخر حلقه هستیم دیگر کاما نمایش داده نشود.</p>
+
+<p>بدون این شرط، برچسب زیر
+    <tags>vimrc,terminal,vimrc bank,ترمینال,vim</tags></p>
+
+<p>به شکل زیر، بعد از vim یک کامای اضافه نمایش داده خواهد شد:</p>
+
+<pre><code>&lt;tags&gt;vimrc,terminal,vimrc bank,ترمینال,vim,&lt;/tags&gt;
+</code></pre>
+
+<p>و نکته‌ی آخر، بعضی از خط ها بعد و قبل از استفاده از جفت آکولادها {{ }} از یک خط تیره - استفاده شده {{- -}}، آکولادها قبل و بعد از خود یک کاراکتر خط جدید را هم به نمایش در می‌آورند. البته برای ساختن قالب‌های html چندان اهمیتی ندارند، چرا که در html تا از <br> یا <p></p> یا سایر برچسب‌های مشابه استفاده نکنیم خطوط جدید ساخته نمی‌شوند، و این کاراکترهای خط جدید که قبل و بعد از آکولاد تولید می‌شوند، باعث تفکیک کدها و خواناتر شدن آن هم می‌شوند. اما برای ساختن یک xml تمیز بهتر است که این کاراکترهای خط جدید وجود نداشته باشند. با گذاشتن خط تیره - مانع از فاصله افتادن بین خطوط می‌شویم.</p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="ساختن یک ساید بار"></a>
+          <h2><a href="/start-fa/sidebar/">ساختن یک ساید بار</a></h2>
+          <a name="more"></a>
+<p>حالا وقت آن رسیده که با ساختن یک ساید بار آرشیوهایی که برای هر سایت را داشتیم را هم به نمایش درآوریم، برای این کار قبلا در میانه‌های قالب‌های index، archive و post یک قسمت را آماده گذشاته بودیم:</p>
+
+<pre><code>&lt;!-- sidebar --&gt;
+&lt;td width="30%"&gt;
+&lt;/td&gt;
+</code></pre>
+
+<p>حالا زمان آن را رسیده که آن را تکمیل کنیم. برای نمایش لیست‌های آرشیو دو راه حل داریم، یکی به شکل کلی تمام آرشیوهای موجود را لود کنیم، مانند کاری که در انتهای قالب atom کرده بودیم، و یکی هم مثل قالب post، روشی که به ما امکان میدهد هر لیست را جدا و در جایی که میخواهیم نمایش دهیم.</p>
+
+<h4>روش اول، لود کردن همه چیز:</h4>
+
+<pre><code>{{ FOREACH archive IN ARCHIVES.pairs }}
+  &lt;h5&gt;{{ archive.key }}&lt;/h5&gt;&lt;!-- archive name, like tags or dates ... --&gt;
+  &lt;hr&gt;
+  {{ FOREACH item IN archive.value.values.sort('name').sort('number') }}
+    &lt;a href="{{ item.url }}"&gt;{{ item.name }}&lt;/a&gt;
+    {{ IF (archive.key == 'categories') }}&lt;br&gt;{{ END }}
+    {{ IF (archive.key == 'date') or (archive.key == 'jdate') }}&lt;br&gt;{{ END }}
+    {{ IF (archive.key == 'author') }}&lt;br&gt;{{ END }}
+    {{ IF (loop.index != loop.max) and (archive.key == 'tags') }}&amp;nbsp;-&amp;nbsp;{{ END }}
+    {{ IF (archive.key == 'category') }}
+    &lt;br&gt;
+    {{ FOREACH utid IN item.posts }}
+        &amp;nbsp;&amp;nbsp;-&amp;nbsp;&lt;a href="{{ ENTRIES.$utid.url }}"&gt;{{ ENTRIES.$utid.title }}&lt;/a&gt;&lt;br&gt;
+    {{ END }}
+    {{ END }}
+  {{- END }}
+  &lt;br&gt;
+{{- END }}
+</code></pre>
+
+<p><strong>توضیح:</strong></p>
+
+<p>ابتدا یک جفت کلید-مقدار از آرشیوها را در متغیری به نام archive لود کردیم archive IN ARCHIVES.pairs، کلید با نام key حاوی نام آرشیو است، مثل category یا tag یا هر چیز دیگری {{ archive.key }}.</p>
+
+<p>مقدار یا value حاوی یک لیست از اطلاعات مربوط به آن آرشیو است archive.value، که این لیست شامل این اطلاعات است: نام، آدرس لینک هر آرشیو، و utid پست‌هایی که در این آرشیو هستند. مثل همیشه، برای نمایش دادن لیست‌ها از FOREACH استفاده می‌کینم.</p>
+
+<pre><code>{{ FOREACH item IN archive.value.values.sort('name').sort('number') }}
+</code></pre>
+
+<p>و البته با استفاده از sort، ترتیب نمایش را هم مشخص کردیم که بر اساس نام باشد و اگر نام‌های مشابه پیدا کرد، اولویت با تعداد پست‌های موجود در هرکدام باشد.</p>
+
+<p>بعد هم با استفاده از شرط‌ها، جداکننده‌های هر آرشیو را مشخص کردیم. مثلا برای آرشیوهای زمانی، نام هر ماه در یک خط جدید باشد، یا برای نمایش تگ‌ها همه پشت سر هم و با جداکننده‌ی - باشند.</p>
+
+<p><strong>خطوط ۱۰ تا ۱۵</strong>: گفتیم که مقدار هر آرشیو لیستی است که utid پست‌هایی که در آن دسته بندی هستند را هم در خود دارد، بین این خطوط مشخص کردیم تیتر و لینک تمام نوشته‌هایی که در دسته بندی هستند، زیر نام آن دسته بندی نمایش داده شوند.با استفاده از ENTRIES.$utid تمام کارهایی که برای نمایش پست ها با POSTS انجام میدادیم را میتوان انجام داد، مثلا خلاصه‌ی متن را لود کرد:</p>
+
+<pre><code>ENTRIES.$utid.body.less
+</code></pre>
+
+<h4>روش دوم، نمایش دادن با ترتیب دلخواه</h4>
+
+<p>روش بالا روش خوبی است، مخصوصا برای زمانی که میخواهیم از یک قالب به شکل مشترک استفاده کنیم اما قدرت کنترل و انعطاف کمی دارد، مثلا شاید بخواهیم در یک سایت آرشیو زمانی در ابتدای ستون کناری باشد و در یک سایت در انتها. در این روش میتوانیم هر آرشیو را هرکجا که بخواهیم لود کنیم. کافی است حلقه‌ای با نام آرشیو و پسوند آرشیو با حروف بزرگ را لود کنیم:</p>
+
+<pre><code>{{ IF CATEGORIES_ARCHIVE }}
+&lt;h3&gt;categories archive&lt;/h3&gt;
+{{ FOREACH cat IN CATEGORIES_ARCHIVE }}
+  &lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt; - &lt;small&gt;{{ cat.posts.size }}&lt;/small&gt;&lt;br&gt;
+{{ END }}
+{{ END }}
+&lt;hr&gt;
+</code></pre>
+
+<p><strong>نکته‌</strong>: همانطور که در مثال قبل هم گفتیم، لیست‌های آرشیو علاوه بر نام و آدرس، پست‌هایی که در دسته بندیشان قرار میگیرد را هم در خود دارند، در مثال قبل با استفاده از posts مقدار utid ها را به دست آوردیم و در ENTRIES لود کردیم، اینجا فقط تعدادشان را گرفتیم و مشخص کردیم در هر دسته بندی چه تعداد نوشته داریم. {{ cat.posts.size }}</p>
+
+<p>برای نمایش کامل تمام آرشیوها در این مثال باید از کد زیر استفاده کرد، در این مثال هم در قسمت category تمام پست ها را با استفاده از utid نمایش می‌دهیم:</p>
+
+<pre><code>{{ IF CATEGORIES_ARCHIVE }}
+&lt;h3&gt;categories archive&lt;/h3&gt;
+{{ FOREACH cat IN CATEGORIES_ARCHIVE }}
+   &lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt; - &lt;small&gt;{{ cat.posts.size }}&lt;/small&gt;&lt;br&gt;
+{{ END }}&lt;hr&gt;
+{{ END }}
+
+{{ IF CATEGORY_ARCHIVE }}
+&lt;h3&gt;category archive&lt;/h3&gt;
+{{ FOREACH cat IN CATEGORY_ARCHIVE }}
+  &lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt; - &lt;small&gt;{{ cat.posts.size }}&lt;/small&gt;&lt;br&gt;
+    &lt;br&gt;
+    {{ FOREACH utid IN cat.posts }}
+        &amp;nbsp;&amp;nbsp;-&amp;nbsp;&lt;a href="{{ ENTRIES.$utid.url }}"&gt;{{ ENTRIES.$utid.title }}&lt;/a&gt;&lt;br&gt;
+    {{ END }}
+{{ END }}
+&lt;hr&gt;
+{{ END }}
+
+{{ IF TAGS_ARCHIVE }}
+&lt;h3&gt;categories archive&lt;/h3&gt;
+{{ FOREACH tag IN TAGS_ARCHIVE }}
+  &lt;a href="{{ tag.url }}"&gt;{{ tag.name }}&lt;/a&gt; - &lt;small&gt;{{ tag.posts.size }}&lt;/small&gt;&lt;br&gt;
+{{ END }}
+&lt;hr&gt;
+{{ END }}
+
+{{ IF AUTHOR_ARCHIVE }}
+&lt;h3&gt;author archive&lt;/h3&gt;
+{{ FOREACH author IN AUTHOR_ARCHIVE }}
+  &lt;a href="{{ author.url }}"&gt;{{ author.name }}&lt;/a&gt; - &lt;small&gt;{{ author.posts.size }}&lt;/small&gt;&lt;br&gt;
+{{ END }}
+&lt;hr&gt;
+{{ END }}
+
+{{ IF DATE_ARCHIVE }}
+&lt;h3&gt;date archive&lt;/h3&gt;
+{{ FOREACH date IN DATE_ARCHIVE }}
+  &lt;a href="{{ date.url }}"&gt;{{ date.name }}&lt;/a&gt; - &lt;small&gt;{{ date.posts.size }}&lt;/small&gt;&lt;br&gt;
+{{ END }}
+&lt;hr&gt;
+{{ END }}
+
+{{ IF JDATE_ARCHIVE }}
+&lt;h3&gt;jalali archive&lt;/h3&gt;
+{{ FOREACH date IN JDATE_ARCHIVE }}
+  &lt;a href="{{ date.url }}"&gt;{{ date.name }}&lt;/a&gt; - &lt;small&gt;{{ date.posts.size }}&lt;/small&gt;&lt;br&gt;
+{{ END }}
+&lt;hr&gt;
+{{ END }}
+</code></pre>
+
+<p>یکی از دو روش بالا را انتخاب کنید، سپس کدهای نوشته شده را در قالب‌های post, index و archive کپی کنید</p>
+
+<pre><code>&lt;!-- sidebar --&gt;
+&lt;td width="30%"&gt;
+   &gt;&gt;&gt; اینجا کپی کنید
+&lt;/td&gt;
+</code></pre>
+
+<p>در فایل‌های مثال که برای دانلود کردن آماده شده از روش اول در قالب archive و روش دوم برای index و post استفاده شده.</p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="تکمیل کردن قالب post"></a>
+          <h2><a href="/start-fa/post-subjoin/">تکمیل کردن قالب post</a></h2>
+          <a name="more"></a>
+<p>زمانی که داشتیم سربرگ‌ها را تنظیم می‌کردیم برای سایت داستان ها یا همان دنباله دار، یک فیلد به نام suggests برای نمایش دادن داستان‌های مشابه تعریف کردیم که تا اینجا از آن استفاده نکردیم، حالا وقت آن رسیده که این فلد را هم به قالبمان اضافه کنیم.</p>
+
+<p>در فایلی که برای محتوا دانلود کردید، به این شاخه‌ی story بروید و این دو فایل را باز کنید:</p>
+
+<pre><code>~/mira/content/story/1394-12-11-the-selfish-gene.md
+~/mira/content/story/1395-2-27-sleep.md
+</code></pre>
+
+<p>در فایل sleep در فیلد suggests آدرس ایستای دو داستان دیگر وارد شده، برای نمایش دادن آن می‌توان از کدی شبیه به این استفاده کرد:</p>
+
+<pre><code>{{ FOREACH suggest IN post.suggests }}
+    {{ FOREACH entry IN ENTRIES.values }}
+        {{ IF entry.url == suggest }}
+            &lt;a href="{{ entry.url }}"&gt;{{ entry.title }}&lt;/a&gt;&lt;br&gt;
+        {{ END }}
+    {{ END }}
+{{ END }}
+</code></pre>
+
+<p>در یک حلقه مقدار هر آدرس را در suggest لود کردیم، سپس در حلقه‌ی درونی تمام پست‌ها را گشتیم، اگر پستی که آدرس مشابه با suggest داست، نام و آدرس آن را نمایش دادیم.</p>
+
+<p>در فایل the-selfish-gene اما utid دو داستان را برای suggests وارد کردیم، برای نمایش دادنشان از کدهای زیر می‌توان استفاده کرد:</p>
+
+<pre><code>{{ FOREACH suggest IN post.suggests }}
+    {{ IF ENTRIES.$suggest.url }}
+        &lt;a href="{{ ENTRIES.$suggest.url }}"&gt;{{ ENTRIES.$suggest.title }}&lt;/a&gt;&lt;br&gt;
+    {{ END }}
+{{ END }}
+</code></pre>
+
+<p>باز هم در یک حلقه suggets های هر پست را می‌خوانیم، اما اینبار نیازی به حلقه‌ی درونی نیست، فقط تست میکنیم آیا پستی با این utid وجود دارد یا نه، اگر وجود داشت، نام و آدرس آن را نمایش می‌دهیم.</p>
+
+<p>برای اینکه از هر دو روش همزمان در قالب استفاده کنیم، یک بار دیگر فایل post.tt2 را برای ویرایش کردن باز کنید، این چند خط را پیدا کنید:</p>
+
+<pre><code>{{ IF post.keywords }}
+keywords: {{ FOREACH kw IN post.keywords }}{{ kw }}/{{ END }}&lt;br&gt;
+{{ END }}
+</code></pre>
+
+<p>کد زیر را بعد از آن اضافه کنید:</p>
+
+<pre><code>{{ IF post.suggests }}
+    &lt;hr/&gt;
+&lt;p&gt;suggests:&lt;/p&gt;
+{{ FOREACH suggest IN post.suggests }}
+    {{ IF ENTRIES.$suggest.url }}
+        &lt;a href="{{ ENTRIES.$suggest.url }}"&gt;{{ ENTRIES.$suggest.title }}&lt;/a&gt;&lt;br&gt;
+    {{ END }}
+    {{ FOREACH entry IN ENTRIES.values }}
+    {{ IF entry.url == suggest }}
+            &lt;a href="{{ entry.url }}"&gt;{{ entry.title }}&lt;/a&gt;&lt;br&gt;
+        {{ END }}
+    {{ END }}
+{{ END }}
+{{ END }}
+</code></pre>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="مرتب کردن چیدمان"></a>
+          <h2><a href="/start-fa/layout/">مرتب کردن چیدمان</a></h2>
+          <a name="more"></a>
+<p>اگر تا این مرحله دستور build را اجرا نکردید، حتما یک بار آن را امتحان کنید</p>
+
+<pre><code>mira build
+</code></pre>
+
+<p>و بعد یک پیش نمایش از سایت را برای خود اجرا کنید:</p>
+
+<pre><code>mira view
+</code></pre>
+
+<p>حالا به این آدرس بروید:</p>
+
+<p><a href="//127.0.0.1:5000/blog/">127.0.0.1:5000/blog/</a></p>
+
+<p>می‌بینید که همه نوشته‌ها چپ به راست نوشته شده‌اند و اصلا برای نمایش زبان فارسی مناسب نیستند.</p>
+
+<p>همانطور که در تنظیم پیکربندی دیدید، در تنظیم هر سایت یک فیلد به نام lang را ساخته بودیم، حالا زمان استفاده از آن است.</p>
+
+<p>برای راست‌چین کردن محتوای فارسی از یک شرط IF و مقدار فیلد lang در فایل config اختصاصی هر سایت استفاده میکنیم.</p>
+
+<p>استفاده از مقدار فایل‌های config اختصاصی طبقات در قالب main و سایر قالب‌ها با هم متفاوت است. برای اینکه از این مقادیر در main استفاده کنیم، حتما باید داخل حلقه‌ی FLOORS باشیم، اما در سایر قالب‌ها در هر جای قالب که باشیم قابل دسترسی هستند.</p>
+
+<p>برای اینکه تنوع استفاده و روش‌های متفاوت استفاده از بلوک‌های شرطی IF را ببینید، با دو روش متفاوت این مثال را پیش می‌بریم. انتخاب روش دلخواه با خود شماست.</p>
+
+<p>یک بار دیگر فایل main.tt2 را باز کنید و به حلقه‌ی FOREACH FLOORS این کدها را اضافه کنید:</p>
+
+<pre><code>{{ IF site.SITE.lang == 'fa' }}
+   &lt;div dir="rtl"&gt;
+{{ ELSE }}
+   &lt;div&gt;
+{{ END }}
+</code></pre>
+
+<p>حالا باید نتیجه چیزی شبیه به این شده باشد:</p>
+
+<pre><code>{{ FOREACH site IN FLOORS.values.sort('name') }}
+  &lt;td style="border-right: 1px solid black; width: 25%;" valign="top"&gt;
+     {{ IF site.SITE.lang == 'fa' }}   &lt;!-- add --&gt;
+    &lt;div dir="rtl"&gt;                &lt;!-- add --&gt;
+     {{ ELSE }}                        &lt;!-- add --&gt;
+    &lt;div&gt;                          &lt;!-- add --&gt;
+     {{ END }}                         &lt;!-- add --&gt;
+  &lt;h2&gt;&lt;a href="{{ site.root }}"&gt;{{ site.name }}&lt;/a&gt;&lt;/h2&gt;
+  &lt;p&gt;{{ site.description }}&lt;/p&gt;
+  &lt;hr&gt;
+  &lt;ul&gt;
+  {{ FOREACH post IN site.posts }}
+    &lt;li&gt;&lt;h4&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;h4&gt;&lt;/li&gt;
+    {{ post.body.less }}
+  {{ END }}
+  &lt;/ul&gt;
+     &lt;/div&gt;                            &lt;!-- add --&gt;
+  &lt;/td&gt;
+{{ END }} 
+</code></pre>
+
+<p>حالا فایل‌های post.tt2، archive.tt2 و index.tt2 را باز کنید و این شرط را در قسمت head سایت به style اضافه کنید:</p>
+
+<pre><code>{{ IF SITE.lang == 'fa' }}
+body {
+   direction: rtl;
+}
+{{ END }}
+{{ IF SITE.lang == 'en' }}
+body {
+   direction: ltr;
+}
+{{ END }}
+</code></pre>
+
+<p>حالا head باید به این شکل در آمده باشد:</p>
+
+<pre><code>&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="description" content="{{ DESCRIPTION }}"&gt;
+    &lt;meta name="author" content="{{ MainAUTHOR }}"&gt;
+    &lt;link rel="shortcut icon" href="{{ MAIN.author_image }}"&gt;
+    &lt;title&gt;{{ PageTITLE }}&lt;/title&gt;
+    &lt;style&gt;
+    entry img {
+    max-width: 100% !important;
+    }
+    {{ IF SITE.lang == 'fa' }}
+    body {
+       direction: rtl;
+    }
+    {{ END }}
+    {{ IF SITE.lang == 'en' }}
+    body {
+       direction: ltr;
+    }
+    {{ END }}
+    &lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+
+<p><strong>نکته</strong>: برای استفاده از IF به جز ELSE از ELSIF هم می‌توانید استفاده کنید.</p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="پوسته‌های بیشتر برای هر قالب و تغییر آدرس"></a>
+          <h2><a href="/start-fa/more-templates/">پوسته‌های بیشتر برای هر قالب و تغییر آدرس</a></h2>
+          <a name="more"></a>
+<p>پیش از این گفتیم که علاوه بر پنج فایل پایه‌ی هر قالب، میتوان به هر تعداد دیگر پوسته برای یک قالب تعریف کرد. در میرا می‌توان برای هر آرشیو یا هر پست یک قالب مجزا داشت.</p>
+
+<h4>پوسته‌های متفاوت برای هر آرشیو</h4>
+
+<p>برای داشتن پوسته‌ی متفاوت برای هر آرشیو، کافی است هم‌نام با آن آرشیو یک فایل در دایرکتوری قالب‌مان داشته باشیم.</p>
+
+<p>برای مثال اگر بخواهیم پوسته‌ی آرشیو category با سایر آرشیوها مثل tags یا آرشیوزمانی و... متفاوت باشد، تنها کافی است در دایرکتوری قالب، یک فایل جدید به نام category.tt2 بسازیم، از این به بعد در هر سایت که آرشیوی به این نام وجود داشت، به جای استفاده از archive.tt2، با استفاده از category.tt2 خروجی آن تولید می‌شود.</p>
+
+<h4>پوسته‌های متفاوت برای پست ها</h4>
+
+<p>گاهی اوقات نیاز داریم آدرس ثابت یک نوشته با سایر نوشته‌ها متفاوت باشد، مثلا برای ساختن page ها یا هر دلیل دیگر. برای این‌که به میرا بگوییم به جای post.tt2 از پوسته‌ی دیگری برای ساختن خروجی یک پست استفاده کند، باید در سربرگ آن پست به فیلد _layout مقدار بدهیم. برای مثال:</p>
+
+<pre><code>_layout: custom_post_template
+</code></pre>
+
+<p><strong>نکته</strong>: <br />
+برخلاف سایر پوسته‌ها، برای صفحات تعریف شده به عنوان پوسته‌ی اختصاصی پست‌ها، الزامی به استفاده از پسوند tt2 برای ساختن پوسته نداریم. استفاده کردن از پسوند تنها در این حالت اختیاری است.</p>
+
+<h4>تغییر آدرس</h4>
+
+<p>همچنین می‌توان آدرس انتشار یک پست را از فرمت تعیین شده در فایل کانفیگ اختصاصی سایتی که در آن منتشر می‌شود جدا کرد. برای مثال در فایل blog-fa.yml به فیلد permalink این مقدار را داده بودیم:</p>
+
+<pre><code>:year/:month/:day/:title.html
+</code></pre>
+
+<p>اما اگر در سربرگ هر کدام از پست‌ها فیلد _permalink را مقدار دهی کنیم، این مسیر تنها برای آن پست تغییر میکند:</p>
+
+<pre><code>_permalink: :year/:title/
+یا
+_permalink: /:title/
+یا
+_permalink: some/thing/else/:title.php
+</code></pre>
+       
+
+       
+      	<h2>گام هفتم: شخصی سازی بیشتر</h2>
+       
+
+       
+
+       <h1>
+       <a name="ساختن صفحات"></a>
+          <h2><a href="/start-fa/pages/">ساختن صفحات</a></h2>
+          <a name="more"></a>
+<p>برای ساختن صفحات ثابت جدا از روند اصلی سایت، مثل صفحه درباره یا تماس و ... با اضافه کردن فیلد type و مقدار page در هدر هر پست، آن پست را به عنوان صفحه ثابت به میرا معرفی می‌کنیم، این کار باعث میشود که پست مورد نظر از لیست‌های مطالب برای نمایش در صفحه اول یا سایر صفحه‌های سایت و page.next و page.prev برای حرکت بین پست‌ها حذف شده و تنها با وارد کردن آدرس مستقیم آن نمایش داده شود.</p>
+
+<p>در وبلاگ فارسی یک پست جدید بسازید:</p>
+
+<pre><code>mira new -t 'about me' -f blog-fa
+</code></pre>
+
+<p>حالا آن را ویرایش کنید:</p>
+
+<pre><code>---
+utid: 20170328195013
+title: درباره من
+_index: about
+_type: page
+_layout: page
+_permalink: /:title/
+---
+این صفحه در باره من است، اینجا مقداری در مورد خودم توضیح می‌دهم
+</code></pre>
+
+<p>حالا در شاخه‌ی قالب my-theme یک فایل جدید به نام page بسازید:</p>
+
+<pre><code>~/mira/template/my-theme/page
+</code></pre>
+
+<p>و مقادیر زیر را در آن کپی کنید:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="description" content="{{ DESCRIPTION }}"&gt;
+    &lt;meta name="author" content="{{ MainAUTHOR }}"&gt;
+    &lt;link rel="shortcut icon" href="{{ MAIN.author_image }}"&gt;
+    &lt;title&gt;{{ PageTITLE }}&lt;/title&gt;
+    &lt;style&gt;
+    img {
+    max-width: 100% !important;
+    }
+    {{ IF SITE.lang == 'fa' }}
+    body {
+       direction: rtl;
+    }
+    {{ END }}
+    {{ IF SITE.lang == 'en' }}
+    body {
+       direction: ltr;
+    }
+    {{ END }}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;center&gt;
+    &lt;img src="{{ SITE.author_image }}"&gt;
+    &lt;h1&gt;{{ post.title }}&lt;/h1&gt;
+    &lt;/center&gt;
+    &lt;hr&gt;
+    &lt;table&gt;
+    &lt;tr&gt;
+    &lt;td&gt;
+      &lt;p&gt;{{ post.body.more }}&lt;/p&gt;
+    &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>این پست در صفحه اصلی یا هیچ‌کجای دیگر سایت نمایش داده نخواهد شد، تنها راه دسترسی به آن دادن لینک مستقیم به این صفحه در این آدرس است:</p>
+
+<pre><code>/blog/about/
+</code></pre>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="آدرس‌های تکراری"></a>
+          <h2><a href="/start-fa/duplicate-address/">آدرس‌های تکراری</a></h2>
+          <a name="more"></a>
+<p>همیشه این امکان وجود دارد که دو نوشته شما یک آدرس مشابه به خود بیرند، مخصوصا وقتی که در سیستم آدرس‌دهی برای هر نوشته، به جز تیتر آن هیچ شرط دیگری مثل تاریخ یا دسته بندی و... را ذکر نمی‌کنید، مثل کاری که در این مثال برای انتشار داستان‌ها کردیم.</p>
+
+<p>به هر حال همیشه این احتمال وجود دارد که دو پست آدرس یکسیانی به ود بگیرند، فرض کنیم که در فایل کانفیگ سایت فیلد permalink را به این شکل ساخته باشیم:</p>
+
+<pre><code>permalink: :year/:month/:day/:title/
+</code></pre>
+
+<p>و در یک روز دو پست را با این مشخصات نوشته باشیم:
+<code>post1:</code></p>
+
+<pre><code>---
+utid: 20170325151121
+date: 2017/03/25
+title: آزمایش
+_index: test
+category: آموزش
+tags:
+ - یک
+ - دو
+---
+</code></pre>
+
+<p><code>post2:</code></p>
+
+<pre><code>---
+utid: 20170325162308
+date: 2017/03/25
+title: test
+category: learn
+tags:
+ - one
+ - two
+---
+</code></pre>
+
+<p>هر دو پست دقیقا در یک روز منتشر شده‌اند، اولی _index با مقدار test دارد و دومی هم که index ندارد، از تیتر test استفاده کرده، پس با توجه به مقدار permalink در کانفیگ، آدرس هر دو پست این آدرس خواهد بود:</p>
+
+<pre><code>/2017/03/25/test/
+</code></pre>
+
+<p>میرا برای حل این مشکل یک راه حل ساده دارد، اگر با آدرس‌های تکراری مواجه بشود، به ترتیب شماره‌ی utid آن‌ها از کوچک به بزرگ این آدرس‌ها را شماره گذاری می‌کند. پست اول عدد utid کوچک‌تری دارد، آدرس اصلی به آن تعلق می‌گیرد و پست دوم یک اندیس شماره 2 می‌گیرد، پس آدرس پست‌های ما در اصل این‌ها خواهند بود:</p>
+
+<pre><code>post1: &gt;  /2017/03/25/test/
+post2: &gt;  /2017/03/25/test/2/
+</code></pre>
+
+<p>در صورتی هم که permalink به جای آدرس خالص، از نام فایل در آن استفاده شده باشد، مثل:</p>
+
+<pre><code>permalink: :year/:month/:day/:title.html
+</code></pre>
+
+<p>آدرس‌ها به این صورت ساخته خواهند شد:</p>
+
+<pre><code>post1: &gt;  /2017/03/25/test.html
+post2: &gt;  /2017/03/25/2/test.html
+</code></pre>
+
+<p>اما اگر نخواهید میرا برای شما آدرس‌ها را بسازد، مثلا بخواهید به جای 2 از 'second edition' در آدرس استفاده کنید، می‌توانید در هدر همان پست فیلد _permalink ار مقدار دهی کنید، برای مثال میتوانیم دو پست را به این شکل داشته باشیم:</p>
+
+<p><code>post1:</code></p>
+
+<pre><code>---
+utid: 20170325151121
+date: 2017/03/25
+title: آزمایش
+_index: test
+category: آموزش
+tags:
+ - یک
+ - دو
+---
+</code></pre>
+
+<p><code>post2:</code></p>
+
+<pre><code>---
+utid: 20170325162308
+date: 2017/03/25
+title: test
+_permalink: :year/:month/:day/:title/second-edition/
+category: learn
+tags:
+ - one
+ - two
+---
+</code></pre>
+
+<p>یا حتی از یک فرمول به جز فرمول کانفیگ سایت استفاده کنیم:</p>
+
+<pre><code>_permalink: :category/:title/second-edition/
+یا
+_permalink: :year/second-edition/:title/
+یا
+_permalink: :title/
+</code></pre>
+
+<p>اگر فایل‌های این مثال را دانلود کرده باشید، در وبلاگ فارسی و داستان، دو مطلب تکراری وجود دارد که آدرس مشابه میگیرند، آن‌ها را هر طور که دوست دارید اصلاح کنید.</p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="تغییر آدرس آرشیو‌ها"></a>
+          <h2><a href="/start-fa/namespcae/">تغییر آدرس آرشیو‌ها</a></h2>
+          <a name="more"></a>
+<p>دیدیم که در تنظیم کردن هر سایت برای آدرس‌دهی به هر پست می‌توانیم از مشخصات آن پست استفاده کنیم، برای مثال:</p>
+
+<pre><code>permalink: :category/:title.html
+یا
+permalink: :author/:year/:title
+</code></pre>
+
+<p>حالا ممکن است دسته بندی موضوعی به نام <strong>آموزشی</strong> داشته باشیم، آدرس ثابت با استفاده از مدل اول این خواهد بود:</p>
+
+<pre><code>SITE_ADDRESS.com/آموزش/post-title.html
+</code></pre>
+
+<p>و اگر آرشیوی بر اساس category ساخته باشیم هم آدرس مطالب دسته بندی <strong>آموزشی</strong> این خواهد بود:</p>
+
+<pre><code>SITE_ADDRESS.com/category/آموزش/
+</code></pre>
+
+<p>یا نام نویسنده مطلب محمد محمدی باشد، در مدل دوم آدرس شبیه به این ساخته خواهد شد:</p>
+
+<pre><code>SITE_ADDRESS.com/محمد-محمدی/post-title/
+</code></pre>
+
+<p>و آدرس آرشیو این نویسنده:</p>
+
+<pre><code>SITE_ADDRESS.com/author/محمد-محمدی/
+</code></pre>
+
+<p>یا اینکه یک دسته بندی با نام طولانی داشته باشیم، مثلا نام دسته بندی این نام باشد: learn use vim in gnu linux systems <br />
+آدرسذها این شکلی خواهتد بود:</p>
+
+<pre><code>SITE_ADDRESS.com/learn-use-vim-in-gnu-linux-systems/post-title.html
+و 
+SITE_ADDRESS.com/category/learn-use-vim-in-gnu-linux-systems/
+</code></pre>
+
+<p>شاید استفاده از نام‌های طولانی یا حروف فارسی در آدرس را دوست نداشته باشید یا سروری که از آن استفاده می‌کنید محدودیت داشته باشد برای پذیرفتن نام‌های غیر لاتین. راه حل استفاده از namespace در فایل کانفیگ عمومی یا اختصاصی هر سایت است.</p>
+
+<p>حالا برای تمرین این مثال، در وبلاگ فارسی یک نوشته جدید به جود بیاورید و در قسمت category مقدار آزمایش را وارید کنید.</p>
+
+<pre><code>---
+utid: 20170326160744
+date: 2017-03-26 16:07:44
+title: فضای نام
+_index: namespace
+category: آزمایش
+---
+</code></pre>
+
+<p>آدرسی که به این پست اختصاص داده می‌شود:</p>
+
+<pre><code>YOUR_ADDRESS.COM/آزمایش/a2017/03/26/namespace.html
+</code></pre>
+
+<p>حالا اگر میخواهید از فضای نام‌ها تمام سایت‌ها به شکل عمومی استفاده کنند در فایل config.yml و اگر میخواهید تنها در وبلاگ فارسی این فضای نام فعال باشد در فایل config/blog-fa.yml فیبدی به نام namespace را به این شکل به وجود بیاورید:</p>
+
+<pre><code>namespace:
+  آزمایش: test
+  آموزش: learn
+  کتاب: book
+  شخصی: personal
+  عمومی: general
+  محمد محمدی: mohamad mohamadi
+</code></pre>
+
+<p>از این به بعد میرا هرجا با یکی از این‌ها در آرشیو مواجه شود، برای ساختن آدرس آن از نام اختصاصی‌اش در فضای نام‌ها استفاده می‌کند. مثلا پست آزمایشی که کمی‌قبل‌تر ساختیم، آدرسی مشابه این آدرس خواهد گرفت:</p>
+
+<pre><code>YOUR_ADDRESS.COM/test/2017/03/26/namespace.html
+و آدرس آرشیو:
+SITE_ADDRESS.com/category/test/
+</code></pre>
+
+<p>یا اگر دسته بندی <strong>کتاب</strong> داشته باشیم:</p>
+
+<pre><code>YOUR_ADDRESS.COM/book/2010/10/10/post-title.html
+SITE_ADDRESS.com/category/book/
+</code></pre>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="اضافه کردن لینک شبکه‌های اجتماعی"></a>
+          <h2><a href="/start-fa/add-social-links/">اضافه کردن لینک شبکه‌های اجتماعی</a></h2>
+          <a name="more"></a>
+<p>برای افزودن لینک خودمان در شبکه‌های اجتماعی به جایی مثل ساید باز هم میرویم سراغ کانفیگ‌ها و اضافه کردن چند خط به هرکدامشان</p>
+
+<p>فرض میکنیم لینکی که می‌خواهیم برای شبکه‌های اجتماعی در نظر بگیریم در تمام سایت‌ها ثابت نیست و برای هر سایت یک کانال، یا اکانت جدا در شبکه‌های اجتماعی و یک کانال در پیام رسان تلگرام را ساخته‌ایم.</p>
+
+<p>از اینجای مثال فقط برای وبلاگ فارسی همه چیز را در نظر می‌گیریم، اما می‌توانید برای سه سایت دیگر هم به همین شکل کار را انجام دهید یا کلا این همه چیز را به جای تنظیم اختصاصی هر سایت در تنظیم‌های عمومی بگنجانید و در همه‌ی سایت‌ها از همان تنظیم استفاده کنید.</p>
+
+<p>آدرس ها را هم این‌ها در نظر میگیریم:</p>
+
+<h4>وبلاگ فارسی:</h4>
+
+<p>twitter.com/@MY_FA_BLOG_MIRA
+telegram.me/MY_FA_BLOG_MIRA</p>
+
+<p>حالا به blog-fa.yml  کدهای زیر را اضافه می‌کنیم:</p>
+
+<p><code>~/mira/config/blog-fa.yml</code></p>
+
+<pre><code>socials:
+ -
+  name: twitter
+  url: https://twitter.com/MY_FA_BLOG_MIRA
+ -
+  name: instagram
+  url: https://instagram.com/MY_FA_BLOG_MIRA
+ -
+  name: github
+  url: https://github.com/MY_FA_BLOG_MIRA
+</code></pre>
+
+<blockquote>
+  <p>به فاصله‌ها دقت کنید، هر بخش که داخل رفتیم، یک خط فاصله اضافه شده است، socials در ابتدای خط است، قبل از هر خط تیره - یک space وجود دارد و یک مرحله فرورفتگی ایجاد شده و بعد، قبل از name و url دو خط فاصله یا همان space هست، یعنی دو مرحله فرورفتگی.</p>
+</blockquote>
+
+<p>حالا در my-theme فایل index.tt2 را باز می‌کینم و هر کجا که خواستیم شبکه‌های اجتماعی را نمایش دهیم این کدها را به آن اضافه می‌کنیم، مثلا در بالاترین قسمت sidebar:</p>
+
+<pre><code>&lt;td width="30%" valign="top"&gt;
+{{ IF SITE.socials }}
+    &lt;h3&gt;socials&lt;/h3&gt;
+    {{ FOREACH social IN SITE.socials }}
+        &lt;a href="{{ social.url }}"&gt;{{ social.name }}&lt;/a&gt;&gt;ذق&lt;
+    {{ END }}
+{{ END }}
+</code></pre>
+
+<p>برای هر کدام از چهار سایت دیگر هم می‌توان همین کار را تکرار کرد، یا اینکه برای همه سایت‌ها از یک آدرس مشترک در شبکه‌های اجتماعی استفاده کنیم و همه اطلاعات را در config.yml وارد کنیم، در این حالت برای نمایش لینک‌ها در سایت، به جای SITE.socials باید از MAIN.socials استفاده کرد.</p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="افزودن مشخصات نویسنده مطلب"></a>
+          <h2><a href="/start-fa/add-author-info/">افزودن مشخصات نویسنده مطلب</a></h2>
+          <a name="more"></a>
+<p>اگر به یاد داشته باشید در سایت آموزش لینوکس، بیشتر از یک نویسنده برای مطالبمان داشتیم، حالا میخواهیم یک اطلاعات کلی از هرکدام را به سایدبار در زیر آرشیو نام‌هایشان اضافه کنیم، ابتدا linux-learn.yml را ویرایش میکنیم و خطوط زیر را در آن می‌نویسیم:</p>
+
+<pre><code>authors:
+ -
+  name: farbodgame
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+ -
+  name: MrNull
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+ -
+  name: rmasoumvand
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+</code></pre>
+
+<blockquote>
+  <p>به فاصله‌ها دقت کنید، هر بخش که داخل رفتیم، یک خط فاصله اضافه شده است، authors در ابتدای خط است، قبل از هر خط تیره - یک space وجود دارد و یک مرحله فرورفتگی ایجاد شده و بعد، قبل از name، desc و twitter دو خط فاصله یا همان space هست، یعنی دو مرحله فرورفتگی.</p>
+</blockquote>
+
+<p>بعد قالب index.tt2 را باز کنید و در sidebar، بلوک کد {{ IF AUTHOR_ARCHIVE }} را پیدا کنید و به جای آن کدهای زیر را کپی کنید:</p>
+
+<pre><code>{{ IF AUTHOR_ARCHIVE }}
+&lt;h3&gt;author archive&lt;/h3&gt;
+{{ FOREACH author IN AUTHOR_ARCHIVE }}
+  &lt;a href="{{ author.url }}"&gt;{{ author.name }}&lt;/a&gt; - &lt;small&gt;{{ author.posts.size }}&lt;/small&gt;
+&lt;!-- این قسمت به کد اضافه شده است --&gt;
+  {{ IF SITE.authors }}
+  {{ FOREACH auth IN SITE.authors }}
+  {{ IF author.name == auth.name }}
+    &lt;ul&gt;
+    &lt;li&gt;{{ auth.desc }}&lt;/li&gt;
+    &lt;li&gt;&lt;a href="{{ auth.twitter }}"&gt;twitter&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  {{ END }}
+  {{ END }}
+  {{ END }}
+&lt;!-- تا اینجا --&gt;
+{{ END }}
+&lt;hr&gt;
+{{ END }}
+</code></pre>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="تغییر آدرس انتشار سایت‌ها"></a>
+          <h2><a href="/start-fa/change-publish-address/">تغییر آدرس انتشار سایت‌ها</a></h2>
+          <a name="more"></a>
+<p>در تنظیمات دیدیم که ریشه‌ی اصلی سایت را برای یک صفحه‌ی مشترک بین تمام سایت‌ها در نظر گرفتیم و بعد برای هر سایت یک آدرس در لول پایینتر مشخص کردیم:</p>
+
+<pre><code>your-address.com/          &gt;    صفحه مشترک بین هر چهار سایت
+your-address.com/blog/     &gt;    وبلاگ فارسی
+your-address.com/en/       &gt;    وبلاگ انگلیسی
+your-address.com/story/    &gt;    داستان‌ها
+your-address.com/linux/    &gt;    آموزش لینوکس
+</code></pre>
+
+<p>اما شاید بخواهید ریشه اصلی سایت را برای وبلاگ فارسی در نظر بگیرید و صفحه‌ی مشترک را در زیر آدرس دیگری بسازید، مثل این:</p>
+
+<pre><code>your-address.com/main/     &gt;    صفحه مشترک بین هر چهار سایت
+your-address.com/          &gt;    وبلاگ فارسی
+</code></pre>
+
+<p>برای این منظور config.yml و config/blog-fa.yml را ویرایش کنید و url و root را تغییر دهید:</p>
+
+<p><code>config.yml</code></p>
+
+<pre><code>url: your-address.com/main
+root: /main
+</code></pre>
+
+<p><code>config/blog-fa.yml</code></p>
+
+<pre><code>url: your-address.com/
+root: /
+</code></pre>
+
+<p>یا شاید اصلا نخواهید صفحه‌ی مشترک را داشته باشید، برای اینکار url و root را در config.yml با مقدار url و root در config/blog-fa.yml یکی قرار دهید. در صورت مساوی شدن مقدار این دو فیلد بین main و طبقات، اولویت با طبقات است. در این صورت دیگر صفحه مشترکی نخواهید داشت. میتوانید main.tt2 را هم از قالبتان پاک کنید.</p>
+
+<p><code>config.yml</code></p>
+
+<pre><code>url: your-address.com/
+root: /
+</code></pre>
+
+<p><code>config/blog-fa.yml</code></p>
+
+<pre><code>url: your-address.com/
+root: /
+</code></pre>
+       
+
+       
+      	<h2>گام هشتم: انتشار</h2>
+       
+
+       
+
+       <h1>
+       <a name="انتخاب محل انتشار"></a>
+          <h2><a href="/start-fa/start-publish/">انتخاب محل انتشار</a></h2>
+          <a name="more"></a>
+<p>برای منتشر کردن خروجی تولید شده توسط میرا روی وب انتخاب‌های متعددی دارید، و بسته به انتخابی که می‌کنید، راه‌های متفاوتی پیش رو خواهید داشت.</p>
+
+<p>می‌توانید از یکی از سرویس‌هایی که فایل‌های استاتیک را برای انتشار پشتیبانی می‌کنند مثل گیت‌هاب، استفاده کنید و یک دامین روی همان سرویس‌ها انتخاب کنید، یا از یک دامین شخصی و فضای ارايه شده توسط سرویس‌ها استفاده کنید، یا کلا از فضا و دامنه شخصی استفاده کنید.</p>
+
+<p>در این قسمت سعی می‌کنیم برای انتخاب کردن هر یک از سه راه بالا، یک راه‌حل پیدا کنیم.</p>
+
+<p><strong>پیش نیاز</strong>: قبل از ادامه این بخش:</p>
+
+<p>۱- اگر گیت را روی کامپیوترتان نصب نکرده‌اید، آن‌را نصب کنید، <a href="https://git-scm.com/downloads">دانلود گیت</a></p>
+
+<p>۲- اگر روی گیت‌هاب اکانت ندارید، یک اکانت بسازید. <a href="https://git-scm.com/downloads">GitHub</a></p>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="انتشار روی فضای شخصی"></a>
+          <h2><a href="/start-fa/personal-host-publish/">انتشار روی فضای شخصی</a></h2>
+          <a name="more"></a>
+<p>اگر فضای میزبانی یا همان هاست شخصی خودتان را دارید، کار زیادی لازم نیست انجام بدهید، محتوای دایرکتوری public را پس از ساخته شدن به public_html یا www یا هر دایرکتوری دیگری که برای انتشار محتوای سایتتان مشخص کرده‌اید منتقل کنید.</p>
+
+<p>اگر از سرور خودتان استفاده می‌کنید و میرا را روی سرور اجرا می‌کنید، آدرس همین دایرکتوری public را به عنوان root در تنظیمات سرور مشخص کنید.</p>
+
+<p>یا اینکه mira view را روی هر portی که می‌خواهید اجرا کنید و مشخصات listen را برای سایتتان با port میرا یکی کنید.</p>
+
+<h4>این قسمت ادامه خواهد داشت، برای تعییر فایل‌های تنظیم سرور و... که در بالا در موردشان صحبت شد چند مثال و توضیح، در آینده اضافه خواهد شد.</h4>
+       
+
+       
+
+       
+
+       <h1>
+       <a name="استفاده از گیت‌هاب برای انتشار"></a>
+          <h2><a href="/start-fa/use-github-for-publish/">استفاده از گیت‌هاب برای انتشار</a></h2>
+          <a name="more"></a>
+<p>هدف در این بخش از راهنما شرح دادن چگونگی منتشر کردن سایتی که با میرا ساخته‌اید بر روی گیت هاب است. برای بهتر متوجه شدن این قسمت نیاز به یک آشنایی حداقلی با گیت‌هاب و چگونگی ساختن مخازن جدید در آن و دانستن مفاهیم و تفاوت‌های مخزن (repository یا repo) با شاخه یا انشعاب یا همان branch دارید.</p>
+
+<p>برای آشنایی بیشتر با صفحات گیتهاب میتوانید مستندات آنرا در این لینک بخوانید:
+<a href="https://help.github.com/articles/user-organization-and-project-pages/">User, Organization, and Project Pages</a></p>
+
+<p>گیت‌هاب برای استفاده از سرویس pages، راه‌های متفاوتی ارائه می‌کند.</p>
+
+<p>۱- استفاده از دایرکتوری docs در branch master</p>
+
+<p>۲- استفاده از branch فرعی با نام gh-pages</p>
+
+<p>۳- انتشار محتوای ذخیره شده در master</p>
+
+<p>در زیر به شکل کلی در مورد این سه روش می‌خوانیم و در ادامه برای استفاده از هرکدام به شکل اختصاصی برای استفاده در میرا یک راه حل و مثال را پیاده می‌کنیم.</p>
+
+<h1>انتشار با استفاده از دایرکتوری /docs در شاخه‌ی master</h1>
+
+<p>بر اساس <a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch">راهنمای صفحات گیت هاب</a>، در صفحات گیت‌هاب با استفاده از docs می‌توان دست به انتشار محتوا زد، راه حل داشتن یک دایرکتوری به نام docs در شاخه‌ی master هر مخزن است.</p>
+
+<p>اگر خواستید از این روش استفاده کنید، باید دایرکتوری public را به docs تغییر نام دهید. برای این‌که هربار که سایت‌تان را با کمک میرا می‌سازید، نیاز به تغییر نام شاخه public نداشته باشید، تنها کافی است در config.yml این خط را اضافه کنید:</p>
+
+<pre><code>publishDIR: docs
+</code></pre>
+
+<p>از این به بعد، پس از هر باز اجرا کردن mira build، به جای public، میرا خروجی تولید شده را در دایرکتوری docs ذخیره می‌کند.</p>
+
+<p>شاخه‌ی master را push کنید به مخزن remote و در قسمت setting پروژه در گیت هاب، مشخص کنید که از دایرکتوری docs برای انتشار صفحات استفاده می‌کنید:</p>
+
+<pre><code>Settings -&gt; GitHub Pages -&gt; Source -&gt; Select master branch /docs folder
+</code></pre>
+
+<p>دایرکتوری که mira را در آن پیکربندی کردید را کلا به عنوان شاخه‌ی master از مخزن اصلی تعریف کنید و مخزنی که روی گیت‌هاب برای آن ساخته‌اید را به عنوان remote به گیت معرفی کنید.</p>
+
+<pre><code>git init
+git remote add origin git@github.com:USER/YOUR-SITE-mira.git
+git add --all
+git commit -m 'start'
+git push origin master
+</code></pre>
+
+<p>از این به بعد، پس از هر بار اجرا کردن mira build و ساخته شدن سایتتان، تغییرات را به گیت اضافه و publish کنید.</p>
+
+<pre><code>mira build
+git add --all
+git commit -m 'add new content and publish'
+git push origin master
+</code></pre>
+
+<p>از حالا به بعد اگر آدرس مخزنی که روی گیت هاب ساخته بودید چیزی شبیه به این آدرس بود:</p>
+
+<pre><code>github.com/USER/YOUR-SITE-mira.git
+</code></pre>
+
+<p>محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری docs منتشر خواهد شد:</p>
+
+<pre><code>USER.github.io/YOUR-SITE-mira
+</code></pre>
+
+<p>و اگر می‌خواهید از نام دامین اختصاصی خودتان برای نمایش محتوا استفاده کنید، فایلی به نام CNAME را در docs بسازید و نام دامنه‌ی خودتان را در آن بنویسید</p>
+
+<pre><code>echo YOUR_DOMAIN_NAME.com &gt; CNAME
+</code></pre>
+
+<h1>انتشار به وسیله‌ی شاخه‌ی gh-pages</h1>
+
+<p>راه دیگر انتشار محتوا به وسیله‌ی یک شاخه‌ی جدا به نام gh-pages در مخزن گیت است. آماده سازی آن نسبت به استفاده از شاخه‌ی docs پیچیده‌تر است، اما در مقابل مزایای بیشتری هم دارد.</p>
+
+<ul>
+<li>محتوای خام و تنظیمات در شاخه‌ای جدا از خروجی قابل انتشار نگهداری می‌شوند.</li>
+<li>تاریحچه منبع محتوا و صفحات منتشر شده کاملا جدا از هم نگهداری می‌شود.</li>
+<li>از دایرکتوری public به شکل پیش‌فرض استفاده می‌کنیم.</li>
+<li>برای تنظیم کردن پیکربندی انعطاف بیشتری داریم.</li>
+<li>و...</li>
+</ul>
+
+<p><strong>توجه کنید</strong>: اگر چندان با گیت آشنا نیستید و دقیقا می‌خواهید قدم به قدم با مثال‌های گیت این راهنما پیش بروید، مخازنی را که در گیت‌هاب می‌سازید، کاملا خالی باشند، هنگام ساختن مخزن در گیت‌هاب، اجازه ساخته شدن فایل README یا gitignore و... را ندهید.</p>
+
+<p><strong>آماده سازی</strong>:</p>
+
+<p>توضیح: این قسمت را تنها نیاز داریم یک بار انجام دهیم، در طول توضیحات فرض این است که نام remote که استفاده میکنیم origin است، اگر از نام دیگری استفاده میکنید، آن‌ را با origin جایگزین کنید.</p>
+
+<p>قبل از شروع هرکاری، دایرکتوری public را پاک می‌کنیم.</p>
+
+<pre><code>rm -rf public
+</code></pre>
+
+<p>یا اگر در ویندوز باشیم</p>
+
+<pre><code>rd public /s /q
+</code></pre>
+
+<p>اول گیت را پیکربندی می‌کنیم و دایرکتوری public را به gitignore اضافه میکنیم:</p>
+
+<pre><code>git init
+echo "public" &gt; .gitignore
+git add --all
+git commit -m 'start'
+</code></pre>
+
+<p>آدرس مخزنی که در گیت‌هاب ساخته‌اید را به عنوان remote به پروژه اضافه می‌کنیم و شاخه‌ی master را push می‌کنیم.</p>
+
+<pre><code>git remote add origin git@github.com:USER/YOUR-SITE-mira.git
+git push origin master
+</code></pre>
+
+<p>سپس شاخه‌ی gh-pages را می‌سازیم و به شکل خالی مقداردهی می‌کنیم و به مخزن remote هم آن‌را اضافه میکنیم.</p>
+
+<pre><code>git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m "Initializing gh-pages"
+git push origin gh-pages
+</code></pre>
+
+<p>به شاخه‌ی master بر می‌گردیم</p>
+
+<pre><code>git checkout master
+</code></pre>
+
+<p>و دایرکتوری public را به عنوان worktree برای شاخه‌ی gh-pages مشخص می‌کنیم.(دقت کنید که دایرکتوری public را پاک کرده باشید و هنگام اجرای این دستور وجود نداشته باشد)</p>
+
+<pre><code>git worktree add -B gh-pages public origin/gh-pages
+</code></pre>
+
+<p><strong>انتشار</strong>:</p>
+
+<p>اگر همه مراحل بالا بدون اشکال پیش رفته باشد، حالا همه چیز آماده است. از این به بعد بعد از هر بار اضافه کردن محتوا یک بار مخزن را به روز کنید و بعد از هر build کردن سایت هم یک بار دیگر. ترتیب دستورها چیزی شبیه به این خواهد بود:</p>
+
+<pre><code>mira new -t 'post title' -f blog
+ویرایش و تولید محتوا و قرار دادن عکس یا سایر ضمیمه‌ها در شاخه استاتیک
+mira build
+git add .
+git commit -m 'add content'
+cd public
+git add .
+git commit -m 'publish'
+cd ..
+به روز کردن مخزن گیت‌هاب پروژه
+git push origin master gh-pages
+</code></pre>
+
+<p>از حالا به بعد اگر آدرس مخزنی که روی گیت هاب ساخته بودید چیزی شبیه به این آدرس بود:</p>
+
+<pre><code>github.com/USER/YOUR-SITE-mira.git
+</code></pre>
+
+<p>محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری public منتشر خواهد شد:</p>
+
+<pre><code>USER.github.io/YOUR-SITE-mira
+</code></pre>
+
+<p>و اگر می‌خواهید از نام دامین اختصاصی خودتان برای نمایش محتوا استفاده کنید، فایلی به نام CNAME را در public بسازید و نام دامنه‌ی خودتان را در آن بنویسید</p>
+
+<pre><code>echo YOUR_DOMAIN_NAME.com &gt; CNAME
+</code></pre>
+
+<h2>استفاده از یک اسکریپت:</h2>
+
+<p>برای اتومامتیک انجام شدن تمام مراحل بالا، این اسکریپت را دانلود کنید.</p>
+
+<p><a href="https://raw.githubusercontent.com/kiamazi/mira-tools/master/gh-pages/gh-pages.pl">اسکریپت gh-pages.pl</a></p>
+
+<p>حالا یا آن را در دایرکتوری ریشه‌ی میرا کپی کنید، یا در مسیری که در path شما باشد، مثلا دایرکتوری bin در home، و آن را اجرایی کنید
+<code>chmod +x gh-pages.pl</code>
+البته اگر آن را در مسیر میرای خودتان کپی کردید بدون اجرایی کردن آن هم مشکلی نخواهید داشت.</p>
+
+<p>این اسکریپت دو عملکرد دارد، init و push، دقیقا مثل توضیحات بالا که همه چیز را خودمان انجام میدادیم، init را فقط کافی است یک بار اجرا کنید و بعد از آن فقط از push استفاده میکنیم.</p>
+
+<p>اگر آن‌را اجرایی نکرده باشید:</p>
+
+<pre><code>~/mira$&gt; perl gh-pages.pl --init
+</code></pre>
+
+<p>و اگر اجرایی شده باشد:</p>
+
+<pre><code>~/mira$&gt; gh-pages.pl --init
+</code></pre>
+
+<p>شاخه‌ی gh-pages ساخته شد و دایرکتوری public به عنوان worktree آن معرفی شد.</p>
+
+<p>حالا یک مخزن remote خالی در github می‌سازیم و به پروژه اضافه می‌کنیم:</p>
+
+<pre><code>git remote add origin git@github.com:USER/REPO_NAME.git
+</code></pre>
+
+<p>آماده سازی تمام شد، از این به بعد با اجرای دستور زیر:</p>
+
+<pre><code>~/mira$&gt; perl gh-pages.pl --push
+یا
+~/mira$&gt; gh-pages.pl --push
+</code></pre>
+
+<p>تمام مراحل add و commit و push به طور خودکار برای هر دو شاخه انجام می‌شود، محتویات تمام دایرکتوری‌های میرا به جز public به شاخه master و محتویات public به شاخه‌ی gh-pages اضافه می‌شوند و دستور push برای هر دو شاخه اجرا می‌شود.</p>
+
+<p><strong>یک نکته</strong>: اسکریپت فوق یک سوییچ دیگر هم دارد
+<code>--worktree | -w</code>
+اگر زمانی خواستید شاخه‌ی دیگری به جز public به عنوان worktree برای شاخه‌ی gh-pages استفاده شود، میتوانید این سوییچ را هم مورد استفاده قرار دهید.</p>
+
+<pre><code>~/mira$&gt; perl gh-pages.pl --init -w public/other
+~/mira$&gt; gh-pages.pl --push -w other/path/
+</code></pre>
+
+<p>اگر مقدار سوییچ worktree با / شروع بشود، اسکریپت اتوماتیک مسیر را در دایرکتوری public در نظر می‌گیرد:</p>
+
+<pre><code>~/mira$&gt; gh-pages.pl --push --worktree='/path/other'
+برابر است با
+~/mira$&gt; gh-pages.pl --push -w public/path/other
+</code></pre>
+
+<p>اگر نمی‌خواهید هر سری سوییچ -w را استفاده کنید، اسکریپت را ویرایش کنید و در خط ۱۷ مقدار پیش‌فرض را از public به آدرس مورد نظرتان تغییر دهید:</p>
+
+<pre><code>worktree =&gt; 'public'
+تغییر دهید به
+worktree =&gt; 'public/deep/path/'
+یا
+worktree =&gt; 'doc'
+worktree =&gt; 'another/path'
+</code></pre>
+
+<h1>انتشار در USER.github.io</h1>
+
+<p>در راهنمای صفحات گیت هاب، در کنار ساختن صفحات پروژه، یکی دیگر از راه‌هایی که به آن اشاره شده ساختن صفحات شخصی است. قاعده کلی این صفحات به این صورت است:</p>
+
+<ul>
+<li>در آدرسی که با نام کاربری شما در گیت هاب ساخته شده قابل انتشار هستند: USER.github.io</li>
+<li>محتوا تنها از شاخه‌ی master در مخزنی با نام USER.github.io برای انتشار استفاده می‌شود.</li>
+</ul>
+
+<p>پس برای استفاده از این راه، تنها کافی است دایرکتوری public را به عنوان شاخه master در مخزن USER.github.io معرفی کنید.</p>
+
+<p>ابتدا در گیت هاب مخزنی را با مشخصات اشاره شده بسازید و بعد در دایرکتوری public این کدها را وارد کنید:</p>
+
+<pre><code>~/mira/public$&gt; git init
+~/mira/public$&gt; git add .
+~/mira/public$&gt; git commit -m 'publish'
+~/mira/public$&gt; git remote add origin git@github.com:USER/USER.github.io.git
+~/mira/public$&gt; git push origin master
+</code></pre>
+
+<h2>تکمیل</h2>
+
+<p>البته یک ایراد وجود دارد، در این حالت فایل‌های محتویات و تنظیمات و تاریخچه آن‌ها و... را در هیچ مخزنی نداریم. برای حل این مشکل از یک راه حل دیگر استفاده می‌کنیم:</p>
+
+<ul>
+<li>دایرکتوری public را کاملا پاک کنید <code>rm -rf public</code></li>
+<li>روی گیت هاب مخزنی با نام کاربری خود برای انتشار محتوا بسازید: USER.github.io</li>
+<li>روی گیت هاب مخزنی با نام سایت خود بسازید، مثلا YOUR-SITE-mira</li>
+<li>گیت را در دایرکتوری ریشه‌ای که میرا را در آن استفاده می‌کنید، پیکربندی کنید و مخزن YOUR-SITE-mira-content را به عنوان remote به پروژه اضافه کنید.  </li>
+</ul>
+
+<p>دستورهایی که باید وارد کنید چیزی شبیه به این‌ها خواهد بود:</p>
+
+<pre><code>~/mira$&gt; git init
+~/mira$&gt; git remote add origin git@github.com:USER/YOUR-SITE-mira-content.git
+~/mira$&gt; git add .
+~/mira$&gt; git commit -m 'start'
+</code></pre>
+
+<p>در آخر public را به عنوان یک ساب ماژول به این مخزن معرفی میکنیم:</p>
+
+<pre><code>git submodule add -b master git@github.com:USER/USER.github.io.git public
+</code></pre>
+
+<p>تمام شد، حالا بعد از هر بار mira build، یک بار در شاخه اصلی و یک بار در شاخه public همه چیز را به گیت اضافه کنید و push کنید</p>
+
+<pre><code>~/mira$&gt; cd public
+~/mira/public$&gt; git add .
+~/mira/public$&gt; git commit -m 'publish'
+~/mira/public$&gt; git push origin master
+~/mira/public$&gt; cd ..
+~/mira$&gt; git add .
+~/mira$&gt; git commit -m 'add content'
+~/mira$&gt; git push origin master
+</code></pre>
+       
+    </div>
+
+    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">
+<ul class="nav">
+  <li><h2><a href="/start-fa/">شروع</a></h2></li>
+  <li><h5>راهنمای شروع به کار با میرا</h5></li>
+
+
+    
+      
+        <h3>آغاز کار</h3>
+      
+      
+      <h5><a href="#ابتدا">ابتدا</a></h5>
+<!--      <h5><a href="#/start-fa/start/">ابتدا</a></h5> -->
+    
+      
+      
+      <h5><a href="#پیکربندی">پیکربندی</a></h5>
+<!--      <h5><a href="#/start-fa/init/">پیکربندی</a></h5> -->
+    
+      
+      
+      <h5><a href="#تعریف کردن یک پروژه جدید">تعریف کردن یک پروژه جدید</a></h5>
+<!--      <h5><a href="#/start-fa/define/">تعریف کردن یک پروژه جدید</a></h5> -->
+    
+      
+      
+      <h5><a href="#ضمیمه‌ها">ضمیمه‌ها</a></h5>
+<!--      <h5><a href="#/start-fa/attach/">ضمیمه‌ها</a></h5> -->
+    
+
+    
+      
+        <h3>گام اول: مشخص کردن نام‌ها</h3>
+      
+      
+      <h5><a href="#تعیین نام و محل ذخیره محتوا">تعیین نام و محل ذخیره محتوا</a></h5>
+<!--      <h5><a href="#/start-fa/step1/">تعیین نام و محل ذخیره محتوا</a></h5> -->
+    
+
+    
+      
+        <h3>گام دوم: استراکچر</h3>
+      
+      
+      <h5><a href="#مشخص کردن فیلدهای پیش‌فرض برای هر سایت">مشخص کردن فیلدهای پیش‌فرض برای هر سایت</a></h5>
+<!--      <h5><a href="#/start-fa/step2/">مشخص کردن فیلدهای پیش‌فرض برای هر سایت</a></h5> -->
+    
+
+    
+      
+        <h3>گام سوم: تنظیم پیکربندی یا کانفیگ کردن</h3>
+      
+      
+      <h5><a href="#توضیح تنظیمات در میرا">توضیح تنظیمات در میرا</a></h5>
+<!--      <h5><a href="#/start-fa/config/">توضیح تنظیمات در میرا</a></h5> -->
+    
+      
+      
+      <h5><a href="#تنظیمات عمومی">تنظیمات عمومی</a></h5>
+<!--      <h5><a href="#/start-fa/general-config/">تنظیمات عمومی</a></h5> -->
+    
+      
+      
+      <h5><a href="#تنظیمات اختصاصی برای هر سایت">تنظیمات اختصاصی برای هر سایت</a></h5>
+<!--      <h5><a href="#/start-fa/specific-config/">تنظیمات اختصاصی برای هر سایت</a></h5> -->
+    
+
+    
+      
+        <h3>گام چهارم: تولید محتوا</h3>
+      
+      
+      <h5><a href="#نوشتن اولین پست">نوشتن اولین پست</a></h5>
+<!--      <h5><a href="#/start-fa/content/">نوشتن اولین پست</a></h5> -->
+    
+      
+      
+      <h5><a href="#استفاده از ایندکس برای داشتن آدرس مرتب و کوتاه">استفاده از ایندکس برای داشتن آدرس مرتب و کوتاه</a></h5>
+<!--      <h5><a href="#/start-fa/index-content/">استفاده از ایندکس برای داشتن آدرس مرتب و کوتاه</a></h5> -->
+    
+      
+      
+      <h5><a href="#چند نکته و پیشنهاد در مورد محتوا">چند نکته و پیشنهاد در مورد محتوا</a></h5>
+<!--      <h5><a href="#/start-fa/more-about-content/">چند نکته و پیشنهاد در مورد محتوا</a></h5> -->
+    
+
+    
+      
+        <h3>گام پنجم: فایل‌ها و پوشه‌های ضمیمه یا statics</h3>
+      
+      
+      <h5><a href="#توضیح فایل‌های ضمیمه">توضیح فایل‌های ضمیمه</a></h5>
+<!--      <h5><a href="#/start-fa/statics/">توضیح فایل‌های ضمیمه</a></h5> -->
+    
+      
+      
+      <h5><a href="#ضمیمه‌های عمومی">ضمیمه‌های عمومی</a></h5>
+<!--      <h5><a href="#/start-fa/general-statics/">ضمیمه‌های عمومی</a></h5> -->
+    
+      
+      
+      <h5><a href="#ضمیمه‌های اختصاصی هر طبقه">ضمیمه‌های اختصاصی هر طبقه</a></h5>
+<!--      <h5><a href="#/start-fa/specific-statics/">ضمیمه‌های اختصاصی هر طبقه</a></h5> -->
+    
+      
+      
+      <h5><a href="#مسیر تصاویر یا imageurl">مسیر تصاویر یا imageurl</a></h5>
+<!--      <h5><a href="#/start-fa/images-statics/">مسیر تصاویر یا imageurl</a></h5> -->
+    
+
+    
+      
+        <h3>گام ششم: ساختن قالب</h3>
+      
+      
+      <h5><a href="#توضیح ساختار قالب در میرا">توضیح ساختار قالب در میرا</a></h5>
+<!--      <h5><a href="#/start-fa/template/">توضیح ساختار قالب در میرا</a></h5> -->
+    
+      
+      
+      <h5><a href="#main template">main template</a></h5>
+<!--      <h5><a href="#/start-fa/main-template/">main template</a></h5> -->
+    
+      
+      
+      <h5><a href="#index template">index template</a></h5>
+<!--      <h5><a href="#/start-fa/index-template/">index template</a></h5> -->
+    
+      
+      
+      <h5><a href="#archive template">archive template</a></h5>
+<!--      <h5><a href="#/start-fa/archive-template/">archive template</a></h5> -->
+    
+      
+      
+      <h5><a href="#post template">post template</a></h5>
+<!--      <h5><a href="#/start-fa/post-template/">post template</a></h5> -->
+    
+      
+      
+      <h5><a href="#feed template">feed template</a></h5>
+<!--      <h5><a href="#/start-fa/feed-template/">feed template</a></h5> -->
+    
+      
+      
+      <h5><a href="#ساختن یک ساید بار">ساختن یک ساید بار</a></h5>
+<!--      <h5><a href="#/start-fa/sidebar/">ساختن یک ساید بار</a></h5> -->
+    
+      
+      
+      <h5><a href="#تکمیل کردن قالب post">تکمیل کردن قالب post</a></h5>
+<!--      <h5><a href="#/start-fa/post-subjoin/">تکمیل کردن قالب post</a></h5> -->
+    
+      
+      
+      <h5><a href="#مرتب کردن چیدمان">مرتب کردن چیدمان</a></h5>
+<!--      <h5><a href="#/start-fa/layout/">مرتب کردن چیدمان</a></h5> -->
+    
+      
+      
+      <h5><a href="#پوسته‌های بیشتر برای هر قالب و تغییر آدرس">پوسته‌های بیشتر برای هر قالب و تغییر آدرس</a></h5>
+<!--      <h5><a href="#/start-fa/more-templates/">پوسته‌های بیشتر برای هر قالب و تغییر آدرس</a></h5> -->
+    
+
+    
+      
+        <h3>گام هفتم: شخصی سازی بیشتر</h3>
+      
+      
+      <h5><a href="#ساختن صفحات">ساختن صفحات</a></h5>
+<!--      <h5><a href="#/start-fa/pages/">ساختن صفحات</a></h5> -->
+    
+      
+      
+      <h5><a href="#آدرس‌های تکراری">آدرس‌های تکراری</a></h5>
+<!--      <h5><a href="#/start-fa/duplicate-address/">آدرس‌های تکراری</a></h5> -->
+    
+      
+      
+      <h5><a href="#تغییر آدرس آرشیو‌ها">تغییر آدرس آرشیو‌ها</a></h5>
+<!--      <h5><a href="#/start-fa/namespcae/">تغییر آدرس آرشیو‌ها</a></h5> -->
+    
+      
+      
+      <h5><a href="#اضافه کردن لینک شبکه‌های اجتماعی">اضافه کردن لینک شبکه‌های اجتماعی</a></h5>
+<!--      <h5><a href="#/start-fa/add-social-links/">اضافه کردن لینک شبکه‌های اجتماعی</a></h5> -->
+    
+      
+      
+      <h5><a href="#افزودن مشخصات نویسنده مطلب">افزودن مشخصات نویسنده مطلب</a></h5>
+<!--      <h5><a href="#/start-fa/add-author-info/">افزودن مشخصات نویسنده مطلب</a></h5> -->
+    
+      
+      
+      <h5><a href="#تغییر آدرس انتشار سایت‌ها">تغییر آدرس انتشار سایت‌ها</a></h5>
+<!--      <h5><a href="#/start-fa/change-publish-address/">تغییر آدرس انتشار سایت‌ها</a></h5> -->
+    
+
+    
+      
+        <h3>گام هشتم: انتشار</h3>
+      
+      
+      <h5><a href="#انتخاب محل انتشار">انتخاب محل انتشار</a></h5>
+<!--      <h5><a href="#/start-fa/start-publish/">انتخاب محل انتشار</a></h5> -->
+    
+      
+      
+      <h5><a href="#انتشار روی فضای شخصی">انتشار روی فضای شخصی</a></h5>
+<!--      <h5><a href="#/start-fa/personal-host-publish/">انتشار روی فضای شخصی</a></h5> -->
+    
+      
+      
+      <h5><a href="#استفاده از گیت‌هاب برای انتشار">استفاده از گیت‌هاب برای انتشار</a></h5>
+<!--      <h5><a href="#/start-fa/use-github-for-publish/">استفاده از گیت‌هاب برای انتشار</a></h5> -->
+    
+
+</ul>
+</div>
+
+  </div>
+</div>
+
+<br>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                  <li>
+                    <a href="mailto: kiavash@gmail.com">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//twitter.com/kiavash">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//gitlab.com/kiavash/mira">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//github.com/kiamazi/mira">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+                <p><i class="fa fa-copyright" aria-hidden="true"></i>&nbsp; GPLv3</p>
+              </div>
+          </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript
+    <script src="/static/js/clean-blog.js"></script> -->
+
+</div>
+    <script type="text/javascript" src="/static/js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="/static/js/run.js"></script>
+
+</body>
+
+</html>

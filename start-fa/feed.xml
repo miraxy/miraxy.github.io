@@ -1,0 +1,1766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>شروع</title>
+    <description>راهنمای شروع به کار با میرا</description>
+    <link>http://miraxy.github.io/start-fa</link>
+    <atom:link href="http://miraxy.github.io/start-fa/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate></pubDate>
+    <lastBuildDate></lastBuildDate>
+    <generator>mira</generator>
+
+
+      
+        <item>
+          <title>استفاده از گیت‌هاب برای انتشار</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;هدف در این بخش از راهنما شرح دادن چگونگی منتشر کردن سایتی که با میرا ساخته‌اید بر روی گیت هاب است. برای بهتر متوجه شدن این قسمت نیاز به یک آشنایی حداقلی با گیت‌هاب و چگونگی ساختن مخازن جدید در آن و دانستن مفاهیم و تفاوت‌های مخزن (repository یا repo) با شاخه یا انشعاب یا همان branch دارید.&lt;/p&gt;
+
+&lt;p&gt;برای آشنایی بیشتر با صفحات گیتهاب میتوانید مستندات آنرا در این لینک بخوانید:
+&lt;a href=&quot;https://help.github.com/articles/user-organization-and-project-pages/&quot;&gt;User, Organization, and Project Pages&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;گیت‌هاب برای استفاده از سرویس pages، راه‌های متفاوتی ارائه می‌کند.&lt;/p&gt;
+
+&lt;p&gt;۱- استفاده از دایرکتوری docs در branch master&lt;/p&gt;
+
+&lt;p&gt;۲- استفاده از branch فرعی با نام gh-pages&lt;/p&gt;
+
+&lt;p&gt;۳- انتشار محتوای ذخیره شده در master&lt;/p&gt;
+
+&lt;p&gt;در زیر به شکل کلی در مورد این سه روش می‌خوانیم و در ادامه برای استفاده از هرکدام به شکل اختصاصی برای استفاده در میرا یک راه حل و مثال را پیاده می‌کنیم.&lt;/p&gt;
+
+&lt;h1&gt;انتشار با استفاده از دایرکتوری /docs در شاخه‌ی master&lt;/h1&gt;
+
+&lt;p&gt;بر اساس &lt;a href=&quot;https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch&quot;&gt;راهنمای صفحات گیت هاب&lt;/a&gt;، در صفحات گیت‌هاب با استفاده از docs می‌توان دست به انتشار محتوا زد، راه حل داشتن یک دایرکتوری به نام docs در شاخه‌ی master هر مخزن است.&lt;/p&gt;
+
+&lt;p&gt;اگر خواستید از این روش استفاده کنید، باید دایرکتوری public را به docs تغییر نام دهید. برای این‌که هربار که سایت‌تان را با کمک میرا می‌سازید، نیاز به تغییر نام شاخه public نداشته باشید، تنها کافی است در config.yml این خط را اضافه کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;publishDIR: docs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از این به بعد، پس از هر باز اجرا کردن mira build، به جای public، میرا خروجی تولید شده را در دایرکتوری docs ذخیره می‌کند.&lt;/p&gt;
+
+&lt;p&gt;شاخه‌ی master را push کنید به مخزن remote و در قسمت setting پروژه در گیت هاب، مشخص کنید که از دایرکتوری docs برای انتشار صفحات استفاده می‌کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Settings -&amp;gt; GitHub Pages -&amp;gt; Source -&amp;gt; Select master branch /docs folder
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;دایرکتوری که mira را در آن پیکربندی کردید را کلا به عنوان شاخه‌ی master از مخزن اصلی تعریف کنید و مخزنی که روی گیت‌هاب برای آن ساخته‌اید را به عنوان remote به گیت معرفی کنید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git init
+git remote add origin git@github.com:USER/YOUR-SITE-mira.git
+git add --all
+git commit -m 'start'
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از این به بعد، پس از هر بار اجرا کردن mira build و ساخته شدن سایتتان، تغییرات را به گیت اضافه و publish کنید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira build
+git add --all
+git commit -m 'add new content and publish'
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از حالا به بعد اگر آدرس مخزنی که روی گیت هاب ساخته بودید چیزی شبیه به این آدرس بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;github.com/USER/YOUR-SITE-mira.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری docs منتشر خواهد شد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;USER.github.io/YOUR-SITE-mira
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و اگر می‌خواهید از نام دامین اختصاصی خودتان برای نمایش محتوا استفاده کنید، فایلی به نام CNAME را در docs بسازید و نام دامنه‌ی خودتان را در آن بنویسید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo YOUR_DOMAIN_NAME.com &amp;gt; CNAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1&gt;انتشار به وسیله‌ی شاخه‌ی gh-pages&lt;/h1&gt;
+
+&lt;p&gt;راه دیگر انتشار محتوا به وسیله‌ی یک شاخه‌ی جدا به نام gh-pages در مخزن گیت است. آماده سازی آن نسبت به استفاده از شاخه‌ی docs پیچیده‌تر است، اما در مقابل مزایای بیشتری هم دارد.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;محتوای خام و تنظیمات در شاخه‌ای جدا از خروجی قابل انتشار نگهداری می‌شوند.&lt;/li&gt;
+&lt;li&gt;تاریحچه منبع محتوا و صفحات منتشر شده کاملا جدا از هم نگهداری می‌شود.&lt;/li&gt;
+&lt;li&gt;از دایرکتوری public به شکل پیش‌فرض استفاده می‌کنیم.&lt;/li&gt;
+&lt;li&gt;برای تنظیم کردن پیکربندی انعطاف بیشتری داریم.&lt;/li&gt;
+&lt;li&gt;و...&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;توجه کنید&lt;/strong&gt;: اگر چندان با گیت آشنا نیستید و دقیقا می‌خواهید قدم به قدم با مثال‌های گیت این راهنما پیش بروید، مخازنی را که در گیت‌هاب می‌سازید، کاملا خالی باشند، هنگام ساختن مخزن در گیت‌هاب، اجازه ساخته شدن فایل README یا gitignore و... را ندهید.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;آماده سازی&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;توضیح: این قسمت را تنها نیاز داریم یک بار انجام دهیم، در طول توضیحات فرض این است که نام remote که استفاده میکنیم origin است، اگر از نام دیگری استفاده میکنید، آن‌ را با origin جایگزین کنید.&lt;/p&gt;
+
+&lt;p&gt;قبل از شروع هرکاری، دایرکتوری public را پاک می‌کنیم.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rm -rf public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا اگر در ویندوز باشیم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rd public /s /q
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اول گیت را پیکربندی می‌کنیم و دایرکتوری public را به gitignore اضافه میکنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git init
+echo &quot;public&quot; &amp;gt; .gitignore
+git add --all
+git commit -m 'start'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;آدرس مخزنی که در گیت‌هاب ساخته‌اید را به عنوان remote به پروژه اضافه می‌کنیم و شاخه‌ی master را push می‌کنیم.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote add origin git@github.com:USER/YOUR-SITE-mira.git
+git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;سپس شاخه‌ی gh-pages را می‌سازیم و به شکل خالی مقداردهی می‌کنیم و به مخزن remote هم آن‌را اضافه میکنیم.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout --orphan gh-pages
+git reset --hard
+git commit --allow-empty -m &quot;Initializing gh-pages&quot;
+git push origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;به شاخه‌ی master بر می‌گردیم&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و دایرکتوری public را به عنوان worktree برای شاخه‌ی gh-pages مشخص می‌کنیم.(دقت کنید که دایرکتوری public را پاک کرده باشید و هنگام اجرای این دستور وجود نداشته باشد)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git worktree add -B gh-pages public origin/gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;انتشار&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;اگر همه مراحل بالا بدون اشکال پیش رفته باشد، حالا همه چیز آماده است. از این به بعد بعد از هر بار اضافه کردن محتوا یک بار مخزن را به روز کنید و بعد از هر build کردن سایت هم یک بار دیگر. ترتیب دستورها چیزی شبیه به این خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira new -t 'post title' -f blog
+ویرایش و تولید محتوا و قرار دادن عکس یا سایر ضمیمه‌ها در شاخه استاتیک
+mira build
+git add .
+git commit -m 'add content'
+cd public
+git add .
+git commit -m 'publish'
+cd ..
+به روز کردن مخزن گیت‌هاب پروژه
+git push origin master gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از حالا به بعد اگر آدرس مخزنی که روی گیت هاب ساخته بودید چیزی شبیه به این آدرس بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;github.com/USER/YOUR-SITE-mira.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;محتوای شما در آدرسی شبیه به این آدرس با استفاده از فایل‌های قرار گرفته در دایرکتوری public منتشر خواهد شد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;USER.github.io/YOUR-SITE-mira
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و اگر می‌خواهید از نام دامین اختصاصی خودتان برای نمایش محتوا استفاده کنید، فایلی به نام CNAME را در public بسازید و نام دامنه‌ی خودتان را در آن بنویسید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo YOUR_DOMAIN_NAME.com &amp;gt; CNAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;استفاده از یک اسکریپت:&lt;/h2&gt;
+
+&lt;p&gt;برای اتومامتیک انجام شدن تمام مراحل بالا، این اسکریپت را دانلود کنید.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/kiamazi/mira-tools/master/gh-pages/gh-pages.pl&quot;&gt;اسکریپت gh-pages.pl&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;حالا یا آن را در دایرکتوری ریشه‌ی میرا کپی کنید، یا در مسیری که در path شما باشد، مثلا دایرکتوری bin در home، و آن را اجرایی کنید
+&lt;code&gt;chmod +x gh-pages.pl&lt;/code&gt;
+البته اگر آن را در مسیر میرای خودتان کپی کردید بدون اجرایی کردن آن هم مشکلی نخواهید داشت.&lt;/p&gt;
+
+&lt;p&gt;این اسکریپت دو عملکرد دارد، init و push، دقیقا مثل توضیحات بالا که همه چیز را خودمان انجام میدادیم، init را فقط کافی است یک بار اجرا کنید و بعد از آن فقط از push استفاده میکنیم.&lt;/p&gt;
+
+&lt;p&gt;اگر آن‌را اجرایی نکرده باشید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira$&amp;gt; perl gh-pages.pl --init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و اگر اجرایی شده باشد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira$&amp;gt; gh-pages.pl --init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;شاخه‌ی gh-pages ساخته شد و دایرکتوری public به عنوان worktree آن معرفی شد.&lt;/p&gt;
+
+&lt;p&gt;حالا یک مخزن remote خالی در github می‌سازیم و به پروژه اضافه می‌کنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git remote add origin git@github.com:USER/REPO_NAME.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;آماده سازی تمام شد، از این به بعد با اجرای دستور زیر:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira$&amp;gt; perl gh-pages.pl --push
+یا
+~/mira$&amp;gt; gh-pages.pl --push
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;تمام مراحل add و commit و push به طور خودکار برای هر دو شاخه انجام می‌شود، محتویات تمام دایرکتوری‌های میرا به جز public به شاخه master و محتویات public به شاخه‌ی gh-pages اضافه می‌شوند و دستور push برای هر دو شاخه اجرا می‌شود.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;یک نکته&lt;/strong&gt;: اسکریپت فوق یک سوییچ دیگر هم دارد
+&lt;code&gt;--worktree | -w&lt;/code&gt;
+اگر زمانی خواستید شاخه‌ی دیگری به جز public به عنوان worktree برای شاخه‌ی gh-pages استفاده شود، میتوانید این سوییچ را هم مورد استفاده قرار دهید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira$&amp;gt; perl gh-pages.pl --init -w public/other
+~/mira$&amp;gt; gh-pages.pl --push -w other/path/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر مقدار سوییچ worktree با / شروع بشود، اسکریپت اتوماتیک مسیر را در دایرکتوری public در نظر می‌گیرد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira$&amp;gt; gh-pages.pl --push --worktree='/path/other'
+برابر است با
+~/mira$&amp;gt; gh-pages.pl --push -w public/path/other
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر نمی‌خواهید هر سری سوییچ -w را استفاده کنید، اسکریپت را ویرایش کنید و در خط ۱۷ مقدار پیش‌فرض را از public به آدرس مورد نظرتان تغییر دهید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;worktree =&amp;gt; 'public'
+تغییر دهید به
+worktree =&amp;gt; 'public/deep/path/'
+یا
+worktree =&amp;gt; 'doc'
+worktree =&amp;gt; 'another/path'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1&gt;انتشار در USER.github.io&lt;/h1&gt;
+
+&lt;p&gt;در راهنمای صفحات گیت هاب، در کنار ساختن صفحات پروژه، یکی دیگر از راه‌هایی که به آن اشاره شده ساختن صفحات شخصی است. قاعده کلی این صفحات به این صورت است:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;در آدرسی که با نام کاربری شما در گیت هاب ساخته شده قابل انتشار هستند: USER.github.io&lt;/li&gt;
+&lt;li&gt;محتوا تنها از شاخه‌ی master در مخزنی با نام USER.github.io برای انتشار استفاده می‌شود.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;پس برای استفاده از این راه، تنها کافی است دایرکتوری public را به عنوان شاخه master در مخزن USER.github.io معرفی کنید.&lt;/p&gt;
+
+&lt;p&gt;ابتدا در گیت هاب مخزنی را با مشخصات اشاره شده بسازید و بعد در دایرکتوری public این کدها را وارد کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/public$&amp;gt; git init
+~/mira/public$&amp;gt; git add .
+~/mira/public$&amp;gt; git commit -m 'publish'
+~/mira/public$&amp;gt; git remote add origin git@github.com:USER/USER.github.io.git
+~/mira/public$&amp;gt; git push origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;تکمیل&lt;/h2&gt;
+
+&lt;p&gt;البته یک ایراد وجود دارد، در این حالت فایل‌های محتویات و تنظیمات و تاریخچه آن‌ها و... را در هیچ مخزنی نداریم. برای حل این مشکل از یک راه حل دیگر استفاده می‌کنیم:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;دایرکتوری public را کاملا پاک کنید &lt;code&gt;rm -rf public&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;روی گیت هاب مخزنی با نام کاربری خود برای انتشار محتوا بسازید: USER.github.io&lt;/li&gt;
+&lt;li&gt;روی گیت هاب مخزنی با نام سایت خود بسازید، مثلا YOUR-SITE-mira&lt;/li&gt;
+&lt;li&gt;گیت را در دایرکتوری ریشه‌ای که میرا را در آن استفاده می‌کنید، پیکربندی کنید و مخزن YOUR-SITE-mira-content را به عنوان remote به پروژه اضافه کنید.  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;دستورهایی که باید وارد کنید چیزی شبیه به این‌ها خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira$&amp;gt; git init
+~/mira$&amp;gt; git remote add origin git@github.com:USER/YOUR-SITE-mira-content.git
+~/mira$&amp;gt; git add .
+~/mira$&amp;gt; git commit -m 'start'
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در آخر public را به عنوان یک ساب ماژول به این مخزن معرفی میکنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git submodule add -b master git@github.com:USER/USER.github.io.git public
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;تمام شد، حالا بعد از هر بار mira build، یک بار در شاخه اصلی و یک بار در شاخه public همه چیز را به گیت اضافه کنید و push کنید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira$&amp;gt; cd public
+~/mira/public$&amp;gt; git add .
+~/mira/public$&amp;gt; git commit -m 'publish'
+~/mira/public$&amp;gt; git push origin master
+~/mira/public$&amp;gt; cd ..
+~/mira$&amp;gt; git add .
+~/mira$&amp;gt; git commit -m 'add content'
+~/mira$&amp;gt; git push origin master
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-04-04 01:55:23</pubDate>
+          <link>/start-fa/use-github-for-publish/</link>
+          <guid isPermaLink="true">/start-fa/use-github-for-publish/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>انتشار روی فضای شخصی</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;اگر فضای میزبانی یا همان هاست شخصی خودتان را دارید، کار زیادی لازم نیست انجام بدهید، محتوای دایرکتوری public را پس از ساخته شدن به public_html یا www یا هر دایرکتوری دیگری که برای انتشار محتوای سایتتان مشخص کرده‌اید منتقل کنید.&lt;/p&gt;
+
+&lt;p&gt;اگر از سرور خودتان استفاده می‌کنید و میرا را روی سرور اجرا می‌کنید، آدرس همین دایرکتوری public را به عنوان root در تنظیمات سرور مشخص کنید.&lt;/p&gt;
+
+&lt;p&gt;یا اینکه mira view را روی هر portی که می‌خواهید اجرا کنید و مشخصات listen را برای سایتتان با port میرا یکی کنید.&lt;/p&gt;
+
+&lt;h4&gt;این قسمت ادامه خواهد داشت، برای تعییر فایل‌های تنظیم سرور و... که در بالا در موردشان صحبت شد چند مثال و توضیح، در آینده اضافه خواهد شد.&lt;/h4&gt;</description>
+          <pubDate>2017-04-04 01:43:34</pubDate>
+          <link>/start-fa/personal-host-publish/</link>
+          <guid isPermaLink="true">/start-fa/personal-host-publish/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>انتخاب محل انتشار</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;برای منتشر کردن خروجی تولید شده توسط میرا روی وب انتخاب‌های متعددی دارید، و بسته به انتخابی که می‌کنید، راه‌های متفاوتی پیش رو خواهید داشت.&lt;/p&gt;
+
+&lt;p&gt;می‌توانید از یکی از سرویس‌هایی که فایل‌های استاتیک را برای انتشار پشتیبانی می‌کنند مثل گیت‌هاب، استفاده کنید و یک دامین روی همان سرویس‌ها انتخاب کنید، یا از یک دامین شخصی و فضای ارايه شده توسط سرویس‌ها استفاده کنید، یا کلا از فضا و دامنه شخصی استفاده کنید.&lt;/p&gt;
+
+&lt;p&gt;در این قسمت سعی می‌کنیم برای انتخاب کردن هر یک از سه راه بالا، یک راه‌حل پیدا کنیم.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;پیش نیاز&lt;/strong&gt;: قبل از ادامه این بخش:&lt;/p&gt;
+
+&lt;p&gt;۱- اگر گیت را روی کامپیوترتان نصب نکرده‌اید، آن‌را نصب کنید، &lt;a href=&quot;https://git-scm.com/downloads&quot;&gt;دانلود گیت&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;۲- اگر روی گیت‌هاب اکانت ندارید، یک اکانت بسازید. &lt;a href=&quot;https://git-scm.com/downloads&quot;&gt;GitHub&lt;/a&gt;&lt;/p&gt;</description>
+          <pubDate>2017-04-04 01:19:54</pubDate>
+          <link>/start-fa/start-publish/</link>
+          <guid isPermaLink="true">/start-fa/start-publish/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>تغییر آدرس انتشار سایت‌ها</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;در تنظیمات دیدیم که ریشه‌ی اصلی سایت را برای یک صفحه‌ی مشترک بین تمام سایت‌ها در نظر گرفتیم و بعد برای هر سایت یک آدرس در لول پایینتر مشخص کردیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;your-address.com/          &amp;gt;    صفحه مشترک بین هر چهار سایت
+your-address.com/blog/     &amp;gt;    وبلاگ فارسی
+your-address.com/en/       &amp;gt;    وبلاگ انگلیسی
+your-address.com/story/    &amp;gt;    داستان‌ها
+your-address.com/linux/    &amp;gt;    آموزش لینوکس
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اما شاید بخواهید ریشه اصلی سایت را برای وبلاگ فارسی در نظر بگیرید و صفحه‌ی مشترک را در زیر آدرس دیگری بسازید، مثل این:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;your-address.com/main/     &amp;gt;    صفحه مشترک بین هر چهار سایت
+your-address.com/          &amp;gt;    وبلاگ فارسی
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای این منظور config.yml و config/blog-fa.yml را ویرایش کنید و url و root را تغییر دهید:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;config.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;url: your-address.com/main
+root: /main
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;config/blog-fa.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;url: your-address.com/
+root: /
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا شاید اصلا نخواهید صفحه‌ی مشترک را داشته باشید، برای اینکار url و root را در config.yml با مقدار url و root در config/blog-fa.yml یکی قرار دهید. در صورت مساوی شدن مقدار این دو فیلد بین main و طبقات، اولویت با طبقات است. در این صورت دیگر صفحه مشترکی نخواهید داشت. میتوانید main.tt2 را هم از قالبتان پاک کنید.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;config.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;url: your-address.com/
+root: /
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;config/blog-fa.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;url: your-address.com/
+root: /
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-04-06 00:49:59</pubDate>
+          <link>/start-fa/change-publish-address/</link>
+          <guid isPermaLink="true">/start-fa/change-publish-address/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>افزودن مشخصات نویسنده مطلب</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;اگر به یاد داشته باشید در سایت آموزش لینوکس، بیشتر از یک نویسنده برای مطالبمان داشتیم، حالا میخواهیم یک اطلاعات کلی از هرکدام را به سایدبار در زیر آرشیو نام‌هایشان اضافه کنیم، ابتدا linux-learn.yml را ویرایش میکنیم و خطوط زیر را در آن می‌نویسیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;authors:
+ -
+  name: farbodgame
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+ -
+  name: MrNull
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+ -
+  name: rmasoumvand
+  desc: توضیحاتی در مورد کاربر
+  twitter: twitter.com/TWITTER_USER_NAME
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;به فاصله‌ها دقت کنید، هر بخش که داخل رفتیم، یک خط فاصله اضافه شده است، authors در ابتدای خط است، قبل از هر خط تیره - یک space وجود دارد و یک مرحله فرورفتگی ایجاد شده و بعد، قبل از name، desc و twitter دو خط فاصله یا همان space هست، یعنی دو مرحله فرورفتگی.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;بعد قالب index.tt2 را باز کنید و در sidebar، بلوک کد {{ IF AUTHOR_ARCHIVE }} را پیدا کنید و به جای آن کدهای زیر را کپی کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ IF AUTHOR_ARCHIVE }}
+&amp;lt;h3&amp;gt;author archive&amp;lt;/h3&amp;gt;
+{{ FOREACH author IN AUTHOR_ARCHIVE }}
+  &amp;lt;a href=&quot;{{ author.url }}&quot;&amp;gt;{{ author.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ author.posts.size }}&amp;lt;/small&amp;gt;
+&amp;lt;!-- این قسمت به کد اضافه شده است --&amp;gt;
+  {{ IF SITE.authors }}
+  {{ FOREACH auth IN SITE.authors }}
+  {{ IF author.name == auth.name }}
+    &amp;lt;ul&amp;gt;
+    &amp;lt;li&amp;gt;{{ auth.desc }}&amp;lt;/li&amp;gt;
+    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;{{ auth.twitter }}&quot;&amp;gt;twitter&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;
+    &amp;lt;/ul&amp;gt;
+  {{ END }}
+  {{ END }}
+  {{ END }}
+&amp;lt;!-- تا اینجا --&amp;gt;
+{{ END }}
+&amp;lt;hr&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-04-01 22:01:50</pubDate>
+          <link>/start-fa/add-author-info/</link>
+          <guid isPermaLink="true">/start-fa/add-author-info/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>اضافه کردن لینک شبکه‌های اجتماعی</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;برای افزودن لینک خودمان در شبکه‌های اجتماعی به جایی مثل ساید باز هم میرویم سراغ کانفیگ‌ها و اضافه کردن چند خط به هرکدامشان&lt;/p&gt;
+
+&lt;p&gt;فرض میکنیم لینکی که می‌خواهیم برای شبکه‌های اجتماعی در نظر بگیریم در تمام سایت‌ها ثابت نیست و برای هر سایت یک کانال، یا اکانت جدا در شبکه‌های اجتماعی و یک کانال در پیام رسان تلگرام را ساخته‌ایم.&lt;/p&gt;
+
+&lt;p&gt;از اینجای مثال فقط برای وبلاگ فارسی همه چیز را در نظر می‌گیریم، اما می‌توانید برای سه سایت دیگر هم به همین شکل کار را انجام دهید یا کلا این همه چیز را به جای تنظیم اختصاصی هر سایت در تنظیم‌های عمومی بگنجانید و در همه‌ی سایت‌ها از همان تنظیم استفاده کنید.&lt;/p&gt;
+
+&lt;p&gt;آدرس ها را هم این‌ها در نظر میگیریم:&lt;/p&gt;
+
+&lt;h4&gt;وبلاگ فارسی:&lt;/h4&gt;
+
+&lt;p&gt;twitter.com/@MY_FA_BLOG_MIRA
+telegram.me/MY_FA_BLOG_MIRA&lt;/p&gt;
+
+&lt;p&gt;حالا به blog-fa.yml  کدهای زیر را اضافه می‌کنیم:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;~/mira/config/blog-fa.yml&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;socials:
+ -
+  name: twitter
+  url: https://twitter.com/MY_FA_BLOG_MIRA
+ -
+  name: instagram
+  url: https://instagram.com/MY_FA_BLOG_MIRA
+ -
+  name: github
+  url: https://github.com/MY_FA_BLOG_MIRA
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;به فاصله‌ها دقت کنید، هر بخش که داخل رفتیم، یک خط فاصله اضافه شده است، socials در ابتدای خط است، قبل از هر خط تیره - یک space وجود دارد و یک مرحله فرورفتگی ایجاد شده و بعد، قبل از name و url دو خط فاصله یا همان space هست، یعنی دو مرحله فرورفتگی.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;حالا در my-theme فایل index.tt2 را باز می‌کینم و هر کجا که خواستیم شبکه‌های اجتماعی را نمایش دهیم این کدها را به آن اضافه می‌کنیم، مثلا در بالاترین قسمت sidebar:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;td width=&quot;30%&quot; valign=&quot;top&quot;&amp;gt;
+{{ IF SITE.socials }}
+    &amp;lt;h3&amp;gt;socials&amp;lt;/h3&amp;gt;
+    {{ FOREACH social IN SITE.socials }}
+        &amp;lt;a href=&quot;{{ social.url }}&quot;&amp;gt;{{ social.name }}&amp;lt;/a&amp;gt;&amp;gt;ذق&amp;lt;
+    {{ END }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای هر کدام از چهار سایت دیگر هم می‌توان همین کار را تکرار کرد، یا اینکه برای همه سایت‌ها از یک آدرس مشترک در شبکه‌های اجتماعی استفاده کنیم و همه اطلاعات را در config.yml وارد کنیم، در این حالت برای نمایش لینک‌ها در سایت، به جای SITE.socials باید از MAIN.socials استفاده کرد.&lt;/p&gt;</description>
+          <pubDate>2017-04-01 21:14:19</pubDate>
+          <link>/start-fa/add-social-links/</link>
+          <guid isPermaLink="true">/start-fa/add-social-links/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>تغییر آدرس آرشیو‌ها</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;دیدیم که در تنظیم کردن هر سایت برای آدرس‌دهی به هر پست می‌توانیم از مشخصات آن پست استفاده کنیم، برای مثال:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;permalink: :category/:title.html
+یا
+permalink: :author/:year/:title
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا ممکن است دسته بندی موضوعی به نام &lt;strong&gt;آموزشی&lt;/strong&gt; داشته باشیم، آدرس ثابت با استفاده از مدل اول این خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SITE_ADDRESS.com/آموزش/post-title.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و اگر آرشیوی بر اساس category ساخته باشیم هم آدرس مطالب دسته بندی &lt;strong&gt;آموزشی&lt;/strong&gt; این خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SITE_ADDRESS.com/category/آموزش/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا نام نویسنده مطلب محمد محمدی باشد، در مدل دوم آدرس شبیه به این ساخته خواهد شد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SITE_ADDRESS.com/محمد-محمدی/post-title/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و آدرس آرشیو این نویسنده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SITE_ADDRESS.com/author/محمد-محمدی/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا اینکه یک دسته بندی با نام طولانی داشته باشیم، مثلا نام دسته بندی این نام باشد: learn use vim in gnu linux systems &lt;br /&gt;
+آدرسذها این شکلی خواهتد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SITE_ADDRESS.com/learn-use-vim-in-gnu-linux-systems/post-title.html
+و 
+SITE_ADDRESS.com/category/learn-use-vim-in-gnu-linux-systems/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;شاید استفاده از نام‌های طولانی یا حروف فارسی در آدرس را دوست نداشته باشید یا سروری که از آن استفاده می‌کنید محدودیت داشته باشد برای پذیرفتن نام‌های غیر لاتین. راه حل استفاده از namespace در فایل کانفیگ عمومی یا اختصاصی هر سایت است.&lt;/p&gt;
+
+&lt;p&gt;حالا برای تمرین این مثال، در وبلاگ فارسی یک نوشته جدید به جود بیاورید و در قسمت category مقدار آزمایش را وارید کنید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170326160744
+date: 2017-03-26 16:07:44
+title: فضای نام
+_index: namespace
+category: آزمایش
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;آدرسی که به این پست اختصاص داده می‌شود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;YOUR_ADDRESS.COM/آزمایش/a2017/03/26/namespace.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا اگر میخواهید از فضای نام‌ها تمام سایت‌ها به شکل عمومی استفاده کنند در فایل config.yml و اگر میخواهید تنها در وبلاگ فارسی این فضای نام فعال باشد در فایل config/blog-fa.yml فیبدی به نام namespace را به این شکل به وجود بیاورید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;namespace:
+  آزمایش: test
+  آموزش: learn
+  کتاب: book
+  شخصی: personal
+  عمومی: general
+  محمد محمدی: mohamad mohamadi
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از این به بعد میرا هرجا با یکی از این‌ها در آرشیو مواجه شود، برای ساختن آدرس آن از نام اختصاصی‌اش در فضای نام‌ها استفاده می‌کند. مثلا پست آزمایشی که کمی‌قبل‌تر ساختیم، آدرسی مشابه این آدرس خواهد گرفت:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;YOUR_ADDRESS.COM/test/2017/03/26/namespace.html
+و آدرس آرشیو:
+SITE_ADDRESS.com/category/test/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا اگر دسته بندی &lt;strong&gt;کتاب&lt;/strong&gt; داشته باشیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;YOUR_ADDRESS.COM/book/2010/10/10/post-title.html
+SITE_ADDRESS.com/category/book/
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-04-01 15:24:12</pubDate>
+          <link>/start-fa/namespcae/</link>
+          <guid isPermaLink="true">/start-fa/namespcae/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>آدرس‌های تکراری</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;همیشه این امکان وجود دارد که دو نوشته شما یک آدرس مشابه به خود بیرند، مخصوصا وقتی که در سیستم آدرس‌دهی برای هر نوشته، به جز تیتر آن هیچ شرط دیگری مثل تاریخ یا دسته بندی و... را ذکر نمی‌کنید، مثل کاری که در این مثال برای انتشار داستان‌ها کردیم.&lt;/p&gt;
+
+&lt;p&gt;به هر حال همیشه این احتمال وجود دارد که دو پست آدرس یکسیانی به ود بگیرند، فرض کنیم که در فایل کانفیگ سایت فیلد permalink را به این شکل ساخته باشیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;permalink: :year/:month/:day/:title/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و در یک روز دو پست را با این مشخصات نوشته باشیم:
+&lt;code&gt;post1:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170325151121
+date: 2017/03/25
+title: آزمایش
+_index: test
+category: آموزش
+tags:
+ - یک
+ - دو
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;post2:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170325162308
+date: 2017/03/25
+title: test
+category: learn
+tags:
+ - one
+ - two
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;هر دو پست دقیقا در یک روز منتشر شده‌اند، اولی _index با مقدار test دارد و دومی هم که index ندارد، از تیتر test استفاده کرده، پس با توجه به مقدار permalink در کانفیگ، آدرس هر دو پست این آدرس خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/2017/03/25/test/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;میرا برای حل این مشکل یک راه حل ساده دارد، اگر با آدرس‌های تکراری مواجه بشود، به ترتیب شماره‌ی utid آن‌ها از کوچک به بزرگ این آدرس‌ها را شماره گذاری می‌کند. پست اول عدد utid کوچک‌تری دارد، آدرس اصلی به آن تعلق می‌گیرد و پست دوم یک اندیس شماره 2 می‌گیرد، پس آدرس پست‌های ما در اصل این‌ها خواهند بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;post1: &amp;gt;  /2017/03/25/test/
+post2: &amp;gt;  /2017/03/25/test/2/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در صورتی هم که permalink به جای آدرس خالص، از نام فایل در آن استفاده شده باشد، مثل:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;permalink: :year/:month/:day/:title.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;آدرس‌ها به این صورت ساخته خواهند شد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;post1: &amp;gt;  /2017/03/25/test.html
+post2: &amp;gt;  /2017/03/25/2/test.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اما اگر نخواهید میرا برای شما آدرس‌ها را بسازد، مثلا بخواهید به جای 2 از 'second edition' در آدرس استفاده کنید، می‌توانید در هدر همان پست فیلد _permalink ار مقدار دهی کنید، برای مثال میتوانیم دو پست را به این شکل داشته باشیم:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;post1:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170325151121
+date: 2017/03/25
+title: آزمایش
+_index: test
+category: آموزش
+tags:
+ - یک
+ - دو
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;post2:&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170325162308
+date: 2017/03/25
+title: test
+_permalink: :year/:month/:day/:title/second-edition/
+category: learn
+tags:
+ - one
+ - two
+---
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا حتی از یک فرمول به جز فرمول کانفیگ سایت استفاده کنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;_permalink: :category/:title/second-edition/
+یا
+_permalink: :year/second-edition/:title/
+یا
+_permalink: :title/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر فایل‌های این مثال را دانلود کرده باشید، در وبلاگ فارسی و داستان، دو مطلب تکراری وجود دارد که آدرس مشابه میگیرند، آن‌ها را هر طور که دوست دارید اصلاح کنید.&lt;/p&gt;</description>
+          <pubDate>2017-04-01 14:24:05</pubDate>
+          <link>/start-fa/duplicate-address/</link>
+          <guid isPermaLink="true">/start-fa/duplicate-address/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>ساختن صفحات</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;برای ساختن صفحات ثابت جدا از روند اصلی سایت، مثل صفحه درباره یا تماس و ... با اضافه کردن فیلد type و مقدار page در هدر هر پست، آن پست را به عنوان صفحه ثابت به میرا معرفی می‌کنیم، این کار باعث میشود که پست مورد نظر از لیست‌های مطالب برای نمایش در صفحه اول یا سایر صفحه‌های سایت و page.next و page.prev برای حرکت بین پست‌ها حذف شده و تنها با وارد کردن آدرس مستقیم آن نمایش داده شود.&lt;/p&gt;
+
+&lt;p&gt;در وبلاگ فارسی یک پست جدید بسازید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira new -t 'about me' -f blog-fa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا آن را ویرایش کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170328195013
+title: درباره من
+_index: about
+_type: page
+_layout: page
+_permalink: /:title/
+---
+این صفحه در باره من است، اینجا مقداری در مورد خودم توضیح می‌دهم
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا در شاخه‌ی قالب my-theme یک فایل جدید به نام page بسازید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/template/my-theme/page
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و مقادیر زیر را در آن کپی کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;
+    &amp;lt;meta name=&quot;description&quot; content=&quot;{{ DESCRIPTION }}&quot;&amp;gt;
+    &amp;lt;meta name=&quot;author&quot; content=&quot;{{ MainAUTHOR }}&quot;&amp;gt;
+    &amp;lt;link rel=&quot;shortcut icon&quot; href=&quot;{{ MAIN.author_image }}&quot;&amp;gt;
+    &amp;lt;title&amp;gt;{{ PageTITLE }}&amp;lt;/title&amp;gt;
+    &amp;lt;style&amp;gt;
+    img {
+    max-width: 100% !important;
+    }
+    {{ IF SITE.lang == 'fa' }}
+    body {
+       direction: rtl;
+    }
+    {{ END }}
+    {{ IF SITE.lang == 'en' }}
+    body {
+       direction: ltr;
+    }
+    {{ END }}
+    &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;center&amp;gt;
+    &amp;lt;img src=&quot;{{ SITE.author_image }}&quot;&amp;gt;
+    &amp;lt;h1&amp;gt;{{ post.title }}&amp;lt;/h1&amp;gt;
+    &amp;lt;/center&amp;gt;
+    &amp;lt;hr&amp;gt;
+    &amp;lt;table&amp;gt;
+    &amp;lt;tr&amp;gt;
+    &amp;lt;td&amp;gt;
+      &amp;lt;p&amp;gt;{{ post.body.more }}&amp;lt;/p&amp;gt;
+    &amp;lt;/td&amp;gt;
+    &amp;lt;/tr&amp;gt;
+    &amp;lt;/table&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;این پست در صفحه اصلی یا هیچ‌کجای دیگر سایت نمایش داده نخواهد شد، تنها راه دسترسی به آن دادن لینک مستقیم به این صفحه در این آدرس است:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/blog/about/
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-03-28 19:50:13</pubDate>
+          <link>/start-fa/pages/</link>
+          <guid isPermaLink="true">/start-fa/pages/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>پوسته‌های بیشتر برای هر قالب و تغییر آدرس</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;پیش از این گفتیم که علاوه بر پنج فایل پایه‌ی هر قالب، میتوان به هر تعداد دیگر پوسته برای یک قالب تعریف کرد. در میرا می‌توان برای هر آرشیو یا هر پست یک قالب مجزا داشت.&lt;/p&gt;
+
+&lt;h4&gt;پوسته‌های متفاوت برای هر آرشیو&lt;/h4&gt;
+
+&lt;p&gt;برای داشتن پوسته‌ی متفاوت برای هر آرشیو، کافی است هم‌نام با آن آرشیو یک فایل در دایرکتوری قالب‌مان داشته باشیم.&lt;/p&gt;
+
+&lt;p&gt;برای مثال اگر بخواهیم پوسته‌ی آرشیو category با سایر آرشیوها مثل tags یا آرشیوزمانی و... متفاوت باشد، تنها کافی است در دایرکتوری قالب، یک فایل جدید به نام category.tt2 بسازیم، از این به بعد در هر سایت که آرشیوی به این نام وجود داشت، به جای استفاده از archive.tt2، با استفاده از category.tt2 خروجی آن تولید می‌شود.&lt;/p&gt;
+
+&lt;h4&gt;پوسته‌های متفاوت برای پست ها&lt;/h4&gt;
+
+&lt;p&gt;گاهی اوقات نیاز داریم آدرس ثابت یک نوشته با سایر نوشته‌ها متفاوت باشد، مثلا برای ساختن page ها یا هر دلیل دیگر. برای این‌که به میرا بگوییم به جای post.tt2 از پوسته‌ی دیگری برای ساختن خروجی یک پست استفاده کند، باید در سربرگ آن پست به فیلد _layout مقدار بدهیم. برای مثال:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;_layout: custom_post_template
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: &lt;br /&gt;
+برخلاف سایر پوسته‌ها، برای صفحات تعریف شده به عنوان پوسته‌ی اختصاصی پست‌ها، الزامی به استفاده از پسوند tt2 برای ساختن پوسته نداریم. استفاده کردن از پسوند تنها در این حالت اختیاری است.&lt;/p&gt;
+
+&lt;h4&gt;تغییر آدرس&lt;/h4&gt;
+
+&lt;p&gt;همچنین می‌توان آدرس انتشار یک پست را از فرمت تعیین شده در فایل کانفیگ اختصاصی سایتی که در آن منتشر می‌شود جدا کرد. برای مثال در فایل blog-fa.yml به فیلد permalink این مقدار را داده بودیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;:year/:month/:day/:title.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اما اگر در سربرگ هر کدام از پست‌ها فیلد _permalink را مقدار دهی کنیم، این مسیر تنها برای آن پست تغییر میکند:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;_permalink: :year/:title/
+یا
+_permalink: /:title/
+یا
+_permalink: some/thing/else/:title.php
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-03-28 20:00:43</pubDate>
+          <link>/start-fa/more-templates/</link>
+          <guid isPermaLink="true">/start-fa/more-templates/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>مرتب کردن چیدمان</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;اگر تا این مرحله دستور build را اجرا نکردید، حتما یک بار آن را امتحان کنید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira build
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و بعد یک پیش نمایش از سایت را برای خود اجرا کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira view
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا به این آدرس بروید:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;//127.0.0.1:5000/blog/&quot;&gt;127.0.0.1:5000/blog/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;می‌بینید که همه نوشته‌ها چپ به راست نوشته شده‌اند و اصلا برای نمایش زبان فارسی مناسب نیستند.&lt;/p&gt;
+
+&lt;p&gt;همانطور که در تنظیم پیکربندی دیدید، در تنظیم هر سایت یک فیلد به نام lang را ساخته بودیم، حالا زمان استفاده از آن است.&lt;/p&gt;
+
+&lt;p&gt;برای راست‌چین کردن محتوای فارسی از یک شرط IF و مقدار فیلد lang در فایل config اختصاصی هر سایت استفاده میکنیم.&lt;/p&gt;
+
+&lt;p&gt;استفاده از مقدار فایل‌های config اختصاصی طبقات در قالب main و سایر قالب‌ها با هم متفاوت است. برای اینکه از این مقادیر در main استفاده کنیم، حتما باید داخل حلقه‌ی FLOORS باشیم، اما در سایر قالب‌ها در هر جای قالب که باشیم قابل دسترسی هستند.&lt;/p&gt;
+
+&lt;p&gt;برای اینکه تنوع استفاده و روش‌های متفاوت استفاده از بلوک‌های شرطی IF را ببینید، با دو روش متفاوت این مثال را پیش می‌بریم. انتخاب روش دلخواه با خود شماست.&lt;/p&gt;
+
+&lt;p&gt;یک بار دیگر فایل main.tt2 را باز کنید و به حلقه‌ی FOREACH FLOORS این کدها را اضافه کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ IF site.SITE.lang == 'fa' }}
+   &amp;lt;div dir=&quot;rtl&quot;&amp;gt;
+{{ ELSE }}
+   &amp;lt;div&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا باید نتیجه چیزی شبیه به این شده باشد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH site IN FLOORS.values.sort('name') }}
+  &amp;lt;td style=&quot;border-right: 1px solid black; width: 25%;&quot; valign=&quot;top&quot;&amp;gt;
+     {{ IF site.SITE.lang == 'fa' }}   &amp;lt;!-- add --&amp;gt;
+    &amp;lt;div dir=&quot;rtl&quot;&amp;gt;                &amp;lt;!-- add --&amp;gt;
+     {{ ELSE }}                        &amp;lt;!-- add --&amp;gt;
+    &amp;lt;div&amp;gt;                          &amp;lt;!-- add --&amp;gt;
+     {{ END }}                         &amp;lt;!-- add --&amp;gt;
+  &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ site.root }}&quot;&amp;gt;{{ site.name }}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;
+  &amp;lt;p&amp;gt;{{ site.description }}&amp;lt;/p&amp;gt;
+  &amp;lt;hr&amp;gt;
+  &amp;lt;ul&amp;gt;
+  {{ FOREACH post IN site.posts }}
+    &amp;lt;li&amp;gt;&amp;lt;h4&amp;gt;&amp;lt;a href=&quot;{{ post.url }}&quot;&amp;gt;{{ post.title }}&amp;lt;/a&amp;gt;&amp;lt;h4&amp;gt;&amp;lt;/li&amp;gt;
+    {{ post.body.less }}
+  {{ END }}
+  &amp;lt;/ul&amp;gt;
+     &amp;lt;/div&amp;gt;                            &amp;lt;!-- add --&amp;gt;
+  &amp;lt;/td&amp;gt;
+{{ END }} 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا فایل‌های post.tt2، archive.tt2 و index.tt2 را باز کنید و این شرط را در قسمت head سایت به style اضافه کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ IF SITE.lang == 'fa' }}
+body {
+   direction: rtl;
+}
+{{ END }}
+{{ IF SITE.lang == 'en' }}
+body {
+   direction: ltr;
+}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا head باید به این شکل در آمده باشد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;
+    &amp;lt;meta name=&quot;description&quot; content=&quot;{{ DESCRIPTION }}&quot;&amp;gt;
+    &amp;lt;meta name=&quot;author&quot; content=&quot;{{ MainAUTHOR }}&quot;&amp;gt;
+    &amp;lt;link rel=&quot;shortcut icon&quot; href=&quot;{{ MAIN.author_image }}&quot;&amp;gt;
+    &amp;lt;title&amp;gt;{{ PageTITLE }}&amp;lt;/title&amp;gt;
+    &amp;lt;style&amp;gt;
+    entry img {
+    max-width: 100% !important;
+    }
+    {{ IF SITE.lang == 'fa' }}
+    body {
+       direction: rtl;
+    }
+    {{ END }}
+    {{ IF SITE.lang == 'en' }}
+    body {
+       direction: ltr;
+    }
+    {{ END }}
+    &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: برای استفاده از IF به جز ELSE از ELSIF هم می‌توانید استفاده کنید.&lt;/p&gt;</description>
+          <pubDate>2017-03-28 20:08:44</pubDate>
+          <link>/start-fa/layout/</link>
+          <guid isPermaLink="true">/start-fa/layout/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>تکمیل کردن قالب post</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;زمانی که داشتیم سربرگ‌ها را تنظیم می‌کردیم برای سایت داستان ها یا همان دنباله دار، یک فیلد به نام suggests برای نمایش دادن داستان‌های مشابه تعریف کردیم که تا اینجا از آن استفاده نکردیم، حالا وقت آن رسیده که این فلد را هم به قالبمان اضافه کنیم.&lt;/p&gt;
+
+&lt;p&gt;در فایلی که برای محتوا دانلود کردید، به این شاخه‌ی story بروید و این دو فایل را باز کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/content/story/1394-12-11-the-selfish-gene.md
+~/mira/content/story/1395-2-27-sleep.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در فایل sleep در فیلد suggests آدرس ایستای دو داستان دیگر وارد شده، برای نمایش دادن آن می‌توان از کدی شبیه به این استفاده کرد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH suggest IN post.suggests }}
+    {{ FOREACH entry IN ENTRIES.values }}
+        {{ IF entry.url == suggest }}
+            &amp;lt;a href=&quot;{{ entry.url }}&quot;&amp;gt;{{ entry.title }}&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+        {{ END }}
+    {{ END }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در یک حلقه مقدار هر آدرس را در suggest لود کردیم، سپس در حلقه‌ی درونی تمام پست‌ها را گشتیم، اگر پستی که آدرس مشابه با suggest داست، نام و آدرس آن را نمایش دادیم.&lt;/p&gt;
+
+&lt;p&gt;در فایل the-selfish-gene اما utid دو داستان را برای suggests وارد کردیم، برای نمایش دادنشان از کدهای زیر می‌توان استفاده کرد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH suggest IN post.suggests }}
+    {{ IF ENTRIES.$suggest.url }}
+        &amp;lt;a href=&quot;{{ ENTRIES.$suggest.url }}&quot;&amp;gt;{{ ENTRIES.$suggest.title }}&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+    {{ END }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;باز هم در یک حلقه suggets های هر پست را می‌خوانیم، اما اینبار نیازی به حلقه‌ی درونی نیست، فقط تست میکنیم آیا پستی با این utid وجود دارد یا نه، اگر وجود داشت، نام و آدرس آن را نمایش می‌دهیم.&lt;/p&gt;
+
+&lt;p&gt;برای اینکه از هر دو روش همزمان در قالب استفاده کنیم، یک بار دیگر فایل post.tt2 را برای ویرایش کردن باز کنید، این چند خط را پیدا کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ IF post.keywords }}
+keywords: {{ FOREACH kw IN post.keywords }}{{ kw }}/{{ END }}&amp;lt;br&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;کد زیر را بعد از آن اضافه کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ IF post.suggests }}
+    &amp;lt;hr/&amp;gt;
+&amp;lt;p&amp;gt;suggests:&amp;lt;/p&amp;gt;
+{{ FOREACH suggest IN post.suggests }}
+    {{ IF ENTRIES.$suggest.url }}
+        &amp;lt;a href=&quot;{{ ENTRIES.$suggest.url }}&quot;&amp;gt;{{ ENTRIES.$suggest.title }}&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+    {{ END }}
+    {{ FOREACH entry IN ENTRIES.values }}
+    {{ IF entry.url == suggest }}
+            &amp;lt;a href=&quot;{{ entry.url }}&quot;&amp;gt;{{ entry.title }}&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+        {{ END }}
+    {{ END }}
+{{ END }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;</description>
+          <pubDate>2017-03-28 19:34:44</pubDate>
+          <link>/start-fa/post-subjoin/</link>
+          <guid isPermaLink="true">/start-fa/post-subjoin/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>ساختن یک ساید بار</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;حالا وقت آن رسیده که با ساختن یک ساید بار آرشیوهایی که برای هر سایت را داشتیم را هم به نمایش درآوریم، برای این کار قبلا در میانه‌های قالب‌های index، archive و post یک قسمت را آماده گذشاته بودیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- sidebar --&amp;gt;
+&amp;lt;td width=&quot;30%&quot;&amp;gt;
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا زمان آن را رسیده که آن را تکمیل کنیم. برای نمایش لیست‌های آرشیو دو راه حل داریم، یکی به شکل کلی تمام آرشیوهای موجود را لود کنیم، مانند کاری که در انتهای قالب atom کرده بودیم، و یکی هم مثل قالب post، روشی که به ما امکان میدهد هر لیست را جدا و در جایی که میخواهیم نمایش دهیم.&lt;/p&gt;
+
+&lt;h4&gt;روش اول، لود کردن همه چیز:&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH archive IN ARCHIVES.pairs }}
+  &amp;lt;h5&amp;gt;{{ archive.key }}&amp;lt;/h5&amp;gt;&amp;lt;!-- archive name, like tags or dates ... --&amp;gt;
+  &amp;lt;hr&amp;gt;
+  {{ FOREACH item IN archive.value.values.sort('name').sort('number') }}
+    &amp;lt;a href=&quot;{{ item.url }}&quot;&amp;gt;{{ item.name }}&amp;lt;/a&amp;gt;
+    {{ IF (archive.key == 'categories') }}&amp;lt;br&amp;gt;{{ END }}
+    {{ IF (archive.key == 'date') or (archive.key == 'jdate') }}&amp;lt;br&amp;gt;{{ END }}
+    {{ IF (archive.key == 'author') }}&amp;lt;br&amp;gt;{{ END }}
+    {{ IF (loop.index != loop.max) and (archive.key == 'tags') }}&amp;amp;nbsp;-&amp;amp;nbsp;{{ END }}
+    {{ IF (archive.key == 'category') }}
+    &amp;lt;br&amp;gt;
+    {{ FOREACH utid IN item.posts }}
+        &amp;amp;nbsp;&amp;amp;nbsp;-&amp;amp;nbsp;&amp;lt;a href=&quot;{{ ENTRIES.$utid.url }}&quot;&amp;gt;{{ ENTRIES.$utid.title }}&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+    {{ END }}
+    {{ END }}
+  {{- END }}
+  &amp;lt;br&amp;gt;
+{{- END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;توضیح:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;ابتدا یک جفت کلید-مقدار از آرشیوها را در متغیری به نام archive لود کردیم archive IN ARCHIVES.pairs، کلید با نام key حاوی نام آرشیو است، مثل category یا tag یا هر چیز دیگری {{ archive.key }}.&lt;/p&gt;
+
+&lt;p&gt;مقدار یا value حاوی یک لیست از اطلاعات مربوط به آن آرشیو است archive.value، که این لیست شامل این اطلاعات است: نام، آدرس لینک هر آرشیو، و utid پست‌هایی که در این آرشیو هستند. مثل همیشه، برای نمایش دادن لیست‌ها از FOREACH استفاده می‌کینم.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH item IN archive.value.values.sort('name').sort('number') }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و البته با استفاده از sort، ترتیب نمایش را هم مشخص کردیم که بر اساس نام باشد و اگر نام‌های مشابه پیدا کرد، اولویت با تعداد پست‌های موجود در هرکدام باشد.&lt;/p&gt;
+
+&lt;p&gt;بعد هم با استفاده از شرط‌ها، جداکننده‌های هر آرشیو را مشخص کردیم. مثلا برای آرشیوهای زمانی، نام هر ماه در یک خط جدید باشد، یا برای نمایش تگ‌ها همه پشت سر هم و با جداکننده‌ی - باشند.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;خطوط ۱۰ تا ۱۵&lt;/strong&gt;: گفتیم که مقدار هر آرشیو لیستی است که utid پست‌هایی که در آن دسته بندی هستند را هم در خود دارد، بین این خطوط مشخص کردیم تیتر و لینک تمام نوشته‌هایی که در دسته بندی هستند، زیر نام آن دسته بندی نمایش داده شوند.با استفاده از ENTRIES.$utid تمام کارهایی که برای نمایش پست ها با POSTS انجام میدادیم را میتوان انجام داد، مثلا خلاصه‌ی متن را لود کرد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ENTRIES.$utid.body.less
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;روش دوم، نمایش دادن با ترتیب دلخواه&lt;/h4&gt;
+
+&lt;p&gt;روش بالا روش خوبی است، مخصوصا برای زمانی که میخواهیم از یک قالب به شکل مشترک استفاده کنیم اما قدرت کنترل و انعطاف کمی دارد، مثلا شاید بخواهیم در یک سایت آرشیو زمانی در ابتدای ستون کناری باشد و در یک سایت در انتها. در این روش میتوانیم هر آرشیو را هرکجا که بخواهیم لود کنیم. کافی است حلقه‌ای با نام آرشیو و پسوند آرشیو با حروف بزرگ را لود کنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ IF CATEGORIES_ARCHIVE }}
+&amp;lt;h3&amp;gt;categories archive&amp;lt;/h3&amp;gt;
+{{ FOREACH cat IN CATEGORIES_ARCHIVE }}
+  &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ cat.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+{{ END }}
+{{ END }}
+&amp;lt;hr&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;نکته‌&lt;/strong&gt;: همانطور که در مثال قبل هم گفتیم، لیست‌های آرشیو علاوه بر نام و آدرس، پست‌هایی که در دسته بندیشان قرار میگیرد را هم در خود دارند، در مثال قبل با استفاده از posts مقدار utid ها را به دست آوردیم و در ENTRIES لود کردیم، اینجا فقط تعدادشان را گرفتیم و مشخص کردیم در هر دسته بندی چه تعداد نوشته داریم. {{ cat.posts.size }}&lt;/p&gt;
+
+&lt;p&gt;برای نمایش کامل تمام آرشیوها در این مثال باید از کد زیر استفاده کرد، در این مثال هم در قسمت category تمام پست ها را با استفاده از utid نمایش می‌دهیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ IF CATEGORIES_ARCHIVE }}
+&amp;lt;h3&amp;gt;categories archive&amp;lt;/h3&amp;gt;
+{{ FOREACH cat IN CATEGORIES_ARCHIVE }}
+   &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ cat.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+{{ END }}&amp;lt;hr&amp;gt;
+{{ END }}
+
+{{ IF CATEGORY_ARCHIVE }}
+&amp;lt;h3&amp;gt;category archive&amp;lt;/h3&amp;gt;
+{{ FOREACH cat IN CATEGORY_ARCHIVE }}
+  &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ cat.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+    &amp;lt;br&amp;gt;
+    {{ FOREACH utid IN cat.posts }}
+        &amp;amp;nbsp;&amp;amp;nbsp;-&amp;amp;nbsp;&amp;lt;a href=&quot;{{ ENTRIES.$utid.url }}&quot;&amp;gt;{{ ENTRIES.$utid.title }}&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+    {{ END }}
+{{ END }}
+&amp;lt;hr&amp;gt;
+{{ END }}
+
+{{ IF TAGS_ARCHIVE }}
+&amp;lt;h3&amp;gt;categories archive&amp;lt;/h3&amp;gt;
+{{ FOREACH tag IN TAGS_ARCHIVE }}
+  &amp;lt;a href=&quot;{{ tag.url }}&quot;&amp;gt;{{ tag.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ tag.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+{{ END }}
+&amp;lt;hr&amp;gt;
+{{ END }}
+
+{{ IF AUTHOR_ARCHIVE }}
+&amp;lt;h3&amp;gt;author archive&amp;lt;/h3&amp;gt;
+{{ FOREACH author IN AUTHOR_ARCHIVE }}
+  &amp;lt;a href=&quot;{{ author.url }}&quot;&amp;gt;{{ author.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ author.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+{{ END }}
+&amp;lt;hr&amp;gt;
+{{ END }}
+
+{{ IF DATE_ARCHIVE }}
+&amp;lt;h3&amp;gt;date archive&amp;lt;/h3&amp;gt;
+{{ FOREACH date IN DATE_ARCHIVE }}
+  &amp;lt;a href=&quot;{{ date.url }}&quot;&amp;gt;{{ date.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ date.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+{{ END }}
+&amp;lt;hr&amp;gt;
+{{ END }}
+
+{{ IF JDATE_ARCHIVE }}
+&amp;lt;h3&amp;gt;jalali archive&amp;lt;/h3&amp;gt;
+{{ FOREACH date IN JDATE_ARCHIVE }}
+  &amp;lt;a href=&quot;{{ date.url }}&quot;&amp;gt;{{ date.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ date.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+{{ END }}
+&amp;lt;hr&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یکی از دو روش بالا را انتخاب کنید، سپس کدهای نوشته شده را در قالب‌های post, index و archive کپی کنید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!-- sidebar --&amp;gt;
+&amp;lt;td width=&quot;30%&quot;&amp;gt;
+   &amp;gt;&amp;gt;&amp;gt; اینجا کپی کنید
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در فایل‌های مثال که برای دانلود کردن آماده شده از روش اول در قالب archive و روش دوم برای index و post استفاده شده.&lt;/p&gt;</description>
+          <pubDate>2017-03-28 19:28:03</pubDate>
+          <link>/start-fa/sidebar/</link>
+          <guid isPermaLink="true">/start-fa/sidebar/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>feed template</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;آخرین فایل atom.tt2 که برای ساختن فید مطالب هر سایت به کار می‌رود، البته میتوانید با هر یک از استانداردهای مورد قبول که دوست دارید فید خود را بسازید و الزامی به atom بودن آن نیست، نهایتا خروجی این فایل، فایل feed.xml در شاخه اصلی هر سایت خواهد بود.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;
+&amp;lt;rss version=&quot;2.0&quot; xmlns:atom=&quot;http://www.w3.org/2005/Atom&quot;&amp;gt;
+  &amp;lt;channel&amp;gt;
+    &amp;lt;title&amp;gt;{{ TITLE }}&amp;lt;/title&amp;gt;
+    &amp;lt;description&amp;gt;{{ DESCRIPTION }}&amp;lt;/description&amp;gt;
+    &amp;lt;link&amp;gt;{{ URL }}&amp;lt;/link&amp;gt;
+    &amp;lt;atom:link href=&quot;{{ URL }}/feed.xml&quot; rel=&quot;self&quot; type=&quot;application/rss+xml&quot; /&amp;gt;
+    &amp;lt;pubDate&amp;gt;{{ Build.date }}&amp;lt;/pubDate&amp;gt;
+    &amp;lt;lastBuildDate&amp;gt;{{ DATE }}&amp;lt;/lastBuildDate&amp;gt;
+    &amp;lt;generator&amp;gt;mira&amp;lt;/generator&amp;gt;
+    {{ FOREACH post IN POSTS }}
+        &amp;lt;item&amp;gt;
+          &amp;lt;title&amp;gt;{{ post.title }}&amp;lt;/title&amp;gt;
+          &amp;lt;description&amp;gt;{{ post.body.more | html }}&amp;lt;/description&amp;gt;
+          &amp;lt;pubDate&amp;gt;{{ post.date }}&amp;lt;/pubDate&amp;gt;
+          &amp;lt;link&amp;gt;{{ post.url }}&amp;lt;/link&amp;gt;
+          &amp;lt;guid isPermaLink=&quot;true&quot;&amp;gt;{{ post.url }}&amp;lt;/guid&amp;gt;
+    {{- FOREACH list IN SITE.lists -}}
+        {{ IF post.$list }}
+        &amp;lt;{{ list }}&amp;gt;
+           {{- FOREACH arch IN post.$list.values -}}
+            {{- arch.name -}}
+            {{- IF (loop.index != loop.max) -}},{{- END -}}
+           {{- END -}}
+        &amp;lt;/{{ list }}&amp;gt;
+        {{ END }}
+    {{- END -}}
+        &amp;lt;/item&amp;gt;
+    {{ END }}
+  &amp;lt;/channel&amp;gt;
+&amp;lt;/rss&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: در این قالب چند نکته جدید را می‌بینید، یکی برچسب BUILD که اطلاعات زمان اجرای فرمان build را در خود دارد، مانند CALENDAR برای هر پست&lt;/p&gt;
+
+&lt;p&gt;و دیگری استفاده جدید از حلقه ها و متغیرهای آن‌ها، خط هجده را ببینید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{- FOREACH list IN SITE.lists -}}
+        {{ IF post.$list }}
+    ...
+    ...
+       {{- FOREACH arch IN post.$list.values -}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در حلقه‌ی اول هر لیستی را که در فایل تنظیمات سایت تنظیم کرده‌ایم را چک می‌کند و از این به بعد با استفاده از علامت $ به جای {{}} میتوانیم از مقدار متغیر در کدهای قالب استفاده کنیم، در خط بعد چک میکنیم اگر این مقدار در پست وجود داشته باشد، در حلقه‌ی جدید نام آن را استخراج می‌کنیم.&lt;/p&gt;
+
+&lt;p&gt;حلقه‌ی بالا برای نمایش دادن تمام لیست‌های آرشیو موجود در هر سایت است، یعنی مثلا اگر category در هدر باشد، مقدار یا مقدارهای آن‌را به نمایش در می‌آورد، اما ممکن است بپرسید چرا در قالب post از این روش استفاده نکردیم و با استفاده از IF و FOREACH جدا جدا هر لیست را لود کردیم؟!&lt;/p&gt;
+
+&lt;p&gt;جواب ساده است، برای اینکه کنترل بیشتری بر روی مکان هر آرشیو داشته باشیم، میخواستیم ترتیب لیست‌ها و مکان قرار گیریشان در قالب دقیقا تحت کنترل خودمان باشد، مثلا نام نویسنده را قبل از بدنه محتوا قرار بدهیم و دسته بندی ها را بعد از آن. اما برای feed نیازی به این مورد نداشتیم، فقط نیاز داریم همه‌ی لیست‌ها دقیقا بعد از متن نمایش داده شوند.&lt;/p&gt;
+
+&lt;p&gt;همچنین از یک شرط جدید هم استفاده شده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{- IF (loop.index != loop.max) -}},{{- END -}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;با استفاده از loop میتوانیم مشخصات حلقه‌ی در حال اجرا را چک کنیم، loop.index می‌گوید که مرتبه چندم از اجرای حلقه هستیم و loop.max، حداکثر دفعاتی که یک حلقه FOREACH با توجه به سایز لیستی که لود کرده خواهد داشت.&lt;/p&gt;
+
+&lt;p&gt;آیتم‌هایی که نمایش داده می‌شوند را با یک کاما بعد از هر کدام از هم جدا کردیم، اما نمیخواستیم که کاما بعد از آخرین آیتم هم نمایش داده شود، پس چک کردیم که اگر در آخر حلقه هستیم دیگر کاما نمایش داده نشود.&lt;/p&gt;
+
+&lt;p&gt;بدون این شرط، برچسب زیر
+    &lt;tags&gt;vimrc,terminal,vimrc bank,ترمینال,vim&lt;/tags&gt;&lt;/p&gt;
+
+&lt;p&gt;به شکل زیر، بعد از vim یک کامای اضافه نمایش داده خواهد شد:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;tags&amp;gt;vimrc,terminal,vimrc bank,ترمینال,vim,&amp;lt;/tags&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و نکته‌ی آخر، بعضی از خط ها بعد و قبل از استفاده از جفت آکولادها {{ }} از یک خط تیره - استفاده شده {{- -}}، آکولادها قبل و بعد از خود یک کاراکتر خط جدید را هم به نمایش در می‌آورند. البته برای ساختن قالب‌های html چندان اهمیتی ندارند، چرا که در html تا از &lt;br&gt; یا &lt;p&gt;&lt;/p&gt; یا سایر برچسب‌های مشابه استفاده نکنیم خطوط جدید ساخته نمی‌شوند، و این کاراکترهای خط جدید که قبل و بعد از آکولاد تولید می‌شوند، باعث تفکیک کدها و خواناتر شدن آن هم می‌شوند. اما برای ساختن یک xml تمیز بهتر است که این کاراکترهای خط جدید وجود نداشته باشند. با گذاشتن خط تیره - مانع از فاصله افتادن بین خطوط می‌شویم.&lt;/p&gt;</description>
+          <pubDate>2017-03-28 19:21:48</pubDate>
+          <link>/start-fa/feed-template/</link>
+          <guid isPermaLink="true">/start-fa/feed-template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>post template</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;فایل post.tt2 برای ساختن قالب تکی پست‌ها و نوشته در آدرسی است که در فیلد permalink در تنظیمات سایت مشخص کرده‌ایم استفاده می‌شود.&lt;/p&gt;
+
+&lt;p&gt;در این مثال، آدرس‌های زیر با استفاده از این قالب ساخته می‌شوند:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;address.com/blog/category/year/month/day/post_title.html
+address.com/en/year/month/day/post_title/
+address.com/linux/author/post_title/
+address.com/story/category/post_title/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر به قالب‌های index و archive یک بار دیگر نگاه بیندازید میبینید که پست ها را با استفاده از یک حلقه {{ FOREACH post IN POSTS }} لود کردیم، در مورد post اما استفاده از این حلقه اجباری نیست، یعنی اگر از آن استفاده نکنیم باز هم &lt;strong&gt;post&lt;/strong&gt; مقدار معتبری دارد.&lt;/p&gt;
+
+&lt;p&gt;هر دو کد زیر برای استفاده در post معتبر هستند:
+    &lt;td&gt;
+    {{ Foreach post IN POSTS }}
+        {{ post.title }}
+    {{ END }}
+    &lt;/td&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+    {{ post.title }}
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در post.tt2 استفاده از حلقه POSTS زمانی مفید است که بخواهید با متغیر دیگری به جز post مقادیر را فراخوانی کنید، مثلا:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;td&amp;gt;
+{{ Foreach entry IN POSTS }}
+    {{ entry.title }}
+{{ END }}
+&amp;lt;/td&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;به جز این مورد تقریبا تمام برچسب‌های دیگر بین archive، post و index شبیه به هم هستند و معتبر. پس میتوانیم عینا از قالب index برای post هم استفاده کنیم، اما عملا این کار برای قالبی که در حال ساخت آن هستیم مفید نیست، چرا که در قالب index خلاصه نوشته ها را برای نمایش در نظر گرفتیم و نه متن کامل یا در index و archive جزییات زیادی از هر پست را لود نکردیم، مثلا در سایت آموزش لینوکس هر نوشته نام نویسنده‌ی متفاوتی داشت، یا دسته بندی‌هایی که انجام داد بودیم، مثل tag ها در وبلاگ ها یا keywordها در داستان و عکس اختصاصی که برای نوشته‌های وبلاگ فارسی و آموزش لینوکس داشتیم و category ها. البته تمام این موارد را میشود در قالب‌های index یا archive هم نمایش داد، اما برای ساده بودن قالب از آن‌ها چشم پوشی شده.&lt;/p&gt;
+
+&lt;p&gt;اما نحوه‌ی اضافه کردن، تمام مشخصات هر نوشته که در هدر به آن نسبت داده شده مثل تاریخ، category، tag و ... در حلقه POSTS قابل بازیابی است، مثلا {{ post.category }}، البته برای لود کردن مقادیر گروهی یا آرشیوها باید از یک حلقه‌ها جدید داخل حلقه قبلی استفاده کنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH kw IN post.keywords }}
+    {{ kw }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;و اگر مقداری که فراخوانی میکنیم را قبلا آرشیو کرده باشیم، یعنی مقدارش را در فایل تنظیمات به فیلد lists وارد کرده باشیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH tag IN post.tags.values }}
+    &amp;lt;a href=&quot;{{ tag.url }}&quot;&amp;gt;{{ tag.name }}&amp;lt;/a&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از آنجا که برای تمام سایت‌ها میخواهیم از یک قالب استفاده کنیم و لیست‌های آرشیو و فیلدهای سربرگ که برای هرکدام در نظر گرفتیم با دیگران متفاوت است، از عبارت شرطی {{ IF }} برای تست اینکه آیا فیلد مورد نظر در این پست وجود دارد یا نه کمک میگیریم، مثلا پست‌های وبلاگ داستان فیلد tags را در سربرگ نداشتند.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ IF tags }}
+{{ FOREACH tag IN post.tags.values }}
+    &amp;lt;a href=&quot;{{ tag.url }}&quot;&amp;gt;{{ tag.name }}&amp;lt;/a&amp;gt;
+{{ END }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یک بار دیگر به جزییات سربرگ‌هایی که داشتیم برگردیم، تمام فیلدهایی که برای هر چهار سایت در نظر گرفته بودیم، این فیلدها بودند:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;image
+description
+author
+category
+tags
+categories
+keywords
+suggests
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;که به جز keywords و suggests، در story و image در آموزش لینوکس و وبلاگ فارسی، مابقی را به عنوان لیست آرشیو برای سایت‌هایشان هم در نظر گرفته بودیم. با توجه به تمام توضیحاتی که دادیم قالب post را به این صورت می‌سازیم، کدهای زیر را در post.tt2 کپی کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot; xml:lang=&quot;en&quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;
+    &amp;lt;meta name=&quot;description&quot; content=&quot;{{ DESCRIPTION }}&quot;&amp;gt;
+    &amp;lt;meta name=&quot;author&quot; content=&quot;{{ MainAUTHOR }}&quot;&amp;gt;
+    &amp;lt;link rel=&quot;shortcut icon&quot; href=&quot;{{ MAIN.author_image }}&quot;&amp;gt;
+    &amp;lt;title&amp;gt;{{ PageTITLE }}&amp;lt;/title&amp;gt;
+    &amp;lt;style&amp;gt;
+    img {
+    max-width: 100% !important;
+    }
+    &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;center&amp;gt;
+    &amp;lt;img src=&quot;{{ SITE.author_image }}&quot;&amp;gt;
+    &amp;lt;h1&amp;gt;{{ TITLE }}&amp;lt;/h1&amp;gt;
+    &amp;lt;h2&amp;gt;{{ DESCRIPTION }}&amp;lt;/h2&amp;gt;
+    &amp;lt;/center&amp;gt;
+    &amp;lt;hr&amp;gt;
+    &amp;lt;table&amp;gt;
+    &amp;lt;tr&amp;gt;
+&amp;lt;!-- Content --&amp;gt;
+    &amp;lt;td width=&quot;70%&quot;&amp;gt;
+    {{ FOREACH post IN POSTS }}
+      &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ post.url }}&quot;&amp;gt;{{ post.title }}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;
+      &amp;lt;h5&amp;gt;{{ post.CALENDAR.jday_name }} {{ post.CALENDAR.jday }} {{ post.CALENDAR.jmonth_name }} {{ post.CALENDAR.jyear }}&amp;lt;/h5&amp;gt;
+      &amp;lt;h5&amp;gt;{{ post.CALENDAR.day_name }} {{ post.CALENDAR.day }} {{ post.CALENDAR.month_name }} {{ post.CALENDAR.year }}&amp;lt;/h5&amp;gt;
+      {{ IF post.description }}description: {{ post.description }}{{ END }}&amp;lt;br&amp;gt;
+      {{ IF post.image }}&amp;lt;img src=&quot;{{ post.image }}&quot;&amp;gt;{{ END }}
+      {{ IF post.author }}
+      author: {{ FOREACH author IN post.author.values }}&amp;lt;a href=&quot;{{ author.url }}&quot;&amp;gt;{{ author.name }}&amp;lt;/a&amp;gt;{{ END }}&amp;lt;br&amp;gt;
+      {{ END }}
+      &amp;lt;p&amp;gt;{{ post.body.more }}&amp;lt;/p&amp;gt;
+      {{ IF post.category }}
+      category: {{ FOREACH cat IN post.category.values }}&amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt;{{ END }}&amp;lt;br&amp;gt;
+      {{ END }}
+      {{ IF post.tags }}
+      tags: {{ FOREACH tag IN post.tags.values }}&amp;lt;a href=&quot;{{ tag.url }}&quot;&amp;gt;{{ tag.name }}&amp;lt;/a&amp;gt;/{{ END }}&amp;lt;br&amp;gt;
+      {{ END }}
+      {{ IF post.categories }}
+      categories: {{ FOREACH cat IN post.categories.values }}&amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt;/{{ END }}&amp;lt;br&amp;gt;
+      {{ END }}
+      {{ IF post.keywords }}
+      keywords: {{ FOREACH kw IN post.keywords }}{{ kw }}/{{ END }}&amp;lt;br&amp;gt;
+      {{ END }}
+      &amp;lt;hr&amp;gt;
+    {{ END }}
+    &amp;lt;/td&amp;gt;
+&amp;lt;!-- sidebar --&amp;gt;
+    &amp;lt;td width=&quot;30%&quot;&amp;gt;
+    &amp;lt;/td&amp;gt;
+    &amp;lt;/tr&amp;gt;
+&amp;lt;!-- pagination --&amp;gt;
+    &amp;lt;tr&amp;gt;
+      &amp;lt;td width=&quot;30%&quot;&amp;gt;
+      {{ IF PAGE.prev }}
+        &amp;lt;a href=&quot;{{ PAGE.prev.url }}&quot;&amp;gt;prev: {{ PAGE.prev.title }}&amp;lt;/a&amp;gt;
+      {{- END }}
+        |
+      {{ IF PAGE.next }}
+            &amp;lt;a href=&quot;{{ PAGE.next.url }}&quot;&amp;gt;next: {{ PAGE.next.title }}&amp;lt;/a&amp;gt;
+      {{- END }}
+      &amp;lt;/td&amp;gt;
+    &amp;lt;/tr&amp;gt;   
+    &amp;lt;/table&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: &lt;br /&gt;
+پیش از این در قسمت تنظیمات گفته شد که هر فیلدی که در تنظیمات اختصاصی سایت نباشد، مقدارش برابر با مقداری است که در فایل تنظیمات عمومی وجود دارد، اگر به یاد داشته باشید برای همین هم در تنظیم سایت دنباله دار، فیلد لیست را به صورت خالی وارد کردیم.&lt;/p&gt;
+
+&lt;p&gt;حالا خطوط ۷ و ۱۷ قالب post را ببینید، در تنظیمات هیچ‌کدام از سایت‌ها فیلدی به نام author_image وجود نداشت این فیلد را تنها در تنظیمات عمومی نوشته بودیم، اما در خط ۱۷ به جای MAIN که متعلق به تنظیمات عمومی است، با SITE که برای تنظیمات سایت‌هاست، آن را لود کرده‌ایم و مقدار معتبری بر میگرداند. &lt;br /&gt;
+البته استفاده از این تگ منطقی نیست و فقط برای مثال و درک بهتر کارکرد فیلدها در تنظیمات به این صورت نوشته شده.&lt;/p&gt;</description>
+          <pubDate>2017-03-28 19:14:35</pubDate>
+          <link>/start-fa/post-template/</link>
+          <guid isPermaLink="true">/start-fa/post-template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>archive template</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;فایل archive.tt2 حاوی قالب ساخت تمام صفحات آرشیو است، برای مثال این صفحه‌ها:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/blog/category/anime/
+/blog/archive/1395/08/
+/en/tags/Promise/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;فایل archive.tt2 را برای ویرایش باز کنید و کدهای زیر را در آن کپی کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot; xml:lang=&quot;en&quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;
+    &amp;lt;meta name=&quot;description&quot; content=&quot;{{ DESCRIPTION }}&quot;&amp;gt;
+    &amp;lt;meta name=&quot;author&quot; content=&quot;{{ MainAUTHOR }}&quot;&amp;gt;
+    &amp;lt;link rel=&quot;shortcut icon&quot; href=&quot;{{ MAIN.author_image }}&quot;&amp;gt;
+    &amp;lt;title&amp;gt;{{ PageTITLE }}&amp;lt;/title&amp;gt;
+    &amp;lt;style&amp;gt;
+    entry img {
+    max-width: 100% !important;
+    }
+    &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;center&amp;gt;
+    &amp;lt;img src=&quot;{{ MAIN.logo }}&quot;&amp;gt;
+    &amp;lt;h1&amp;gt;{{ TITLE }}&amp;lt;/h1&amp;gt;
+    &amp;lt;h2&amp;gt;{{ ArchiveTITLE }}&amp;lt;/h2&amp;gt;
+    &amp;lt;/center&amp;gt;
+    &amp;lt;hr&amp;gt;
+    &amp;lt;table&amp;gt;
+    &amp;lt;tr&amp;gt;
+&amp;lt;!-- Content --&amp;gt;
+    &amp;lt;td width=&quot;70%&quot;&amp;gt;
+    {{ FOREACH post IN POSTS }}
+      &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ post.url }}&quot;&amp;gt;{{ post.title }}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;
+    {{ END }}
+    &amp;lt;/td&amp;gt;
+&amp;lt;!-- sidebar --&amp;gt;
+    &amp;lt;td width=&quot;30%&quot;&amp;gt;
+    &amp;lt;/td&amp;gt;
+    &amp;lt;/tr&amp;gt;
+&amp;lt;!-- pagination --&amp;gt;
+    &amp;lt;tr&amp;gt;
+      &amp;lt;td width=&quot;30%&quot;&amp;gt;
+      {{ IF PAGE.prev }}
+        &amp;lt;a href=&quot;{{ PAGE.prev.url }}&quot;&amp;gt;prev: page {{ PAGE.prev.title }}&amp;lt;/a&amp;gt;
+      {{- END }}
+        | page {{ PAGE.number }} of {{PAGE.total}} |
+      {{ IF PAGE.next }}
+            &amp;lt;a href=&quot;{{ PAGE.next.url }}&quot;&amp;gt;next: page {{ PAGE.next.title }}&amp;lt;/a&amp;gt;
+      {{- END }}
+      &amp;lt;/td&amp;gt;
+    &amp;lt;/tr&amp;gt;   
+    &amp;lt;/table&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اگر به قالب‌های index و archive دقت کنید، تقریبا شبیه به هم هستند و تفاوت‌ها جزیی است، البته در index خلاصه متن را با {{ post.body.less }} فراخوانی کردیم، یا تاریخ‌ها را با برچسب‌های {{ post.CALENDAR }}، اما در قالب archive ما این برچسب‌ها نیستند، که به صورت اختیاری حذف شده‌اند و اگر نیازی داشته باشید می‌توانید از تمامشان استفاده کنید، تنها تفاوت بین این دو قالب {{ ArchiveTITLE }} است که در index یک برچسب نامعتبر به حساب می‌آید.&lt;/p&gt;</description>
+          <pubDate>2017-03-28 19:12:38</pubDate>
+          <link>/start-fa/archive-template/</link>
+          <guid isPermaLink="true">/start-fa/archive-template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>index template</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;فایل index.tt2 برای ساختن صفحه‌ی اصلی هر سایت در آدرسی است که برای آن در فیلدهای url و root تنظیماتش مشخص کرده‌اید.&lt;/p&gt;
+
+&lt;p&gt;در این مثال، آدرس‌های زیر با استفاده از این قالب ساخته می‌شوند:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;address.com/blog/
+address.com/blog/page/1/ , address.com/blog/page/2/ ...
+
+address.com/en/
+address.com/en/page/1/ , address.com/en/page/1/ ...
+
+address.com/story/ ...
+address.com/linux/ ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;کدهای زیر را در index.tt2 کپی کنید:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot; xml:lang=&quot;en&quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;
+    &amp;lt;meta name=&quot;description&quot; content=&quot;{{ DESCRIPTION }}&quot;&amp;gt;
+    &amp;lt;meta name=&quot;author&quot; content=&quot;{{ MainAUTHOR }}&quot;&amp;gt;
+    &amp;lt;link rel=&quot;shortcut icon&quot; href=&quot;{{ MAIN.author_image }}&quot;&amp;gt;
+    &amp;lt;title&amp;gt;{{ PageTITLE }}&amp;lt;/title&amp;gt;
+    &amp;lt;style&amp;gt;
+    entry img {
+    max-width: 100% !important;
+    }
+    &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;center&amp;gt;
+    &amp;lt;img src=&quot;{{ MAIN.logo }}&quot;&amp;gt;
+    &amp;lt;h1&amp;gt;{{ TITLE }}&amp;lt;/h1&amp;gt;
+    &amp;lt;h2&amp;gt;{{ DESCRIPTION }}&amp;lt;/h2&amp;gt;
+    &amp;lt;/center&amp;gt;
+    &amp;lt;hr&amp;gt;
+    &amp;lt;table&amp;gt;
+    &amp;lt;tr&amp;gt;
+&amp;lt;!-- Content --&amp;gt;
+    &amp;lt;td width=&quot;70%&quot;&amp;gt;
+    {{ FOREACH post IN POSTS }}
+      &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ post.url }}&quot;&amp;gt;{{ post.title }}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;
+      &amp;lt;h5&amp;gt;{{ post.CALENDAR.jday_name }} {{ post.CALENDAR.jday }} {{ post.CALENDAR.jmonth_name }} {{ post.CALENDAR.jyear }}&amp;lt;/h5&amp;gt;
+      &amp;lt;h5&amp;gt;{{ post.CALENDAR.day_name }} {{ post.CALENDAR.day }} {{ post.CALENDAR.month_name }} {{ post.CALENDAR.year }}&amp;lt;/h5&amp;gt;
+      &amp;lt;p&amp;gt;{{ post.body.less }}&amp;lt;/p&amp;gt;
+      &amp;lt;br&amp;gt;
+      &amp;lt;a href=&quot;{{ url }}#more&quot;&amp;gt;Continue...&amp;lt;/a&amp;gt;
+      &amp;lt;hr&amp;gt;
+    {{ END }}
+    &amp;lt;/td&amp;gt;
+&amp;lt;!-- sidebar --&amp;gt;
+    &amp;lt;td width=&quot;30%&quot;&amp;gt;
+    &amp;lt;/td&amp;gt;
+    &amp;lt;/tr&amp;gt;
+&amp;lt;!-- pagination --&amp;gt;
+    &amp;lt;tr&amp;gt;
+      &amp;lt;td width=&quot;30%&quot;&amp;gt;
+      {{ IF PAGE.prev }}
+        &amp;lt;a href=&quot;{{ PAGE.prev.url }}&quot;&amp;gt;prev: page {{ PAGE.prev.title }}&amp;lt;/a&amp;gt;
+      {{- END }}
+        | page {{ PAGE.number }} of {{PAGE.total}} |
+      {{ IF PAGE.next }}
+            &amp;lt;a href=&quot;{{ PAGE.next.url }}&quot;&amp;gt;next: page {{ PAGE.next.title }}&amp;lt;/a&amp;gt;
+      {{- END }}
+      &amp;lt;/td&amp;gt;
+    &amp;lt;/tr&amp;gt;   
+    &amp;lt;/table&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;از آنجا که بدنه اصلی کدهای تشکیل دهنده‌ی index، archive و post تقریبا یکی است، در مورد این کدها بعد از ساختن قالب post بیشتر توضیح می‌دهیم. و توضیحات تکمیلی‌تر را هم بعد از ساختن atom.tt2 با هم مرور می‌کینم.&lt;/p&gt;</description>
+          <pubDate>2017-03-28 19:09:26</pubDate>
+          <link>/start-fa/index-template/</link>
+          <guid isPermaLink="true">/start-fa/index-template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>main template</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;فایل main.tt2 برای ساختن یک قالب مشترک بین تمام سایت‌هاست، یک صفحه ارتباطی.&lt;/p&gt;
+
+&lt;p&gt;مسیری که به عنوان url و root در فایل config.yml مشخص کرده باشید با استفاده از این قالب ساخته می‌شود.&lt;/p&gt;
+
+&lt;p&gt;در این مثال این صفحه با استفاده از این قالب ساخته می‌شود.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;address.com/index.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;این فایل را با هر ویرایشگری که دوست دارید باز کنید و کدهای زیر را در آن کپی کنید&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot; lang=&quot;en&quot; xml:lang=&quot;en&quot;&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&quot;utf-8&quot;&amp;gt;
+    &amp;lt;meta name=&quot;description&quot; content=&quot;{{ MainDESCRIPTION }}&quot;&amp;gt;
+    &amp;lt;meta name=&quot;author&quot; content=&quot;{{ MainAUTHOR }}&quot;&amp;gt;
+    &amp;lt;link rel=&quot;shortcut icon&quot; href=&quot;{{ MAIN.author_image }}&quot;&amp;gt;
+    &amp;lt;title&amp;gt;{{ PageTITLE }}&amp;lt;/title&amp;gt;
+    &amp;lt;style&amp;gt;
+    entry img {
+    max-width: 100% !important;
+    }
+    &amp;lt;/style&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;center&amp;gt;
+    &amp;lt;img src=&quot;{{ MAIN.logo }}&quot;&amp;gt;
+    &amp;lt;h1&amp;gt;{{ MainTITLE }}&amp;lt;/h1&amp;gt;
+    &amp;lt;h2&amp;gt;{{ MainDESCRIPTION }}&amp;lt;/h2&amp;gt;
+    &amp;lt;/center&amp;gt;
+    &amp;lt;hr&amp;gt;
+    &amp;lt;table&amp;gt;
+    &amp;lt;tr&amp;gt;
+    {{ FOREACH site IN FLOORS.values.sort('name') }}
+      &amp;lt;td style=&quot;border-right: 1px solid black; width: 25%;&quot; valign=&quot;top&quot;&amp;gt;
+      &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ site.root }}&quot;&amp;gt;{{ site.name }}&amp;lt;/a&amp;gt;&amp;lt;/h2&amp;gt;
+      &amp;lt;p&amp;gt;{{ site.description }}&amp;lt;/p&amp;gt;
+      &amp;lt;hr&amp;gt;
+      &amp;lt;ul&amp;gt;
+      {{ FOREACH post IN site.posts }}
+        &amp;lt;li&amp;gt;&amp;lt;h4&amp;gt;&amp;lt;a href=&quot;{{ post.url }}&quot;&amp;gt;{{ post.title }}&amp;lt;/a&amp;gt;&amp;lt;h4&amp;gt;&amp;lt;/li&amp;gt;
+        {{ post.body.less }}
+      {{ END }}
+      &amp;lt;/ul&amp;gt;
+      &amp;lt;/td&amp;gt;
+    {{ END }}
+    &amp;lt;/tr&amp;gt;
+    &amp;lt;/table&amp;gt;
+
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;نکته&lt;/strong&gt;: تمام مواردی را که در تنظیمات ذخیره شده می‌توان با استفاده از بر چسب‌های MAIN و SITE در قالب نیز فراخوانی کرد، مانند خط ۲۱ همین قالب که با استفاده از {{ MAIN.logo }} مقداری را که در config.yml ذخیره کرده بودیم را فراخوانی کردیم.&lt;/p&gt;
+
+&lt;p&gt;همیچنین می‌توان تنظیماتی که در شاخه‌ی config و برای هر سایت مشخص کرده‌ایم را به این شکل فراخوانی کرد: {{ SITE.lang }} و ...&lt;/p&gt;
+
+&lt;p&gt;حالا که یک قالب داریم میتوانیم اولین build را انجام دهیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mira build
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یک نسخه‌ی قابل انتشار از سایت در شاخه‌ی public به وجود آمده، حالا با دستور 
+    mira view&lt;/p&gt;
+
+&lt;p&gt;یک سرور برای پیش نمایش اجرا می‌کینم.&lt;/p&gt;
+
+&lt;p&gt;حالا به این آدرس بروید:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;//127.0.0.1:5000&quot;&gt;127.0.0.1:5000&lt;/a&gt;&lt;/p&gt;</description>
+          <pubDate>2017-03-28 19:06:14</pubDate>
+          <link>/start-fa/main-template/</link>
+          <guid isPermaLink="true">/start-fa/main-template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>توضیح ساختار قالب در میرا</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;هر قالب در میرا یک پوشه است در شخه‌ی template&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~mira/template/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;گفتیم که در این مثال می‌خواهیم یک قالب جدید با نام my-theme را برای استفاده در سایت‌مان بسازیم. پس نیاز به یک دایرکتوری جدید به همین نام در مسیر فوق داریم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/template/my-theme/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;هر قالب در میرا از تعدادی فایل پوسته تشکیل می‌شود، پنج فایل به شکل پیش فرض تعریف شده‌اند و هر تعداد که بخواهید فایل‌های فرعی.&lt;/p&gt;
+
+&lt;p&gt;پنج فایلی که برای داشتن یک قالب کامل مورد نیاز هستند این ها هستند: main.tt2 و index.tt2 و archive.tt2 و post.tt2 و atom.tt2&lt;/p&gt;
+
+&lt;p&gt;یک توضیح مختصر در مورد اینکه هر کدام از این‌فایل‌ها برای چه کاری مورد استفاده قرار می‌گیرند:&lt;/p&gt;
+
+&lt;p&gt;فایل main.tt2 برای ساختن یک قالب مشترک بین تمام سایت‌هاست، یک صفحه ارتباطی. در اصل پوسته‌ی سازنده‌ی root عمومی که در config.yml تعریف کردیم. در این مثال address.com/index.html با این پوسته ساخته می‌شود.&lt;/p&gt;
+
+&lt;p&gt;فایل index.tt2 برای ساختن صفحه‌ی اصلی هر سایت در آدرسی است که برای آن در فیلدهای url و root تنظیماتش مشخص کرده‌اید استفاده می‌شود.&lt;/p&gt;
+
+&lt;p&gt;فایل archive.tt2 حاوی قالب ساخت تمام صفحات آرشیو است.&lt;/p&gt;
+
+&lt;p&gt;فایل post.tt2 برای ساختن قالب تکی پست‌ها و نوشته‌ها در آدرسی است که در فیلد permalink در تنظیمات سایت مشخص کرده‌ایم.&lt;/p&gt;
+
+&lt;p&gt;فایل atom.tt2 برای ساختن فید مطالب هر سایت به کار می‌رود.&lt;/p&gt;
+
+&lt;p&gt;پنج فایل جدید در شاخه‌ی قالب my-theme بسازید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/template/my-theme/
+.
+│
+├── archive.tt2
+├── atom.tt2
+├── index.tt2
+├── main.tt2
+└── post.tt2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;می‌توانید قالبی را که در ادامه به ساختن آن می‌پردازیم را از این جا دانلود کنید:&lt;/p&gt;
+
+&lt;h4&gt;دانلود &lt;a href=&quot;https://raw.githubusercontent.com/miraxy/sample/master/template.zip&quot;&gt;شاخه template&lt;/a&gt;&lt;/h4&gt;</description>
+          <pubDate>2017-03-28 13:24:05</pubDate>
+          <link>/start-fa/template/</link>
+          <guid isPermaLink="true">/start-fa/template/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>مسیر تصاویر یا imageurl</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;در تنظیمات یک فیلد دیگر را به نام imageurl مقدار دهی کرده بودیم، برخلاف فیلد static که در تنظیمات عمومی تاثیر گذار بود و در تنظیمات اختصاصی تنها برای دسترسی در قالب استفاده می‌شد، این فیلد در تنظیمات عمومی استفاده‌ی خاصی ندارد و فقط برای دسترسی در قالب تعریف شده، اما در تنظیمات اختصاصی تاثیر گذار است.&lt;/p&gt;
+
+&lt;p&gt;مورد استفاده این فیلد در پارسرهای داخلی میرا و هنگلم نوشتن متن محتوا است، در تنظیمات وبلاگ فارسی به این فیلد این مقدار را داده بودیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;imageurl: /blog/assets/article_images
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;حالا در هر کدام از نوشته‌های این سایت اگر از تگ {{ img }} استفاده کنیم، میرا دنبال تصاویر در این مسیر میگردد. &lt;br /&gt;
+نحوه‌ی استفاده از {{ img }} به این شکل است:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ img image/address/pic.jpg [alt] [title] }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;اولین نوشته در وبلاگ فارسی را به یاد دارید؟&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;~/mira/content/blog-fa/2017-3-23-سلام-دنیا.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;بیایید یک‌بار دیگر آن‌را ویرایش کنیم:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+utid: 20170323112305
+date: 2017-03-23 11:23:05
+title: سلام دنیا
+_index: hello world
+category: آزمایش
+image: /blog/assets/article_images/hello.jpg
+---
+سلام دنیا  
+این اولین نوشته من است که برای تست کردن نوشته شده.
+
+{{ img /future/sky.jpg [image alt] [pic title] }}
+
+این یک متن آزمایشی است.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;نتیجه‌ی نهایی برای انتشار این‌گونه خواهد بود:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;سلام دنیا&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;این اولین نوشته من است که برای تست کردن نوشته شده.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;img src=&quot;/blog/assets/article_images/future/sky.jpg&quot; alt=&quot;image alt&quot; title=&quot;pic title&quot;&amp;gt;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;این یک متن آزمایشی است.&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;در برچسب {{ img }} مقادیر [alt] و [title] اختیاری هستند و می‌توانید از آن‌ها چشم پوشی کنید.&lt;/p&gt;</description>
+          <pubDate>2017-03-28 13:03:29</pubDate>
+          <link>/start-fa/images-statics/</link>
+          <guid isPermaLink="true">/start-fa/images-statics/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+
+
+    </channel>
+</rss>

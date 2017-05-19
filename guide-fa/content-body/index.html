@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="اسناد راهنما برای شروع کار با میرا">
+    <meta name="author" content="kiavash">
+
+    <title>بدنه اصلی محتوا - راهنمای میرا</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/static/mira-doc/style-rtl.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v7.0.0/dist/font-face.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/samim-font/v1.0.2/dist/font-face.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/shabnam-font/v1.1.0/dist/font-face.css">
+    <link href="/static/mira-theme/fonts/font-sahel/css/font-sahel.css" rel="stylesheet" type="text/css">
+    <link href="/static/mira-theme/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div class="custom-rtl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <div class="brand-centered">
+                <a class="navbar-brand" href="/"><img src="/static/img/mira-c.png" class="img-responsive mira-header" alt="mira"></a>
+              </div>
+            </div>
+
+
+            <!-- Collect the nav links, forms, and other content for toggling
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav navbar-right">
+               
+                 <li>
+                     <a href="http://miraxy.github.io/doc" name="Mira Documents">documents</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/doc-fa" name="اسناد میرا">اسناد</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/fa" name="چهارچوب مدیریت یکپارچه محتوا برای ساختن وبسایت‌های چندگانه">میرا</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/guide-fa" name="اسناد راهنما برای شروع کار با میرا">راهنمای میرا</a>
+                 </li>
+               
+                 <li>
+                     <a href="http://miraxy.github.io/start-fa" name="راهنمای شروع به کار با میرا">شروع</a>
+                 </li>
+               
+             </ul>
+           </div>
+            /.navbar-collapse -->
+
+        </div>
+
+  </nav>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-7 col-lg-offset-1 col-md-8">
+      
+      <a name="بدنه اصلی محتوا"></a>
+         <h2><a href="/guide-fa/content-body/">بدنه اصلی محتوا</a></h2>
+         <p>بدنه قسمت اصلی محتوای شماست، هر چیزی که در مورد آن میخواهید بنویسید در این قسمت قرار میگیرد.</p>
+
+<p>برای نوشتن بدنه می‌توانید از Mrkup Language هایی که میرا پشتیبانی میکند، کدهای html یا متن‌های خالص استفاده کنید</p>
+
+<pre><code>markdown
+md
+textile
+bbcode
+html
+text
+txt
+</code></pre>
+
+<p>تنها به یاد داشته باشید که برای نمایش صحیح متن، در فیلد <code>_markup</code> در سربرگ هر فایل یا فایل تنظیمات، مشخص کرده باشید که دقیقا از چه مارک‌آپی برای نوشتن متن استفاده کرده‌اید.</p>
+
+<h2>قسمت‌های بدنه</h2>
+
+<p>بدنه هنگام پردازش به دو قسمت less و more تقسیم میشود، less خلاصه یا توضیحی از متنی است که مینویسید و more شامل تمام متن نوشته شده می‌شود</p>
+
+<p>به شکل پیش فرض میرا ۶۰۰ حرف ابتدایی هر متن را بعد از حذف کردن تمام کدهای HTML که ممکن است در آن نوشته شده باشد و نادیده گرفتن تمام قواعد MarkUPی که استفاده کرده‌اید، به عنوان less مشخص می‌کند، اما در صورتیکه بخواهید مقدار less را می‌توانید خودتان مشخص کنید، کافی است هر جا که خواستید در متن‌تان این عبارت را بنویسید</p>
+
+<pre><code>&lt;!-- more --&gt;
+</code></pre>
+
+<p>تعداد فاصله ها مهم نیستند، میتوانید اینطور بنویسید</p>
+
+<pre><code>&lt;!--        more               --&gt;
+</code></pre>
+
+<p>تمام قسمت‌های قبل از آن به عنوان less مشخص می‌شوند، در این حالت کدهای HTML نیز از متن حذف نخواهند شد</p>
+
+<pre><code>خلاصه‌ای از متن
+یا همان
+less
+در این قسمت نوشته شده
+
+&lt;!--     more     --&gt;
+
+ادامه متن
+را در این قسمت
+مینویسیم
+کل متن قبل و بعد از نشانه گذار
+به عنوان
+more
+شناخته خواهد شد
+</code></pre>
+
+<p><br />
+<br />
+به یاد داشته باشید more شامل تمام متن، قبل و بعد از نشانه گذار
+    <a name="more"></a>
+می‌باشد.</p>
+      
+    </div>
+
+    <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 sidebar">
+<ul class="nav">
+  <li><h2><a href="/guide-fa/">راهنمای میرا</a></h2></li>
+  <li><h5>اسناد راهنما برای شروع کار با میرا</h5></li>
+
+
+    
+      
+        <h3>شروع</h3>
+      
+      
+      <h5><a href="#نصب">نصب</a></h5>
+<!--      <h5><a href="#/guide-fa/install/">نصب</a></h5> -->
+    
+      
+      
+      <h5><a href="#شروع">شروع</a></h5>
+<!--      <h5><a href="#/guide-fa/start/">شروع</a></h5> -->
+    
+      
+      
+      <h5><a href="#اولین نوشته">اولین نوشته</a></h5>
+<!--      <h5><a href="#/guide-fa/first-post/">اولین نوشته</a></h5> -->
+    
+      
+      
+      <h5><a href="#اولین انتشار">اولین انتشار</a></h5>
+<!--      <h5><a href="#/guide-fa/first-build/">اولین انتشار</a></h5> -->
+    
+      
+      
+      <h5><a href="#پیش نمایش">پیش نمایش</a></h5>
+<!--      <h5><a href="#/guide-fa/preview/">پیش نمایش</a></h5> -->
+    
+
+    
+      
+        <h3>تنظیمات</h3>
+      
+      
+      <h5><a href="#تنظیمات">تنظیمات</a></h5>
+<!--      <h5><a href="#/guide-fa/config/">تنظیمات</a></h5> -->
+    
+      
+      
+      <h5><a href="#استفاده از تنظیمات در قالب">استفاده از تنظیمات در قالب</a></h5>
+<!--      <h5><a href="#/guide-fa/configs-in-templates/">استفاده از تنظیمات در قالب</a></h5> -->
+    
+
+    
+      
+        <h3>محتوا</h3>
+      
+      
+      <h5><a href="#توضیح کلی در باره محتوا">توضیح کلی در باره محتوا</a></h5>
+<!--      <h5><a href="#/guide-fa/content/">توضیح کلی در باره محتوا</a></h5> -->
+    
+      
+      
+      <h5><a href="#تولید">تولید</a></h5>
+<!--      <h5><a href="#/guide-fa/creat/">تولید</a></h5> -->
+    
+      
+      
+      <h5><a href="#سربرگ">سربرگ</a></h5>
+<!--      <h5><a href="#/guide-fa/header/">سربرگ</a></h5> -->
+    
+      
+      
+      <h5><a href="#utid">utid</a></h5>
+<!--      <h5><a href="#/guide-fa/utid/">utid</a></h5> -->
+    
+      
+      
+      <h5><a href="#date">date</a></h5>
+<!--      <h5><a href="#/guide-fa/date/">date</a></h5> -->
+    
+      
+      
+      <h5><a href="#title">title</a></h5>
+<!--      <h5><a href="#/guide-fa/title/">title</a></h5> -->
+    
+      
+      
+      <h5><a href="#_index">_index</a></h5>
+<!--      <h5><a href="#/guide-fa/_index/">_index</a></h5> -->
+    
+      
+      
+      <h5><a href="#author">author</a></h5>
+<!--      <h5><a href="#/guide-fa/author/">author</a></h5> -->
+    
+      
+      
+      <h5><a href="#_markup">_markup</a></h5>
+<!--      <h5><a href="#/guide-fa/_markup/">_markup</a></h5> -->
+    
+      
+      
+      <h5><a href="#_permalink">_permalink</a></h5>
+<!--      <h5><a href="#/guide-fa/_permalink/">_permalink</a></h5> -->
+    
+      
+      
+      <h5><a href="#_layout">_layout</a></h5>
+<!--      <h5><a href="#/guide-fa/_layout/">_layout</a></h5> -->
+    
+      
+      
+      <h5><a href="#_type">_type</a></h5>
+<!--      <h5><a href="#/guide-fa/_type/">_type</a></h5> -->
+    
+      
+      
+      <h5><a href="#فیلدهای انتخابی">فیلدهای انتخابی</a></h5>
+<!--      <h5><a href="#/guide-fa/other-fields/">فیلدهای انتخابی</a></h5> -->
+    
+      
+      
+      <h5><a href="#لیست ها">لیست ها</a></h5>
+<!--      <h5><a href="#/guide-fa/lists/">لیست ها</a></h5> -->
+    
+      
+      
+      <h5><a href="#آرشیو">آرشیو</a></h5>
+<!--      <h5><a href="#/guide-fa/archive/">آرشیو</a></h5> -->
+    
+      
+      
+      <h5><a href="#استراکچر">استراکچر</a></h5>
+<!--      <h5><a href="#/guide-fa/structure/">استراکچر</a></h5> -->
+    
+      
+      
+      <h5><a href="#بدنه اصلی محتوا">بدنه اصلی محتوا</a></h5>
+<!--      <h5><a href="#/guide-fa/content-body/">بدنه اصلی محتوا</a></h5> -->
+    
+
+    
+      
+        <h3>قالب</h3>
+      
+      
+      <h5><a href="#پوسته و اجزای تشکیل دهنده">پوسته و اجزای تشکیل دهنده</a></h5>
+<!--      <h5><a href="#/guide-fa/template/">پوسته و اجزای تشکیل دهنده</a></h5> -->
+    
+      
+      
+      <h5><a href="#main.tt2">main.tt2</a></h5>
+<!--      <h5><a href="#/guide-fa/main-template/">main.tt2</a></h5> -->
+    
+      
+      
+      <h5><a href="#index.tt2 و atom.tt2">index.tt2 و atom.tt2</a></h5>
+<!--      <h5><a href="#/guide-fa/indextemplate/">index.tt2 و atom.tt2</a></h5> -->
+    
+      
+      
+      <h5><a href="#archive.tt2">archive.tt2</a></h5>
+<!--      <h5><a href="#/guide-fa/archive-template/">archive.tt2</a></h5> -->
+    
+      
+      
+      <h5><a href="#post-template">post-template</a></h5>
+<!--      <h5><a href="#/guide-fa/post-template/">post-template</a></h5> -->
+    
+      
+      
+      <h5><a href="#نمایش محتوا، با استفاده از POSTS">نمایش محتوا، با استفاده از POSTS</a></h5>
+<!--      <h5><a href="#/guide-fa/show-posts/">نمایش محتوا، با استفاده از POSTS</a></h5> -->
+    
+      
+      
+      <h5><a href="#استفاده از فیلدهای فایل‌های تنظیمات در قالب">استفاده از فیلدهای فایل‌های تنظیمات در قالب</a></h5>
+<!--      <h5><a href="#/guide-fa/config-fields/">استفاده از فیلدهای فایل‌های تنظیمات در قالب</a></h5> -->
+    
+
+    
+      
+        <h3>parser</h3>
+      
+      
+      <h5><a href="#پارسرهای داخلی میرا">پارسرهای داخلی میرا</a></h5>
+<!--      <h5><a href="#/guide-fa/parser/">پارسرهای داخلی میرا</a></h5> -->
+    
+      
+      
+      <h5><a href="#img">img</a></h5>
+<!--      <h5><a href="#/guide-fa/img-parser/">img</a></h5> -->
+    
+
+</ul>
+</div>
+
+  </div>
+</div>
+
+<br>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                  <li>
+                    <a href="mailto: kiavash@gmail.com">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//twitter.com/kiavash">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//gitlab.com/kiavash/mira">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-gitlab fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="//github.com/kiamazi/mira">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+                <p><i class="fa fa-copyright" aria-hidden="true"></i>&nbsp; GPLv3</p>
+              </div>
+          </div>
+      </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript
+    <script src="/static/js/clean-blog.js"></script> -->
+
+</div>
+    <script type="text/javascript" src="/static/js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="/static/js/run.js"></script>
+
+</body>
+
+</html>

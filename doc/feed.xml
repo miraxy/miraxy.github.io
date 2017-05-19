@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>documents</title>
+    <description>Mira Documents</description>
+    <link>http://miraxy.github.io/doc</link>
+    <atom:link href="http://miraxy.github.io/doc/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate></pubDate>
+    <lastBuildDate></lastBuildDate>
+    <generator>mira</generator>
+
+
+      
+        <item>
+          <title>documents</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;configfiles&quot;&gt;config files&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;title&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;description&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;url&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;root&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;static&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;imageurl&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;publishDIR&lt;/p&gt;
+
+&lt;p&gt;default is 'public'&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;post_num&lt;/p&gt;
+
+&lt;p&gt;number or 'all'&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;archive_post_num&lt;/p&gt;
+
+&lt;p&gt;number or 'all'&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;feed_post_num&lt;/p&gt;
+
+&lt;p&gt;number or 'all'&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;post_sort&lt;/p&gt;
+
+&lt;p&gt;can set 'reverse'&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;default_floor&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;permalink&lt;/p&gt;
+
+&lt;p&gt;/:year/:month/:day/:FIELD_NAME/every_thing_else/:title .html or .php or .xhtnl or any extension you like&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;default_markup&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;markdown -or- md&lt;/li&gt;
+&lt;li&gt;mmd (mira markdown parser based on multimarkdown 2.0.b6)&lt;/li&gt;
+&lt;li&gt;bbcode&lt;/li&gt;
+&lt;li&gt;textile&lt;/li&gt;
+&lt;li&gt;text -or- txt   just add \&lt;br&gt; in enlines&lt;/li&gt;
+&lt;li&gt;html&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;default_extension&lt;/p&gt;
+
+&lt;p&gt;default extension for new content files, default is md&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;output_extension&lt;/p&gt;
+
+&lt;p&gt;default extension for output files, default is html&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;time_zone&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;t_start_tag&lt;/p&gt;
+
+&lt;p&gt;template tag for use in theme, default is {{&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;t_end_tag&lt;/p&gt;
+
+&lt;p&gt;template tag for use in theme, default is }}&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;t_outline_tag&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;post&quot;&gt;post&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;h3 id=&quot;header&quot;&gt;header&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;utid&lt;/p&gt;
+
+&lt;p&gt;master key of posts, dont edit it&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;date&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;title&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;_index&lt;/p&gt;
+
+&lt;p&gt;change value for :title, if empty, title will be used for output name&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;_permalink&lt;/p&gt;
+
+&lt;p&gt;change default permalink just for this post&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;_type&lt;/p&gt;
+
+&lt;p&gt;default is post, but can set 'page'&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;_markup&lt;/p&gt;
+
+&lt;p&gt;change body markup language just for this post&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;selective personal fields
+ like categories, tags, keywords, author and ...&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h3 id=&quot;body&quot;&gt;body&lt;/h3&gt;
+
+&lt;p&gt;post content body &lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;template&quot;&gt;template&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;h3 id=&quot;variables&quot;&gt;variables&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;h4 id=&quot;generalvariables&quot;&gt;general variables&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;MainTITLE&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MainDESCRIPTION&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MainURL&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MainROOT&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MainSTATIC&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MainIMAGEURL&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MainAUTHOR&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MainEMAIL&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;///////////////&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;TITLE&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;DESCRIPTION&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;URL&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ROOT&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;STATIC&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;IMAGEURL&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;AUTHOR&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;EMAIL&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;///////////////&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;MAIN : config.yml variables&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;SITE : /config/FLOORNAME.yml&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;///////////////&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PageTITLE&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;///////////////&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ENTRIES&lt;/p&gt;
+
+&lt;p&gt;all entries in content folder&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;FLOORS&lt;/p&gt;
+
+&lt;p&gt;all FLOORS in content folder, with config.yml(post_number) posts&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH site IN FLOORS.values.sort('name') }}
+
+
+   {{ IF site.SITE.direction == 'right' }}
+        &amp;lt;div dir=&quot;rtl&quot;&amp;gt;
+   {{ ELSE }}
+        &amp;lt;div dir=&quot;ltr&quot;&amp;gt;
+   {{ END }}
+
+
+   &amp;lt;a href=&quot;{{ site.root }}&quot;&amp;gt;{{ site.name }}&amp;lt;/a&amp;gt;
+   &amp;lt;p&amp;gt;{{ site.description }}&amp;lt;/p&amp;gt;
+
+
+   {{ FOREACH post IN site.posts }}
+        &amp;lt;a href=&quot;{{ post.url }}&quot;&amp;gt;{{ post.title }}&amp;lt;/a&amp;gt;
+        &amp;lt;p&amp;gt;{{ post.body.less }}&amp;lt;/p&amp;gt;
+   {{ END }}
+
+
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;description&lt;/li&gt;
+&lt;li&gt;name&lt;/li&gt;
+&lt;li&gt;root&lt;/li&gt;
+&lt;li&gt;url&lt;/li&gt;
+&lt;li&gt;SITE : config file variables&lt;/li&gt;
+&lt;li&gt;posts
+&lt;ul&gt;
+&lt;li&gt;all POSTS loop fields is valid&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ARCHIVES&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH archive IN ARCHIVES.pairs }}
+   {{ archive.key }}
+   {{ FOREACH item IN archive.value.values.sort('name').sort('number') }}
+      {{ item.name }}
+      {{ item.url }}
+      {{ item.posts.size }}
+      {{ FOREACH utid IN item.posts }}
+         {{ ENTRIES.$utid.url }}
+         {{ ENTRIES.$utid.title }}
+      {{ END }}
+   {{ END }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;name&lt;/li&gt;
+&lt;li&gt;url&lt;/li&gt;
+&lt;li&gt;furl&lt;/li&gt;
+&lt;li&gt;posts&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;if header fields&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;showname : namespace name&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;if date archive&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;number&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;year&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;month&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;month_name&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;number : YearMonth-&gt;201705&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;BUILD&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;BUILD.date&lt;/li&gt;
+&lt;li&gt;BUILD.year&lt;/li&gt;
+&lt;li&gt;BUILD.month&lt;/li&gt;
+&lt;li&gt;BUILD.month_name&lt;/li&gt;
+&lt;li&gt;BUILD.month_abbr&lt;/li&gt;
+&lt;li&gt;BUILD.day&lt;/li&gt;
+&lt;li&gt;BUILD.day_name&lt;/li&gt;
+&lt;li&gt;BUILD.day_abbr&lt;/li&gt;
+&lt;li&gt;BUILD.hour&lt;/li&gt;
+&lt;li&gt;BUILD.minute&lt;/li&gt;
+&lt;li&gt;BUILD.second&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;///////////////&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;POSTS&lt;/p&gt;
+
+&lt;p&gt;is not valid in main.tt2&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH post IN POSTS }}
+   &amp;lt;a href=&quot;{{ post.url }}&quot;&amp;gt;{{ post.title }}&amp;lt;/a&amp;gt;
+   {{ post.CALENDAR.day_name }}
+   {{ post.CALENDAR.day }}{{ post.CALENDAR.month_name }}{{ post.CALENDAR.year }}
+   {{ IF post.image }}&amp;lt;img src=&quot;{{ post.image }}&quot;&amp;gt;{{ END }}
+   {{ post.body.more }}
+
+
+   {{ IF post.category }}
+   {{ FOREACH cat IN post.category }}
+      &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt;{{ END }}&amp;lt;br&amp;gt;
+   {{ END }}
+
+
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;​&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;post.utid&lt;/li&gt;
+&lt;li&gt;post.title&lt;/li&gt;
+&lt;li&gt;post.slug&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;post.url&lt;/strong&gt;  : /floor_name/permalink/&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;post.furl&lt;/strong&gt; : your_url.com/floor_name/permalink/&lt;/li&gt;
+&lt;li&gt;post.date&lt;/li&gt;
+&lt;li&gt;post.CALENDAR.year&lt;/li&gt;
+&lt;li&gt;post.CALENDAR.month&lt;/li&gt;
+&lt;li&gt;post.CALENDAR.month_name&lt;/li&gt;
+&lt;li&gt;post.CALENDAR.month_abbr&lt;/li&gt;
+&lt;li&gt;post.CALENDAR.day&lt;/li&gt;
+&lt;li&gt;post.CALENDAR.day_name&lt;/li&gt;
+&lt;li&gt;post.CALENDAR.day_abbr&lt;/li&gt;
+&lt;li&gt;post.CALENDAR.hour&lt;/li&gt;
+&lt;li&gt;post.CALENDAR.minute&lt;/li&gt;
+&lt;li&gt;post.CALENDAR.second&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;post.body.less&lt;/strong&gt; : abstract post&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;post.body.more&lt;/strong&gt; : full post&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;post.($archive_list)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;for example, if tags is a archive field in post's header
+
+
+{{ FOREACH tag IN post.tags }}
+  &amp;lt;a href=&quot;{{ tag.url }}&quot;&amp;gt;{{ tag.name }}&amp;lt;/a&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;name&lt;/li&gt;
+&lt;li&gt;showname (if have namespace)&lt;/li&gt;
+&lt;li&gt;url&lt;/li&gt;
+&lt;li&gt;furl&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;($listname)_ARCHIVE&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if category is a archive list
+
+
+{{ FOREACH cat IN CATEGORY_ARCHIVE }}
+
+
+   &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt; - {{ cat.posts.size }}
+
+
+   {{ FOREACH utid IN cat.posts }}
+      {{ ENTRIES.$utid.url }}
+      {{ ENTRIES.$utid.title }}
+   {{ END }}
+
+
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;​&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;($date)_ARCHIVE&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH date IN DATE_ARCHIVE }}
+
+
+   like $listname_ARCHIVES
+
+
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;​&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;PAGE&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;PAGE.number&lt;/li&gt;
+&lt;li&gt;PAGE.total&lt;/li&gt;
+&lt;li&gt;PAGE.next.url&lt;/li&gt;
+&lt;li&gt;PAGE.next.title&lt;/li&gt;
+&lt;li&gt;PAGE.prev.url&lt;/li&gt;
+&lt;li&gt;PAGE.prev.title&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h4 id=&quot;templatesvariables&quot;&gt;templates variables&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;main.tt2&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;IS_MAIN&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;UTIDS : all posts's utid field&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH utid IN UTIDS }}
+ {{ ENTRIES.$utid.url }}
+ {{ ENTRIES.$utid.title }}
+
+
+ all variables in POSTS is valid
+
+
+{{ END }}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;​&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;index.tt2&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;IS_INDEX&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;archive.tt2&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ArchiveTITLE&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ARCH&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;ARCH.name&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ARCH.url&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ARCH.furl&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ARCH.posts&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH utid IN ARCH.posts }}
+      {{ ENTRIES.$utid.url }}
+      {{ ENTRIES.$utid.title }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;if field archive&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ARCH.showname  (if namespca)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;if date archive&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ARCH.year&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;ARCH.month&lt;/li&gt;
+&lt;li&gt;ARCH.month_name&lt;/li&gt;
+&lt;li&gt;ARCH.number : YearMonth -&gt; 201608&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;if field archive&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;IS_ARCHIVE&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;if date archive&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;IS_DATE_ARCHIVE&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;post.tt2&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Post_TITLE&lt;/li&gt;
+&lt;li&gt;IS_POST&lt;/li&gt;
+&lt;li&gt;IS_PAGE, if _type: page&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+          <pubDate>2017-05-01 02:26:06</pubDate>
+          <link>/doc/documents/</link>
+          <guid isPermaLink="true">/doc/documents/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+
+
+    </channel>
+</rss>

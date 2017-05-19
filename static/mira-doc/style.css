@@ -1,0 +1,326 @@
+*{
+	margin: 0;
+	padding:0;
+	font-family: Samim, Vazir, Shabnam, 'Open Sans', Lora, serif;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	outline: none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	direction: rtl;
+}
+*:not(input):not(textarea){
+}
+html, body{
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+	font-size: 14pt;
+	line-height: 22pt;
+	color: #333;
+	direction: rtl;
+	/* overflow-x: hidden; */
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.12em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; }
+
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	font-family: Shabnam;
+}
+
+
+header {
+  background-color: #314e6c;
+  color: #222;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom:30px;
+}
+
+header h1 {
+  font-size: 4em;
+  font-weight: 500;
+}
+
+header img {
+    display: block;
+    margin: 0 auto 20px;
+}
+header .page-header {
+    color: #FFFFFF;
+    border-bottom: 0px;
+}
+i.point-icon {
+  text-align: center;
+  font-size: 86px;
+  /*line-height: 216px;*/
+  color: #333;
+}
+.mira-header {
+  width: 50%;
+}
+
+code {
+  direction: ltr;
+  text-align: left;
+  display: block;
+  background-color: #EEE;
+  padding: 10px;
+
+}
+
+.jumbotron-custom {
+  background-color: transparent;
+}
+
+.intro-custom-odd {
+  background-color: #FFF;
+}
+.intro-custom-even {
+  background-color: #EEE;
+}
+
+
+.start-custom {
+  background-color: #EEE;
+/*  width: 100%; */
+}
+.start-custom p {
+  color: #000;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 300;
+}
+.start-custom code {
+  color: #999;
+}
+
+footer {
+  background-color: #333;
+  color: #EEE;
+  padding:50px 0 65px
+  margin: 0 auto;
+}
+footer {
+padding:50px 0 65px
+}
+footer .list-inline {
+margin:0;
+padding:0
+}
+footer .copyright {
+font-size:14px;
+text-align:center;
+margin-bottom:0
+}
+
+
+
+
+.navbar-custom .navbar-collapse {
+  border-color: rgba(255, 255, 255, 0.02);
+}
+.navbar-custom .navbar-toggle {
+  background-color: #FFF;
+  border-color: #999;
+  color: #444;
+  font-size: 12px;
+}
+.navbar .navbar-toggle .icon-bar {
+  background-color: #333;
+}
+.navbar .navbar-toggle:hover .icon-bar {
+  background-color: #666;
+}
+
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #F0F0F0;
+}
+.navbar-custom .navbar-brand {
+font-weight:100;
+font-size: 24pt;
+color: #222;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .navbar-brand:active,
+.navbar-custom .navbar-brand.active {
+  color: #666;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #000;
+  background-color: #F0F0F0;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #000;
+  background-color: #F0F0F0;
+}
+.navbar-default .navbar-nav > .disabled > a,
+.navbar-default .navbar-nav > .disabled > a:hover,
+.navbar-default .navbar-nav > .disabled > a:focus {
+  color: #000;
+  background-color: #F0F0F0;
+}
+
+
+.navbar-custom {
+position:absolute;
+top:0;
+left:0;
+width:100%;
+z-index:3;
+background-color: #FFF;
+}
+.navbar-custom .nav li a {
+  font-family: Samim, Vazir, 'Open Sans';
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #555;
+}
+@media only screen and (min-width:768px) {
+.navbar-custom {
+background-color: #FFF;
+}
+.navbar-custom .navbar-brand {
+color:#333;
+padding:20px
+}
+.navbar-custom .navbar-brand:hover,.navbar-custom .navbar-brand:focus {
+color:#0085a1;
+}
+.navbar-custom .nav li a {
+color:#333;
+padding:20px;
+font-weight: 800;
+}
+.navbar-custom .nav li a:hover,.navbar-custom .nav li a:focus {
+color:#0085a1;
+background: transparent;
+}
+
+}
+@media only screen and (min-width:1170px) {
+.navbar-custom {
+-webkit-transition:background-color .3s;
+-moz-transition:background-color .3s;
+transition:background-color .3s;
+-webkit-transform:translate3d(0,0,0);
+-moz-transform:translate3d(0,0,0);
+-ms-transform:translate3d(0,0,0);
+-o-transform:translate3d(0,0,0);
+transform:translate3d(0,0,0);
+-webkit-backface-visibility:hidden;
+backface-visibility:hidden
+}
+.navbar-custom.is-fixed {
+position:fixed;
+top:-63px;
+background-color:rgba(230,230,230,.9);
+border-bottom: 2px solid #CCC;
+-webkit-transition:-webkit-transform .3s;
+-moz-transition:-moz-transform .3s;
+transition:transform .3s
+}
+.navbar-custom.is-fixed .navbar-brand {
+color:#404040
+}
+.navbar-custom.is-fixed .navbar-brand:hover,.navbar-custom.is-fixed .navbar-brand:focus {
+color:#0085a1
+}
+.navbar-custom.is-fixed .nav li a {
+color:#404040;
+font-weight: 800;
+}
+.navbar-custom.is-fixed .nav li a:hover,.navbar-custom.is-fixed .nav li a:focus {
+color:#0085a1;
+background-color: transparent;
+}
+.navbar-custom.is-visible {
+-webkit-transform:translate3d(0,100%,0);
+-moz-transform:translate3d(0,100%,0);
+-ms-transform:translate3d(0,100%,0);
+-o-transform:translate3d(0,100%,0);
+transform:translate3d(0,100%,0)
+}
+
+
+/**
+ * @license
+ * Copyright (C) 2015 Google Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* Pretty printing styles. Used with prettify.js. */
+
+
+/* SPAN elements with the classes below are added by prettyprint. */
+.pln { color: #000 }  /* plain text */
+
+@media screen {
+  .str { color: #080 }  /* string content */
+  .kwd { color: #008 }  /* a keyword */
+  .com { color: #800 }  /* a comment */
+  .typ { color: #606 }  /* a type name */
+  .lit { color: #066 }  /* a literal value */
+  /* punctuation, lisp open bracket, lisp close bracket */
+  .pun, .opn, .clo { color: #660 }
+  .tag { color: #008 }  /* a markup tag name */
+  .atn { color: #606 }  /* a markup attribute name */
+  .atv { color: #080 }  /* a markup attribute value */
+  .dec, .var { color: #606 }  /* a declaration; a variable name */
+  .fun { color: red }  /* a function name */
+}
+
+/* Use higher contrast and text-weight for printable form. */
+@media print, projection {
+  .str { color: #060 }
+  .kwd { color: #006; font-weight: bold }
+  .com { color: #600; font-style: italic }
+  .typ { color: #404; font-weight: bold }
+  .lit { color: #044 }
+  .pun, .opn, .clo { color: #440 }
+  .tag { color: #006; font-weight: bold }
+  .atn { color: #404 }
+  .atv { color: #060 }
+}
+
+/* Put a border around prettyprinted code snippets. */
+pre.prettyprint { padding: 2px; padding-left: 2em; border: 1px solid #888 }
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 { list-style-type: decimal }
+/* Alternate shading for lines */
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 { background: #eee }

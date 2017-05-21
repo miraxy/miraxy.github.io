@@ -110,7 +110,7 @@ which you want converted to the correct HTML entities.
 {{ post.body.more | xml }}
 </code></pre>
 
-<h4>format</h4>
+<h2>format</h2>
 
 <p>این فیلتر یک فرمت را گرفته و بر روی تمام خط‌های موجود، یک به یک اعمال می‌کند. این فیلتر عملکردی شبیه به printf دارد</p>
 
@@ -126,23 +126,23 @@ which you want converted to the correct HTML entities.
 &lt;!-- through the above format.               --&gt;
 </code></pre>
 
-<h4>uper</h4>
+<h2>uper</h2>
 
 <p>تمام حروف را با حروف بزرگ جایگزین می‌کند.</p>
 
-<h4>lower</h4>
+<h2>lower</h2>
 
 <p>تمام حروف را با حروف کوچک جایگزین می‌کند.</p>
 
-<h4>ucfirst</h4>
+<h2>ucfirst</h2>
 
 <p>اولین حرف رشته را با حروف بزرگ باز می‌گرداند.</p>
 
-<h4>lcfirst</h4>
+<h2>lcfirst</h2>
 
 <p>اولین حرف رشته را با حروف کوچک باز می‌گرداند.</p>
 
-<h4>collapse</h4>
+<h2>collapse</h2>
 
 <pre><code>{{ FILTER collapse }}
 
@@ -160,7 +160,7 @@ which you want converted to the correct HTML entities.
 <pre><code>The cat sat on the matter
 </code></pre>
 
-<h4>html</h4>
+<h2>html</h2>
 
 <p>کاراکترهای  &lt; و > و &amp; و " را به  مقادیر html باز میگرداند.</p>
 
@@ -174,11 +174,11 @@ Binary "&lt;=&gt;" returns -1, 0, or 1 depending on...
 <pre><code>Binary "&amp;lt;=&amp;gt;" returns -1, 0, or 1 depending on...
 </code></pre>
 
-<h4>xml</h4>
+<h2>xml</h2>
 
 <p>ماند فیلتر html اما  &apos; نیز به آن افزوده شده است.</p>
 
-<h4>html_para</h4>
+<h2>html_para</h2>
 
 <p>یک متن را به پاراگراف‌های html‌ترجمه می‌کند. هر دو خطی که بیشتر از دو خط خالی با هم فاصله دشاته باشند را به عنوان یک پاراگراف مجزا در نظر می‌گیرد.</p>
 
@@ -200,7 +200,7 @@ Mary had a little lamb.
 &lt;/p&gt;
 </code></pre>
 
-<h4>html_break / html_para_break</h4>
+<h2>html_break / html_para_break</h2>
 
 <p>مانند html_para با این تفاوت که پاراگراف‌ها را با br از هم جدا می‌کند.</p>
 
@@ -219,7 +219,7 @@ Mary had a little lamb.
 Mary had a little lamb.
 </code></pre>
 
-<h4>html_line_break</h4>
+<h2>html_line_break</h2>
 
 <p>این فیلتر هر کاراکتر خط جدید را با یک br جایگزین می‌کند</p>
 
@@ -235,7 +235,7 @@ Mary had a little lamb.
 Mary had a little lamb.&lt;br&gt;
 </code></pre>
 
-<h4>uri</h4>
+<h2>uri</h2>
 
 <p>متن ورودی را به کاراکترهای مجاز برای آدرس به کلی که در RFC 3986 مشخص شده تبدیل می‌نماید.</p>
 
@@ -253,11 +253,11 @@ Mary had a little lamb.&lt;br&gt;
 
 <p>برای آدرس از این فیلتر اصلی نکنید، از url استفاده کنید.</p>
 
-<h4>url</h4>
+<h2>url</h2>
 
 <p>این فیلتر هر متن ورودی را به کاراکترهای مجاز برای آدرس همانطور که در RFC 2396 مشخص شده تبدیل می‌نماید.</p>
 
-<h4>indent</h4>
+<h2>indent</h2>
 
 <p>هر خط را بر اساس الگویی که به آن داده شده فرورفته می‌کند.</p>
 
@@ -273,7 +273,7 @@ cabbages, rhubard, onions
 ME&gt; cabbages, rhubard, onions
 </code></pre>
 
-<h4>truncate(length,dots)</h4>
+<h2>truncate(length,dots)</h2>
 
 <p>به اندازه‌ی مشخص شده در length کاراکتر از ابتدای متن نمایش می‌دهد، در صورتیکه dots مقدار داشته باشد، با الگوی مشخص شده مابقی متن جایگزین می‌شود.</p>
 
@@ -300,7 +300,7 @@ been said on more than one occasion.
 <pre><code>I have much to say...&amp;hellip;
 </code></pre>
 
-<h4>repeat</h4>
+<h2>repeat</h2>
 
 <p>به تعداد مشخص یک الگو را تکرار میکند.</p>
 
@@ -318,7 +318,7 @@ We want more beer and we want more beer,
 We are the more beer wanters!
 </code></pre>
 
-<h4>remove</h4>
+<h2>remove</h2>
 
 <p>الگوی مشخص شده را از متن حذف می‌کند. در الگوی مورد نظر از regex میتوانید استفاده کنید.</p>
 
@@ -330,7 +330,7 @@ We are the more beer wanters!
 <pre><code>Thecatsatonthemat
 </code></pre>
 
-<h4>replace</h4>
+<h2>replace</h2>
 
 <p>الگوی مورد نظر را در متن با الگوی مشخص شده جایگزین میکند.</p>
 
@@ -342,7 +342,7 @@ We are the more beer wanters!
 <pre><code>The_cat_sat_on_the_mat
 </code></pre>
 
-<h4>$FarsiNum</h4>
+<h2>$FarsiNum</h2>
 
 <p>در متن مورد نظر، هر عددی که به صورت لاتین نوشته باشد با ارقام فارسی به نمایش در می‌آورد.</p>
 
@@ -414,200 +414,9 @@ We are the more beer wanters!
       
 
       
-      	<h5>فیلدهای قابل تنظیم</h5>
-      
 
-      <h5><a href="#title">title</a></h5>
-<!--      <h5><a href="#/doc-fa/3/title/">title</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#description">description</a></h5>
-<!--      <h5><a href="#/doc-fa/3/description/">description</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#author">author</a></h5>
-<!--      <h5><a href="#/doc-fa/3/author/">author</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#email">email</a></h5>
-<!--      <h5><a href="#/doc-fa/3/email/">email</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#url">url</a></h5>
-<!--      <h5><a href="#/doc-fa/3/url/">url</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#root">root</a></h5>
-<!--      <h5><a href="#/doc-fa/3/root/">root</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#static">static</a></h5>
-<!--      <h5><a href="#/doc-fa/3/static/">static</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#imageurl">imageurl</a></h5>
-<!--      <h5><a href="#/doc-fa/3/imageurl/">imageurl</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#publishDIR">publishDIR</a></h5>
-<!--      <h5><a href="#/doc-fa/3/publishdir/">publishDIR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#post_num">post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/post_num/">post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#archive_post_num">archive_post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/archive_post_num/">archive_post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_post_num">feed_post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_post_num/">feed_post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#post_sort">post_sort</a></h5>
-<!--      <h5><a href="#/doc-fa/3/post_sort/">post_sort</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_output">feed_output</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_output/">feed_output</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_template">feed_template</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_template/">feed_template</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_floor">default_floor</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_floor/">default_floor</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#permalink">permalink</a></h5>
-<!--      <h5><a href="#/doc-fa/3/permalink/">permalink</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_markup">default_markup</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_markup/">default_markup</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_extension">default_extension</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_extension/">default_extension</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#output_extension">output_extension</a></h5>
-<!--      <h5><a href="#/doc-fa/3/output_extension/">output_extension</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#template">template</a></h5>
-<!--      <h5><a href="#/doc-fa/3/template/">template</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#lists">lists</a></h5>
-<!--      <h5><a href="#/doc-fa/3/lists/">lists</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#namespace">namespace</a></h5>
-<!--      <h5><a href="#/doc-fa/3/namespace/">namespace</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#plugins">plugins</a></h5>
-<!--      <h5><a href="#/doc-fa/3/plugins/">plugins</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#time_zone">time_zone</a></h5>
-<!--      <h5><a href="#/doc-fa/3/time_zone/">time_zone</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_start_tag">t_start_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_start_tag/">t_start_tag</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_end_tag">t_end_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_end_tag/">t_end_tag</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_outline_tag">t_outline_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_outline_tag/">t_outline_tag</a></h5> -->
+      <h5><a href="#فیلدهای قابل تنظیم">فیلدهای قابل تنظیم</a></h5>
+<!--      <h5><a href="#/doc-fa/3/فیلدهای-قابل-تنظیم/">فیلدهای قابل تنظیم</a></h5> -->
     
 
     
@@ -705,151 +514,9 @@ We are the more beer wanters!
       
 
       
-      	<h5>توضیحاتی در مورد برچسب‌ها</h5>
-      
 
-      <h5><a href="#MainTITLE">MainTITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/maintitle/">MainTITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainDESCRIPTION">MainDESCRIPTION</a></h5>
-<!--      <h5><a href="#/doc-fa/5/maindescription/">MainDESCRIPTION</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainURL">MainURL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainurl/">MainURL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainROOT">MainROOT</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainroot/">MainROOT</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainSTATIC">MainSTATIC</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainstatic/">MainSTATIC</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainIMAGEURL">MainIMAGEURL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainimageurl/">MainIMAGEURL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainAUTHOR">MainAUTHOR</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainauthor/">MainAUTHOR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainEMAIL">MainEMAIL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainemail/">MainEMAIL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#PageTITLE">PageTITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/pagetitle/">PageTITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#FLOORS">FLOORS</a></h5>
-<!--      <h5><a href="#/doc-fa/5/floors/">FLOORS</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ENTRIES">ENTRIES</a></h5>
-<!--      <h5><a href="#/doc-fa/5/entries/">ENTRIES</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#UTIDS">UTIDS</a></h5>
-<!--      <h5><a href="#/doc-fa/5/utids/">UTIDS</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#TITLE">TITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/title/">TITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#DESCRIPTION">DESCRIPTION</a></h5>
-<!--      <h5><a href="#/doc-fa/5/description/">DESCRIPTION</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#URL">URL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/url/">URL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ROOT">ROOT</a></h5>
-<!--      <h5><a href="#/doc-fa/5/root/">ROOT</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#AUTHOR">AUTHOR</a></h5>
-<!--      <h5><a href="#/doc-fa/5/author/">AUTHOR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#EMAIL">EMAIL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/email/">EMAIL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#BUILD">BUILD</a></h5>
-<!--      <h5><a href="#/doc-fa/5/build/">BUILD</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ARCHIVES">ARCHIVES</a></h5>
-<!--      <h5><a href="#/doc-fa/5/archives/">ARCHIVES</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#سایر برچسب‌ها برای آرشیو">سایر برچسب‌ها برای آرشیو</a></h5>
-<!--      <h5><a href="#/doc-fa/5/سایر-برچسب‌ها-برای-آرشیو/">سایر برچسب‌ها برای آرشیو</a></h5> -->
+      <h5><a href="#متغیرهای موجود">متغیرهای موجود</a></h5>
+<!--      <h5><a href="#/doc-fa/5/متغیرهای-موجود/">متغیرهای موجود</a></h5> -->
     
       
 

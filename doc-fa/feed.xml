@@ -14,7 +14,7 @@
         <item>
           <title>سایر کنترل کننده‌ها</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h4&gt;NEXT&lt;/h4&gt;
+&lt;h2&gt;NEXT&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ FOREACH user IN users }}
    {{ NEXT IF user.isguest }}
@@ -22,7 +22,7 @@
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;LAST&lt;/h4&gt;
+&lt;h2&gt;LAST&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ FOREACH user IN users }}
    Name: {{ user.name }}    Email: {{ user.email }}
@@ -30,7 +30,7 @@
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;RETURN&lt;/h4&gt;
+&lt;h2&gt;RETURN&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;Before
 {{ INCLUDE half_wit }}
@@ -55,7 +55,7 @@ This is just half...
         <item>
           <title>ماکروها و پرل</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h4&gt;MACRO&lt;/h4&gt;
+&lt;h2&gt;MACRO&lt;/h2&gt;
 
 &lt;p&gt;از ماکروها برای ساختن دستورات کوتاه از بلوک‌هایی که زیاد استفاده می‌شوند، میتوان استفاده کرد.&lt;/p&gt;
 
@@ -74,7 +74,7 @@ This is just half...
 {{ number(1234567) }}    # 1,234,567
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;PERL&lt;/h4&gt;
+&lt;h2&gt;PERL&lt;/h2&gt;
 
 &lt;p&gt;یک دستور بلوکی است، در این بلوک می‌توانید با استفاده از دستور زبان پرل، کدنویسی کنید.&lt;/p&gt;
 
@@ -114,7 +114,7 @@ which you want converted to the correct HTML entities.
 {{ post.body.more | xml }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;format&lt;/h4&gt;
+&lt;h2&gt;format&lt;/h2&gt;
 
 &lt;p&gt;این فیلتر یک فرمت را گرفته و بر روی تمام خط‌های موجود، یک به یک اعمال می‌کند. این فیلتر عملکردی شبیه به printf دارد&lt;/p&gt;
 
@@ -130,23 +130,23 @@ which you want converted to the correct HTML entities.
 &amp;lt;!-- through the above format.               --&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;uper&lt;/h4&gt;
+&lt;h2&gt;uper&lt;/h2&gt;
 
 &lt;p&gt;تمام حروف را با حروف بزرگ جایگزین می‌کند.&lt;/p&gt;
 
-&lt;h4&gt;lower&lt;/h4&gt;
+&lt;h2&gt;lower&lt;/h2&gt;
 
 &lt;p&gt;تمام حروف را با حروف کوچک جایگزین می‌کند.&lt;/p&gt;
 
-&lt;h4&gt;ucfirst&lt;/h4&gt;
+&lt;h2&gt;ucfirst&lt;/h2&gt;
 
 &lt;p&gt;اولین حرف رشته را با حروف بزرگ باز می‌گرداند.&lt;/p&gt;
 
-&lt;h4&gt;lcfirst&lt;/h4&gt;
+&lt;h2&gt;lcfirst&lt;/h2&gt;
 
 &lt;p&gt;اولین حرف رشته را با حروف کوچک باز می‌گرداند.&lt;/p&gt;
 
-&lt;h4&gt;collapse&lt;/h4&gt;
+&lt;h2&gt;collapse&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ FILTER collapse }}
 
@@ -164,7 +164,7 @@ which you want converted to the correct HTML entities.
 &lt;pre&gt;&lt;code&gt;The cat sat on the matter
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;html&lt;/h4&gt;
+&lt;h2&gt;html&lt;/h2&gt;
 
 &lt;p&gt;کاراکترهای  &amp;lt; و &gt; و &amp;amp; و &quot; را به  مقادیر html باز میگرداند.&lt;/p&gt;
 
@@ -178,11 +178,11 @@ Binary &quot;&amp;lt;=&amp;gt;&quot; returns -1, 0, or 1 depending on...
 &lt;pre&gt;&lt;code&gt;Binary &quot;&amp;amp;lt;=&amp;amp;gt;&quot; returns -1, 0, or 1 depending on...
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;xml&lt;/h4&gt;
+&lt;h2&gt;xml&lt;/h2&gt;
 
 &lt;p&gt;ماند فیلتر html اما  &amp;apos; نیز به آن افزوده شده است.&lt;/p&gt;
 
-&lt;h4&gt;html_para&lt;/h4&gt;
+&lt;h2&gt;html_para&lt;/h2&gt;
 
 &lt;p&gt;یک متن را به پاراگراف‌های html‌ترجمه می‌کند. هر دو خطی که بیشتر از دو خط خالی با هم فاصله دشاته باشند را به عنوان یک پاراگراف مجزا در نظر می‌گیرد.&lt;/p&gt;
 
@@ -204,7 +204,7 @@ Mary had a little lamb.
 &amp;lt;/p&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;html_break / html_para_break&lt;/h4&gt;
+&lt;h2&gt;html_break / html_para_break&lt;/h2&gt;
 
 &lt;p&gt;مانند html_para با این تفاوت که پاراگراف‌ها را با br از هم جدا می‌کند.&lt;/p&gt;
 
@@ -223,7 +223,7 @@ Mary had a little lamb.
 Mary had a little lamb.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;html_line_break&lt;/h4&gt;
+&lt;h2&gt;html_line_break&lt;/h2&gt;
 
 &lt;p&gt;این فیلتر هر کاراکتر خط جدید را با یک br جایگزین می‌کند&lt;/p&gt;
 
@@ -239,7 +239,7 @@ Mary had a little lamb.
 Mary had a little lamb.&amp;lt;br&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;uri&lt;/h4&gt;
+&lt;h2&gt;uri&lt;/h2&gt;
 
 &lt;p&gt;متن ورودی را به کاراکترهای مجاز برای آدرس به کلی که در RFC 3986 مشخص شده تبدیل می‌نماید.&lt;/p&gt;
 
@@ -257,11 +257,11 @@ Mary had a little lamb.&amp;lt;br&amp;gt;
 
 &lt;p&gt;برای آدرس از این فیلتر اصلی نکنید، از url استفاده کنید.&lt;/p&gt;
 
-&lt;h4&gt;url&lt;/h4&gt;
+&lt;h2&gt;url&lt;/h2&gt;
 
 &lt;p&gt;این فیلتر هر متن ورودی را به کاراکترهای مجاز برای آدرس همانطور که در RFC 2396 مشخص شده تبدیل می‌نماید.&lt;/p&gt;
 
-&lt;h4&gt;indent&lt;/h4&gt;
+&lt;h2&gt;indent&lt;/h2&gt;
 
 &lt;p&gt;هر خط را بر اساس الگویی که به آن داده شده فرورفته می‌کند.&lt;/p&gt;
 
@@ -277,7 +277,7 @@ cabbages, rhubard, onions
 ME&amp;gt; cabbages, rhubard, onions
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;truncate(length,dots)&lt;/h4&gt;
+&lt;h2&gt;truncate(length,dots)&lt;/h2&gt;
 
 &lt;p&gt;به اندازه‌ی مشخص شده در length کاراکتر از ابتدای متن نمایش می‌دهد، در صورتیکه dots مقدار داشته باشد، با الگوی مشخص شده مابقی متن جایگزین می‌شود.&lt;/p&gt;
 
@@ -304,7 +304,7 @@ been said on more than one occasion.
 &lt;pre&gt;&lt;code&gt;I have much to say...&amp;amp;hellip;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;repeat&lt;/h4&gt;
+&lt;h2&gt;repeat&lt;/h2&gt;
 
 &lt;p&gt;به تعداد مشخص یک الگو را تکرار میکند.&lt;/p&gt;
 
@@ -322,7 +322,7 @@ We want more beer and we want more beer,
 We are the more beer wanters!
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;remove&lt;/h4&gt;
+&lt;h2&gt;remove&lt;/h2&gt;
 
 &lt;p&gt;الگوی مشخص شده را از متن حذف می‌کند. در الگوی مورد نظر از regex میتوانید استفاده کنید.&lt;/p&gt;
 
@@ -334,7 +334,7 @@ We are the more beer wanters!
 &lt;pre&gt;&lt;code&gt;Thecatsatonthemat
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;replace&lt;/h4&gt;
+&lt;h2&gt;replace&lt;/h2&gt;
 
 &lt;p&gt;الگوی مورد نظر را در متن با الگوی مشخص شده جایگزین میکند.&lt;/p&gt;
 
@@ -346,7 +346,7 @@ We are the more beer wanters!
 &lt;pre&gt;&lt;code&gt;The_cat_sat_on_the_mat
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;$FarsiNum&lt;/h4&gt;
+&lt;h2&gt;$FarsiNum&lt;/h2&gt;
 
 &lt;p&gt;در متن مورد نظر، هر عددی که به صورت لاتین نوشته باشد با ارقام فارسی به نمایش در می‌آورد.&lt;/p&gt;
 
@@ -365,7 +365,7 @@ We are the more beer wanters!
         <item>
           <title>حلقه‌ها</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h4&gt;FOREACH&lt;/h4&gt;
+&lt;h2&gt;FOREACH&lt;/h2&gt;
 
 &lt;p&gt;حلقه‌ی FOREACH تمام آیتم‌های موجود در یک لیست را به ترتیب بارگذاری میکند و با دستوراعملی که در بلوک مربوطه مشخص شده پردازش می‌کند. این دستور یک دستور بلوکی است که با FOREACH شروع و با END پایان می‌یابد.&lt;/p&gt;
 
@@ -391,7 +391,7 @@ We are the more beer wanters!
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;WHILE&lt;/h4&gt;
+&lt;h2&gt;WHILE&lt;/h2&gt;
 
 &lt;p&gt;با استفاده از WHILE نیز می‌توان حلقه‌ها را بوجود آورد، WHILE برای هر بار تکرار یک شرط را بررسی می‌کند و در صورتیکه مقدار شرط صحیح باشد، حلقه را مجددا تکرار میکند، در غیر اینصورت از حلقه خارج خواهد شد.&lt;/p&gt;
 
@@ -402,7 +402,7 @@ We are the more beer wanters!
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;کنترل حلقه FOREACH&lt;/h4&gt;
+&lt;h2&gt;کنترل حلقه FOREACH&lt;/h2&gt;
 
 &lt;p&gt;با استفاده از ابزار کنترل حلقه می‌توان از وضعیت فعلی که حلقه در حال اجرای آن است مطلع شد و برای هر وضعیت شرط خاصی را در نظر گرفت. برای استفاده از هر یک از ابزار کنترل، درون هر حلقه از مقدار loop به همراه نام کنترل کننده میتوان استفاده کرد&lt;/p&gt;
 
@@ -417,23 +417,23 @@ We are the more beer wanters!
 
 &lt;p&gt;در حلقه‌ی بالا برای اولین نوشته‌ی هر صفحه متن کامل آن نمایش داده می‌شود و برای سایر نوشته‌ها متن خلاصه نمایش داده می‌شود.&lt;/p&gt;
 
-&lt;h5&gt;first&lt;/h5&gt;
+&lt;h3&gt;first&lt;/h3&gt;
 
 &lt;p&gt;در صورتیکه حلقه در اولین اجرای خود باشد مقدار صحیح را باز می‌گرداند.&lt;/p&gt;
 
-&lt;h5&gt;last&lt;/h5&gt;
+&lt;h3&gt;last&lt;/h3&gt;
 
 &lt;p&gt;در صورتیکه حلقه در آخرین اجرای خود باشد مقدار صحیح را باز می‌گرداند.&lt;/p&gt;
 
-&lt;h5&gt;size&lt;/h5&gt;
+&lt;h3&gt;size&lt;/h3&gt;
 
 &lt;p&gt;تعداد آیتم‌های لیستی که حلقه لود می‌کند را باز می‌گرداند.&lt;/p&gt;
 
-&lt;h5&gt;count&lt;/h5&gt;
+&lt;h3&gt;count&lt;/h3&gt;
 
 &lt;p&gt;شماره‌ی حلقه‌ای که در حال تکرار شدن است را باز می‌گرداند.&lt;/p&gt;
 
-&lt;h5&gt;prev&lt;/h5&gt;
+&lt;h3&gt;prev&lt;/h3&gt;
 
 &lt;p&gt;امکان دسترسی به مقادیر تکرار پیشین حلقه.&lt;/p&gt;
 
@@ -447,11 +447,11 @@ We are the more beer wanters!
 
 &lt;p&gt;در حلقه‌ی فوق اگر سال در نوشته‌ی قبل و نوشته‌ای که در حال لود شدن است برابر نبود، سال نمایش داده می‌شود.&lt;/p&gt;
 
-&lt;h5&gt;next&lt;/h5&gt;
+&lt;h3&gt;next&lt;/h3&gt;
 
 &lt;p&gt;امکان دسترسی به مقادیر تکرار بعدی حلقه‌.&lt;/p&gt;
 
-&lt;h5&gt;parity&lt;/h5&gt;
+&lt;h3&gt;parity&lt;/h3&gt;
 
 &lt;p&gt;به ترتیب برای هربار لود شدن حلقه مقادیر odd و even را باز میگرداند.&lt;/p&gt;
 
@@ -479,15 +479,15 @@ We are the more beer wanters!
 &amp;lt;/table&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5&gt;odd&lt;/h5&gt;
+&lt;h3&gt;odd&lt;/h3&gt;
 
 &lt;p&gt;با هر بار تکرار شدن حلقه مقادیر 0 و 1 را به نوبت برای تکرار های زوج و فرد حلقه باز می‌گرداند. به عبارت دیگر برای تکرارهای اول، سوم، پنجم، ... حلقه مقدار 1 یا صحیح را برمیگر‌داند.&lt;/p&gt;
 
-&lt;h5&gt;even&lt;/h5&gt;
+&lt;h3&gt;even&lt;/h3&gt;
 
 &lt;p&gt;با هر بار تکرار شدن حلقه مقادیر 0 و 1 را به نوبت برای تکرار های فرد و زوج حلقه باز می‌گرداند. به عبارت دیگر برای تکرارهای دوم، چهارم، ششم، ... حلقه مقدار 1 یا صحیح را برمیگر‌داند.&lt;/p&gt;
 
-&lt;h5&gt;NEXT&lt;/h5&gt;
+&lt;h3&gt;NEXT&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ FOREACH user IN users }}
    {{ NEXT IF user.isguest }}
@@ -495,7 +495,7 @@ We are the more beer wanters!
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5&gt;LAST&lt;/h5&gt;
+&lt;h3&gt;LAST&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ FOREACH user IN users }}
    Name: {{ user.name }}    Email: {{ user.email }}
@@ -515,7 +515,7 @@ We are the more beer wanters!
         <item>
           <title>شرط‌ها</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h4&gt;IF/UNLESS/ELSIF/ELSE&lt;/h4&gt;
+&lt;h2&gt;IF/UNLESS/ELSIF/ELSE&lt;/h2&gt;
 
 &lt;p&gt;برچسب‌های IF و UNLESS برای بررسی یک شرط و اجرا یا چشم پوشی از کدهای تعریف شده‌ی درونی خود دارند. IF در صورتیکه که شرط درست باشد اجرا می‌شود و UNLESS در صورتیکه شرط اشتباه باشد.&lt;/p&gt;
 
@@ -565,7 +565,7 @@ We are the more beer wanters!
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;SWITCH/CASE&lt;/h4&gt;
+&lt;h2&gt;SWITCH/CASE&lt;/h2&gt;
 
 &lt;p&gt;برای بررسی شرط‌ها از SWITCH/CASE نیز می‌توان استفاده کرد. SWITCH مقداری که باید مورد بررسی قرار بگیرد را دریافت می‌کند و در هر CASE درستی شرط بررسی می‌شود.&lt;/p&gt;
 
@@ -589,7 +589,7 @@ We are the more beer wanters!
         <item>
           <title>تنظیم و پردازش فایل‌های خارجی و بلوک‌های پوسته‌ای</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h4&gt;INSERT&lt;/h4&gt;
+&lt;h2&gt;INSERT&lt;/h2&gt;
 
 &lt;p&gt;با استفاده از INSERT می‌توان محتوای یک فایل را بدون هیچ پردازشی به پوسته وارد کرد.&lt;/p&gt;
 
@@ -613,7 +613,7 @@ We are the more beer wanters!
 {{ INSERT &quot;$language/$file&quot; }}  # en/file.txt
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;INCLUDE&lt;/h4&gt;
+&lt;h2&gt;INCLUDE&lt;/h2&gt;
 
 &lt;p&gt;با استفاده از INCLUDE می‌توان محتوای یک فایل را به پوسته وارد کرد، محتوایی که توسط INCLUDE وارد می‌شود مانند سایر خطوط پوسته پردازش می‌شود. همچنین INCLUDE مورد استفاده برای لود کردن BLOCK ها نیز می‌تواند قرار بگیرد.&lt;/p&gt;
 
@@ -673,7 +673,7 @@ foo is still {{ foo }}
 foo is still 10
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;PROCESS&lt;/h4&gt;
+&lt;h2&gt;PROCESS&lt;/h2&gt;
 
 &lt;p&gt;همانند INCLUDE عمل می‌کند، اما متغیرهایی که با استفاده از PROCESS تغییر می‌کنند به شکل عمومی در تمام پوسته مقدارشان تغییر می‌نماید.&lt;/p&gt;
 
@@ -696,7 +696,7 @@ foo is {{ foo }}
 foo is 20
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;BLOCK&lt;/h4&gt;
+&lt;h2&gt;BLOCK&lt;/h2&gt;
 
 &lt;p&gt;کلیدواژه‌ی BLOCK یک دستور از نوعی بلوک میباشد که بین BLOCK و END تعریف می‌شود&lt;/p&gt;
 
@@ -728,7 +728,7 @@ foo is 20
         <item>
           <title>تنظیم، دسترسی، تغییر متغیرها</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h4&gt;GET&lt;/h4&gt;
+&lt;h2&gt;GET&lt;/h2&gt;
 
 &lt;p&gt;با استفاده از get میتوان مقدار یک متغیر را دریافت کرد و نمایش داد&lt;/p&gt;
 
@@ -740,7 +740,7 @@ foo is 20
 &lt;pre&gt;&lt;code&gt;{{ post.body.title }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;SET&lt;/h4&gt;
+&lt;h2&gt;SET&lt;/h2&gt;
 
 &lt;p&gt;با استفاده از set میتوان به یک متغیر مقدار داد&lt;/p&gt;
 
@@ -752,7 +752,7 @@ foo is 20
 &lt;pre&gt;&lt;code&gt;{{ foo = 'hello' }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;DEFAULT&lt;/h4&gt;
+&lt;h2&gt;DEFAULT&lt;/h2&gt;
 
 &lt;p&gt;در صورتیکه متغیری مقدار نداشته باشد به آن مقدار می‌دهد. اگر متغیر مقدار از پیش تعیید شده داشته باشد از مقدار دادن به آن چشم پوشی می‌شود.&lt;/p&gt;
 
@@ -778,7 +778,7 @@ id   = 'jodo'
         <item>
           <title>متغیرها</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h4&gt;اسکالرها&lt;/h4&gt;
+&lt;h2&gt;اسکالرها&lt;/h2&gt;
 
 &lt;p&gt;به متغیرهای اسکالر با استفاده ساده از نامشان میتوان همواره دسترسی داشت.&lt;/p&gt;
 
@@ -792,7 +792,7 @@ foo is $bar        # foo is ten
 foo is ${bar}      # foo is ten
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;لیست‌ها&lt;/h4&gt;
+&lt;h2&gt;لیست‌ها&lt;/h2&gt;
 
 &lt;p&gt;لیست‌ها مجموعه ای از متغیرها هستند که در یک لیست ذخیره شده‌اند. برای مقدار دادن به لیست‌ها از []\ یا مقدار دادن مستقیم به اندیس‌های عددی استفاده میشود. برای دستیابی به مقادیر ذخیره شده در هر لیست از اندیس عددی آن می‌توان استفاده کرد.&lt;/p&gt;
 
@@ -829,7 +829,7 @@ color name is green
 }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;هش‌ها (hashes)&lt;/h4&gt;
+&lt;h2&gt;هش‌ها (hashes)&lt;/h2&gt;
 
 &lt;p&gt;هش‌ها لیست‌های کلید-مقدار هستند با استفاده از {} یا . بین کلید و مقدار می‌توان یک هش را تعریف کرد.&lt;/p&gt;
 
@@ -912,11 +912,11 @@ price is 576
 * tom : Thomas
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;ترکیب هش‌ها و لیست‌ها&lt;/h4&gt;
+&lt;h2&gt;ترکیب هش‌ها و لیست‌ها&lt;/h2&gt;
 
 &lt;p&gt;میتوان در یک هش به جای مقدار هر کلید از یک لیست یا یک هش دیگر استفاده کرد یا در هر لیست به جای مقدار از یک هش یا یک لیست دیگر برای مقداردهی استفاده کرد.&lt;/p&gt;
 
-&lt;h4&gt;متدهای شبیه‌سازی و درونیابی&lt;/h4&gt;
+&lt;h2&gt;متدهای شبیه‌سازی و درونیابی&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ mylist = [ 'foo', 'bar', 'baz' ] }}
 {{ newlist = mylist.sort }}
@@ -1300,78 +1300,220 @@ faves:
         </item>
       
         <item>
-          <title>سایر برچسب‌ها برای آرشیو</title>
+          <title>متغیرهای موجود</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;میرا برای هر آرشیو، همنام با همان آرشیو، مقداری برای پوسته تولید میکند، برای مثال اگر در فایل تنظیمات برای آرشیو ها فیلد categories را به عنوان آٰشیو مشخص کرده باشید، حلقه‌ای به نام CATEGORIES_ARCHIVE نیز در پوسته قابل استفاده خواهد بود، یا برای tags، میتوانید از TAGS_ARCHIVE استفاده کنید.&lt;/p&gt;
+&lt;h2&gt;MainTITLE&lt;/h2&gt;
 
-&lt;p&gt;اطلاعات موجود در هرکدام از این مقادیر، شبیه به این خواهند بود&lt;/p&gt;
+&lt;p&gt;تیتر اصلی سایت ذخیره شده در فایل تنظیمات مرکزی یا همان config.yml
+نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;CATEGORIES_ARCHIVE = [
-          {
-            'name' =&amp;gt; &quot;CAT1&quot;,
-            'url' =&amp;gt; &quot;/FLOOR/categories/CAT1namespace/&quot;,
-            'posts' =&amp;gt; [
-                         '20170210172431',
-                         '20170210174503',
-                         '20170210173327',
-                         '20170210173313',
-                         '20170210173319'
-                       ]
-          },
-          {
-            'name' =&amp;gt; &quot;CAT2&quot;,
-            'url' =&amp;gt; &quot;/FLOOR/categories/CAT2namespace/&quot;,
-            'posts' =&amp;gt; [
-                         '20170210172431',
-                         '20170210174503',
-                         '20170210173327',
-                         '20170210173313',
-                         '20170210173319'
-                       ]
-          },
-        ]
+&lt;pre&gt;&lt;code&gt;{{ MainTITLE }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;برای استفاده از این برچسب‌ها باید در حلقه‌ای که با FOREACH تولید میکنید از آن‌ها استفاده کنید&lt;/p&gt;
+&lt;h2&gt;MainDESCRIPTION&lt;/h2&gt;
 
-&lt;p&gt;نحوه استفاده برای فیلد فرضی categories&lt;/p&gt;
+&lt;p&gt;توضیحات اصلی سایت ذخیره شده در فایل تنظیمات مرکزی یا همان config.yml
+نحوه‌ استفاده:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FOREACH CATEGORIES_ARCHIVE }}
-  &amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
-{{ END }}
+&lt;pre&gt;&lt;code&gt;{{ MainDESCRIPTION }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;یا&lt;/p&gt;
+&lt;h2&gt;MainURL&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FOREACH cat IN CATEGORIES_ARCHIVE }}
-  &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ cat.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
-{{ END }}
+&lt;p&gt;آدرس اصلی سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال: YOURSITE.com
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainURL }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;همانطور که مشخص است در posts، تمام utid ها برگشت داده شده، پس برای نمایش تک تک فایل‌های موجود در هر دسته میتوان از ENTRIES کمک گرفت &lt;/p&gt;
+&lt;h2&gt;MainROOT&lt;/h2&gt;
 
-&lt;pre&gt;&lt;code&gt;{{ FOREACH cat IN CATEGORIES_ARCHIVE.values }}
-  &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ cat.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
-  {{ FOREACH id IN cat.posts.sort }}
-    &amp;lt;h5&amp;gt;&amp;lt;a href=&quot;{{ ENTRIES.$id.url }}&quot;&amp;gt;{{ ENTRIES.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;/h5&amp;gt;
+&lt;p&gt;ریشه اصلی سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال: /
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainROOT }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;MainSTATIC&lt;/h2&gt;
+
+&lt;p&gt;شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال:
+&lt;code&gt;/statics&lt;/code&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainSTATIC }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;MainIMAGEURL&lt;/h2&gt;
+
+&lt;p&gt;شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال:
+&lt;code&gt;/statics/images&lt;/code&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainIMAGEURL }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;MainAUTHOR&lt;/h2&gt;
+
+&lt;p&gt;نام نویسنده ذخیره شده در فایل تنظیمات مرکزی
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainAUTHOR }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;MainEMAIL&lt;/h2&gt;
+
+&lt;p&gt;ایمیل نویسنده
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainEMAIL }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;PageTITLE&lt;/h2&gt;
+
+&lt;p&gt;تیتر صفحه، در صورتیکه از ماژولی شبیه به header برای لود کردن قسمت بالایی صفحات html به شکل ثابت در تمام صفحات استفاده کنید این برچسب کمک بسیاری برای تگ &amp;lt;title&amp;gt; خواهد کرد، برای مثال در main.tt2 مقداری برابر TITLE و در index.tt2 مساوی FloorTITLE خواهد داشت
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ PageTitle }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;این برچسب در هر یک از پوسته‌ها مقدار متفاومتی را باز می‌گرداند:&lt;/p&gt;
+
+&lt;p&gt;main: &lt;br /&gt;
+تیتر ذخیره شده در فیلد title در فایل config.yml&lt;/p&gt;
+
+&lt;p&gt;index , feed: &lt;br /&gt;
+تیتر ذخیره شده در فیلد title در فایل پیکربندی اختصاصی در دایرکتوری config&lt;/p&gt;
+
+&lt;p&gt;field archive: &lt;br /&gt;
+تیتر اختصاصی سایت - نام فیلد آرشیو شده&lt;/p&gt;
+
+&lt;p&gt;date archive: &lt;br /&gt;
+تیتر اختصاصی سایت - سال / ماه&lt;/p&gt;
+
+&lt;h2&gt;FLOORS&lt;/h2&gt;
+
+&lt;p&gt;نام تمام طبقات موجود در سایت به همراه توضیحاتشان و تعداد مشخصی از پست‌ها که در فیلد post_num در فایل تنظیمات مشخص کرده‌اید&lt;/p&gt;
+
+&lt;p&gt;مقادیر موجود در این برچسب:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;name
+description
+
+posts (list)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;فیلد posts شامل تعداد مشخص از آخرین ارسال‌های شماست، تعداد ارسال‌های موجود در این کلید از config.yml و فیلد post_num برداشت میشود. &lt;br /&gt;
+تمام مقادیری که برای POSTS که در قسمت‌های بعد توضیح داده میشود در مورد لیست posts در Floors نیز قابل استفاده است&lt;/p&gt;
+
+&lt;p&gt;نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH site IN FLOORS.values }}
+  {{ site.name }}
+  {{ site.description }}
+
+  {{ FOREACH post IN site.posts }}
+    &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ post.url }}&quot;&amp;gt;{{ post.title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
+    &amp;lt;h4&amp;gt;{{ post.CALENDAR.day }}-{{ post.CALENDAR.month_name }}-{{ post.CALENDAR.year }}&amp;lt;/h4&amp;gt;
+    &amp;lt;p&amp;gt;{{ post.body.less }}&amp;lt;/p&amp;gt;
   {{ END }}
+
 {{ END }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;مثلما به جای id و $id از هر نام دیگری که بخواهید میتوانید استفاده کنید.&lt;/p&gt;</description>
-          <pubDate></pubDate>
-          <link>/doc-fa/5/سایر-برچسب‌ها-برای-آرشیو/</link>
-          <guid isPermaLink="true">/doc-fa/5/سایر-برچسب‌ها-برای-آرشیو/</guid>
+&lt;h2&gt;ENTRIES&lt;/h2&gt;
 
+&lt;p&gt;کلید-مقداری از تمام محتوای تولید شده در سایت، کل نوشته‌ها و صفحات، برای نمایش پست‌ها نیاز به مقدار utid آن دارید، در مورد کارکرد این برچسب، توضیحات UTIDS را بخوانید&lt;/p&gt;
 
-        <category>
-          
-        </category>
-        </item>
-      
-        <item>
-          <title>ARCHIVES</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2&gt;UTIDS&lt;/h2&gt;
+
+&lt;p&gt;کلید نام تمام محتوای موجود در سایت مرتب شده بر اساس مقدار utid هر پست، برابر با utid هر پست، برای لود کردن محتوا در برچسب Entries قابل استفاده است.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;این برچسب تنها مختص به main.tt2 میباشد&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن ENTRIES.$id نیز قابل استفاده هستند
+نحوه‌ی استفاده به همراه ENTRIES&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH id IN UTIDS }}
+   &amp;lt;h2&amp;gt;&amp;lt;a href=&quot;{{ ENTRIES.$id.url }}&quot;&amp;gt;{{ ENTRIES.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;h2&amp;gt;
+   &amp;lt;h4&amp;gt;{{ ENTRIES.$id.CALENDAR.day }}-{{ ENTRIES.$id.CALENDAR.month_name }}-{{ ENTRIES.$id.CALENDAR.year }}&amp;lt;/h4&amp;gt;
+   &amp;lt;p&amp;gt;{{ ENTRIES.$id.body.less }}&amp;lt;/p&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h2&gt;TITLE&lt;/h2&gt;
+
+&lt;p&gt;تیتر اصلی طبقه، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ TITLE }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;DESCRIPTION&lt;/h2&gt;
+
+&lt;p&gt;توضیحات طبقه، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ DESCRIPTION }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;URL&lt;/h2&gt;
+
+&lt;p&gt;آدرس سایتی که طبقه در آن منتشر میشود، ذخیره شده در فیلد url فایل تنظیمات طبقه.  &lt;/p&gt;
+
+&lt;p&gt;نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ URL }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;ROOT&lt;/h2&gt;
+
+&lt;p&gt;آدرس شاخه‌ی ریشه، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ ROOT }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;AUTHOR&lt;/h2&gt;
+
+&lt;p&gt;نام نویسنده، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ AUTHOR }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;EMAIL&lt;/h2&gt;
+
+&lt;p&gt;نام نوسنده، ذخیره شده در فایل تنظیمات طبقه &lt;br /&gt;
+نحوه‌ استفاده:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ EMAIL }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;BUILD&lt;/h2&gt;
+
+&lt;p&gt;اطلاعات زمان ساختن آخرین نسخه از سایت، یا تاریخ زمانی که mira build را اجرا میکنید.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ BUILD.date }} : 2017-03-25 18:44:03
+{{ BUILD.year }}
+{{ BUILD.month }}
+{{ BUILD.month_name }}
+{{ BUILD.month_abbr }}
+{{ BUILD.day }}
+{{ BUILD.day_name }}
+{{ BUILD.day_abbr }}
+{{ BUILD.hour }}
+{{ BUILD.minute }}
+{{ BUILD.second }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;ARCHIVES&lt;/h2&gt;
+
 &lt;p&gt;تمام آرشیوهای موجود در طبقه یا همان سایت&lt;/p&gt;
 
 &lt;p&gt;در صورتیکه از یک پوسته یکسان برای چند طبقه که آرشیوهایی با فیلدها و نام‌های متفاوت دارند استفاده میکنید، میتوانید برای نمایش تمام آرشیو‌ها، بدون اهمیت اینکه چه نامی دارند از این برچسب استفاده کنید.&lt;/p&gt;
@@ -1436,10 +1578,137 @@ faves:
   {{- END }}
   &amp;lt;br&amp;gt;
 {{- END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;سایر برچسب‌ها برای آرشیو&lt;/h2&gt;
+
+&lt;p&gt;میرا برای هر آرشیو، همنام با همان آرشیو، مقداری برای پوسته تولید میکند، برای مثال اگر در فایل تنظیمات برای آرشیو ها فیلد categories را به عنوان آٰشیو مشخص کرده باشید، حلقه‌ای به نام CATEGORIES_ARCHIVE نیز در پوسته قابل استفاده خواهد بود، یا برای tags، میتوانید از TAGS_ARCHIVE استفاده کنید.&lt;/p&gt;
+
+&lt;p&gt;اطلاعات موجود در هرکدام از این مقادیر، شبیه به این خواهند بود&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CATEGORIES_ARCHIVE = [
+          {
+            'name' =&amp;gt; &quot;CAT1&quot;,
+            'url' =&amp;gt; &quot;/FLOOR/categories/CAT1namespace/&quot;,
+            'posts' =&amp;gt; [
+                         '20170210172431',
+                         '20170210174503',
+                         '20170210173327',
+                         '20170210173313',
+                         '20170210173319'
+                       ]
+          },
+          {
+            'name' =&amp;gt; &quot;CAT2&quot;,
+            'url' =&amp;gt; &quot;/FLOOR/categories/CAT2namespace/&quot;,
+            'posts' =&amp;gt; [
+                         '20170210172431',
+                         '20170210174503',
+                         '20170210173327',
+                         '20170210173313',
+                         '20170210173319'
+                       ]
+          },
+        ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;برای استفاده از این برچسب‌ها باید در حلقه‌ای که با FOREACH تولید میکنید از آن‌ها استفاده کنید&lt;/p&gt;
+
+&lt;p&gt;نحوه استفاده برای فیلد فرضی categories&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH CATEGORIES_ARCHIVE }}
+  &amp;lt;a href=&quot;{{ url }}&quot;&amp;gt;{{ name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;یا&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH cat IN CATEGORIES_ARCHIVE }}
+  &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ cat.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;همانطور که مشخص است در posts، تمام utid ها برگشت داده شده، پس برای نمایش تک تک فایل‌های موجود در هر دسته میتوان از ENTRIES کمک گرفت &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ FOREACH cat IN CATEGORIES_ARCHIVE.values }}
+  &amp;lt;a href=&quot;{{ cat.url }}&quot;&amp;gt;{{ cat.name }}&amp;lt;/a&amp;gt; - &amp;lt;small&amp;gt;{{ cat.posts.size }}&amp;lt;/small&amp;gt;&amp;lt;br&amp;gt;
+  {{ FOREACH id IN cat.posts.sort }}
+    &amp;lt;h5&amp;gt;&amp;lt;a href=&quot;{{ ENTRIES.$id.url }}&quot;&amp;gt;{{ ENTRIES.$id.title }}&amp;lt;/a&amp;gt;&amp;lt;/h5&amp;gt;
+  {{ END }}
+{{ END }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;مثلما به جای id و $id از هر نام دیگری که بخواهید میتوانید استفاده کنید.&lt;/p&gt;</description>
+          <pubDate></pubDate>
+          <link>/doc-fa/5/متغیرهای-موجود/</link>
+          <guid isPermaLink="true">/doc-fa/5/متغیرهای-موجود/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>archive.tt2</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;به جز برچسب UTIDS تمام برچسب‌های main.tt2 و index.tt2 در archive با همان مقادیر معتبر هستند&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ MainTITLE }}
+{{ MainDESCRIPTION }}
+{{ MainURL }}
+{{ MainROOT }}
+{{ MainSTATIC }}
+{{ MainIMAGEURL }}
+{{ MainAUTHOR }}
+{{ MainEMAIL }}
+
+{{ PageTITLE }}
+   title - YYYY/MM     :if dae archive
+   title - field name  :if field archive
+
+{{ TITLE }}
+{{ DESCRIPTION }}
+{{ URL }}
+{{ ROOT }}
+{{ STATIC }}
+{{ IMAGEURL }}
+{{ AUTHOR }}
+{{ EMAIL }}
+
+{{ ArchiveTITLE }} :
+   YYYY/MM    :if dae archive
+   field name :if field archive
+
+{{ ENTRIES }}
+{{ FLOORS }}
+{{ POSTS }}
+
+{{ MAIN }}
+{{ SITE }}
+{{ BUILD }}
+
+{{ IS_ARCHIVE }}      :(boolean) true for field archives
+{{ IS_DATE_ARCHIVE }} :(boolean) true for date archives
+
+{{ ARCH }} : مشخصات آرشیوی که در حال ساخته شدن است
+برای آرشیو زمانی:
+   {{ ARCH.name }}       : october 2014   -    اردیبهشت 95
+   {{ ARCH.year }}
+   {{ ARCH.month }}
+   {{ ARCH.month_name }}
+   {{ ARCH.number }}     : year - month     2014 - 07         1395 - 11
+   {{ ARCH.url }}        : float url      /site/archive/
+   {{ ARCH.furl }}       : full url        http://example.org/site/archive/
+برای آرشیو ساخته شده از فیلدهای پست:
+   {{ ARCH.name }}
+   {{ ARCH.showname }} : namespace
+   {{ ARCH.url }}
+   {{ ARCH.furl }}
 &lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate></pubDate>
-          <link>/doc-fa/5/archives/</link>
-          <guid isPermaLink="true">/doc-fa/5/archives/</guid>
+          <link>/doc-fa/5/archive-tt2/</link>
+          <guid isPermaLink="true">/doc-fa/5/archive-tt2/</guid>
 
 
         <category>

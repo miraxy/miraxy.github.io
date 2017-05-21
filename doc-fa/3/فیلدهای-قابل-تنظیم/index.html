@@ -9,7 +9,7 @@
     <meta name="description" content="اسناد میرا">
     <meta name="author" content="kiavash">
 
-    <title>feed_output - اسناد</title>
+    <title>فیلدهای قابل تنظیم - اسناد</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
@@ -89,10 +89,200 @@
   <div class="row">
     <div class="col-lg-7 col-lg-offset-1 col-md-8">
       
-      <a name="feed_output"></a>
-         <h2><a href="/doc-fa/3/feed_output/">feed_output</a></h2>
+      <a name="فیلدهای قابل تنظیم"></a>
+         <h2><a href="/doc-fa/3/فیلدهای-قابل-تنظیم/">فیلدهای قابل تنظیم</a></h2>
          <a name="more"></a>
+<h2>title</h2>
+
+<p>تیتر یا عنوان سایت</p>
+
+<h2>description</h2>
+
+<p>توضیح در مورد سایت</p>
+
+<h2>author</h2>
+
+<p>نام پیش فرض نویسنده یا نویسنده‌ها <br />
+به عنوان فیلد در هدر نوشته‌ها ظاهر میشود، همچنین در پوسته هم به عنوان فیلد author در زیر هر پست، یا به صورت عمومی قابل نمایش است</p>
+
+<h2>email</h2>
+
+<p>آدرس ایمیلی که برای ارتباط با نویسنده یا نویسندگان سایت در نظر گرفته شده.</p>
+
+<h2>url</h2>
+
+<p>آدرس انتشار سایت <br />
+<code>url: mysite.com/floor_name</code></p>
+
+<h2>root</h2>
+
+<p>شاخه‌ی انتشار سایت <br />
+<code>/floor_name</code></p>
+
+<h2>static</h2>
+
+<p>محل انتقال محتویات دایرکتوری statics <br />
+<code>/my_statics</code></p>
+
+<h2>imageurl</h2>
+
+<p>در رفتار عمومی میرا تاثیری ندارد اما در صورتیکه آدرسی به آن داده باشید با یک برچسب از پیش تعریف شده در پوسته قابل استفاده است. <br />
+در صورتیکه در تنظیمات اختصاصی هر سایت مقدار گرفته باشد، پیمایش‌گر درونی یا parser میرا در بدنه هر نوشته از این مقدار برای تفسیر آدرس استفاده می‌کند. برای اطلاعات بیشتر قسمت پارسرهای درونی میرا را مطالعه نمایید.</p>
+
+<h2>publishDIR</h2>
+
+<p>نام دایرکتوری که فایل‌های خروجی به آن منتقل می‌شود. پیش فرض: public</p>
+
+<h2>post_num</h2>
+
+<p>تعداد نوشته‌هایی که در صفحه اول و سایر صفحات ایندکس نمایش داده می‌شود، یا یک عدد باید باشد یا گزینه‌ی all</p>
+
+<h2>archive_post_num</h2>
+
+<p>تعداد نوشته‌هایی که در صفحات آرشیو نمایش داده می‌شود، یا یک عدد باید باشد یا گزینه‌ی all</p>
+
+<h2>feed_post_num</h2>
+
+<p>تعداد نوشته‌هایی که در خوراک یا feed سایت نمایش داده می‌شود، یا یک عدد باید باشد یا گزینه‌ی all</p>
+
+<h2>post_sort</h2>
+
+<p>میرا نوشته‌ها را به صورت پیش فرض از آخر به اول بر اساس عدد utid هر نوشته مرتب می‌کند. اما میتوان با دادن مقدار reverse به این فیلد ترتیب را معکوس نمود. <br />
+<code>post_sort: reverse</code></p>
+
+<h2>feed_output</h2>
+
 <p>نام فایل خوراک یا feed سایت پیش فرض feed.xml است اما میتوان خروجی را به مقدار دادن به این فیلد تغییر داد.</p>
+
+<h2>feed_template</h2>
+
+<p>نام فایل پوسته‌ای که خوراک سایت بر اساس آن تولید می‌شود، به شکل پیش فرض atom.tt2 مورد استفاده قرار میگیرد.</p>
+
+<h2>default_floor</h2>
+
+<p>ای فیلد تنها در تنظیمات مرکزی یا config.yml معتبر است <br />
+در صورتیکه هنگام ایجاد نوشته جدید سوییچ -f یا --floor را وارد نکنید، نام طبقه‌ای که در این فیلد مشخص کرده باشید مورد استفاده قرار میگیرد.</p>
+
+<h2>permalink</h2>
+
+<p>مسیری که آدرس هر نوشته بر اساس آن ساخته خواهد شد.</p>
+
+<pre><code>:year
+سال انتشار پست
+:month
+ماه انتشار
+:day
+روز انتشار
+:title
+عنوان پست
+:FIELD_NAME
+نام هر فیلدی که محتوای تک خطی داشته باشد(لیست نباشد) و در هدر فایل پست با مقدار معتبر وجود داشته باشد
+
+/some/thing/else
+هرچیزی که بخواهید به آدرس شما اضافه شود
+</code></pre>
+
+<p>مثال:</p>
+
+<pre><code>/a/:year/abcd/:month/:chapter/wxyz/:day/else/:title
+که در اصل هر نوشته در آدرسی شبیه به آدرس زیر منتشر خواهد شد:
+mysite.com/a/2017/abcd/02/session_4/wxyz/25/else/post_title_or_index/
+</code></pre>
+
+<p>همچنین میتوانید مشخص کنید که آدرس به صورت مسیر یا فایل خروجی ساخته شود. در صورتیکه در انتها مقدار .html یا هر پسوند دیگری که مایل باشید را مشخص کنید، آدرس به صورت یک فایل خواهد بود</p>
+
+<pre><code>/:year/:month/:day/:category/:title.html
+که در اصل هر نوشته در آدرسی شبیه به آدرس زیر منتشر خواهد شد:
+mysite.com/2017/02/25/daily/post_title_or_index.html
+</code></pre>
+
+<h2>default_markup</h2>
+
+<p>زبان نشانه‌گذاری که برای نوشته‌های سایتتان در نظر گرفته‌اید.
+  - markdown -or- md
+  - mmd   (mira markdown parser based on multimarkdown 2.0.b6)
+  - bbcode
+  - textile
+  - text -or- txt   just add \<br> in enlines
+  - html</p>
+
+<p>گزینه‌ی mmd در حال تکمیل است اما اگر میخواهید markdown با طعمی شبیه به گیت‌هاب را داشته باشید از این گزینه استفاده کنید.</p>
+
+<h2>default_extension</h2>
+
+<p>پسوند پیش فرض برای فایل‌هایی که با دستور <code>mira new</code> ایجاد شده‌اند، به شکل پیش‌فرض مقدار .md در میرا مورد استفاده قرار می‌گیرد.</p>
+
+<h2>output_extension</h2>
+
+<p>پسوند فایل‌های خروجی، مقدار پیش فرض html می‌باشد</p>
+
+<h2>template</h2>
+
+<p>نام پوسته‌ای که بر اساس آن صفحات خروجی برای انتشار ساخته می‌شوند، این مقدار باید برابر با <strong>نام دایرکتوری پوسته مورد نظر در شاخه‌ی templates</strong> باشد.</p>
+
+<h2>lists</h2>
+
+<p>هر کدام از فیلدهای پست که میخواهید یک لیست آرشیو بر اساس آن بسازید
+مثال:</p>
+
+<pre><code>lists:
+  - categories
+  - tags
+  - author
+</code></pre>
+
+<p>هر فیلدی را میتوان در میرا آرشیو کرد و محدودیتی وجود ندارد.</p>
+
+<h2>namespace</h2>
+
+<p>در صورتی که بر اساس فیلدهای خود آرشیو میسازید و میخواهید نام متفاوتی با مقدار آن فیلد برای آدرس در نظر بگیرید در این قسمت آن را مشخص کنید
+مثال:</p>
+
+<pre><code>namespace:
+  veryverylongarchivename : vlan
+  آموزش: learn
+  کتاب: book
+  درباره: about
+  شخصی: personal
+  ترمینال: terminal
+</code></pre>
+
+<p>اگر در tag های خود از آموزش استفاده کنید آدرس آن به این صورت خواهد بود
+    yoursite/FLOOR/tag/آموزش/index.html
+اما اگر در namespace کلید و مقدار</p>
+
+<pre><code>آموزش: learn
+</code></pre>
+
+<p>را اضافه کرده باشید این آدرس به این صورت تغییر خواهد کرد
+    yoursite/FLOOR/tag/learn/index.html</p>
+
+<h2>plugins</h2>
+
+<p>نام پلاگین‌هایی که میخواهید فعال باشند</p>
+
+<pre><code>plugins:
+  - Jdate
+</code></pre>
+
+<p>در حال حاضر تنها پلاگین موجود، پلاگین جلالی است، که تاریخ هجری شمسی را به نوشته‌های شما اضافه میکند، در صورتی که بخواهید آرشیو بر اساس تاریخ شمسی هم داشته باشید، مقدار jdate را به lists نیز اضافه کنید.</p>
+
+<h2>time_zone</h2>
+
+<p>اختلاف زمانی منطقه‌ی شما با ساعت جهانی، از این فیلد جهت تصحیح زمان در خوراک سایت استفاده می‌شود. پیش فرض +0000 است، اما برای مثال در ایران باید مقدار را برابر +0330 قرار داد <br />
+<code>time_zone: +0330</code></p>
+
+<h2>t_start_tag</h2>
+
+<p>شروع کننده‌ی برچسب‌های پوسته، پیش فرض }} </p>
+
+<h2>t_end_tag</h2>
+
+<p>پایان دهنده‌ی برچسب‌های پوسته، پیش فرض {{</p>
+
+<h2>t_outline_tag</h2>
+
+<p>کدنویسی پوسته بدون برچسب‌های شروع و پایان</p>
       
     </div>
 
@@ -159,200 +349,9 @@
       
 
       
-      	<h5>فیلدهای قابل تنظیم</h5>
-      
 
-      <h5><a href="#title">title</a></h5>
-<!--      <h5><a href="#/doc-fa/3/title/">title</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#description">description</a></h5>
-<!--      <h5><a href="#/doc-fa/3/description/">description</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#author">author</a></h5>
-<!--      <h5><a href="#/doc-fa/3/author/">author</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#email">email</a></h5>
-<!--      <h5><a href="#/doc-fa/3/email/">email</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#url">url</a></h5>
-<!--      <h5><a href="#/doc-fa/3/url/">url</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#root">root</a></h5>
-<!--      <h5><a href="#/doc-fa/3/root/">root</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#static">static</a></h5>
-<!--      <h5><a href="#/doc-fa/3/static/">static</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#imageurl">imageurl</a></h5>
-<!--      <h5><a href="#/doc-fa/3/imageurl/">imageurl</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#publishDIR">publishDIR</a></h5>
-<!--      <h5><a href="#/doc-fa/3/publishdir/">publishDIR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#post_num">post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/post_num/">post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#archive_post_num">archive_post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/archive_post_num/">archive_post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_post_num">feed_post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_post_num/">feed_post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#post_sort">post_sort</a></h5>
-<!--      <h5><a href="#/doc-fa/3/post_sort/">post_sort</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_output">feed_output</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_output/">feed_output</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_template">feed_template</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_template/">feed_template</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_floor">default_floor</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_floor/">default_floor</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#permalink">permalink</a></h5>
-<!--      <h5><a href="#/doc-fa/3/permalink/">permalink</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_markup">default_markup</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_markup/">default_markup</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_extension">default_extension</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_extension/">default_extension</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#output_extension">output_extension</a></h5>
-<!--      <h5><a href="#/doc-fa/3/output_extension/">output_extension</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#template">template</a></h5>
-<!--      <h5><a href="#/doc-fa/3/template/">template</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#lists">lists</a></h5>
-<!--      <h5><a href="#/doc-fa/3/lists/">lists</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#namespace">namespace</a></h5>
-<!--      <h5><a href="#/doc-fa/3/namespace/">namespace</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#plugins">plugins</a></h5>
-<!--      <h5><a href="#/doc-fa/3/plugins/">plugins</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#time_zone">time_zone</a></h5>
-<!--      <h5><a href="#/doc-fa/3/time_zone/">time_zone</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_start_tag">t_start_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_start_tag/">t_start_tag</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_end_tag">t_end_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_end_tag/">t_end_tag</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_outline_tag">t_outline_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_outline_tag/">t_outline_tag</a></h5> -->
+      <h5><a href="#فیلدهای قابل تنظیم">فیلدهای قابل تنظیم</a></h5>
+<!--      <h5><a href="#/doc-fa/3/فیلدهای-قابل-تنظیم/">فیلدهای قابل تنظیم</a></h5> -->
     
 
     
@@ -450,151 +449,9 @@
       
 
       
-      	<h5>توضیحاتی در مورد برچسب‌ها</h5>
-      
 
-      <h5><a href="#MainTITLE">MainTITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/maintitle/">MainTITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainDESCRIPTION">MainDESCRIPTION</a></h5>
-<!--      <h5><a href="#/doc-fa/5/maindescription/">MainDESCRIPTION</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainURL">MainURL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainurl/">MainURL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainROOT">MainROOT</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainroot/">MainROOT</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainSTATIC">MainSTATIC</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainstatic/">MainSTATIC</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainIMAGEURL">MainIMAGEURL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainimageurl/">MainIMAGEURL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainAUTHOR">MainAUTHOR</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainauthor/">MainAUTHOR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainEMAIL">MainEMAIL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainemail/">MainEMAIL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#PageTITLE">PageTITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/pagetitle/">PageTITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#FLOORS">FLOORS</a></h5>
-<!--      <h5><a href="#/doc-fa/5/floors/">FLOORS</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ENTRIES">ENTRIES</a></h5>
-<!--      <h5><a href="#/doc-fa/5/entries/">ENTRIES</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#UTIDS">UTIDS</a></h5>
-<!--      <h5><a href="#/doc-fa/5/utids/">UTIDS</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#TITLE">TITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/title/">TITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#DESCRIPTION">DESCRIPTION</a></h5>
-<!--      <h5><a href="#/doc-fa/5/description/">DESCRIPTION</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#URL">URL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/url/">URL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ROOT">ROOT</a></h5>
-<!--      <h5><a href="#/doc-fa/5/root/">ROOT</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#AUTHOR">AUTHOR</a></h5>
-<!--      <h5><a href="#/doc-fa/5/author/">AUTHOR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#EMAIL">EMAIL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/email/">EMAIL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#BUILD">BUILD</a></h5>
-<!--      <h5><a href="#/doc-fa/5/build/">BUILD</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ARCHIVES">ARCHIVES</a></h5>
-<!--      <h5><a href="#/doc-fa/5/archives/">ARCHIVES</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#سایر برچسب‌ها برای آرشیو">سایر برچسب‌ها برای آرشیو</a></h5>
-<!--      <h5><a href="#/doc-fa/5/سایر-برچسب‌ها-برای-آرشیو/">سایر برچسب‌ها برای آرشیو</a></h5> -->
+      <h5><a href="#متغیرهای موجود">متغیرهای موجود</a></h5>
+<!--      <h5><a href="#/doc-fa/5/متغیرهای-موجود/">متغیرهای موجود</a></h5> -->
     
       
 

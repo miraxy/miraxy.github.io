@@ -94,7 +94,7 @@
          <a name="more"></a>
 <p>در سربرگ هر فیلدی که نیاز داشته باشد برای آرشیو کردن یا ذخیره کردن اطلاعات و محتوا می‌توان داشت، اما تعدادی فیلد از پیش تعریف شده نیز وجود دارد که در تولید خروجی موثر می‌باشند.</p>
 
-<h4>utid</h4>
+<h2>utid</h2>
 
 <p>این فیلد کلید اصلی هر نوشته می‌باشد، ترتیب نمایش، محل ذخیره در حافظه، آدرس دهی و هر چیزی که به محتوا مربوط باشد به این فیلد وابسته است. در صورتی که این فیلد موجو نباشد، میرا از تمام محتوای موجود چشم پوشی میکند.</p>
 
@@ -127,7 +127,7 @@ YOURSITE.com/blog/2017/hello/2/        &gt; utid 20171213141516
 
 <p>مثلا اگر نوشته‌ای به وبلاگ اضافه شود اما قرار نباشد در صفحه اول نمایش داده شود یا بخواهید در آخرین صفحه وبلاگ و در کنار نوشته‌های اولیه قرار بگیرد، با تغییر این مقدار به عددی کوچک‌تر میتوان این تغییرات را به وجود آورد، یا برعکس برای نگه داشتن همیشگی یک نوشته در صفحه اول، اگر نمیخواهید از کدها و برچسب‌های موجود برای تولید پوسته استفاده کنید، خیلی ساده میتوان مقدار خیلی بزرگی مثل ۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹۹ را به utid اختصاص داد، اینظور میتوان مطمین شد آن نوشته همیشه در ابتدای تمام نوشت‌ها قرار می‌گیرد.</p>
 
-<h4>date</h4>
+<h2>date</h2>
 
 <p>تاریخ تولید فایل محتوا</p>
 
@@ -147,7 +147,7 @@ YYYY-MM-DDTHH:MM:SS
 
 <p>در صورت نیاز به تولید آرشیو زمانی، وجود داشتن این فیلد دقیقا با فرمت ذکر شده در بالا، برای هر پست مورد نیاز است.</p>
 
-<h4>title</h4>
+<h2>title</h2>
 
 <p>تیتر یا عنوان هر نوشته</p>
 
@@ -166,7 +166,7 @@ YYYY-MM-DDTHH:MM:SS
 
 <p>همانطور که در بالا دیدید هنگام تولید آدرس تمام علایم غیر از علایم نوشتاری، اعداد و کاراکتر خط تیره از آدرس حذف خواهند شد و فاصله‌ها با خط تیره جایگزین می‌شوند</p>
 
-<h4>_index</h4>
+<h2>_index</h2>
 
 <p>جایگزین title برای تولید آدرس نوشته‌ها در فیلد permalink</p>
 
@@ -208,11 +208,11 @@ page
 categories, tags...
 </code></pre>
 
-<h4>_permalink</h4>
+<h2>_permalink</h2>
 
 <p>در حالت پیش فرض آدرس ایستای هر نوشته با مقداری که به فیلد permalink در فایل تنظیمات ساخته میشود، با مقدار دهی به این فیلد مقدار موجود در فایل تنظیمات نادیده گرفته میشود و از این مقدار استفاده خواهد شد.  </p>
 
-<h4>_type</h4>
+<h2>_type</h2>
 
 <p>مشخص کردن صفحه‌های ثابت که در صفحات ایندکس و لینک صفحه قبل و بعد لیست نشوند، با دادن مقدار page به این فیلد ممکن خواهد بود.</p>
 
@@ -225,17 +225,17 @@ _layout: customized_about_layout.tt2
 _permalink: /:title/
 </code></pre>
 
-<h4>_layout</h4>
+<h2>_layout</h2>
 
 <p>پوسته اختصاصی برای هر نوتشه</p>
 
 <p>میرا برای تولید خروجی نهایی تمام پست‌ها، به شکل پیش فرض از فایلی به نام post.tt2 در پوسته‌ای که در تنظیمات مشخص کرده‌اید استفاده می‌کند، اما اگر به این فیلد مقدار بدهید، پست مورد نظر، از یک پوسته اختصاصی می‌تواند استفاده می‌کند.</p>
 
-<h4>_markup</h4>
+<h2>_markup</h2>
 
 <p>در صورتیکه نوشته‌ای با فرمتی به جز markup پیش فرض که در تنظیمات مشخص‌شده نوشته بشود، می‌توان با مقدار دادن به این فیلد برای میرا مشخص کرد که برای پردازش بدنه‌ی نوشته از این مارک‌آپ استفاده کند.</p>
 
-<h4>فیلدهای انتخابی</h4>
+<h2>فیلدهای انتخابی</h2>
 
 <p>به جز موارد ذکر شده از هر فیلد دیگری میتوان در سربرگ استفاده کرد، مثلا می‌توان برای هر نوشته یک عکس ثابت برای صفحه ایستای آن در کنار عنوان داشت یا برای مطالبی که ترجمه‌ای از منابع مختلف هستند و قرارباشد از نام منبع به شکل ثابتی در پوسته جدا از بدنه نوشته استفاده کرد، یا هر چیز دیگر. <br />
 میتوانید در سر برگ نوشته فیلدی برای این منظورها ساخت.</p>
@@ -257,7 +257,7 @@ source: other.com/post.html
 {{ END }}
 </code></pre>
 
-<h4>لیست‌ها در سربرگ</h4>
+<h2>لیست‌ها در سربرگ</h2>
 
 <p>اگر  فیلدهایی مقداری بیشتر از یک آیتم داشته باشند، باید آن‌ها را به صورت لیست‌هایی با فرمت yaml و به این شکل ساخت:  </p>
 
@@ -339,200 +339,9 @@ tags:
       
 
       
-      	<h5>فیلدهای قابل تنظیم</h5>
-      
 
-      <h5><a href="#title">title</a></h5>
-<!--      <h5><a href="#/doc-fa/3/title/">title</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#description">description</a></h5>
-<!--      <h5><a href="#/doc-fa/3/description/">description</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#author">author</a></h5>
-<!--      <h5><a href="#/doc-fa/3/author/">author</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#email">email</a></h5>
-<!--      <h5><a href="#/doc-fa/3/email/">email</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#url">url</a></h5>
-<!--      <h5><a href="#/doc-fa/3/url/">url</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#root">root</a></h5>
-<!--      <h5><a href="#/doc-fa/3/root/">root</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#static">static</a></h5>
-<!--      <h5><a href="#/doc-fa/3/static/">static</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#imageurl">imageurl</a></h5>
-<!--      <h5><a href="#/doc-fa/3/imageurl/">imageurl</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#publishDIR">publishDIR</a></h5>
-<!--      <h5><a href="#/doc-fa/3/publishdir/">publishDIR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#post_num">post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/post_num/">post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#archive_post_num">archive_post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/archive_post_num/">archive_post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_post_num">feed_post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_post_num/">feed_post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#post_sort">post_sort</a></h5>
-<!--      <h5><a href="#/doc-fa/3/post_sort/">post_sort</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_output">feed_output</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_output/">feed_output</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_template">feed_template</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_template/">feed_template</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_floor">default_floor</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_floor/">default_floor</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#permalink">permalink</a></h5>
-<!--      <h5><a href="#/doc-fa/3/permalink/">permalink</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_markup">default_markup</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_markup/">default_markup</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_extension">default_extension</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_extension/">default_extension</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#output_extension">output_extension</a></h5>
-<!--      <h5><a href="#/doc-fa/3/output_extension/">output_extension</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#template">template</a></h5>
-<!--      <h5><a href="#/doc-fa/3/template/">template</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#lists">lists</a></h5>
-<!--      <h5><a href="#/doc-fa/3/lists/">lists</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#namespace">namespace</a></h5>
-<!--      <h5><a href="#/doc-fa/3/namespace/">namespace</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#plugins">plugins</a></h5>
-<!--      <h5><a href="#/doc-fa/3/plugins/">plugins</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#time_zone">time_zone</a></h5>
-<!--      <h5><a href="#/doc-fa/3/time_zone/">time_zone</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_start_tag">t_start_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_start_tag/">t_start_tag</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_end_tag">t_end_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_end_tag/">t_end_tag</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_outline_tag">t_outline_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_outline_tag/">t_outline_tag</a></h5> -->
+      <h5><a href="#فیلدهای قابل تنظیم">فیلدهای قابل تنظیم</a></h5>
+<!--      <h5><a href="#/doc-fa/3/فیلدهای-قابل-تنظیم/">فیلدهای قابل تنظیم</a></h5> -->
     
 
     
@@ -630,151 +439,9 @@ tags:
       
 
       
-      	<h5>توضیحاتی در مورد برچسب‌ها</h5>
-      
 
-      <h5><a href="#MainTITLE">MainTITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/maintitle/">MainTITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainDESCRIPTION">MainDESCRIPTION</a></h5>
-<!--      <h5><a href="#/doc-fa/5/maindescription/">MainDESCRIPTION</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainURL">MainURL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainurl/">MainURL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainROOT">MainROOT</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainroot/">MainROOT</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainSTATIC">MainSTATIC</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainstatic/">MainSTATIC</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainIMAGEURL">MainIMAGEURL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainimageurl/">MainIMAGEURL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainAUTHOR">MainAUTHOR</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainauthor/">MainAUTHOR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainEMAIL">MainEMAIL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainemail/">MainEMAIL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#PageTITLE">PageTITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/pagetitle/">PageTITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#FLOORS">FLOORS</a></h5>
-<!--      <h5><a href="#/doc-fa/5/floors/">FLOORS</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ENTRIES">ENTRIES</a></h5>
-<!--      <h5><a href="#/doc-fa/5/entries/">ENTRIES</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#UTIDS">UTIDS</a></h5>
-<!--      <h5><a href="#/doc-fa/5/utids/">UTIDS</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#TITLE">TITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/title/">TITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#DESCRIPTION">DESCRIPTION</a></h5>
-<!--      <h5><a href="#/doc-fa/5/description/">DESCRIPTION</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#URL">URL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/url/">URL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ROOT">ROOT</a></h5>
-<!--      <h5><a href="#/doc-fa/5/root/">ROOT</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#AUTHOR">AUTHOR</a></h5>
-<!--      <h5><a href="#/doc-fa/5/author/">AUTHOR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#EMAIL">EMAIL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/email/">EMAIL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#BUILD">BUILD</a></h5>
-<!--      <h5><a href="#/doc-fa/5/build/">BUILD</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ARCHIVES">ARCHIVES</a></h5>
-<!--      <h5><a href="#/doc-fa/5/archives/">ARCHIVES</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#سایر برچسب‌ها برای آرشیو">سایر برچسب‌ها برای آرشیو</a></h5>
-<!--      <h5><a href="#/doc-fa/5/سایر-برچسب‌ها-برای-آرشیو/">سایر برچسب‌ها برای آرشیو</a></h5> -->
+      <h5><a href="#متغیرهای موجود">متغیرهای موجود</a></h5>
+<!--      <h5><a href="#/doc-fa/5/متغیرهای-موجود/">متغیرهای موجود</a></h5> -->
     
       
 

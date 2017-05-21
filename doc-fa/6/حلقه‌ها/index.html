@@ -92,7 +92,7 @@
       <a name="حلقه‌ها"></a>
          <h2><a href="/doc-fa/6/حلقه‌ها/">حلقه‌ها</a></h2>
          <a name="more"></a>
-<h4>FOREACH</h4>
+<h2>FOREACH</h2>
 
 <p>حلقه‌ی FOREACH تمام آیتم‌های موجود در یک لیست را به ترتیب بارگذاری میکند و با دستوراعملی که در بلوک مربوطه مشخص شده پردازش می‌کند. این دستور یک دستور بلوکی است که با FOREACH شروع و با END پایان می‌یابد.</p>
 
@@ -118,7 +118,7 @@
 {{ END }}
 </code></pre>
 
-<h4>WHILE</h4>
+<h2>WHILE</h2>
 
 <p>با استفاده از WHILE نیز می‌توان حلقه‌ها را بوجود آورد، WHILE برای هر بار تکرار یک شرط را بررسی می‌کند و در صورتیکه مقدار شرط صحیح باشد، حلقه را مجددا تکرار میکند، در غیر اینصورت از حلقه خارج خواهد شد.</p>
 
@@ -129,7 +129,7 @@
 {{ END }}
 </code></pre>
 
-<h4>کنترل حلقه FOREACH</h4>
+<h2>کنترل حلقه FOREACH</h2>
 
 <p>با استفاده از ابزار کنترل حلقه می‌توان از وضعیت فعلی که حلقه در حال اجرای آن است مطلع شد و برای هر وضعیت شرط خاصی را در نظر گرفت. برای استفاده از هر یک از ابزار کنترل، درون هر حلقه از مقدار loop به همراه نام کنترل کننده میتوان استفاده کرد</p>
 
@@ -144,23 +144,23 @@
 
 <p>در حلقه‌ی بالا برای اولین نوشته‌ی هر صفحه متن کامل آن نمایش داده می‌شود و برای سایر نوشته‌ها متن خلاصه نمایش داده می‌شود.</p>
 
-<h5>first</h5>
+<h3>first</h3>
 
 <p>در صورتیکه حلقه در اولین اجرای خود باشد مقدار صحیح را باز می‌گرداند.</p>
 
-<h5>last</h5>
+<h3>last</h3>
 
 <p>در صورتیکه حلقه در آخرین اجرای خود باشد مقدار صحیح را باز می‌گرداند.</p>
 
-<h5>size</h5>
+<h3>size</h3>
 
 <p>تعداد آیتم‌های لیستی که حلقه لود می‌کند را باز می‌گرداند.</p>
 
-<h5>count</h5>
+<h3>count</h3>
 
 <p>شماره‌ی حلقه‌ای که در حال تکرار شدن است را باز می‌گرداند.</p>
 
-<h5>prev</h5>
+<h3>prev</h3>
 
 <p>امکان دسترسی به مقادیر تکرار پیشین حلقه.</p>
 
@@ -174,11 +174,11 @@
 
 <p>در حلقه‌ی فوق اگر سال در نوشته‌ی قبل و نوشته‌ای که در حال لود شدن است برابر نبود، سال نمایش داده می‌شود.</p>
 
-<h5>next</h5>
+<h3>next</h3>
 
 <p>امکان دسترسی به مقادیر تکرار بعدی حلقه‌.</p>
 
-<h5>parity</h5>
+<h3>parity</h3>
 
 <p>به ترتیب برای هربار لود شدن حلقه مقادیر odd و even را باز میگرداند.</p>
 
@@ -206,15 +206,15 @@
 &lt;/table&gt;
 </code></pre>
 
-<h5>odd</h5>
+<h3>odd</h3>
 
 <p>با هر بار تکرار شدن حلقه مقادیر 0 و 1 را به نوبت برای تکرار های زوج و فرد حلقه باز می‌گرداند. به عبارت دیگر برای تکرارهای اول، سوم، پنجم، ... حلقه مقدار 1 یا صحیح را برمیگر‌داند.</p>
 
-<h5>even</h5>
+<h3>even</h3>
 
 <p>با هر بار تکرار شدن حلقه مقادیر 0 و 1 را به نوبت برای تکرار های فرد و زوج حلقه باز می‌گرداند. به عبارت دیگر برای تکرارهای دوم، چهارم، ششم، ... حلقه مقدار 1 یا صحیح را برمیگر‌داند.</p>
 
-<h5>NEXT</h5>
+<h3>NEXT</h3>
 
 <pre><code>{{ FOREACH user IN users }}
    {{ NEXT IF user.isguest }}
@@ -222,7 +222,7 @@
 {{ END }}
 </code></pre>
 
-<h5>LAST</h5>
+<h3>LAST</h3>
 
 <pre><code>{{ FOREACH user IN users }}
    Name: {{ user.name }}    Email: {{ user.email }}
@@ -295,200 +295,9 @@
       
 
       
-      	<h5>فیلدهای قابل تنظیم</h5>
-      
 
-      <h5><a href="#title">title</a></h5>
-<!--      <h5><a href="#/doc-fa/3/title/">title</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#description">description</a></h5>
-<!--      <h5><a href="#/doc-fa/3/description/">description</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#author">author</a></h5>
-<!--      <h5><a href="#/doc-fa/3/author/">author</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#email">email</a></h5>
-<!--      <h5><a href="#/doc-fa/3/email/">email</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#url">url</a></h5>
-<!--      <h5><a href="#/doc-fa/3/url/">url</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#root">root</a></h5>
-<!--      <h5><a href="#/doc-fa/3/root/">root</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#static">static</a></h5>
-<!--      <h5><a href="#/doc-fa/3/static/">static</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#imageurl">imageurl</a></h5>
-<!--      <h5><a href="#/doc-fa/3/imageurl/">imageurl</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#publishDIR">publishDIR</a></h5>
-<!--      <h5><a href="#/doc-fa/3/publishdir/">publishDIR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#post_num">post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/post_num/">post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#archive_post_num">archive_post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/archive_post_num/">archive_post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_post_num">feed_post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_post_num/">feed_post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#post_sort">post_sort</a></h5>
-<!--      <h5><a href="#/doc-fa/3/post_sort/">post_sort</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_output">feed_output</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_output/">feed_output</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_template">feed_template</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_template/">feed_template</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_floor">default_floor</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_floor/">default_floor</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#permalink">permalink</a></h5>
-<!--      <h5><a href="#/doc-fa/3/permalink/">permalink</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_markup">default_markup</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_markup/">default_markup</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_extension">default_extension</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_extension/">default_extension</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#output_extension">output_extension</a></h5>
-<!--      <h5><a href="#/doc-fa/3/output_extension/">output_extension</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#template">template</a></h5>
-<!--      <h5><a href="#/doc-fa/3/template/">template</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#lists">lists</a></h5>
-<!--      <h5><a href="#/doc-fa/3/lists/">lists</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#namespace">namespace</a></h5>
-<!--      <h5><a href="#/doc-fa/3/namespace/">namespace</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#plugins">plugins</a></h5>
-<!--      <h5><a href="#/doc-fa/3/plugins/">plugins</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#time_zone">time_zone</a></h5>
-<!--      <h5><a href="#/doc-fa/3/time_zone/">time_zone</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_start_tag">t_start_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_start_tag/">t_start_tag</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_end_tag">t_end_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_end_tag/">t_end_tag</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_outline_tag">t_outline_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_outline_tag/">t_outline_tag</a></h5> -->
+      <h5><a href="#فیلدهای قابل تنظیم">فیلدهای قابل تنظیم</a></h5>
+<!--      <h5><a href="#/doc-fa/3/فیلدهای-قابل-تنظیم/">فیلدهای قابل تنظیم</a></h5> -->
     
 
     
@@ -586,151 +395,9 @@
       
 
       
-      	<h5>توضیحاتی در مورد برچسب‌ها</h5>
-      
 
-      <h5><a href="#MainTITLE">MainTITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/maintitle/">MainTITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainDESCRIPTION">MainDESCRIPTION</a></h5>
-<!--      <h5><a href="#/doc-fa/5/maindescription/">MainDESCRIPTION</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainURL">MainURL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainurl/">MainURL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainROOT">MainROOT</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainroot/">MainROOT</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainSTATIC">MainSTATIC</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainstatic/">MainSTATIC</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainIMAGEURL">MainIMAGEURL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainimageurl/">MainIMAGEURL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainAUTHOR">MainAUTHOR</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainauthor/">MainAUTHOR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainEMAIL">MainEMAIL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainemail/">MainEMAIL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#PageTITLE">PageTITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/pagetitle/">PageTITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#FLOORS">FLOORS</a></h5>
-<!--      <h5><a href="#/doc-fa/5/floors/">FLOORS</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ENTRIES">ENTRIES</a></h5>
-<!--      <h5><a href="#/doc-fa/5/entries/">ENTRIES</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#UTIDS">UTIDS</a></h5>
-<!--      <h5><a href="#/doc-fa/5/utids/">UTIDS</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#TITLE">TITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/title/">TITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#DESCRIPTION">DESCRIPTION</a></h5>
-<!--      <h5><a href="#/doc-fa/5/description/">DESCRIPTION</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#URL">URL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/url/">URL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ROOT">ROOT</a></h5>
-<!--      <h5><a href="#/doc-fa/5/root/">ROOT</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#AUTHOR">AUTHOR</a></h5>
-<!--      <h5><a href="#/doc-fa/5/author/">AUTHOR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#EMAIL">EMAIL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/email/">EMAIL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#BUILD">BUILD</a></h5>
-<!--      <h5><a href="#/doc-fa/5/build/">BUILD</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ARCHIVES">ARCHIVES</a></h5>
-<!--      <h5><a href="#/doc-fa/5/archives/">ARCHIVES</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#سایر برچسب‌ها برای آرشیو">سایر برچسب‌ها برای آرشیو</a></h5>
-<!--      <h5><a href="#/doc-fa/5/سایر-برچسب‌ها-برای-آرشیو/">سایر برچسب‌ها برای آرشیو</a></h5> -->
+      <h5><a href="#متغیرهای موجود">متغیرهای موجود</a></h5>
+<!--      <h5><a href="#/doc-fa/5/متغیرهای-موجود/">متغیرهای موجود</a></h5> -->
     
       
 

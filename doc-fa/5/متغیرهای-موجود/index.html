@@ -9,7 +9,7 @@
     <meta name="description" content="اسناد میرا">
     <meta name="author" content="kiavash">
 
-    <title>PageTITLE - اسناد</title>
+    <title>متغیرهای موجود - اسناد</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/mira-doc/bootstrap.min.css" rel="stylesheet">
@@ -89,9 +89,81 @@
   <div class="row">
     <div class="col-lg-7 col-lg-offset-1 col-md-8">
       
-      <a name="PageTITLE"></a>
-         <h2><a href="/doc-fa/5/pagetitle/">PageTITLE</a></h2>
+      <a name="متغیرهای موجود"></a>
+         <h2><a href="/doc-fa/5/متغیرهای-موجود/">متغیرهای موجود</a></h2>
          <a name="more"></a>
+<h2>MainTITLE</h2>
+
+<p>تیتر اصلی سایت ذخیره شده در فایل تنظیمات مرکزی یا همان config.yml
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ MainTITLE }}
+</code></pre>
+
+<h2>MainDESCRIPTION</h2>
+
+<p>توضیحات اصلی سایت ذخیره شده در فایل تنظیمات مرکزی یا همان config.yml
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ MainDESCRIPTION }}
+</code></pre>
+
+<h2>MainURL</h2>
+
+<p>آدرس اصلی سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال: YOURSITE.com
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ MainURL }}
+</code></pre>
+
+<h2>MainROOT</h2>
+
+<p>ریشه اصلی سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال: /
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ MainROOT }}
+</code></pre>
+
+<h2>MainSTATIC</h2>
+
+<p>شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال:
+<code>/statics</code>
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ MainSTATIC }}
+</code></pre>
+
+<h2>MainIMAGEURL</h2>
+
+<p>شاخه فایل‌های ثابت سایت ذخیره شده در فایل تنظیمات مرکزی
+مقدار بازگشتی برای مثال:
+<code>/statics/images</code>
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ MainIMAGEURL }}
+</code></pre>
+
+<h2>MainAUTHOR</h2>
+
+<p>نام نویسنده ذخیره شده در فایل تنظیمات مرکزی
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ MainAUTHOR }}
+</code></pre>
+
+<h2>MainEMAIL</h2>
+
+<p>ایمیل نویسنده
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ MainEMAIL }}
+</code></pre>
+
+<h2>PageTITLE</h2>
+
 <p>تیتر صفحه، در صورتیکه از ماژولی شبیه به header برای لود کردن قسمت بالایی صفحات html به شکل ثابت در تمام صفحات استفاده کنید این برچسب کمک بسیاری برای تگ &lt;title&gt; خواهد کرد، برای مثال در main.tt2 مقداری برابر TITLE و در index.tt2 مساوی FloorTITLE خواهد داشت
 نحوه‌ استفاده:</p>
 
@@ -111,6 +183,252 @@
 
 <p>date archive: <br />
 تیتر اختصاصی سایت - سال / ماه</p>
+
+<h2>FLOORS</h2>
+
+<p>نام تمام طبقات موجود در سایت به همراه توضیحاتشان و تعداد مشخصی از پست‌ها که در فیلد post_num در فایل تنظیمات مشخص کرده‌اید</p>
+
+<p>مقادیر موجود در این برچسب:</p>
+
+<pre><code>name
+description
+
+posts (list)
+</code></pre>
+
+<p>فیلد posts شامل تعداد مشخص از آخرین ارسال‌های شماست، تعداد ارسال‌های موجود در این کلید از config.yml و فیلد post_num برداشت میشود. <br />
+تمام مقادیری که برای POSTS که در قسمت‌های بعد توضیح داده میشود در مورد لیست posts در Floors نیز قابل استفاده است</p>
+
+<p>نحوه‌ استفاده:</p>
+
+<pre><code>{{ FOREACH site IN FLOORS.values }}
+  {{ site.name }}
+  {{ site.description }}
+
+  {{ FOREACH post IN site.posts }}
+    &lt;h2&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;h2&gt;
+    &lt;h4&gt;{{ post.CALENDAR.day }}-{{ post.CALENDAR.month_name }}-{{ post.CALENDAR.year }}&lt;/h4&gt;
+    &lt;p&gt;{{ post.body.less }}&lt;/p&gt;
+  {{ END }}
+
+{{ END }}
+</code></pre>
+
+<h2>ENTRIES</h2>
+
+<p>کلید-مقداری از تمام محتوای تولید شده در سایت، کل نوشته‌ها و صفحات، برای نمایش پست‌ها نیاز به مقدار utid آن دارید، در مورد کارکرد این برچسب، توضیحات UTIDS را بخوانید</p>
+
+<h2>UTIDS</h2>
+
+<p>کلید نام تمام محتوای موجود در سایت مرتب شده بر اساس مقدار utid هر پست، برابر با utid هر پست، برای لود کردن محتوا در برچسب Entries قابل استفاده است.</p>
+
+<p><strong>این برچسب تنها مختص به main.tt2 میباشد</strong></p>
+
+<p>تمام مقادیر معتبر برای POSTS در زیر این برچسب با اضافه کردن ENTRIES.$id نیز قابل استفاده هستند
+نحوه‌ی استفاده به همراه ENTRIES</p>
+
+<pre><code>{{ FOREACH id IN UTIDS }}
+   &lt;h2&gt;&lt;a href="{{ ENTRIES.$id.url }}"&gt;{{ ENTRIES.$id.title }}&lt;/a&gt;&lt;h2&gt;
+   &lt;h4&gt;{{ ENTRIES.$id.CALENDAR.day }}-{{ ENTRIES.$id.CALENDAR.month_name }}-{{ ENTRIES.$id.CALENDAR.year }}&lt;/h4&gt;
+   &lt;p&gt;{{ ENTRIES.$id.body.less }}&lt;/p&gt;
+{{ END }}
+</code></pre>
+
+<p><br><br></p>
+
+<h2>TITLE</h2>
+
+<p>تیتر اصلی طبقه، ذخیره شده در فایل تنظیمات طبقه <br />
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ TITLE }}
+</code></pre>
+
+<h2>DESCRIPTION</h2>
+
+<p>توضیحات طبقه، ذخیره شده در فایل تنظیمات طبقه <br />
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ DESCRIPTION }}
+</code></pre>
+
+<h2>URL</h2>
+
+<p>آدرس سایتی که طبقه در آن منتشر میشود، ذخیره شده در فیلد url فایل تنظیمات طبقه.  </p>
+
+<p>نحوه‌ استفاده:</p>
+
+<pre><code>{{ URL }}
+</code></pre>
+
+<h2>ROOT</h2>
+
+<p>آدرس شاخه‌ی ریشه، ذخیره شده در فایل تنظیمات طبقه <br />
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ ROOT }}
+</code></pre>
+
+<h2>AUTHOR</h2>
+
+<p>نام نویسنده، ذخیره شده در فایل تنظیمات طبقه <br />
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ AUTHOR }}
+</code></pre>
+
+<h2>EMAIL</h2>
+
+<p>نام نوسنده، ذخیره شده در فایل تنظیمات طبقه <br />
+نحوه‌ استفاده:</p>
+
+<pre><code>{{ EMAIL }}
+</code></pre>
+
+<h2>BUILD</h2>
+
+<p>اطلاعات زمان ساختن آخرین نسخه از سایت، یا تاریخ زمانی که mira build را اجرا میکنید.</p>
+
+<pre><code>{{ BUILD.date }} : 2017-03-25 18:44:03
+{{ BUILD.year }}
+{{ BUILD.month }}
+{{ BUILD.month_name }}
+{{ BUILD.month_abbr }}
+{{ BUILD.day }}
+{{ BUILD.day_name }}
+{{ BUILD.day_abbr }}
+{{ BUILD.hour }}
+{{ BUILD.minute }}
+{{ BUILD.second }}
+</code></pre>
+
+<h2>ARCHIVES</h2>
+
+<p>تمام آرشیوهای موجود در طبقه یا همان سایت</p>
+
+<p>در صورتیکه از یک پوسته یکسان برای چند طبقه که آرشیوهایی با فیلدها و نام‌های متفاوت دارند استفاده میکنید، میتوانید برای نمایش تمام آرشیو‌ها، بدون اهمیت اینکه چه نامی دارند از این برچسب استفاده کنید.</p>
+
+<p>مقدار این برچسب چیزی شبیه به این است:</p>
+
+<pre><code>'categories' =&gt; {
+          "CAT1" =&gt; {
+                'name' =&gt; "CAT1",
+                    'url' =&gt; "/FLOOR/categories/CAT1namespace/",
+                    'posts' =&gt; [
+                               '20170210173327',
+                               '20170210173313',
+                               '20170210174503',
+                               '20170210172431',
+                               '20170210173319'
+                             ]
+              },
+          "CAT2" =&gt; {
+                'name' =&gt; "CAT2",
+                    'url' =&gt; "/FLOOR/categories/CAT2namespace/",
+                    'posts' =&gt; [
+                               '20170210173327',
+                               '20170210173313',
+                               '20170210174503',
+                               '20170210172431',
+                               '20170210173319'
+                             ]
+             }
+},
+'date' =&gt; {
+      '201702' =&gt; {
+              'year' =&gt; '2017',
+              'month' =&gt; '02',
+              'url' =&gt; '/fa/archive/2017/02/',
+              'name' =&gt; 'February 2017',
+              'number' =&gt; '2017 - 02',
+              'posts' =&gt; [
+                         '20170210173327',
+                         '20170210173313',
+                         '20170210174503',
+                         '20170210172431',
+                         '20170210173319'
+                       ]
+              }
+}
+</code></pre>
+
+<p>با استفاده از IF میتوانید رفتار متفاوتی را برای هر نوع آرشیو در صورت وجود تعریف کنید</p>
+
+<p>نحوه استفاده:</p>
+
+<pre><code>{{ FOREACH archive IN ARCHIVES.pairs }}
+  {{ archive.key }} نام آرشیو
+  &lt;hr&gt;
+  {{ FOREACH item IN archive.value.values }}
+    &lt;a href="{{ item.url }}"&gt;{{ item.name }}&lt;/a&gt;
+    {{ IF (archive.key == 'categories') }}&lt;br&gt;{{ END }}
+    {{ IF (archive.key == 'date') or (archive.key == 'jdate') }}&lt;br&gt;{{ END }}
+    {{ IF (archive.key == 'author') }}&lt;br&gt;{{ END }}
+    {{ IF (archive.key == 'tags') }}&amp;nbsp;-&amp;nbsp;{{ END }}
+  {{- END }}
+  &lt;br&gt;
+{{- END }}
+</code></pre>
+
+<h2>سایر برچسب‌ها برای آرشیو</h2>
+
+<p>میرا برای هر آرشیو، همنام با همان آرشیو، مقداری برای پوسته تولید میکند، برای مثال اگر در فایل تنظیمات برای آرشیو ها فیلد categories را به عنوان آٰشیو مشخص کرده باشید، حلقه‌ای به نام CATEGORIES_ARCHIVE نیز در پوسته قابل استفاده خواهد بود، یا برای tags، میتوانید از TAGS_ARCHIVE استفاده کنید.</p>
+
+<p>اطلاعات موجود در هرکدام از این مقادیر، شبیه به این خواهند بود</p>
+
+<pre><code>CATEGORIES_ARCHIVE = [
+          {
+            'name' =&gt; "CAT1",
+            'url' =&gt; "/FLOOR/categories/CAT1namespace/",
+            'posts' =&gt; [
+                         '20170210172431',
+                         '20170210174503',
+                         '20170210173327',
+                         '20170210173313',
+                         '20170210173319'
+                       ]
+          },
+          {
+            'name' =&gt; "CAT2",
+            'url' =&gt; "/FLOOR/categories/CAT2namespace/",
+            'posts' =&gt; [
+                         '20170210172431',
+                         '20170210174503',
+                         '20170210173327',
+                         '20170210173313',
+                         '20170210173319'
+                       ]
+          },
+        ]
+</code></pre>
+
+<p>برای استفاده از این برچسب‌ها باید در حلقه‌ای که با FOREACH تولید میکنید از آن‌ها استفاده کنید</p>
+
+<p>نحوه استفاده برای فیلد فرضی categories</p>
+
+<pre><code>{{ FOREACH CATEGORIES_ARCHIVE }}
+  &lt;a href="{{ url }}"&gt;{{ name }}&lt;/a&gt; - &lt;small&gt;{{ posts.size }}&lt;/small&gt;&lt;br&gt;
+{{ END }}
+</code></pre>
+
+<p>یا</p>
+
+<pre><code>{{ FOREACH cat IN CATEGORIES_ARCHIVE }}
+  &lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt; - &lt;small&gt;{{ cat.posts.size }}&lt;/small&gt;&lt;br&gt;
+{{ END }}
+</code></pre>
+
+<p>همانطور که مشخص است در posts، تمام utid ها برگشت داده شده، پس برای نمایش تک تک فایل‌های موجود در هر دسته میتوان از ENTRIES کمک گرفت </p>
+
+<pre><code>{{ FOREACH cat IN CATEGORIES_ARCHIVE.values }}
+  &lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt; - &lt;small&gt;{{ cat.posts.size }}&lt;/small&gt;&lt;br&gt;
+  {{ FOREACH id IN cat.posts.sort }}
+    &lt;h5&gt;&lt;a href="{{ ENTRIES.$id.url }}"&gt;{{ ENTRIES.$id.title }}&lt;/a&gt;&lt;/h5&gt;
+  {{ END }}
+{{ END }}
+</code></pre>
+
+<p>مثلما به جای id و $id از هر نام دیگری که بخواهید میتوانید استفاده کنید.</p>
       
     </div>
 
@@ -177,200 +495,9 @@
       
 
       
-      	<h5>فیلدهای قابل تنظیم</h5>
-      
 
-      <h5><a href="#title">title</a></h5>
-<!--      <h5><a href="#/doc-fa/3/title/">title</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#description">description</a></h5>
-<!--      <h5><a href="#/doc-fa/3/description/">description</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#author">author</a></h5>
-<!--      <h5><a href="#/doc-fa/3/author/">author</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#email">email</a></h5>
-<!--      <h5><a href="#/doc-fa/3/email/">email</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#url">url</a></h5>
-<!--      <h5><a href="#/doc-fa/3/url/">url</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#root">root</a></h5>
-<!--      <h5><a href="#/doc-fa/3/root/">root</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#static">static</a></h5>
-<!--      <h5><a href="#/doc-fa/3/static/">static</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#imageurl">imageurl</a></h5>
-<!--      <h5><a href="#/doc-fa/3/imageurl/">imageurl</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#publishDIR">publishDIR</a></h5>
-<!--      <h5><a href="#/doc-fa/3/publishdir/">publishDIR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#post_num">post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/post_num/">post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#archive_post_num">archive_post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/archive_post_num/">archive_post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_post_num">feed_post_num</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_post_num/">feed_post_num</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#post_sort">post_sort</a></h5>
-<!--      <h5><a href="#/doc-fa/3/post_sort/">post_sort</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_output">feed_output</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_output/">feed_output</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#feed_template">feed_template</a></h5>
-<!--      <h5><a href="#/doc-fa/3/feed_template/">feed_template</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_floor">default_floor</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_floor/">default_floor</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#permalink">permalink</a></h5>
-<!--      <h5><a href="#/doc-fa/3/permalink/">permalink</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_markup">default_markup</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_markup/">default_markup</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#default_extension">default_extension</a></h5>
-<!--      <h5><a href="#/doc-fa/3/default_extension/">default_extension</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#output_extension">output_extension</a></h5>
-<!--      <h5><a href="#/doc-fa/3/output_extension/">output_extension</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#template">template</a></h5>
-<!--      <h5><a href="#/doc-fa/3/template/">template</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#lists">lists</a></h5>
-<!--      <h5><a href="#/doc-fa/3/lists/">lists</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#namespace">namespace</a></h5>
-<!--      <h5><a href="#/doc-fa/3/namespace/">namespace</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#plugins">plugins</a></h5>
-<!--      <h5><a href="#/doc-fa/3/plugins/">plugins</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#time_zone">time_zone</a></h5>
-<!--      <h5><a href="#/doc-fa/3/time_zone/">time_zone</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_start_tag">t_start_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_start_tag/">t_start_tag</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_end_tag">t_end_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_end_tag/">t_end_tag</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#t_outline_tag">t_outline_tag</a></h5>
-<!--      <h5><a href="#/doc-fa/3/t_outline_tag/">t_outline_tag</a></h5> -->
+      <h5><a href="#فیلدهای قابل تنظیم">فیلدهای قابل تنظیم</a></h5>
+<!--      <h5><a href="#/doc-fa/3/فیلدهای-قابل-تنظیم/">فیلدهای قابل تنظیم</a></h5> -->
     
 
     
@@ -468,151 +595,9 @@
       
 
       
-      	<h5>توضیحاتی در مورد برچسب‌ها</h5>
-      
 
-      <h5><a href="#MainTITLE">MainTITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/maintitle/">MainTITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainDESCRIPTION">MainDESCRIPTION</a></h5>
-<!--      <h5><a href="#/doc-fa/5/maindescription/">MainDESCRIPTION</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainURL">MainURL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainurl/">MainURL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainROOT">MainROOT</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainroot/">MainROOT</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainSTATIC">MainSTATIC</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainstatic/">MainSTATIC</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainIMAGEURL">MainIMAGEURL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainimageurl/">MainIMAGEURL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainAUTHOR">MainAUTHOR</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainauthor/">MainAUTHOR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#MainEMAIL">MainEMAIL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/mainemail/">MainEMAIL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#PageTITLE">PageTITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/pagetitle/">PageTITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#FLOORS">FLOORS</a></h5>
-<!--      <h5><a href="#/doc-fa/5/floors/">FLOORS</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ENTRIES">ENTRIES</a></h5>
-<!--      <h5><a href="#/doc-fa/5/entries/">ENTRIES</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#UTIDS">UTIDS</a></h5>
-<!--      <h5><a href="#/doc-fa/5/utids/">UTIDS</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#TITLE">TITLE</a></h5>
-<!--      <h5><a href="#/doc-fa/5/title/">TITLE</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#DESCRIPTION">DESCRIPTION</a></h5>
-<!--      <h5><a href="#/doc-fa/5/description/">DESCRIPTION</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#URL">URL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/url/">URL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ROOT">ROOT</a></h5>
-<!--      <h5><a href="#/doc-fa/5/root/">ROOT</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#AUTHOR">AUTHOR</a></h5>
-<!--      <h5><a href="#/doc-fa/5/author/">AUTHOR</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#EMAIL">EMAIL</a></h5>
-<!--      <h5><a href="#/doc-fa/5/email/">EMAIL</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#BUILD">BUILD</a></h5>
-<!--      <h5><a href="#/doc-fa/5/build/">BUILD</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#ARCHIVES">ARCHIVES</a></h5>
-<!--      <h5><a href="#/doc-fa/5/archives/">ARCHIVES</a></h5> -->
-    
-      
-
-      
-
-      <h5><a href="#سایر برچسب‌ها برای آرشیو">سایر برچسب‌ها برای آرشیو</a></h5>
-<!--      <h5><a href="#/doc-fa/5/سایر-برچسب‌ها-برای-آرشیو/">سایر برچسب‌ها برای آرشیو</a></h5> -->
+      <h5><a href="#متغیرهای موجود">متغیرهای موجود</a></h5>
+<!--      <h5><a href="#/doc-fa/5/متغیرهای-موجود/">متغیرهای موجود</a></h5> -->
     
       
 

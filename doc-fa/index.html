@@ -791,13 +791,15 @@ mysite.com/2017/02/25/daily/post_title_or_index.html
 
 <h2>default_markup</h2>
 
-<p>زبان نشانه‌گذاری که برای نوشته‌های سایتتان در نظر گرفته‌اید.
-  - markdown -or- md
-  - mmd   (mira markdown parser based on multimarkdown 2.0.b6)
-  - bbcode
-  - textile
-  - text -or- txt   just add \<br> in enlines
-  - html</p>
+<p>زبان نشانه‌گذاری که برای نوشته‌های سایتتان در نظر گرفته‌اید.</p>
+
+<pre><code> - markdown -or- md
+ - mmd   (mira markdown parser based on multimarkdown 2.0.b6)
+ - bbcode
+ - textile
+ - text -or- txt   just add \&lt;br&gt; in enlines
+ - html
+</code></pre>
 
 <p>گزینه‌ی mmd در حال تکمیل است اما اگر میخواهید markdown با طعمی شبیه به گیت‌هاب را داشته باشید از این گزینه استفاده کنید.</p>
 
@@ -3157,10 +3159,11 @@ been said on more than one occasion.
 <p>خروجی:</p>
 
 <pre><code>I have much to say...
+</code></pre>
 
-If you want to use something other than '...' you can pass that as a second argument.
+<p>در صورتیکه نخواهید از ... استفاده کنید، میتوانید این الگو را تغییر دهید:</p>
 
-{{ FILTER truncate(26, '...&amp;hellip;') }}
+<pre><code>{{ FILTER truncate(26, 'CONTINUE+++OTHER') }}
 I have much to say on this matter that has previously 
 been said on more than one occasion.
 {{ END }}
@@ -3168,7 +3171,7 @@ been said on more than one occasion.
 
 <p>خروجی:</p>
 
-<pre><code>I have much to say...&amp;hellip;
+<pre><code>I have much to say CONTINUE+++OTHER;
 </code></pre>
 
 <h2>repeat</h2>

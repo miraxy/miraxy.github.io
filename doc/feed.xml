@@ -309,7 +309,7 @@ atom.tt2
 &lt;li&gt;mmd   (mira markdown parser based on multimarkdown 2.0.b6)&lt;/li&gt;
 &lt;li&gt;bbcode&lt;/li&gt;
 &lt;li&gt;textile&lt;/li&gt;
-&lt;li&gt;text -or- txt   just add \&lt;br&gt; in enlines&lt;/li&gt;
+&lt;li&gt;text -or- txt   just add ‍&lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt; in endlines&lt;/li&gt;
 &lt;li&gt;html&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;default_extension&lt;/strong&gt;&lt;/p&gt;

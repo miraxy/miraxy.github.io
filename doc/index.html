@@ -24,64 +24,412 @@
        
        <div id="write">
           <a name="more"></a>
-<h2 id="configfiles">config files</h2>
+<h1 id="mira">Mira</h1>
+
+<p>integrated content management framework for create multiple websites.</p>
+
+<p>A publishing tools for creat multiple static web sites</p>
+
+<p><a href="https://metacpan.org/release/Mira">Distributed as a Perl module</a>, Mira comes with a command-line application called <code>mira</code> which you can use to create static websites.</p>
+
+<pre><code>$ cpanm Mira # Install
+$ mira init                                  # Initialize current directory with new site
+$ mira new -t "post_title" -f "floor_name"   # creat new post
+$ mira build                                 # Build contents
+$ mira view                                  # serve locally at http://localhost:5000
+</code></pre>
+
+<p><strong>Features</strong></p>
 
 <ul>
-<li><p>title</p></li>
-<li><p>description</p></li>
-<li><p>url</p></li>
-<li><p>root</p></li>
-<li><p>static</p></li>
-<li><p>imageurl</p></li>
-<li><p>publishDIR</p>
+<li>Written in perl, available as a command line utility after installing.</li>
+<li>Content is written in many MarkUP languages.</li>
+<li>Layouts are developed using TT2 from the Template-toolkit templating engine.</li>
+<li>Configuration files and attributes are encoded with YAML.</li>
+<li>mira is a building, each directory in content folder is a floor, each floor is a separated site.</li>
+<li>each subdirectory in floors which start with _ is a static folder</li>
+<li>mira have a global config.yml in root</li>
+<li>each floor can have a config file in config directory: config/floor_name.yml</li>
+</ul>
+
+<h1 id="gettingstarted">Getting Started</h1>
+
+<p>The following sections show you how to install, upgrade, and downgrade the version of Mira you have, as well as how to use the <code>mira</code> command-line utility and work with the directory structure it depends on.</p>
+
+<h2 id="install">Install</h2>
+
+<p>Install Mira in seconds:</p>
+
+<pre><code>$ cpanm Mira
+</code></pre>
+
+<p>Then, create a new site, build it, and view it locally like so:</p>
+
+<pre><code>$ mkdir new-site &amp;&amp; cd new-site
+$ mira init
+$ mira -t "new post" -f blog
+$ Mira build
+$ Mira view
+</code></pre>
+
+<p>After that, browse to <a href="http://localhost:5000">http://localhost:5000</a> to see your site.</p>
+
+<p>To modify the content, look at <code>content/blog/yyyy-mm-dd-new_post.md</code>. you can change your content file name and extension, for wxample: <code>content/blog/my_first_test_new_post.custom</code></p>
+
+<p>To modify the layout, edit <code>template/default_theme/index.tt2</code>.</p>
+
+<h3 id="upgrade">Upgrade</h3>
+
+<p>Find out which version of Mira you have, by using the <code>-v</code> option:</p>
+
+<pre><code>$ mira -v
+</code></pre>
+
+<p>You can compare this with the latest version from CPAN like this:</p>
+
+<pre><code>$ cpan -D Mira
+
+...
+...
+Installed: 0.07.42
+CPAN:      0.07.47  Not up to date
+...
+...
+</code></pre>
+
+<p>In this example, you can see there is a newer version available. Upgrade like this:</p>
+
+<pre><code>$ cpan Mira
+</code></pre>
+
+<p>Stable releases are available on CPAN, but development happens at <a href="https://github.com/kiamazi/mira">Github</a>. If you like living on the edge, install from the latest development tip like this:</p>
+
+<pre><code>$ cpanm git://github.com/kiamazi/mira.git
+</code></pre>
+
+<h3 id="downgrade">Downgrade</h3>
+
+<p>If you want to install an older version of Mira, first find the link on
+<a href="http://backpan.perl.org/authors/id/K/KI/KIAVASH/mira/">backpan</a>. Then, install like
+this (e.g. v0.07.39):</p>
+
+<pre><code>$ cpanm http://backpan.perl.org/authors/id/K/KI/KIAVASH/mira/Mira-00.07.39.tar.gz
+</code></pre>
+
+<p>If you want, you can also install from source. To do that, you just need to download and unpack the desired release from <a href="http://backpan.perl.org/authors/id/K/KI/KIAVASH/mira/">backpan</a>, or clone the repository from Github. Then, do this:</p>
+
+<pre><code>$ perl Makefile.PL
+$ make
+$ make test
+$ make install
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+
+<p>When you install the <code>Mira</code> Perl module, an executable named <code>mira</code> will be available to you in your terminal window.
+You can use this executable in a number of ways. The following sections show you how.</p>
+
+<h3 id="init">Init</h3>
+
+<p>The <code>mira init</code> command initializes a new site. Note that the site will be initialized in the current directory. Therefore, it's usually best to create a blank directory that can be used for this purpose. A description of the resulting directory structure is available in the
+<a href="#directory-structure">Directory Structure</a> section.</p>
+
+<pre><code># Initialize the current directory with a fresh skeleton of a site
+$ mira init
+</code></pre>
+
+<h3 id="new">New</h3>
+
+<p>After the site has been initialized, create new post in blog floor using the <code>mira new</code> command.</p>
+
+<pre><code>$mira new -t "new post" -f blog
+</code></pre>
+
+<h3 id="build">Build</h3>
+
+<p>After the site has been initialized, build it using the <code>mira build</code> command. Mira takes care of reading the source files, combining them with the layout template(s), and saving the result in the <code>public</code> directory.</p>
+
+<pre><code># Build the site
+$ mira build
+</code></pre>
+
+<h3 id="view">View</h3>
+
+<p>The <code>Mira view</code> command serves the contents of the <code>public</code> directory using Mira's built-in webserver.</p>
+
+<pre><code># Serve the site locally at http://localhost:8000
+$ mira view
+</code></pre>
+
+<p>If you want to use a different port number (e.g. 9000) or different host address (e.g. 127.0.0.24), specifiy it using the <em>-p</em> and <em>-o</em> options:</p>
+
+<pre><code># Serve the site locally at http://localhost:9000
+$ mira view -p 9000 -o 127.0.0.24
+</code></pre>
+
+<h2 id="directorystructure">Directory Structure</h2>
+
+<p>After running the <a href="#init"><code>mira init</code></a> command, the following directory structure will be created:</p>
+
+<pre><code>│
+├── config
+├── config.yml
+├── content
+├── public
+├── statics
+├── structure
+└── template
+</code></pre>
+
+<p>Here is a description of each file:</p>
+
+<p><strong>config.yml</strong></p>
+
+<p>The configuration file is a <a href="http://www.yaml.org/">YAML</a> file that specifies key configuration elements for your static websites. The default configuration file is as follows:</p>
+
+<pre><code># Mira configuration file
+---
+title : My Sites
+...
+...
+...
+</code></pre>
+
+<p>If you want to use another output directory, you may specify it in this file. For instance:</p>
+
+<pre><code># Mira configuration file
+---
+title : My Site
+template: layout_name
+publishDIR: public
+output_extension: html    # output file extension
+default_extension: md     # new file extension
+</code></pre>
+
+<p>each floor can have them config or use config.yml by default, if you need a config file for blog, you can crate <code>config/blog.yml</code>. publishDIR is only available in config.yml, but other config fields can use in general and public configs.</p>
+
+<p>There are a few definitions that affect the way that Mira behaves. Those are defined in the <a href="#configuration">Configuration</a> section. Those and any others that you choose to specify become available in the layout templates under the <code>SITE</code> or <code>MAIN</code> namespace. For instance, <code>title</code> is available in templates like this:</p>
+
+<pre><code>{{ SITE.name }}   # floor title saved in config/floor_name.yml
+{{ MAIN.title }}  # main title saved in config.yml
+</code></pre>
+
+<p><strong>content</strong></p>
+
+<p>all directories in content is a separated site. each file in this directories is a content:</p>
+
+<p>defaut format for content file is like this:</p>
+
+<pre><code>---
+utid: 20170214184439
+date: 2017-02-14 18:44:39
+title: this is post title
+---
+
+Hello world.
+</code></pre>
+
+<p>There are a few things to note about this file:</p>
+
+<ol>
+<li><p>There is a YAML configuration block at the start of the file.</p></li>
+<li><p>the <code>utid</code> configuration is master key of posts, all posts will be define and sort by this field.</p></li>
+<li><p>The <code>title</code> configuration is the name of the post/page.</p></li>
+<li><p>All of the configurations may be used in the corresponding layout file.</p>
+
+<p><!-- Example use of "title" in a layout file -->
+{{ post.title }}</p></li>
+</ol>
+
+<p><strong>structure</strong></p>
+
+<p>if you need custom post header for each floor, you can make a structure file in this folder:</p>
+
+<p>structure/blog</p>
+
+<pre><code>categories:
+ -
+tags:
+ -
+post_image:
+</code></pre>
+
+<p><strong>template</strong></p>
+
+<p>Layout files are processed using the TT2 from the Template-Toolkit template system. each folder in template is a separated template.</p>
+
+<p>each template need this layouts:</p>
+
+<pre><code>main.tt2
+index.tt2
+post.tt2
+archive.tt2
+atom.tt2
+</code></pre>
+
+<p><strong>public</strong></p>
+
+<p>The output file that is created is a mix of the input file and the template that is specified by the config file.</p>
+
+<h1 id="configuration">Configuration</h1>
+
+<p>Mira allows you to create static websites in just about any way that you want to. The project configuration files (<code>config.yml</code> and <code>config/floor_name.yml</code>) allows you to specify special instructions to Mira and also to guide the process of rendering the site using the source files (<code>content/</code>) and the layout templates (<code>template/layout_name</code>).</p>
+
+<p>Variables specified in <code>config.yml</code> and <code>config</code> directory, are done using YAML.</p>
+
+<ul>
+<li><p><strong>description</strong></p></li>
+<li><p><strong>ur</strong>l</p></li>
+<li><p><strong>root</strong></p></li>
+<li><p><strong>static</strong></p></li>
+<li><p><strong>imageurl</strong></p></li>
+<li><p><strong>publishDIR</strong></p>
 
 <p>default is 'public'</p></li>
-<li><p>post_num</p>
+<li><p><strong>post_num</strong></p>
 
 <p>number or 'all'</p></li>
-<li><p>archive_post_num</p>
+<li><p><strong>archive_post_num</strong></p>
 
 <p>number or 'all'</p></li>
-<li><p>feed_post_num</p>
+<li><p><strong>feed_post_num</strong></p>
 
 <p>number or 'all'</p></li>
-<li><p>post_sort</p>
+<li><p><strong>post_sort</strong></p>
 
 <p>can set 'reverse'</p></li>
-<li><p>default_floor</p></li>
-<li><p>permalink</p>
+<li><p><strong>feed_output</strong></p>
 
-<p>/:year/:month/:day/:FIELD_NAME/every_thing_else/:title .html or .php or .xhtnl or any extension you like</p></li>
-<li><p>default_markup</p>
+<p>default is 'feed.xml'</p></li>
+<li><p><strong>feed_template</strong></p>
+
+<p>default is 'atom.tt2'</p></li>
+<li><p><strong>default_floor</strong></p>
+
+<p>if in new command dont use -f switch, mira use this field value for floor name</p></li>
+<li><p><strong>permalink</strong></p>
+
+<p>/:year/:month/:day/:FIELD_NAME/every_thing_else/:title .html or .php or .xhtnl or any extension you like</p>
+
+<p>A full list of pattern options are as follows:</p></li>
+<li><p><strong>default_markup</strong></p>
 
 <ul>
 <li>markdown -or- md</li>
-<li>mmd (mira markdown parser based on multimarkdown 2.0.b6)</li>
+<li>mmd   (mira markdown parser based on multimarkdown 2.0.b6)</li>
 <li>bbcode</li>
 <li>textile</li>
 <li>text -or- txt   just add \<br> in enlines</li>
 <li>html</li>
 </ul></li>
-<li><p>default_extension</p>
+<li><p><strong>default_extension</strong></p>
 
 <p>default extension for new content files, default is md</p></li>
-<li><p>output_extension</p>
+<li><p><strong>output_extension</strong></p>
 
 <p>default extension for output files, default is html</p></li>
-<li><p>time_zone</p></li>
-<li><p>t_start_tag</p>
+<li><p><strong>time_zone</strong></p></li>
+<li><p><strong>t_start_tag</strong></p>
 
 <p>template tag for use in theme, default is {{</p></li>
-<li><p>t_end_tag</p>
+<li><p><strong>t_end_tag</strong></p>
 
 <p>template tag for use in theme, default is }}</p></li>
-<li><p>t_outline_tag</p></li>
+<li><p><strong>t_outline_tag</strong></p></li>
+<li><p><strong>feed_output</strong></p>
+
+<p>default is feed.xml</p></li>
+<li><p><strong>feed_template</strong></p>
+
+<p>default is atom.tt2</p></li>
+<li><p><strong>lists</strong></p>
+
+<p>the fields you want make archive</p></li>
+<li><p><strong>namespace</strong> change lists static address</p>
+
+<p>veryverylongarchivename : vlan      # /blog/tags/veryverylongarchivename  >   /blog/tags/vlan</p></li>
 </ul>
 
-<h2 id="post">post</h2>
+<p>sample:</p>
 
-<ol>
-<li><h3 id="header">header</h3>
+<pre><code>title: my site
+url: http://myaddress.net/blog
+root: /blog
+
+lists:
+ - date
+ - tags
+
+links :
+    Feed : http://feeds.feedburner.com/myfeed
+    Amazon : http://amazon.com/author/name
+    Github : http://github.com/name
+    LinkedIn : http://linkedin.com/in/name
+    Twitter : https://twitter.com/name
+
+socials:
+ -  name: twitter
+    url: https://twitter.com/UserName
+    desc: Follow me on twitter
+
+ -  name: github
+    url: https://github.com/UserName
+    desc: Fork me on twitter
+
+ -  name: facebook
+    url: https://facebook.com/UserName
+    desc: Follow me on facebook
+</code></pre>
+
+<p>Any variable specified in <code>configs</code> can be used in a template. MAIN for config.yml  and  SITE for config directory</p>
+
+<pre><code>{{ SITE.title }}
+</code></pre>
+
+<p>URL can be used like this:</p>
+
+<pre><code>&lt;a href="{{ MAIN.url }}"&gt;{{ MAIN.title }}&lt;/a&gt;
+</code></pre>
+
+<p>The links (key/value pairs) can be listed like this:</p>
+
+<pre><code>{{ FOREACHEACH link in SITE.links }}
+    &lt;a href="{{ link.value }}"&gt;{{ link.key }}&lt;/a&gt;&lt;br /&gt;
+{{ END }}
+</code></pre>
+
+<p>All of the items in the <code>social</code> array can be shown like this:</p>
+
+<pre><code>{{ FOREACHEACH social in SITE.socials }}
+  &lt;a href="{{ social.url }}"&gt;{{ social.name }} : {{ social.desc }}&lt;/a&gt;
+{{- END }}
+</code></pre>
+
+<p>See the official <a href="http://yaml.org/">YAML</a> specification.</p>
+
+<h1 id="content">content</h1>
+
+<p>content files in Mira are have 2 section, header and body.</p>
+
+<pre><code>---
+utid:
+title:
+---
+content body
+</code></pre>
+
+<p>headers must contain <a href="http://yaml.org/">YAML</a>.
+The YAML at the beginning of the content files is denoted by leading and trailing lines that each contain a sequence of three dashes. Example:</p>
+
+<pre><code>---
+utid: 123456
+title: Post Title
+---
+
+Here is the text of the post.
+</code></pre>
+
+<p>Variable definitions in headers that carry special meaning are as follows:</p>
 
 <ul>
 <li><p>utid</p>
@@ -94,328 +442,574 @@
 <p>change value for :title, if empty, title will be used for output name</p></li>
 <li><p>_permalink</p>
 
-<p>change default permalink just for this post</p></li>
+<p>defines the URL path for the output file just for this post. This may also be specified in <code>config</code> as well.</p></li>
 <li><p>_type</p>
 
 <p>default is post, but can set 'page'</p></li>
 <li><p>_markup</p>
 
 <p>change body markup language just for this post</p></li>
-<li><p>selective personal fields
- like categories, tags, keywords, author and ...</p></li>
-</ul></li>
-<li><h3 id="body">body</h3>
-
-<p>post content body </p></li>
-</ol>
-
-<h2 id="template">template</h2>
-
-<ol>
-<li><h3 id="variables">variables</h3>
-
-<ol>
-<li><h4 id="generalvariables">general variables</h4>
-
-<ul>
-<li><p>MainTITLE</p></li>
-<li><p>MainDESCRIPTION</p></li>
-<li><p>MainURL</p></li>
-<li><p>MainROOT</p></li>
-<li><p>MainSTATIC</p></li>
-<li><p>MainIMAGEURL</p></li>
-<li><p>MainAUTHOR</p></li>
-<li><p>MainEMAIL</p></li>
-<li><p>///////////////</p></li>
-<li><p>TITLE</p></li>
-<li><p>DESCRIPTION</p></li>
-<li><p>URL</p></li>
-<li><p>ROOT</p></li>
-<li><p>STATIC</p></li>
-<li><p>IMAGEURL</p></li>
-<li><p>AUTHOR</p></li>
-<li><p>EMAIL</p></li>
-<li><p>///////////////</p></li>
-<li><p>MAIN : config.yml variables</p></li>
-<li><p>SITE : /config/FLOORNAME.yml</p></li>
-<li><p>///////////////</p></li>
-<li><p>PageTITLE</p></li>
-<li><p>///////////////</p></li>
-<li><p>ENTRIES</p>
-
-<p>all entries in content folder</p></li>
-<li><p>FLOORS</p>
-
-<p>all FLOORS in content folder, with config.yml(post_number) posts</p>
-
-<pre><code>{{ FOREACH site IN FLOORS.values.sort('name') }}
-
-
-   {{ IF site.SITE.direction == 'right' }}
-        &lt;div dir="rtl"&gt;
-   {{ ELSE }}
-        &lt;div dir="ltr"&gt;
-   {{ END }}
-
-
-   &lt;a href="{{ site.root }}"&gt;{{ site.name }}&lt;/a&gt;
-   &lt;p&gt;{{ site.description }}&lt;/p&gt;
-
-
-   {{ FOREACH post IN site.posts }}
-        &lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;
-        &lt;p&gt;{{ post.body.less }}&lt;/p&gt;
-   {{ END }}
-
-
-{{ END }}
-</code></pre>
-
-<p>​</p>
-
-<ul>
-<li>description</li>
-<li>name</li>
-<li>root</li>
-<li>url</li>
-<li>SITE : config file variables</li>
-<li>posts
-<ul>
-<li>all POSTS loop fields is valid</li>
-</ul></li>
-</ul></li>
-<li><p>ARCHIVES</p>
-
-<pre><code>{{ FOREACH archive IN ARCHIVES.pairs }}
-   {{ archive.key }}
-   {{ FOREACH item IN archive.value.values.sort('name').sort('number') }}
-      {{ item.name }}
-      {{ item.url }}
-      {{ item.posts.size }}
-      {{ FOREACH utid IN item.posts }}
-         {{ ENTRIES.$utid.url }}
-         {{ ENTRIES.$utid.title }}
-      {{ END }}
-   {{ END }}
-{{ END }}
-</code></pre>
-
-<p>​</p>
-
-<ul>
-<li>name</li>
-<li>url</li>
-<li>furl</li>
-<li>posts</li>
-<li><strong>if header fields</strong>
-<ul>
-<li>showname : namespace name</li>
-</ul></li>
-<li><p><strong>if date archive</strong></p>
-
-<ul>
-<li><p>number</p></li>
-<li><p>year</p></li>
-<li><p>month</p></li>
-<li><p>month_name</p></li>
-<li><p>number : YearMonth->201705</p></li>
-</ul></li>
-</ul></li>
-<li><p>BUILD</p>
-
-<ul>
-<li>BUILD.date</li>
-<li>BUILD.year</li>
-<li>BUILD.month</li>
-<li>BUILD.month_name</li>
-<li>BUILD.month_abbr</li>
-<li>BUILD.day</li>
-<li>BUILD.day_name</li>
-<li>BUILD.day_abbr</li>
-<li>BUILD.hour</li>
-<li>BUILD.minute</li>
-<li>BUILD.second</li>
-</ul></li>
-<li><p>///////////////</p></li>
-<li><p>POSTS</p>
-
-<p>is not valid in main.tt2</p>
-
-<pre><code>{{ FOREACH post IN POSTS }}
-   &lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;
-   {{ post.CALENDAR.day_name }}
-   {{ post.CALENDAR.day }}{{ post.CALENDAR.month_name }}{{ post.CALENDAR.year }}
-   {{ IF post.image }}&lt;img src="{{ post.image }}"&gt;{{ END }}
-   {{ post.body.more }}
-
-
-   {{ IF post.category }}
-   {{ FOREACH cat IN post.category }}
-      &lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt;{{ END }}&lt;br&gt;
-   {{ END }}
-
-
-{{ END }}
-</code></pre>
-
-<p>​</p>
-
-<ul>
-<li>post.utid</li>
-<li>post.title</li>
-<li>post.slug</li>
-<li><strong>post.url</strong>  : /floor_name/permalink/</li>
-<li><strong>post.furl</strong> : your_url.com/floor_name/permalink/</li>
-<li>post.date</li>
-<li>post.CALENDAR.year</li>
-<li>post.CALENDAR.month</li>
-<li>post.CALENDAR.month_name</li>
-<li>post.CALENDAR.month_abbr</li>
-<li>post.CALENDAR.day</li>
-<li>post.CALENDAR.day_name</li>
-<li>post.CALENDAR.day_abbr</li>
-<li>post.CALENDAR.hour</li>
-<li>post.CALENDAR.minute</li>
-<li>post.CALENDAR.second</li>
-<li><strong>post.body.less</strong> : abstract post</li>
-<li><strong>post.body.more</strong> : full post</li>
-<li><p>post.($archive_list)</p>
-
-<pre><code>for example, if tags is a archive field in post's header
-
-
-{{ FOREACH tag IN post.tags }}
-  &lt;a href="{{ tag.url }}"&gt;{{ tag.name }}&lt;/a&gt;
-{{ END }}
-</code></pre>
-
-<ul>
-<li>name</li>
-<li>showname (if have namespace)</li>
-<li>url</li>
-<li>furl</li>
-</ul></li>
-</ul></li>
-<li><p>($listname)_ARCHIVE</p>
-
-<pre><code>if category is a archive list
-
-
-{{ FOREACH cat IN CATEGORY_ARCHIVE }}
-
-
-   &lt;a href="{{ cat.url }}"&gt;{{ cat.name }}&lt;/a&gt; - {{ cat.posts.size }}
-
-
-   {{ FOREACH utid IN cat.posts }}
-      {{ ENTRIES.$utid.url }}
-      {{ ENTRIES.$utid.title }}
-   {{ END }}
-
-
-{{ END }}
-</code></pre>
-
-<p>​</p></li>
-<li><p>($date)_ARCHIVE</p>
-
-<pre><code>{{ FOREACH date IN DATE_ARCHIVE }}
-
-
-   like $listname_ARCHIVES
-
-
-{{ END }}
-</code></pre>
-
-<p>​</p></li>
-<li><p>PAGE</p>
-
-<ul>
-<li>PAGE.number</li>
-<li>PAGE.total</li>
-<li>PAGE.next.url</li>
-<li>PAGE.next.title</li>
-<li>PAGE.prev.url</li>
-<li>PAGE.prev.title</li>
-</ul></li>
-</ul></li>
-<li><h4 id="templatesvariables">templates variables</h4>
-
-<ol>
-<li><p>main.tt2</p>
-
-<ul>
-<li><p>IS_MAIN</p></li>
-<li><p>UTIDS : all posts's utid field</p>
-
-<pre><code>{{ FOREACH utid IN UTIDS }}
- {{ ENTRIES.$utid.url }}
- {{ ENTRIES.$utid.title }}
-
-
- all variables in POSTS is valid
-
-
-{{ END }}}
-</code></pre>
-
-<p>​</p></li>
-</ul></li>
-<li><p>index.tt2</p>
-
-<ul>
-<li>IS_INDEX</li>
-</ul></li>
-<li><p>archive.tt2</p>
-
-<ul>
-<li><p>ArchiveTITLE</p></li>
-<li><p>ARCH</p>
-
-<ul>
-<li><p>ARCH.name</p></li>
-<li><p>ARCH.url</p></li>
-<li><p>ARCH.furl</p></li>
-<li><p>ARCH.posts</p></li>
+<li><p>selective personal fields like categories, tags, keywords, author and ...</p></li>
 </ul>
 
-<pre><code>{{ FOREACH utid IN ARCH.posts }}
-      {{ ENTRIES.$utid.url }}
-      {{ ENTRIES.$utid.title }}
+<h1 id="template">template</h1>
+
+<p>Layout templates in Mira are based on a superset of the <a href="http://template-toolkit.org/">TemplateToolkit</a> v2 (TT2).
+Although both Mira and TemplateToolkit are both written in Perl, you do not need to know Perl in order to use them.</p>
+
+<p>Layout templates include a series of directives. Directives can be used to print the contents of a variable, or perform more sophisticated computation such as if/then/else, foreach, or case statements. Directives are surrounded by matched pairs of hard brackets and percent signs. Here is an example of printing a variable called <code>SITE.title</code>:</p>
+
+<pre><code>{{ site.name }}
+</code></pre>
+
+<p>When printing variables, you may also use filters to transform the variable or print information about it. For instance, you can convert a variable name to all uppercase letters using the <code>upper</code> filter. Example:</p>
+
+<pre><code>{{ SITE.title | upper }}
+</code></pre>
+
+<p>Another class of "logic" directives are used in a similar fashion. Here is an example of a for statement that loops through each <code>social</code> in <code>SITE.social</code>. For each iteration of the loop, print the contents of <code>social.name</code>:</p>
+
+<pre><code>{{ FOREACHEACH social in SITE.socials }}
+  {{ social.name }}
 {{ END }}
 </code></pre>
 
-<ul>
-<li><p><strong>if field archive</strong></p></li>
-<li><p>ARCH.showname  (if namespca)</p></li>
-<li><p><strong>if date archive</strong></p></li>
-<li><p>ARCH.year</p></li>
-<li>ARCH.month</li>
-<li>ARCH.month_name</li>
-<li>ARCH.number : YearMonth -> 201608</li>
-</ul></li>
-<li><p><strong>if field archive</strong></p>
+<p>The following sections show how to use directives in more depth.</p>
 
-<ul>
-<li>IS_ARCHIVE</li>
-</ul></li>
-<li><p><strong>if date archive</strong></p>
+<h2 id="variables">Variables</h2>
 
-<ul>
-<li>IS_DATE_ARCHIVE</li>
-</ul></li>
-</ul></li>
-<li><p>post.tt2</p>
+<p>This section describes how to use variables, literals, and expressions in Mira.</p>
 
-<ul>
-<li>Post_TITLE</li>
-<li>IS_POST</li>
-<li>IS_PAGE, if _type: page</li>
-</ul></li>
-</ol></li>
-</ol></li>
+<p>Variables are bits of text or numbers that are defined in the project configuration file or in the source files that can be used in templates. Here is an example of printing the contents of <code>post.title</code>:</p>
+
+<pre><code>{{ post.title }}
+</code></pre>
+
+<p>In Mira, there are two top-level variables (think of them as namespaces), which are <code>SITE</code>-<code>MAIN</code> and <code>POSTS</code>. All <code>SITE</code> variables are defined in <code>config/floor_name.yml</code>, and <code>MAIN</code> variables are defined in <code>config.yml</code> and are available in layouts as <code>{{ SITE.* }}</code> and <code>{{ MAIN.* }}</code>. All page variables (defined at the beginning of source files) are available in
+layouts as <code>{{FOREACH post in POSTS}}{{ posts.* }}{{ END }}</code> for index and archives and <code>{{ post.* }}</code> for post.tt2.</p>
+
+<p>Example <code>config/blog.yml</code>:</p>
+
+<pre><code>title: main site title
+</code></pre>
+
+<p>Example <code>content/blog/sample_post.md</code>:</p>
+
+<pre><code>---
+utid: 123456
+title: The title of my post
+---
+less body
+&lt;!-- more --&gt;
+The body of my post.
+</code></pre>
+
+<p>Example <code>template/my_layout/post.tt2</code>:</p>
+
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;{{ post.title }} - {{ SITE.title }}&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;{{ post.title }}&lt;/h1&gt;
+    &lt;p&gt;{{ post.body.more }}&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>This would produce the following:</p>
+
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;The title of my post - site title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;The title of my post&lt;/h1&gt;
+    &lt;p&gt;less body&lt;/p&gt;
+    &lt;p&gt;The body of my post.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Variables can also be defined within a template file. For example:</p>
+
+<pre><code>{{ a = 42 }}{{ a }}
+{{ b = "Hello" }}{{ b }}
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>42
+Hello
+</code></pre>
+
+<p>It's also possible to create arrays:</p>
+
+<pre><code>{{ a = [1, 2, 3, 4, 5] }}
+{{ a.1 }}
+{{ a | length }}
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>2
+5
+</code></pre>
+
+<p>And associative arrays (hashes):</p>
+
+<pre><code>{{ link = {name =&gt; 'ma name', 'url' =&gt; 'http://myaddress.com/'} }}
+&lt;a href="{{ link.url }}"&gt;{{ link.name }}&lt;/a&gt;
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>&lt;a href="http://myaddress.com/"&gt;my name&lt;/a&gt;
+</code></pre>
+
+<p><em>Literals</em></p>
+
+<p>The following are the types of literals (numbers and strings) allowed in
+layouts:</p>
+
+<pre><code>{{ 23423 }}          Prints an integer
+{{ 3.14159 }}        Prints a number
+{{ pi = 3.14159 }}   Sets the value of the variable
+{{ 3.13159.length }} Prints 7 (the string length of the number)
+</code></pre>
+
+<p><em>Expressions</em></p>
+
+<p>Expressions are one or more variables or literals joined together with operators. An expression can be used anywhere a variable can be used with the exception of the left-hand side of a variable assignment directive or a filename for one of the <code>process</code>, <code>include</code>, <code>wrapper</code>, or <code>insert</code>
+directives.</p>
+
+<p>Examples:</p>
+
+<pre><code>{{ 1 + 2 }}       Prints 3
+{{ 1 + 2 * 3 }}   Prints 7
+{{ (1 + 2) * 3 }} Prints 9
+
+{{ x = 2 }}       Assignments don't return anything
+{{ (x = 2) }}     Unless they are in parens. Prints 2
+{{ y = 3 }}
+{{ x * (y - 1) }} Prints 4
+</code></pre>
+
+<p>For a full listing of operators, see
+<a href="http://template-toolkit.org">TemplateToolkit</a>.</p>
+
+<h2 id="conditionals">Conditionals</h2>
+
+<p>Conditional statements are possible in Mira. A variety of options exist, including <code>if/else</code>, <code>unless</code>, and <code>switch/case</code>, which are defined next.</p>
+
+<h3 id="ifelse">IF/ELSE</h3>
+
+<p><code>IF</code> statements are used for controlling the flow of execution through a layout template. <code>IF</code> statements take an expression. If true, the proceeding block is executed. If not, an <code>ELSIF</code> block is executed (if it exists). Finally, an <code>ELSE</code> block (if it exists) is executed if neither the <code>IF</code> or the <code>ELSIF</code> block is true. Example:</p>
+
+<p>Here is an if/else example:</p>
+
+<pre><code>{{ IF post.category == "books" }}
+    Category: Books
+{{ ELSIF post.category == "movies" }}
+    Category: Movies
+{{ ELSE }}
+    Category: Unknown
+{{ END }}
+</code></pre>
+
+<p>For brevity, <code>IF</code> statements may also be used as post-operative directives.
+Example:</p>
+
+<pre><code>{{ "Category: Books" IF post.category == "books" }}
+</code></pre>
+
+<h3 id="unless">UNLESS</h3>
+
+<p>Same as <code>IF</code> statements, but the condition is reversed. The following block is only evaluated if the expression is <em>not</em> true.</p>
+
+<pre><code>{{ UNLESS post.category == "books" }}
+    Category: (Not) Books
+{{ END }}
+</code></pre>
+
+<p><code>Unless</code> directives can also be used as post-operative directives. Example:</p>
+
+<pre><code>{{ "Category: (Not) Books" UNLESS post.category == "books" }}
+</code></pre>
+
+<h3 id="switchcase">Switch/Case</h3>
+
+<p>Switch statements are allowed in Mira as well. Usage is best described with an example:</p>
+
+<pre><code>{{ SWITCH post.category }}
+    {{ case "books"  }} Category: Books
+    {{ case "movies" }} Category: Movies
+    {{ case default  }} Category: Unknown
+{{ END }}
+</code></pre>
+
+<h2 id="iteration">Iteration</h2>
+
+<p>Iterative (looping) constructs are also available in Mira. Options include <code>foreach</code>, and <code>while</code>. Additionally, a <code>loop</code> variable is provided to allow you to see information about the current loop. </p>
+
+<h3 id="foreach">FOREACH</h3>
+
+<p><code>Foreach</code> statements allow you to iterate over the contents of an array. If the variable is not already an array, it is automatically converted to an array for you. Example:</p>
+
+<pre><code>{{ FOREACHEACH link IN SITE.blogroll }}
+    The link is {{ link }}
+{{ END }}
+</code></pre>
+
+<p>You can also use <code>=</code> in place of <code>in</code>:</p>
+
+<pre><code>{{ FOREACHEACH link = site.blogroll }}
+    The link is {{ link }}
+{{ END }}
+</code></pre>
+
+<p>The <code>foreach</code> statement also works on hashes:</p>
+
+<pre><code>{{ FOREACHEACH [{a =&gt; 1}, {a =&gt; 2}] }}
+    Key a = {{ a }}
+{{~ END }}
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>    Key a = 1
+    Key a = 2
+</code></pre>
+
+<p>During a <code>foreach</code> loop, a special variable called <code>loop</code> is available and provides
+the following information:</p>
+
+<table>
+<col />
+<col />
+<thead>
+<tr>
+	<th>Variable</th>
+	<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td><code>loop.index</code></td>
+	<td>The current index</td>
+</tr>
+<tr>
+	<td><code>loop.max</code></td>
+	<td>The max index of the list</td>
+</tr>
+<tr>
+	<td><code>loop.size</code></td>
+	<td>The number of items in the list</td>
+</tr>
+<tr>
+	<td><code>loop.count</code></td>
+	<td>Index + 1</td>
+</tr>
+<tr>
+	<td><code>loop.number</code></td>
+	<td>Index + 1</td>
+</tr>
+<tr>
+	<td><code>loop.first</code></td>
+	<td>True if on the first item</td>
+</tr>
+<tr>
+	<td><code>loop.last</code></td>
+	<td>True if on the last item</td>
+</tr>
+<tr>
+	<td><code>loop.next</code></td>
+	<td>Return the next item in the list</td>
+</tr>
+<tr>
+	<td><code>loop.prev</code></td>
+	<td>Return the previous item in the list</td>
+</tr>
+<tr>
+	<td><code>loop.odd</code></td>
+	<td>Return 1 if the current count is odd, 0 otherwise</td>
+</tr>
+<tr>
+	<td><code>loop.even</code></td>
+	<td>Return 1 if the current count is even, 0 otherwise</td>
+</tr>
+<tr>
+	<td><code>loop.parity</code></td>
+	<td>Return "odd" if the current count is odd, "even" otherwise</td>
+</tr>
+</tbody>
+</table>
+
+<p>Example:</p>
+
+<pre><code>{{ FOREACHEACH [1 .. 3] }}
+    {{ loop.count }}/{{ loop.size }}
+{{ END }}
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>1/3
+2/3
+3/3 
+</code></pre>
+
+<p>Additinoally, <code>break/last</code> and <code>next</code> directives may be used in loops. <code>Break</code> is an alias for <code>last</code> and exits the loop. <code>Next</code> skips the remainder of the current loop and begins the next iteration in the loop. Example:</p>
+
+<pre><code>{{ FOREACHEACH [1 .. 3] }}
+    {{ IF loop.count == 2 }}{{ BREAK }}{{ END }}
+    {{ loop.count }}/{{ loop.size }}
+{{ END }}
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>1/3
+</code></pre>
+
+<p>Example:</p>
+
+<pre><code>{{ FOREACH [1 .. 3] }}
+    {{ IF loop.count == 2 }}{{ NEXT }}{{ END }}
+    {{ loop.count }}/{{ loop.size }}
+{{ END }}
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>1/3
+3/3
+</code></pre>
+
+<h3 id="while">While</h3>
+
+<p>The <code>while</code> directive will process a block of code while a condition continues
+to be true. Example:</p>
+
+<pre><code>{{ i = 0 }}
+{{ while i &lt; 3 }}
+    {{ i = i + 1 }}
+    i = {{ i }}
+{{ END }} 
+#&gt;
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>i = 1
+i = 2
+i = 3
+</code></pre>
+
+<p>As with <code>foreach</code> statements, <code>break/last</code> and <code>next</code> statements are also available.</p>
+
+<h2 id="block">BLOCK</h2>
+
+<p><code>Block</code> directives allow you to save a block of text under a name for later use in an <code>include</code> directive. Blocks may be placed anywhere within the template being processed. Example:</p>
+
+<pre><code>{{ BLOCK foo }}Some text{{ END }}
+{{ INCLUDE foo }}
+</code></pre>
+
+<h2 id="includes">Includes</h2>
+
+<p>An <code>include</code> directive parses the contents of a file or <code>block</code> and inserts them into the template. Variables that are defined or modified within the included bits are discarded after the include occurs. Example:</p>
+
+<pre><code>{{ INCLUDE "path/to/template.tt2" }}
+
+{{ file = "path/to/template.html" }}
+{{ INCLUDE $file }}
+
+{{ BLOCK foo }}This is foo{{ END }}
+{{ INCLUDE foo }}
+</code></pre>
+
+<p>Arguments may also be passed to the template:</p>
+
+<pre><code>{{ INCLUDE "path/to/template.tt2" a = "An arg" b = "Another arg" }}
+</code></pre>
+
+<p>Multiple filenames can be passed by separating them with a plus, a space, or commas. Any supplied arguments will be used on all templates. Example:</p>
+
+<pre><code>{{ INCLUDE "path/to/template1.tt2",
+           "path/to/template2.tt2" a = "An arg" b = "Another arg" }}
+</code></pre>
+
+<h3 id="date">Date</h3>
+
+<p>The Date plugin provides an easy way to generate formatted time and date strings by delegating to the POSIX strftime() routine.</p>
+
+<p>The plugin can be loaded via the <code>use</code> directive.</p>
+
+<pre><code>{{ USE date }}
+</code></pre>
+
+<p>This creates a plugin object with the default name of <code>date</code>. An alternate name can be specified like this:</p>
+
+<pre><code>{{ USE myname = date }}
+</code></pre>
+
+<p>The plugin provides the format() method which accepts a time value, a format string and a locale name. All of these parameters are optional with the current system time, default format ('%H:%M:%S %d-%b-%Y') and current locale being used respectively, if undefined. Default values for the time, format and/or locale may be specified as named parameters in the use directive.</p>
+
+<pre><code>{{ USE date(format = '%a %d-%b-%Y', locale = 'fr_FR') }}
+</code></pre>
+
+<p>When called without any parameters, the format() method returns a string representing the current system time, formatted by strftime() according to the default format and for the default locale (which may not be the current one, if locale is set in the use directive).</p>
+
+<pre><code>{{ date.format }}
+</code></pre>
+
+<p>The plugin allows a time/date to be specified as seconds since the epoch, as is returned by time().</p>
+
+<pre><code>File last modified: {{ date.format(filemod_time) }}
+</code></pre>
+
+<p>The time/date can also be specified as a string of the form <code>h:m:s d/m/y</code> or <code>y/m/d h:m:s</code>. Any of the characters <code>:</code> <code>/</code> <code>-</code> or space may be used to delimit fields.</p>
+
+<pre><code>{{ USE day = date(format =&gt; '%A', locale =&gt; 'en_GB') }}
+{{ day.format('4:20:00 9-13-2000') }}
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code>Tuesday
+</code></pre>
+
+<p>A format string can also be passed to the format() method, and a locale specification may follow that.</p>
+
+<pre><code>{{ date.format(filemod, '%d-%b-%Y') }}
+{{ date.format(filemod, '%d-%b-%Y', 'en_GB') }}
+</code></pre>
+
+<p>A fourth parameter allows you to force output in GMT, in the case of seconds-since-the-epoch input:</p>
+
+<pre><code>{{ date.format(filemod, '%d-%b-%Y', 'en_GB', 1) }}
+</code></pre>
+
+<p>Note that in this case, if the local time is not GMT, then also specifying '%Z' (time zone) in the format parameter will lead to an extremely misleading result.</p>
+
+<p>Any or all of these parameters may be named. Positional parameters should always be in the order ($time, $format, $locale).</p>
+
+<pre><code>{{ date.format(format =&gt; '%H:%M:%S') }}
+{{ date.format(time =&gt; filemod, format =&gt; '%H:%M:%S') }}
+{{ date.format(mytime, format =&gt; '%H:%M:%S') }}
+{{ date.format(mytime, format =&gt; '%H:%M:%S', locale =&gt; 'fr_FR') }}
+{{ date.format(mytime, format =&gt; '%H:%M:%S', gmt =&gt; 1) }}
+...etc...
+</code></pre>
+
+<p>The now() method returns the current system time in seconds since the epoch.</p>
+
+<pre><code>{{ date.format(date.now, '%A') }}
+</code></pre>
+
+<p>The calc() method can be used to create an interface to the Date::Calc module (if installed on your system).</p>
+
+<pre><code>{{ calc = date.calc }}
+{{ calc.Monday_of_Week(22, 2001).join('/') }}
+</code></pre>
+
+<p>The manip() method can be used to create an interface to the Date::Manip module (if installed on your system).</p>
+
+<pre><code>{{ manip = date.manip }}
+{{ manip.UnixDate("Noon Yesterday","%Y %b %d %H:%M") }}
+</code></pre>
+
+<h2 id="chomping">Chomping</h2>
+
+<p>When using directives in templates, it can help to add whitespace around the directives to make them more readable. However, adding this whitespace can make the resulting output unreadable. To help with this, special uses of the <code>+</code>, <code>-</code>, <code>=</code>, and <code>~</code> characters can be used to pre- and post-chomp the whitespace as follows:</p>
+
+<h4 id="chompnone">{{+ Chomp None +}}</h4>
+
+<p>Don't do any chomping.</p>
+
+<pre><code>Quick.
+
+{{+ "Brown." +}}
+
+Fox.
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>Quick.
+
+Brown.
+
+Fox.
+</code></pre>
+
+<h4 id="chompone-">{{- Chomp One -}}</h4>
+
+<p>Delete any whitespace up to the adjacent newline.</p>
+
+<pre><code>Quick.
+
+{{- "Brown." -}}
+
+Fox.
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>Quick.
+Brown.
+Fox.
+</code></pre>
+
+<h4 id="chompgreedy">{{~ Chomp Greedy ~}}</h4>
+
+<p>Remove all adjacent whitespace.</p>
+
+<pre><code>Quick.
+
+{{~ "Brown." ~}}
+
+Fox.
+</code></pre>
+
+<p>Result:</p>
+
+<pre><code>Quick.Brown.Fox.
+</code></pre>
+
+<h2 id="githubpages">Github Pages</h2>
+
+<p>Github Pages is a free service that allows you to publish a static website for free. By pushing your changes to a git repository, your website will be automatically available on github.io. Here are the steps:</p>
+
+<ol>
+<li><p>First, if you don’t have an account already, you should sign up for a <a href="http://github.com/">Github 
+account</a>.</p></li>
+<li><p>Next, create a new repository named <code>&lt;username&gt;.github.io</code> where you should replace <code>&lt;username&gt;</code> with your actual Github username.</p></li>
+<li><p>After that, push the contents of your <code>_output</code> directory to the new github repo. Steps:</p>
+
+<p>$ cd public
+   $ git init
+   $ git remote add origin https://github.com/<username>/<username>.github.io.git
+   $ git add *
+   $ git commit -m"Initial revision"
+   $ git push</p></li>
+<li><p>Wait a few minutes. Then, find your new website on github.io at the following 
+address: <code>http://&lt;username&gt;.github.io</code>.</p></li>
 </ol>
+
+<h1 id="author">Author</h1>
+
+<p>Mira was written by Kiavash Mazi
+<a href="mailto:kiavash@cpan.org">kiavash@cpan.org</a>.</p>
+
+<h1 id="licenseandcopyright">License and Copyright</h1>
+
+<p>mira is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or any later version.</p>
+
+<p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+
+<p>You should have received a copy of the GNU General Public License along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>.</p>
 
        </div>
        

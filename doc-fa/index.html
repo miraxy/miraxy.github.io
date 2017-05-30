@@ -297,6 +297,10 @@
 		    
       	
    			
+					<a href="#پوسته_برچسب‌های مورد استفاده در پوسته_index.tt2">- index.tt2</a>
+		    
+      	
+   			
 					<a href="#پوسته_برچسب‌های مورد استفاده در پوسته_متغیرهای موجود">- متغیرهای موجود</a>
 		    
       	
@@ -1413,7 +1417,7 @@ Site.com/blog/tagss/TAG3/
 Site.com/blog/tagss/...
 </code></pre>
 
-<p>قبلا گفته شد که صفحات آرشیو را به هر تعداد که بخواهید میتوانید تکثیر کنید <br />
+<p>صفحات آرشیو را به هر تعداد که نیاز باشد میتوان تکثیر کرد <br />
 اگر بخواهید هر کدام از آرشیو‌هایی که دارید، پوسته متفاوتی داشته باشد، میتوانید هم‌نام آن آرشیو مثل categories یا هر چیز دیگری، یک فایل با پسوند tt2 در شاخه‌ی پوسته در کنار سایر فایل‌های tt2 قرار دهید، چیزی مثل این:</p>
 
 <pre><code>template/THEME/categories.tt2
@@ -1592,6 +1596,7 @@ _layout: other_custom_page
 {{ MAIN }}
 {{ SITE }}
 {{ BUILD }}
+{{ PAGE }}
 </code></pre>
         </div>
 
@@ -1688,6 +1693,7 @@ _layout: other_custom_page
 {{ MAIN }}
 {{ SITE }}
 {{ BUILD }}
+{{ PAGE }}
 
 {{ IS_ARCHIVE }}      :(boolean) true for field archives
 {{ IS_DATE_ARCHIVE }} :(boolean) true for date archives
@@ -1706,6 +1712,79 @@ _layout: other_custom_page
    {{ ARCH.showname }} : namespace
    {{ ARCH.url }}
    {{ ARCH.furl }}
+</code></pre>
+        </div>
+
+
+  	
+    
+    
+
+    	  <a name="پوسته_برچسب‌های مورد استفاده در پوسته_index.tt2"></a>
+    	  <h3 class="list">index.tt2</h3>
+    	  
+    	  <div class="content-body">
+        <a name="more"></a>
+<pre><code>{{ MianTITLE }}
+{{ MianDESCRIPTION }}
+{{ MianURL }}
+{{ MianROOT }}
+{{ MianSTATIC }}
+{{ MainIMAGEURL }}
+{{ MianAUTHOR }}
+{{ MianEMAIL }}
+
+{{ PageTITLE }}
+   "post title - site title"
+
+{{ PostTITLE }}
+   "post title"
+
+{{ TITLE }}
+{{ DESCRIPTION }}
+{{ URL }}
+{{ ROOT }}
+{{ STATIC }}
+{{ IMAGEURL }}
+{{ AUTHOR }}
+{{ EMAIL }}
+
+{{ ARCHIVES }} :
+برای اطلاعات کامل‌تر در مورد آرشیو ها قسمت اول بخش پوسته ها را ببینید، این برچسب مناسب برای نمایش در سایدبار و امثال آن است. برای ساختن صفحات آرشیو، archive.tt2 جهت نمایش محتوا، از POSTS استفاده می‌شود، کارکرد این برچسب با صفحات archive متفاوت است.
+
+{{ ENTRIES }}
+{{ FLOORS }}
+{{ POSTS }}
+
+{{ IS_POST }} :(boolean) true
+
+if _type: page then:
+{{ IS_POST }} :(boolean) false
+{{ IS_PAGE }} :(boolean) true
+
+{{ MAIN }}
+{{ SITE }}
+{{ BUILD }}
+{{ PAGE }}
+
+{{ post.* }}
+</code></pre>
+
+<p>در الگوی post.tt2 یا الگوی شخصی سازی شده صفحه‌ها نیازی به فراخوانی حلقه‌ی FOREACH POSTS نیست، تمام مقادیر مورد نیاز در  {{ post }} از پیش لود شده است. اما در صورت نیاز میتوانید این حلقه را هم لود کنید. مقادیر زیر در این الگو برابر هستند:</p>
+
+<pre><code>1: با لود کردن حلقه
+&lt;div class="content"&gt;
+{{ FOREACH entry IN POSTS }}
+  &lt;div class="title"&gt;{{ entry.title }}&lt;/div&gt;
+  {{ entry.body.more }}
+{{ END }}
+&lt;/div&gt;
+
+2: بدون لود کردن حلقه
+&lt;div class="content"&gt;
+  &lt;div class="title"&gt;{{ post.title }}&lt;/div&gt;
+  {{ post.body.more }}
+&lt;/div&gt;
 </code></pre>
         </div>
 
@@ -1810,6 +1889,14 @@ _layout: other_custom_page
 
 <p>date archive: <br />
 تیتر اختصاصی سایت - سال / ماه</p>
+
+<p>post: <br />
+تیتر نوشته - تیتر طبقه انتشار ذخیره شده دایرکتوری config <br />
+"post_title-site_title"</p>
+
+<h2>PostTITLE</h2>
+
+<p>تنها در الگوی post معتبر است و تیتر نوشته‌ی در حال نمایش را برمیگرداند.</p>
 
 <h2>FLOORS</h2>
 
@@ -1927,6 +2014,26 @@ posts (list)
 {{ BUILD.hour }}
 {{ BUILD.minute }}
 {{ BUILD.second }}
+</code></pre>
+
+<h2>PAGE</h2>
+
+<p>در الگوهای index, archive مقادیری حاوی آدرس و شماره صفحه‌ی بعد، شماره‌ی صفحه‌ای که در آن هستیم و تعداد کل صفحات را برمیگرداند.</p>
+
+<p>در الگوی post آدرس و تیتر پست‌های قبل و بعد را باز میگرداند.</p>
+
+<p>معتبر در تمام الگوها:</p>
+
+<pre><code>{{ Page.next.url }}
+{{ Page.next.title }}
+{{ Page.prev.url }}
+{{ Page.prev.title }}
+</code></pre>
+
+<p>معتبر در الگوهای archive و index:</p>
+
+<pre><code>{{ PAGE.number }}
+{{ PAGE.total }}
 </code></pre>
 
 <h2>ARCHIVES</h2>
